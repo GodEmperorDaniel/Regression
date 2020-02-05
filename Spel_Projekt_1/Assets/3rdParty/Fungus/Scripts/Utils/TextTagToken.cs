@@ -22,12 +22,12 @@ namespace Fungus
         ItalicStart,
         /// <summary> /i </summary>
         ItalicEnd,
-        /// <summary> color=red </summary>
-        ColorStart,
-        /// <summary> /color </summary>
-        ColorEnd,
-        /// <summary> size=20 </summary>
-        SizeStart,
+		/// <summary> color=red </summary>
+		ColorStart,
+		/// <summary> /color </summary>
+		ColorEnd,
+		/// <summary> size=20 </summary>
+		SizeStart,
         /// <summary> /size </summary>
         SizeEnd,
         /// <summary> w, w=0.5 </summary>
@@ -68,7 +68,11 @@ namespace Fungus
         AudioStop,
         /// <summary> wvo </summary>
         WaitForVoiceOver,
-    }
+		/// <summary> hcolor=red </summary>
+		HiddenColorStart,
+		/// <summary> /hcolor </summary>
+		HiddenColorEnd,
+	}
 
     /// <summary>
     /// Represents a token of story text. The text is broken into a list of tokens.

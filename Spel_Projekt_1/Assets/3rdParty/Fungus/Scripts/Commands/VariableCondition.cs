@@ -17,8 +17,9 @@ namespace Fungus
                           typeof(FloatVariable),
                           typeof(StringVariable),
                           typeof(AnimatorVariable),
-                          typeof(AudioSourceVariable),
-                          typeof(ColorVariable),
+						  typeof(AudioSourceVariable),
+						  typeof(CharacterVariable),
+						  typeof(ColorVariable),
                           typeof(GameObjectVariable),
                           typeof(MaterialVariable),
                           typeof(ObjectVariable),
@@ -45,10 +46,13 @@ namespace Fungus
         [Tooltip("Animator value to compare against")]
         [SerializeField] protected AnimatorData animatorData;
 
-        [Tooltip("AudioSource value to compare against")]
-        [SerializeField] protected AudioSourceData audioSourceData;
+		[Tooltip("AudioSource value to compare against")]
+		[SerializeField] protected AudioSourceData audioSourceData;
 
-        [Tooltip("Color value to compare against")]
+		[Tooltip("AudioSource value to compare against")]
+		[SerializeField] protected CharacterData characterData;
+
+		[Tooltip("Color value to compare against")]
         [SerializeField] protected ColorData colorData;
 
         [Tooltip("GameObject value to compare against")]
@@ -118,8 +122,10 @@ namespace Fungus
             {
                 AudioSourceVariable audioSourceVariable = (variable as AudioSourceVariable);
                 condition = audioSourceVariable.Evaluate(compareOperator, audioSourceData.Value);
-            }
-            else if (t == typeof(ColorVariable))
+			} else if (t == typeof(CharacterVariable)) {
+				CharacterVariable characterVariable = (variable as CharacterVariable);
+				condition = characterVariable.Evaluate(compareOperator, characterData.Value);
+			} else if (t == typeof(ColorVariable))
             {
                 ColorVariable colorVariable = (variable as ColorVariable);
                 condition = colorVariable.Evaluate(compareOperator, colorData.Value);
@@ -186,8 +192,9 @@ namespace Fungus
             { typeof(FloatVariable), FloatVariable.compareOperators },
             { typeof(StringVariable), StringVariable.compareOperators },
             { typeof(AnimatorVariable), AnimatorVariable.compareOperators },
-            { typeof(AudioSourceVariable), AudioSourceVariable.compareOperators },
-            { typeof(ColorVariable), ColorVariable.compareOperators },
+			{ typeof(AudioSourceVariable), AudioSourceVariable.compareOperators },
+			{ typeof(CharacterVariable), CharacterVariable.compareOperators },
+			{ typeof(ColorVariable), ColorVariable.compareOperators },
             { typeof(GameObjectVariable), GameObjectVariable.compareOperators },
             { typeof(MaterialVariable), MaterialVariable.compareOperators },
             { typeof(ObjectVariable), ObjectVariable.compareOperators },
@@ -239,8 +246,9 @@ namespace Fungus
             else if (t == typeof(AudioSourceVariable))
             {
                 summary += audioSourceData.GetDescription();
-            }
-            else if (t == typeof(ColorVariable))
+			} else if (t == typeof(CharacterVariable)) {
+				summary += characterData.GetDescription();
+			} else if (t == typeof(ColorVariable))
             {
                 summary += colorData.GetDescription();
             }
@@ -314,8 +322,9 @@ namespace Fungus
             else if (t == typeof(AudioSourceVariable))
             {
                 retval |= audioSourceData.audioSourceRef == variable;
-            }
-            else if (t == typeof(ColorVariable))
+			} else if (t == typeof(CharacterVariable)) {
+				retval |= characterData.characterRef == variable;
+			} else if (t == typeof(ColorVariable))
             {
                 retval |= colorData.colorRef == variable;
             }

@@ -21,8 +21,9 @@ namespace Fungus
                           typeof(FloatVariable),
                           typeof(StringVariable),
                           typeof(AnimatorVariable),
-                          typeof(AudioSourceVariable),
-                          typeof(ColorVariable),
+						  typeof(AudioSourceVariable),
+						  typeof(CharacterVariable),
+						  typeof(ColorVariable),
                           typeof(GameObjectVariable),
                           typeof(MaterialVariable),
                           typeof(ObjectVariable),
@@ -52,10 +53,13 @@ namespace Fungus
         [Tooltip("Animator value to set with")]
         [SerializeField] protected AnimatorData animatorData;
 
-        [Tooltip("AudioSource value to set with")]
-        [SerializeField] protected AudioSourceData audioSourceData;
+		[Tooltip("AudioSource value to set with")]
+		[SerializeField] protected AudioSourceData audioSourceData;
 
-        [Tooltip("Color value to set with")]
+		[Tooltip("AudioSource value to set with")]
+		[SerializeField] protected CharacterData characterData;
+
+		[Tooltip("Color value to set with")]
         [SerializeField] protected ColorData colorData;
 
         [Tooltip("GameObject value to set with")]
@@ -121,12 +125,17 @@ namespace Fungus
                 AnimatorVariable animatorVariable = (variable as AnimatorVariable);
                 animatorVariable.Apply(setOperator, animatorData.Value);
             }
-            else if (t == typeof(AudioSourceVariable))
-            {
-                AudioSourceVariable audioSourceVariable = (variable as AudioSourceVariable);
-                audioSourceVariable.Apply(setOperator, audioSourceData.Value);
-            }
-            else if (t == typeof(ColorVariable))
+			else if (t == typeof(AudioSourceVariable))
+			{
+				AudioSourceVariable audioSourceVariable = (variable as AudioSourceVariable);
+				audioSourceVariable.Apply(setOperator, audioSourceData.Value);
+			}
+			else if (t == typeof(CharacterVariable))
+			{
+				CharacterVariable characterVariable = (variable as CharacterVariable);
+				characterVariable.Apply(setOperator, characterData.Value);
+			}
+			else if (t == typeof(ColorVariable))
             {
                 ColorVariable colorVariable = (variable as ColorVariable);
                 colorVariable.Apply(setOperator, colorData.Value);
@@ -186,8 +195,9 @@ namespace Fungus
             { typeof(FloatVariable), FloatVariable.setOperators },
             { typeof(StringVariable), StringVariable.setOperators },
             { typeof(AnimatorVariable), AnimatorVariable.setOperators },
-            { typeof(AudioSourceVariable), AudioSourceVariable.setOperators },
-            { typeof(ColorVariable), ColorVariable.setOperators },
+			{ typeof(AudioSourceVariable), AudioSourceVariable.setOperators },
+			{ typeof(CharacterVariable), CharacterVariable.setOperators },
+			{ typeof(ColorVariable), ColorVariable.setOperators },
             { typeof(GameObjectVariable), GameObjectVariable.setOperators },
             { typeof(MaterialVariable), MaterialVariable.setOperators },
             { typeof(ObjectVariable), ObjectVariable.setOperators },
@@ -268,8 +278,9 @@ namespace Fungus
             else if (t == typeof(AudioSourceVariable))
             {
                 description += audioSourceData.GetDescription();
-            }
-            else if (t == typeof(ColorVariable))
+			} else if (t == typeof(CharacterVariable)) {
+				description += characterData.GetDescription();
+			} else if (t == typeof(ColorVariable))
             {
                 description += colorData.GetDescription();
             }
@@ -343,8 +354,9 @@ namespace Fungus
             else if (t == typeof(AudioSourceVariable))
             {
                 retval |= audioSourceData.audioSourceRef == variable;
-            }
-            else if (t == typeof(ColorVariable))
+			} else if (t == typeof(CharacterVariable)) {
+				retval |= characterData.characterRef == variable;
+			} else if (t == typeof(ColorVariable))
             {
                 retval |= colorData.colorRef == variable;
             }

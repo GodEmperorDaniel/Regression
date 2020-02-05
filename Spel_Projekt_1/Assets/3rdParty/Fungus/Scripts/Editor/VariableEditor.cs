@@ -348,13 +348,15 @@ namespace Fungus.EditorUtils
 
     [CustomPropertyDrawer (typeof(TransformData))]
     public class TransformDataDrawer : VariableDataDrawer<TransformVariable>
-    {}
-
-    [CustomPropertyDrawer (typeof(AudioSourceData))]
-    public class AudioSourceDrawer : VariableDataDrawer<AudioSourceVariable>
     { }
 
-    [CustomPropertyDrawer(typeof(Rigidbody2DData))]
+	[CustomPropertyDrawer(typeof(AudioSourceData))]
+	public class AudioSourceDrawer : VariableDataDrawer<AudioSourceVariable> { }
+
+	[CustomPropertyDrawer(typeof(CharacterData))]
+	public class CharacterDrawer : VariableDataDrawer<CharacterVariable> { }
+
+	[CustomPropertyDrawer(typeof(Rigidbody2DData))]
     public class Rigidbody2DDataDrawer : VariableDataDrawer<Rigidbody2DVariable>
     { }
 }

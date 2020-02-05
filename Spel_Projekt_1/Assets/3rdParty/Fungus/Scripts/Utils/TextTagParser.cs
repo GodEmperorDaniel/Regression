@@ -52,16 +52,15 @@ namespace Fungus
             else if (tag == "/i")
             {
                 type = TokenType.ItalicEnd;
-            }
-            else if (tag.StartsWith("color="))
-            {
-                type = TokenType.ColorStart;
-            }
-            else if (tag == "/color")
-            {
-                type = TokenType.ColorEnd;
-            }
-            else if (tag.StartsWith("size="))
+			} else if (tag.StartsWith("color=")) {
+				type = TokenType.ColorStart;
+			} else if (tag == "/color") {
+				type = TokenType.ColorEnd;
+			} else if (tag.StartsWith("hcolor=") || tag.StartsWith("hColor=")) {
+				type = TokenType.HiddenColorStart;
+			} else if (tag == "/hcolor" || tag.StartsWith("/hColor")) {
+				type = TokenType.HiddenColorEnd;
+			} else if (tag.StartsWith("size="))
             {
                 type = TokenType.SizeStart;
             }
@@ -171,7 +170,7 @@ namespace Fungus
             }
             else
             {
-                Debug.LogWarning("Invalid text tag " + tag);
+                Debug.LogWarning("Invalid text tag '" + tag + "'");
             }
         }
 
@@ -201,34 +200,38 @@ namespace Fungus
         /// </summary>
         public static string GetTagHelp()
         {
-            return "" +
-                "\t{b} Bold Text {/b}\n" + 
-                "\t{i} Italic Text {/i}\n" +
-                "\t{color=red} Color Text (color){/color}\n" +
-                "\t{size=30} Text size {/size}\n" +
-                "\n" +
-                "\t{s}, {s=60} Writing speed (chars per sec){/s}\n" +
-                "\t{w}, {w=0.5} Wait (seconds)\n" +
-                "\t{wi} Wait for input\n" +
-                "\t{wc} Wait for input and clear\n" +
-                "\t{wvo} Wait for voice over line to complete\n" +
-                "\t{wp}, {wp=0.5} Wait on punctuation (seconds){/wp}\n" +
-                "\t{c} Clear\n" +
-                "\t{x} Exit, advance to the next command without waiting for input\n" +
-                "\n" +
-                "\t{vpunch=10,0.5} Vertically punch screen (intensity,time)\n" +
-                "\t{hpunch=10,0.5} Horizontally punch screen (intensity,time)\n" +
-                "\t{punch=10,0.5} Punch screen (intensity,time)\n" +
-                "\t{flash=0.5} Flash screen (duration)\n" +
-                "\n" +
-                "\t{audio=AudioObjectName} Play Audio Once\n" +
-                "\t{audioloop=AudioObjectName} Play Audio Loop\n" +
-                "\t{audiopause=AudioObjectName} Pause Audio\n" +
-                "\t{audiostop=AudioObjectName} Stop Audio\n" +
-                "\n" +
-                "\t{m=MessageName} Broadcast message\n" +
-                "\t{$VarName} Substitute variable";
-        }
+			return "" +
+				"\t{b} Bold Text {/b}\n" +
+				"\t{i} Italic Text {/i}\n" +
+				"\t{color=red} Color Text (color){/color}\n" +
+				"\t{size=30} Text size {/size}\n" +
+				"\n" +
+				"\t{s}, {s=60} Writing speed (chars per sec){/s}\n" +
+				"\t{w}, {w=0.5} Wait (seconds)\n" +
+				"\t{wi} Wait for input\n" +
+				"\t{wc} Wait for input and clear\n" +
+				"\t{wvo} Wait for voice over line to complete\n" +
+				"\t{wp}, {wp=0.5} Wait on punctuation (seconds){/wp}\n" +
+				"\t{c} Clear\n" +
+				"\t{x} Exit, advance to the next command without waiting for input\n" +
+				"\n" +
+				"\t{vpunch=10,0.5} Vertically punch screen (intensity,time)\n" +
+				"\t{hpunch=10,0.5} Horizontally punch screen (intensity,time)\n" +
+				"\t{punch=10,0.5} Punch screen (intensity,time)\n" +
+				"\t{flash=0.5} Flash screen (duration)\n" +
+				"\n" +
+				"\t{audio=AudioObjectName} Play Audio Once\n" +
+				"\t{audioloop=AudioObjectName} Play Audio Loop\n" +
+				"\t{audiopause=AudioObjectName} Pause Audio\n" +
+				"\t{audiostop=AudioObjectName} Stop Audio\n" +
+				"\n" +
+				"\t{m=MessageName} Broadcast message\n" +
+				"\t{$VarName} Substitute variable" +
+				"\n" +
+				"\t{hcolor=} Color Hidden Text{/hcolor}" + 
+
+				"";
+		}
 
         /// <summary>
         /// Processes a block of story text and converts it to a list of tokens.
