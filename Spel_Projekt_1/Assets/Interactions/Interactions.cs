@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactions : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Interactions : MonoBehaviour
 	public InteractionSettings onStay;
 	public InteractionSettings onExit;
 	private AudioSource source;
+
+	private Canvas playerCanvas = null;
 
 	private void Awake()
 	{
@@ -63,7 +66,10 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-
+				if (playerCanvas == null)
+				{
+					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				}
 			}
 		}
 	}
@@ -73,7 +79,10 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-
+				if (playerCanvas == null)
+				{
+					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				}
 			}
 		}
 	}
@@ -84,8 +93,29 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-
+				if (playerCanvas == null)
+				{
+					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				}
+				/*if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
+				{
+					
+				}*/
 			}
 		}
+	}
+
+	IEnumerator showImage(InteractionSettings settings)
+	{
+		float timer = 0;
+
+		//sätt upp bilden på canvas
+
+		while (timer < settings.image.imageTimer)
+		{
+			timer += Time.deltaTime;
+			yield return null;
+		}
+
 	}
 }
