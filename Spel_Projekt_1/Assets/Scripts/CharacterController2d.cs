@@ -6,6 +6,8 @@ public class CharacterController2d : MonoBehaviour
 {
     public int MovementSpeed;
     CharacterController Player;
+	public KeyCode forwardKey = KeyCode.W;
+	public KeyCode backwardKey = KeyCode.S;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,7 @@ public class CharacterController2d : MonoBehaviour
         {
             transform.position += Vector3.right * MovementSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(forwardKey))
         {
             transform.position += Vector3.up * MovementSpeed * Time.deltaTime;
         }

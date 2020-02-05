@@ -66,6 +66,7 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
+				Debug.Log("Entered");
 				if (playerCanvas == null)
 				{
 					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
