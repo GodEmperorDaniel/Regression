@@ -60,9 +60,9 @@ public class Interactions : MonoBehaviour
 
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		if (onEnter.Active)
+	private void OnTriggerEnter2D(Collider2D other) {
+		Interact(other, onEnter);
+		/*if (onEnter.Active)
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
@@ -71,11 +71,11 @@ public class Interactions : MonoBehaviour
 					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
 				}
 			}
-		}
+		}*/
 	}
-	private void OnTriggerExit2D(Collider2D other)
-	{
-		if (onExit.Active)
+	private void OnTriggerExit2D(Collider2D other) {
+		Interact(other, onExit);
+		/*if (onExit.Active)
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
@@ -84,12 +84,12 @@ public class Interactions : MonoBehaviour
 					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
 				}
 			}
-		}
+		}*/
 	}
 
-	private void OnTriggerStay2D(Collider2D other)
-	{
-		if (onStay.Active)
+	private void OnTriggerStay2D(Collider2D other) {
+		Interact(other, onStay);
+		/*if (onStay.Active)
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
@@ -97,10 +97,20 @@ public class Interactions : MonoBehaviour
 				{
 					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
 				}
-				/*if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
+				if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
 				{
 					
-				}*/
+				}
+			}
+		}*/
+	}
+
+	private void Interact(Collider2D other, InteractionSettings settings) {
+		if (settings.Active) {
+			if (other.gameObject.tag == "Player") {
+				if (settings.flowchart && settings.block) {
+					settings.flowchart.ExecuteBlock(settings.block);
+				}
 			}
 		}
 	}
@@ -111,11 +121,11 @@ public class Interactions : MonoBehaviour
 
 		//sätt upp bilden på canvas
 
-		while (timer < settings.image.imageTimer)
+		/*while (timer < settings.image.imageTimer)
 		{
 			timer += Time.deltaTime;
 			yield return null;
-		}
-
+		}*/
+		yield return null;
 	}
 }
