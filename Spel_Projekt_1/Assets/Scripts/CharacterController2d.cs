@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController2d : MonoBehaviour
 {
-    public int MovementSpeed = 3;
-    public Vector3 LeftInput = Vector3.up;
+    public int MovementSpeed;
     CharacterController Player;
 
     // Start is called before the first frame update
@@ -19,11 +18,12 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         keyboardMovement();
+        gamepadMovement();
     }
 
     private void keyboardMovement()
     {
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * MovementSpeed * Time.deltaTime;
         }
@@ -35,9 +35,16 @@ public class CharacterController : MonoBehaviour
         {
             transform.position += Vector3.up * MovementSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.S))
         {
             transform.position += Vector3.down * MovementSpeed * Time.deltaTime;
         }
+    }
+
+    private void gamepadMovement()
+    {
+        float x = Input.GetAxis("Horizontal") * MovementSpeed * Time.deltaTime;
+        float y = Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime;
+        transform.Translate(x, y, 0);
     }
 }
