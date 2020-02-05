@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 
 [System.Serializable]
 public struct InteractionSettings
 {
 	public bool Active;
 	public string text;
-
+	public Flowchart flow;
 	public ImageSettings image;
 	public AudioClip audioClip;
 	public OtherEvents moreEvents;
