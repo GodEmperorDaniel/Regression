@@ -24,6 +24,7 @@ public class Interactions : MonoBehaviour
 	private AudioSource source;
 
 	private Canvas playerCanvas = null;
+	private Image scareImage = null;
 
 	private void Awake()
 	{
@@ -98,7 +99,7 @@ public class Interactions : MonoBehaviour
 				{
 					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
 				}
-				/*if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
+				/*if(other.gameObject.GetComponent<CharacterController2d>().getInteractionKey())
 				{
 					
 				}*/
@@ -118,5 +119,14 @@ public class Interactions : MonoBehaviour
 			yield return null;
 		}
 
+		timer = 0;
+		Color t = scareImage.color;
+		while (timer < settings.image.fadeTimer)
+		{
+			timer += Time.deltaTime;
+			yield return null;
+			t.a = Mathf.Lerp(255, 0, timer / settings.image.fadeTimer);
+			scareImage.color = t;
+		}
 	}
 }
