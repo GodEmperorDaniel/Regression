@@ -67,11 +67,11 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-				Debug.Log("Entered");
-				if (playerCanvas == null)
-				{
-					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				}
+				Debug.Log(onEnter.text);
+				//if (playerCanvas == null)
+				//{
+				//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				//}
 			}
 		}
 	}
@@ -81,10 +81,11 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-				if (playerCanvas == null)
-				{
-					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				}
+				Debug.Log(onExit.text);
+				//if (playerCanvas == null)
+				//{
+				//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				//}
 			}
 		}
 	}
@@ -95,13 +96,13 @@ public class Interactions : MonoBehaviour
 		{
 			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
-				if (playerCanvas == null)
-				{
-					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				}
+				//if (playerCanvas == null)
+				//{
+				//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+				//}
 				/*if(other.gameObject.GetComponent<CharacterController2d>().getInteractionKey())
 				{
-					
+					Debug.Log("Interaction Happened");
 				}*/
 			}
 		}
@@ -124,9 +125,16 @@ public class Interactions : MonoBehaviour
 		while (timer < settings.image.fadeTimer)
 		{
 			timer += Time.deltaTime;
-			yield return null;
 			t.a = Mathf.Lerp(255, 0, timer / settings.image.fadeTimer);
 			scareImage.color = t;
+			yield return null;
 		}
+
+		//ta bort bilden från canvas
+	}
+
+	private void SkickaText()
+	{ 
+		//connecta till flowcharten och skicka string till specifikt block
 	}
 }
