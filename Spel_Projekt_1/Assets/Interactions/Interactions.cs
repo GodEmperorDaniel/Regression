@@ -120,7 +120,7 @@ public class Interactions : MonoBehaviour
 
 	IEnumerator showImage(InteractionSettings settings)
 	{
-		float timer = 0;
+		//float timer = 0;
 
 		//sätt upp bilden på canvas
 
