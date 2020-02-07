@@ -61,7 +61,8 @@ public class Interactions : MonoBehaviour
 
 	}
 
-	private void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
 		Interact(other, onEnter);
 		/*if (onEnter.Active)
 		{
@@ -75,7 +76,8 @@ public class Interactions : MonoBehaviour
 			}
 		}*/
 	}
-	private void OnTriggerExit2D(Collider2D other) {
+	private void OnTriggerExit2D(Collider2D other)
+	{
 		Interact(other, onExit);
 		/*if (onExit.Active)
 		{
@@ -90,28 +92,30 @@ public class Interactions : MonoBehaviour
 		}*/
 	}
 
-	private void OnTriggerStay2D(Collider2D other) {
-		Interact(other, onStay);
-		/*if (onStay.Active)
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
-			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+			//if (playerCanvas == null)
+			//{
+			//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+			//}
+			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
 			{
-				if (playerCanvas == null)
-				{
-					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				}
-				if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
-				{
-					
-				}
+				Debug.Log("Interacted");
+				Interact(other, onStay);
 			}
-		}*/
+		}
 	}
 
-	private void Interact(Collider2D other, InteractionSettings settings) {
-		if (settings.Active) {
-			if (other.gameObject.tag == "Player") {
-				if (settings.flowchart && settings.block) {
+	private void Interact(Collider2D other, InteractionSettings settings)
+	{
+		if (settings.Active)
+		{
+			if (other.gameObject.tag == "Player")
+			{
+				if (settings.flowchart && settings.block)
+				{
 					settings.flowchart.ExecuteBlock(settings.block);
 				}
 			}

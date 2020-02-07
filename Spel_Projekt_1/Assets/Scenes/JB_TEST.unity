@@ -202,6 +202,11 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7284780971577527873, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: Ani
+      value: 
+      objectReference: {fileID: 1079574875}
     - target: {fileID: 8835751588778784879, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_TagString
@@ -211,6 +216,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 764195829, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1045422690, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
       propertyPath: forwardKey
@@ -308,6 +317,26 @@ PrefabInstance:
         type: 3}
       propertyPath: onEnter.text
       value: Show this when you enter this zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onStay._foldout
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onStay.Active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onExit._foldout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onEnter._foldout
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 466387909143195110, guid: a4164668b24941e4983d7a0e63737f23,
         type: 3}
@@ -421,3 +450,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!1 &1079574872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+    type: 3}
+  m_PrefabInstance: {fileID: 217921123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1079574875
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079574872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f287d004e7252504fb930eab984b8dd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
