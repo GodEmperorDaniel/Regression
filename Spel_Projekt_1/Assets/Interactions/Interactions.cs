@@ -7,12 +7,12 @@ public class Interactions : MonoBehaviour
 {
 	[Header("Object Settings")]
 
-	public Sprite objectSprite = null;
+	public Sprite objectSprite = null; //kan vara lite onödigt att ens ha med denna - JB
 
 	[Header("Collider Settings")]
 
 	[Range(0.001f, 10)]
-	public float colliderRadius;
+	public float colliderRadius; //samma som kommentar ovan
 
 	private Collider2D objectCollider = null;
 
@@ -22,9 +22,6 @@ public class Interactions : MonoBehaviour
 	public InteractionSettings onStay;
 	public InteractionSettings onExit;
 	private AudioSource source;
-
-	private Canvas playerCanvas = null;
-	private Image scareImage = null;
 
 	private void Awake()
 	{
@@ -112,7 +109,7 @@ public class Interactions : MonoBehaviour
 	{
 		if (settings.Active)
 		{
-			if (other.gameObject.tag == "Player")
+			if (other.gameObject.tag == "Player") //enbart en fråga men finns det någon anledning att använda tag över layermasks? - JB
 			{
 				if (settings.flowchart && settings.block)
 				{

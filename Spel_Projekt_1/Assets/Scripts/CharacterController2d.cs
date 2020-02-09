@@ -13,14 +13,14 @@ public class CharacterController2d : MonoBehaviour
     public KeyCode interactionButton = KeyCode.E;
     public KeyCode interactionButtonGamepad = KeyCode.Joystick1Button1;
     public Animator Ani;
-    // Start is called before the first frame update
+
     void Start()
     {
         Player = GetComponent<CharacterController>();
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         keyboardMovement();
