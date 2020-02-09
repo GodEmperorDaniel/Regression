@@ -147,6 +147,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1265186320}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &473916047
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473916046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f287d004e7252504fb930eab984b8dd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1265186320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,131 +335,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.8634627
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.989128
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 12.5199995
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 9.145469
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SceneName
-      value: JJ_TEST2
-      objectReference: {fileID: 0}
-    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: doorToSpawn
-      value: two
-      objectReference: {fileID: 0}
-    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 473916046}
-    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: lockDoor
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_Size.x
@@ -521,6 +415,135 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8416971572331519512, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: doorToSpawn
+      value: two
+      objectReference: {fileID: 0}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 473916046}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: lockDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 12.5199995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 9.145469
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892713047760679649, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: doorToSpawn
+      value: two
+      objectReference: {fileID: 0}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 473916046}
+    - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: lockDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.14070709
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.1415483
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0027665868
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0025017075
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
