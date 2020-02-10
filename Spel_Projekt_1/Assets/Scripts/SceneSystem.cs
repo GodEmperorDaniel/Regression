@@ -7,11 +7,19 @@ public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
     public bool lockDoor;
-    public bool isSpawner = false;
     public GameObject player;
     private Transform door;
     Vector3 SpawnPos;
+    public int ThisDoorIndex;
+    public int SpawnToIndex;
 
+    private void Awake()
+    {
+        if(PlayerStatic.DoorIndex == ThisDoorIndex)
+        {
+            SpawnPosition();
+        }
+    }
     private void Start()
     {
         door = gameObject.transform;
@@ -22,6 +30,7 @@ public class SceneSystem : MonoBehaviour
     {
         if (collision.tag == "Player") //kan du göra om till layermask
         {
+            PlayerStatic.DoorIndex = SpawnToIndex;
             if (!lockDoor) //kan ha två colliders på dörren, en aktiveras när den är låst --> för att man inte ska kunna gå igenom den
             {
                 SceneManager.LoadScene(SceneName);
@@ -32,13 +41,14 @@ public class SceneSystem : MonoBehaviour
             }
         }
     }
+
     private void Update()
     {
        // Debug.Log(SpawnPos);
     }
     private Vector3 SpawnPosition()
     {
-        if(isSpawner) 
+        if(PlayerStatic.DoorIndex == ThisDoorIndex) 
         {
             SpawnPos = door.position;
             PlayerStatic.player.position = SpawnPos;
