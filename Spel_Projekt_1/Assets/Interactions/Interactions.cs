@@ -7,12 +7,12 @@ public class Interactions : MonoBehaviour
 {
 	[Header("Object Settings")]
 
-	public Sprite objectSprite = null;
+	public Sprite objectSprite = null; //kan vara lite onödigt att ens ha med denna - JB
 
 	[Header("Collider Settings")]
 
 	[Range(0.001f, 10)]
-	public float colliderRadius;
+	public float colliderRadius; //samma som kommentar ovan
 
 	private Collider2D objectCollider = null;
 
@@ -22,9 +22,6 @@ public class Interactions : MonoBehaviour
 	public InteractionSettings onStay;
 	public InteractionSettings onExit;
 	private AudioSource source;
-
-	private Canvas playerCanvas = null;
-	private Image scareImage = null;
 
 	private void Awake()
 	{
@@ -61,7 +58,8 @@ public class Interactions : MonoBehaviour
 
 	}
 
-	private void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
 		Interact(other, onEnter);
 		/*if (onEnter.Active)
 		{
@@ -75,7 +73,8 @@ public class Interactions : MonoBehaviour
 			}
 		}*/
 	}
-	private void OnTriggerExit2D(Collider2D other) {
+	private void OnTriggerExit2D(Collider2D other)
+	{
 		Interact(other, onExit);
 		/*if (onExit.Active)
 		{
@@ -90,28 +89,30 @@ public class Interactions : MonoBehaviour
 		}*/
 	}
 
-	private void OnTriggerStay2D(Collider2D other) {
-		Interact(other, onStay);
-		/*if (onStay.Active)
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
-			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+			//if (playerCanvas == null)
+			//{
+			//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
+			//}
+			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
 			{
-				if (playerCanvas == null)
-				{
-					playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				}
-				if(other.gameObject.GetComponent<PlayerController>().getInteractionKey())
-				{
-					
-				}
+				Debug.Log("Interacted");
+				Interact(other, onStay);
 			}
-		}*/
+		}
 	}
 
-	private void Interact(Collider2D other, InteractionSettings settings) {
-		if (settings.Active) {
-			if (other.gameObject.tag == "Player") {
-				if (settings.flowchart && settings.block) {
+	private void Interact(Collider2D other, InteractionSettings settings)
+	{
+		if (settings.Active)
+		{
+			if (other.gameObject.tag == "Player") //enbart en fråga men finns det någon anledning att använda tag över layermasks? - JB
+			{
+				if (settings.flowchart && settings.block)
+				{
 					settings.flowchart.ExecuteBlock(settings.block);
 				}
 			}
@@ -120,7 +121,7 @@ public class Interactions : MonoBehaviour
 
 	IEnumerator showImage(InteractionSettings settings)
 	{
-		float timer = 0;
+		//float timer = 0;
 
 		//sätt upp bilden på canvas
 
