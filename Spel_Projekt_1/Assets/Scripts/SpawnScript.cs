@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class SpawnScript : MonoBehaviour
 {
     Vector3 SpawnPos;
@@ -18,3 +18,4 @@ public class SpawnScript : MonoBehaviour
         return SpawnPos;
     }
 }
+*/

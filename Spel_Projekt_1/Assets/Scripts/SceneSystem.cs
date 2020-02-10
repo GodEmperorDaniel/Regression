@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/*
 public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
@@ -27,4 +27,4 @@ public class SceneSystem : MonoBehaviour
             }
         }
     }
-}
+}*/
