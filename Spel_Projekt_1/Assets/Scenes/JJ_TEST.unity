@@ -132,6 +132,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 344285277}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: isSpawner
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: lockDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: ThisDoorIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SpawnToIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST
+      objectReference: {fileID: 0}
     - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,31 +216,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 344285277}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: isSpawner
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: lockDoor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: ThisDoorIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SpawnToIndex
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
@@ -335,6 +340,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1318182316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 224690897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1318182321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318182316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a822f5e1cde49429abed478ae27205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: {r: 1, g: 1, b: 1, a: 1}
+  B: {r: 0.23113209, g: 0.51154286, b: 1, a: 1}
+  speed: 1
 --- !u!1001 &1556300871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,14 +368,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
-    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 344285277}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: ThisDoorIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SpawnToIndex
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
@@ -406,26 +452,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 344285277}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SceneName
-      value: JJ_TEST2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: ThisDoorIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SpawnToIndex
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}

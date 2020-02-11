@@ -15,14 +15,14 @@ public class SceneSystem : MonoBehaviour
 
     private void Awake()
     {
-        if(PlayerStatic.DoorIndex == ThisDoorIndex)
+        door = gameObject.transform;
+        if (PlayerStatic.DoorIndex == ThisDoorIndex)
         {
             SpawnPosition();
         }
     }
     private void Start()
     {
-        door = gameObject.transform;
         SpawnPosition();
         DontDestroyOnLoad(player);
     }
