@@ -42,9 +42,9 @@ namespace Fungus
         WaitOnPunctuationEnd,
         /// <summary> c </summary>
         Clear,
-        /// <summary> s, s=60 </summary>
+        /// <summary> speed, speed=60 </summary>
         SpeedStart,
-        /// <summary> /s </summary>
+        /// <summary> /speed </summary>
         SpeedEnd,
         /// <summary> x </summary>
         Exit,
@@ -72,6 +72,8 @@ namespace Fungus
 		HiddenColorStart,
 		/// <summary> /hcolor </summary>
 		HiddenColorEnd,
+		/// <summary> /hcolor </summary>
+		TMProTag,
 	}
 
     /// <summary>

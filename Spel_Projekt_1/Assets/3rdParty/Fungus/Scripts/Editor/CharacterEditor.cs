@@ -11,8 +11,9 @@ namespace Fungus.EditorUtils
     {
         protected SerializedProperty nameTextProp;
         protected SerializedProperty nameColorProp;
-        protected SerializedProperty soundEffectProp;
-        protected SerializedProperty portraitsProp;
+		protected SerializedProperty soundEffectProp;
+		protected SerializedProperty writerAudioProp;
+		protected SerializedProperty portraitsProp;
         protected SerializedProperty portraitsFaceProp;
         protected SerializedProperty descriptionProp;
         protected SerializedProperty setSayDialogProp;
@@ -26,7 +27,8 @@ namespace Fungus.EditorUtils
             portraitsFaceProp = serializedObject.FindProperty ("portraitsFace");
             descriptionProp = serializedObject.FindProperty ("description");
             setSayDialogProp = serializedObject.FindProperty("setSayDialog");
-        }
+			writerAudioProp = serializedObject.FindProperty("setWriterAudio");
+		}
 
         public override void OnInspectorGUI() 
         {
@@ -36,9 +38,10 @@ namespace Fungus.EditorUtils
 
             EditorGUILayout.PropertyField(nameTextProp, new GUIContent("Name Text", "Name of the character display in the dialog"));
             EditorGUILayout.PropertyField(nameColorProp, new GUIContent("Name Color", "Color of name text display in the dialog"));
-            EditorGUILayout.PropertyField(soundEffectProp, new GUIContent("Sound Effect", "Sound to play when the character is talking. Overrides the setting in the Dialog."));
+            //EditorGUILayout.PropertyField(soundEffectProp, new GUIContent("Sound Effect", "Sound to play when the character is talking. Overrides the setting in the Dialog."));
             EditorGUILayout.PropertyField(setSayDialogProp);
-            EditorGUILayout.PropertyField(descriptionProp, new GUIContent("Description", "Notes about this story character (personality, attibutes, etc.)"));
+			EditorGUILayout.PropertyField(writerAudioProp);
+			EditorGUILayout.PropertyField(descriptionProp, new GUIContent("Description", "Notes about this story character (personality, attibutes, etc.)"));
 
             if (t.Portraits != null &&
                 t.Portraits.Count > 0)
