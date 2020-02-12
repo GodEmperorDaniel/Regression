@@ -7,6 +7,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+using TMPro;
+
 namespace Fungus
 {
     /// <summary>
@@ -24,7 +26,7 @@ namespace Fungus
         [SerializeField] protected Canvas dialogCanvas;
 
         [Tooltip("The name text UI object")]
-        [SerializeField] protected Text nameText;
+        [SerializeField] protected TMP_Text nameText;
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if nameText is null")]
         [SerializeField] protected GameObject nameTextGO;
         protected TextAdapter nameTextAdapter = new TextAdapter();
@@ -41,7 +43,7 @@ namespace Fungus
         }
 
         [Tooltip("The story text UI object")]
-        [SerializeField] protected Text storyText;
+        [SerializeField] protected TMP_Text storyText;
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if storyText is null")]
         [SerializeField] protected GameObject storyTextGO;
         protected TextAdapter storyTextAdapter = new TextAdapter();
@@ -504,22 +506,21 @@ namespace Fungus
 
             this.fadeWhenDone = fadeWhenDone;
 
-            // Voice over clip takes precedence over a character sound effect if provided
+			// Voice over clip takes precedence over a character sound effect if provided
 
-            AudioClip soundEffectClip = null;
-            if (voiceOverClip != null)
-            {
-                WriterAudio writerAudio = GetWriterAudio();
+			WriterAudio writerAudio = GetWriterAudio();
+			if (voiceOverClip != null) {
                 writerAudio.OnVoiceover(voiceOverClip);
-            }
-            else if (speakingCharacter != null)
+				writerAudio = null;
+			}
+            else if (speakingCharacter != null && speakingCharacter.SetWriterAudio)
             {
-                soundEffectClip = speakingCharacter.SoundEffect;
-            }
+				writerAudio = speakingCharacter.SetWriterAudio;
+			}
 
             writer.AttachedWriterAudio = writerAudio;
 
-            yield return StartCoroutine(writer.Write(text, clearPrevious, waitForInput, stopVoiceover, waitForVO, soundEffectClip, onComplete));
+            yield return StartCoroutine(writer.Write(text, clearPrevious, waitForInput, stopVoiceover, waitForVO, writerAudio, onComplete));
         }
 
         /// <summary>
