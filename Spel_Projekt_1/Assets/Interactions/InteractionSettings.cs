@@ -11,6 +11,7 @@ public struct InteractionSettings
 	//public string text;
 
 	public Flowchart flowchart;
+
 	[HideInInspector]
 	public Block block;
 
