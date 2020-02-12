@@ -119,8 +119,8 @@ public class CharacterController2d : MonoBehaviour
 
         while(t < stepTimer)
         {
-            transform.position = Vector2.Lerp(startPos, destinationPos, t);
-            t += Time.deltaTime / stepDuration;
+            transform.position = Vector2.Lerp(startPos, destinationPos, t / stepTimer);
+            t += Time.deltaTime * MovementSpeed / stepDuration;
             yield return new WaitForEndOfFrame();
         }
         transform.position = destinationPos;
