@@ -180,7 +180,7 @@ namespace Fungus
             }
         }
 
-        public virtual void OnStart(AudioClip audioClip)
+		public virtual void OnStart(AudioClip audioClip)
         {
             if (playingVoiceover)
             {
@@ -188,8 +188,8 @@ namespace Fungus
             }
             Play(audioClip);
         }
-        
-        public virtual void OnPause()
+
+		public virtual void OnPause()
         {
             if (playingVoiceover)
             {

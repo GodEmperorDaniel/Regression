@@ -5,15 +5,6 @@ using UnityEngine.UI;
 
 public class Interactions : MonoBehaviour
 {
-	[Header("Object Settings")]
-
-	public Sprite objectSprite = null; //kan vara lite onödigt att ens ha med denna - JB
-
-	[Header("Collider Settings")]
-
-	[Range(0.001f, 10)]
-	public float colliderRadius; //samma som kommentar ovan
-
 	private Collider2D objectCollider = null;
 
 	[Header("Interaction Setting")]
@@ -21,7 +12,6 @@ public class Interactions : MonoBehaviour
 	public InteractionSettings onEnter;
 	public InteractionSettings onStay;
 	public InteractionSettings onExit;
-	private AudioSource source;
 
 	private void Awake()
 	{
@@ -34,69 +24,22 @@ public class Interactions : MonoBehaviour
 				Debug.LogError("Could not find any colliders, it will not work");
 				Debug.Break();
 			}
-			else
-			{
-				(objectCollider as CircleCollider2D).radius = colliderRadius;
-			}
 		}
-		if (objectSprite != null)
-		{
-			gameObject.GetComponentInChildren<SpriteRenderer>().sprite = objectSprite;
-		}
-		else
-		{
-			Debug.LogWarning("No sprite set for " + gameObject.name + ", it will not be visable");
-		}
-		if (source == null)
-		{
-			source = gameObject.GetComponentInChildren<AudioSource>();
-			if (source == null)
-			{
-				Debug.LogWarning("No AudioSource found in children, if you deleted child revert to prefab to fix");
-			}
-		}
-
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		Interact(other, onEnter);
-		/*if (onEnter.Active)
-		{
-			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-			{
-				Debug.Log(onEnter.text);
-				//if (playerCanvas == null)
-				//{
-				//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				//}
-			}
-		}*/
 	}
 	private void OnTriggerExit2D(Collider2D other)
 	{
 		Interact(other, onExit);
-		/*if (onExit.Active)
-		{
-			if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-			{
-				Debug.Log(onExit.text);
-				//if (playerCanvas == null)
-				//{
-				//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-				//}
-			}
-		}*/
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
-			//if (playerCanvas == null)
-			//{
-			//	playerCanvas = other.gameObject.GetComponentInChildren<Canvas>();
-			//}
 			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
 			{
 				Debug.Log("Interacted");
