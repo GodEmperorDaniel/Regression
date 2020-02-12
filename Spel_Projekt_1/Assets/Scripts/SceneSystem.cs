@@ -7,22 +7,33 @@ public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
     public bool lockDoor;
-    public bool isSpawner = false;
     public GameObject player;
     private Transform door;
     Vector3 SpawnPos;
+    public int ThisDoorIndex;
+    public int SpawnToIndex;
+    private BoxCollider2D collider;
+    private void Awake()
+    {
 
+        door = gameObject.transform;
+        if (PlayerStatic.DoorIndex == ThisDoorIndex)
+        {
+            SpawnPosition();
+        }
+    }
     private void Start()
     {
-        door = gameObject.transform;
+        collider = GetComponent<BoxCollider2D>();
         SpawnPosition();
         DontDestroyOnLoad(player);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") //kan du göra om till layermask
+        if (collision.tag == "Player")
         {
-            if (!lockDoor) //kan ha två colliders på dörren, en aktiveras när den är låst --> för att man inte ska kunna gå igenom den
+            PlayerStatic.DoorIndex = SpawnToIndex;
+            if (!lockDoor)
             {
                 SceneManager.LoadScene(SceneName);
             }
@@ -32,13 +43,21 @@ public class SceneSystem : MonoBehaviour
             }
         }
     }
+
     private void Update()
     {
-       // Debug.Log(SpawnPos);
+        if (!lockDoor)
+        {
+            collider.isTrigger = true;
+        }
+        else
+        {
+            collider.isTrigger = false;
+        }
     }
     private Vector3 SpawnPosition()
     {
-        if(isSpawner) 
+        if(PlayerStatic.DoorIndex == ThisDoorIndex) 
         {
             SpawnPos = door.position;
             PlayerStatic.player.position = SpawnPos;
