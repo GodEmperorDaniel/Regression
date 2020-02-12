@@ -2,26 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-/*
 public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
     public bool lockDoor;
-    public bool isSpawner = false; //vi behöver inte denna, alla dörrar 'kan vara' spawners om en dörr är kopplad till dess index sedan
+    public GameObject player;
     private Transform door;
-    private Vector3 SpawnPos;
+    Vector3 SpawnPos;
+    public int ThisDoorIndex;
+    public int SpawnToIndex;
+    private BoxCollider2D collider;
+    private void Awake()
+    {
 
+        door = gameObject.transform;
+        if (PlayerStatic.DoorIndex == ThisDoorIndex)
+        {
+            SpawnPosition();
+        }
+    }
     private void Start()
     {
-		//if !PlayerStatic.Player --> instantiate(Player) (dvs om ingen spelare finns skapa en) kanske borde använda load resource om inte public variabel funkar för prefaben
-		door = gameObject.transform;
+        collider = GetComponent<BoxCollider2D>();
         SpawnPosition();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") //kan du göra om till layermask enligt mig - JB
+        if (collision.tag == "Player")
         {
-            if (!lockDoor) //kan ha två colliders på dörren, en aktiveras när den är låst --> för att man inte ska kunna gå igenom den
+            PlayerStatic.DoorIndex = SpawnToIndex;
+            if (!lockDoor)
             {
                 SceneManager.LoadScene(SceneName);
             }
@@ -31,13 +41,21 @@ public class SceneSystem : MonoBehaviour
             }
         }
     }
-	private void SpawnPlayer()
-	{
 
-	}
+    private void Update()
+    {
+        if (!lockDoor)
+        {
+            collider.isTrigger = true;
+        }
+        else
+        {
+            collider.isTrigger = false;
+        }
+    }
     private Vector3 SpawnPosition()
     {
-        if(isSpawner) 
+        if(PlayerStatic.DoorIndex == ThisDoorIndex) 
         {
             SpawnPos = door.position;
             PlayerStatic.player.position = SpawnPos;
