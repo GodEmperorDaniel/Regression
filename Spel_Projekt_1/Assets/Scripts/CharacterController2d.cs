@@ -12,57 +12,119 @@ public class CharacterController2d : MonoBehaviour
     public KeyCode rightKey = KeyCode.D;
     public KeyCode interactionButton = KeyCode.E;
     public KeyCode interactionButtonGamepad = KeyCode.Joystick1Button1;
+    public const float stepDuration = 0.5f;
+    private Coroutine playerMovement;
+
     public Animator Ani;
+    private Vector2 movement;
+    private Vector2 oldPos = Vector2.zero;
+    private Vector2 dir;
+    
+    public float stepTimer;
+    public bool isStepping = false;
     // Start is called before the first frame update
     void Start()
     {
         Player = GetComponent<CharacterController>();
-
+        Ani = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         keyboardMovement();
         gamepadMovement();
         getInteractionKey();
+        fixAnimator();
     }
 
     private void keyboardMovement()
     {
-        if (Input.GetKey(leftKey))
+        if (playerMovement == null)
         {
-            transform.position += Vector3.left * MovementSpeed * Time.deltaTime;
-            Ani.SetFloat("HorizontalAni", -1);
-            Ani.SetFloat("VerticalAni", 0);
+            if (Input.GetKey(leftKey))
+            {
+                TransPos(Vector2.left);
+            }
+            if (Input.GetKey(rightKey))
+            {
+                TransPos(Vector2.right);
+            }
+            if (Input.GetKey(forwardKey))
+            {
+                TransPos(Vector2.up);
+            }
+            if (Input.GetKey(backwardKey))
+            {
+                TransPos(Vector2.down);
+            }
         }
-        if (Input.GetKey(rightKey))
+
+    }
+
+    private void TransPos(Vector3 mDir)
+    {
+        if (isStepping)
         {
-            transform.position += Vector3.right * MovementSpeed * Time.deltaTime;
-            Ani.SetFloat("HorizontalAni", 1);
-            Ani.SetFloat("VerticalAni", 0);
+            playerMovement = StartCoroutine(Steps(mDir));
         }
-        if (Input.GetKey(forwardKey))
+        else
         {
-            transform.position += Vector3.up * MovementSpeed * Time.deltaTime;
-            Ani.SetFloat("VerticalAni", 1);
-            Ani.SetFloat("HorizontalAni", 0);
-        }
-        if (Input.GetKey(backwardKey))
-        {
-            transform.position += Vector3.down * MovementSpeed * Time.deltaTime;
-            Ani.SetFloat("VerticalAni", -1);
-            Ani.SetFloat("HorizontalAni", 0);
+            transform.position += mDir * MovementSpeed * Time.deltaTime;
         }
     }
 
     private void gamepadMovement()
     {
-        float x = Input.GetAxis("Horizontal") * MovementSpeed * Time.deltaTime;
-       // Ani.SetFloat("HorizontalAni", Input.GetAxis("Horizontal"));
-        float y = Input.GetAxis("Vertical") * MovementSpeed * Time.deltaTime;
-        //Ani.SetFloat("VerticalAni", Input.GetAxis("Vertical"));
-        transform.Translate(x, y, 0);
+        if (playerMovement == null)
+        {
+            if (!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && Input.GetAxisRaw("Vertical") != 0)
+            {
+                TransPos(new Vector2(0, Input.GetAxisRaw("Vertical")).normalized);
+                //inputY = Input.GetAxisRaw("Vertical");
+            }
+
+            if (!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && Input.GetAxisRaw("Horizontal") != 0)
+            {
+                TransPos(new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized);
+            }
+        }
+        //float inputX = Input.GetAxisRaw("Horizontal");
+        //float inputY = Input.GetAxisRaw("Vertical");
+        //movement = new Vector2(inputX, inputY);
+        //transform.Translate(movement.normalized * MovementSpeed * Time.deltaTime);
+    }
+
+    private void fixAnimator()
+    {
+        if(oldPos == (Vector2)transform.position)
+        {
+            Ani.SetBool("movement", false);
+        }else
+        {
+            Ani.SetBool("movement", true);
+            dir = (oldPos - (Vector2)transform.position).normalized;
+            oldPos = transform.position;
+            Ani.SetFloat("horimovement", Mathf.RoundToInt(dir.x));
+            Ani.SetFloat("vertimovement", Mathf.RoundToInt(dir.y));
+        }
+    }
+
+    IEnumerator Steps(Vector3 mDir)
+    {
+        Vector2 startPos = transform.position;
+        Vector2 destinationPos = transform.position + mDir;
+        float t = 0.0f;
+
+        while(t < stepTimer)
+        {
+            transform.position = Vector2.Lerp(startPos, destinationPos, t);
+            t += Time.deltaTime / stepDuration;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.position = destinationPos;
+        playerMovement = null;
     }
 
     public bool getInteractionKey()

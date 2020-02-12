@@ -3,8 +3,10 @@
 public class PlayerStatic : MonoBehaviour
 {
     public static Transform player;
-    void Start()
+    public static int DoorIndex;
+    void Awake()
     {
-        player = gameObject.transform;
+		player = gameObject.transform;
+		DontDestroyOnLoad(gameObject);
     }
 }

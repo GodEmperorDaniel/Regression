@@ -26,17 +26,17 @@ public struct InteractionSettings
 	//public OtherEvents moreEvents;
 }
 
-[System.Serializable]
-public struct ImageSettings
-{
-	public Image screenImage;
-	public float fadeTimer;
-	public float imageTimer;
-}
+//[System.Serializable]
+//public struct ImageSettings
+//{
+//	public Image screenImage;
+//	public float fadeTimer;
+//	public float imageTimer;
+//}
 
-[System.Serializable]
-public struct OtherEvents
-{
-	public bool enableOrDisable;
-	public GameObject gObject;
-}
+//[System.Serializable]
+//public struct OtherEvents
+//{
+//	public bool enableOrDisable;
+//	public GameObject gObject;
+//}
