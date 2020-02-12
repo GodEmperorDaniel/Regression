@@ -254,7 +254,12 @@ PrefabInstance:
     - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8176647778504872637, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
@@ -311,7 +316,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8835751588778784879, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835751588778784879, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4781034780829146177, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+    - {fileID: -4727688074088416272, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+    - {fileID: 764195829, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
 --- !u!1 &344285277 stripped
 GameObject:
@@ -319,7 +337,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 344285276}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &344285282
+--- !u!50 &344285278
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -340,6 +358,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &344285279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344285277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c3af753e53f284f835ee9945f8caf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318182316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
