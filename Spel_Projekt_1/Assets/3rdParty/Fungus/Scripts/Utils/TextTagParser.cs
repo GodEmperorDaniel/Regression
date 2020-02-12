@@ -104,15 +104,15 @@ namespace Fungus
             {
                 type = TokenType.Clear;
             }
-            else if (tag.StartsWith("s="))
+            else if (tag.StartsWith("speed="))
             {
                 type = TokenType.SpeedStart;
             }
-            else if (tag == "s")
+            else if (tag == "speed")
             {
                 type = TokenType.SpeedStart;
             }
-            else if (tag == "/s")
+            else if (tag == "/speed")
             {
                 type = TokenType.SpeedEnd;
             }
@@ -155,13 +155,26 @@ namespace Fungus
             else if (tag.StartsWith("audiopause="))
             {
                 type = TokenType.AudioPause;
-            }
-            else if (tag.StartsWith("audiostop="))
-            {
-                type = TokenType.AudioStop;
-            }
-            
-            if (type != TokenType.Invalid)
+			}
+
+			if (type == TokenType.Invalid && tag != "") {
+				foreach (var tmp_tag in TMP_Tag.allTags) {
+
+					if ((tmp_tag.parameterCount > 0)? tag.StartsWith(tmp_tag.open) : tag == tmp_tag.open) {
+						type = TokenType.TMProTag;
+						parameters.Insert(0, tmp_tag.open);
+						parameters.Insert(1, tmp_tag.shouldHide.ToString());
+						break;
+					} else if (tag == tmp_tag.close) {
+						type = TokenType.TMProTag;
+						parameters.Insert(0, tmp_tag.close);
+						parameters.Insert(1, tmp_tag.shouldHide.ToString());
+						break;
+					}
+				}
+			}
+
+			if (type != TokenType.Invalid)
             {
                 TextTagToken token = new TextTagToken();
                 token.type = type;
@@ -201,34 +214,74 @@ namespace Fungus
         public static string GetTagHelp()
         {
 			return "" +
-				"\t{b} Bold Text {/b}\n" +
-				"\t{i} Italic Text {/i}\n" +
-				"\t{color=red} Color Text (color){/color}\n" +
-				"\t{size=30} Text size {/size}\n" +
+				"{b} Bold Text {/b}\n" +
+				"{i} Italic Text {/i}\n" +
+				"{color=red} Color Text (color){/color}\n" +
+				"{size=30} Text size {/size}\n" +
 				"\n" +
-				"\t{s}, {s=60} Writing speed (chars per sec){/s}\n" +
-				"\t{w}, {w=0.5} Wait (seconds)\n" +
-				"\t{wi} Wait for input\n" +
-				"\t{wc} Wait for input and clear\n" +
-				"\t{wvo} Wait for voice over line to complete\n" +
-				"\t{wp}, {wp=0.5} Wait on punctuation (seconds){/wp}\n" +
-				"\t{c} Clear\n" +
-				"\t{x} Exit, advance to the next command without waiting for input\n" +
+				"{speed}, {speed=60} Writing speed (chars per sec){/speed}\n" +
+				"{w}, {w=0.5} Wait (seconds)\n" +
+				"{wi} Wait for input\n" +
+				"{wc} Wait for input and clear\n" +
+				"{wvo} Wait for voice over line to complete\n" +
+				"{wp}, {wp=0.5} Wait on punctuation (seconds){/wp}\n" +
+				"{c} Clear\n" +
+				"{x} Exit, advance to the next command without waiting for input\n" +
 				"\n" +
-				"\t{vpunch=10,0.5} Vertically punch screen (intensity,time)\n" +
-				"\t{hpunch=10,0.5} Horizontally punch screen (intensity,time)\n" +
-				"\t{punch=10,0.5} Punch screen (intensity,time)\n" +
-				"\t{flash=0.5} Flash screen (duration)\n" +
+				"{vpunch=10,0.5} Vertically punch screen (intensity,time)\n" +
+				"{hpunch=10,0.5} Horizontally punch screen (intensity,time)\n" +
+				"{punch=10,0.5} Punch screen (intensity,time)\n" +
+				"{flash=0.5} Flash screen (duration)\n" +
 				"\n" +
-				"\t{audio=AudioObjectName} Play Audio Once\n" +
-				"\t{audioloop=AudioObjectName} Play Audio Loop\n" +
-				"\t{audiopause=AudioObjectName} Pause Audio\n" +
-				"\t{audiostop=AudioObjectName} Stop Audio\n" +
+				"{audio=AudioObjectName} Play Audio Once\n" +
+				"{audioloop=AudioObjectName} Play Audio Loop\n" +
+				"{audiopause=AudioObjectName} Pause Audio\n" +
+				"{audiostop=AudioObjectName} Stop Audio\n" +
 				"\n" +
-				"\t{m=MessageName} Broadcast message\n" +
-				"\t{$VarName} Substitute variable" +
+				"{m=MessageName} Broadcast message\n" +
+				"{$VarName} Substitute variable\n" +
+				"{hcolor=} Color Hidden Text{/hcolor}\n" +
 				"\n" +
-				"\t{hcolor=} Color Hidden Text{/hcolor}" + 
+				"//TMPro Tags//\n" +
+				"\n* Can be in font units (em) or pixels (px)\n" +
+				"** Can be in font units (em), pixels (px), or percentages (%)\n" +
+				"\n" +
+				"{align=} Text alignment {/align} Can be \"left\", \"center\", \"right\", \"justified\", or \"flush\"\n" +
+				"{cspace=1em} Spacing between characters {/cspace} * Can be negative\n" +
+				"{indent=10%} Horizontal Offset that is persistent between lines {/indent} **\n" +
+				"{line-height=50%} Line Height {/line-height} **\n" +
+				"{line-indent=10px} Indentation that doesn't affect word-wrapped lines {/line-indent} **\n" +
+				"{link=\"ID\"} Link Metadata {/link}\n" +
+				"{font=\"\"} Change Font {/font}\n" +
+				"\n" +
+				"{lowercase} Lowercase Letters {/lowercase}\n" +
+				"{uppercase} Uppercase Letters {/uppercase}\n" +
+				"{smallcaps} Capitalizes all lowercase letters and decreases their size {/smallcaps}\n" +
+				"{margin=5em} Margin {/margin} **\n" +
+				"{margin-left=5em} Left Margin {/margin} **\n" +
+				"{margin-right=5em} Right Margin {/margin} **\n" +
+				"\n" +
+				"{mark=#ffff00aa} Mark Text (color){/mark}\n" +
+				"{mspace=2.75em} Monospace Font {/mspace} *\n" +
+				//{noparse} No Parse {/noparse}\n" +
+				"{nobr} Prevents words from being separated by word wrapping {/nobr}\n" +
+				"{page} Insert page break (Requires page overflow mode)\n" +
+				"{pos=50%} Set horizontal position to write from, doesn't persist between lines **\n" +
+				"{space=2.75em} Inserts Space *\n" +
+				"\n" +
+				"{sprite=\"assetName\",index=1,color=#FFFFFF} Inserts sprite from asset file with index and optional color\n" +
+				"{sprite=\"assetName\",name=\"spriteName\",color=#FFFFFF} Inserts sprite from asset file with name and optional color\n" +
+				"{sprite index=1,color=#FFFFFF} Inserts sprite from the default asset file with index and optional color\n" +
+				"{sprite name=\"spriteName\",color=#FFFFFF} Inserts sprite from the default asset file with name and optional color\n" +
+				"\n" +
+				"{s} Strikethrough {/s}\n" +
+				"{u} Underline {/u}\n" +
+				"{style=\"Style\"} Inserts A Preset Style</style>\n" +
+				"{sup} Superscript {/sup}\n" +
+				"{sub} Subscript {/sub}\n" +
+				"{voffset=0.5em} Offset Text Vertically {/voffset} *\n" +
+				"{width=50%} Width of Text Area {/width} **\n" +
+
 
 				"";
 		}

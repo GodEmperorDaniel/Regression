@@ -20,19 +20,22 @@ namespace Fungus
         [Tooltip("Color to display the character name in Say Dialog.")]
         [SerializeField] protected Color nameColor = Color.white;
 
-        [Tooltip("Sound effect to play when this character is speaking.")]
-        [SerializeField] protected AudioClip soundEffect;
+        //[Tooltip("Sound effect to play when this character is speaking.")]
+        //[SerializeField] protected AudioClip soundEffect;
 
-        [Tooltip("List of portrait images that can be displayed for this character.")]
+		[Tooltip("List of portrait images that can be displayed for this character.")]
         [SerializeField] protected List<Sprite> portraits;
 
         [Tooltip("Direction that portrait sprites face.")]
         [SerializeField] protected FacingDirection portraitsFace;
 
-        [Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. This Say Dialog will be used whenever the character speaks.")]
-        [SerializeField] protected SayDialog setSayDialog;
+		[Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. This Say Dialog will be used whenever the character speaks.")]
+		[SerializeField] protected SayDialog setSayDialog;
 
-        [FormerlySerializedAs("notes")]
+		[Tooltip("Sets the active Writer Audio with a reference to a Writer Audio object in the scene. This Writer Audio will be used whenever the character speaks.")]
+		[SerializeField] protected WriterAudio setWriterAudio;
+
+		[FormerlySerializedAs("notes")]
         [TextArea(5,10)]
         [SerializeField] protected string description;
 
@@ -70,16 +73,18 @@ namespace Fungus
         /// </summary>
         public virtual Color NameColor { get { return nameColor; } }
 
-        /// <summary>
-        /// Sound effect to play when this character is speaking.
-        /// </summary>
-        /// <value>The sound effect.</value>
-        public virtual AudioClip SoundEffect { get { return soundEffect; } }
+		/// <summary>
+		/// Sound effect to play when this character is speaking.
+		/// </summary>
+		/// <value>The sound effect.</value>
+		//public virtual AudioClip SoundEffect { get { return soundEffect; } }
 
-        /// <summary>
-        /// List of portrait images that can be displayed for this character.
-        /// </summary>
-        public virtual List<Sprite> Portraits { get { return portraits; } }
+		public virtual WriterAudio SetWriterAudio { get { return setWriterAudio; } }
+
+		/// <summary>
+		/// List of portrait images that can be displayed for this character.
+		/// </summary>
+		public virtual List<Sprite> Portraits { get { return portraits; } }
 
         /// <summary>
         /// Direction that portrait sprites face.
