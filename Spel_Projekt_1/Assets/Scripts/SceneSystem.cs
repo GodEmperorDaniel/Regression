@@ -26,7 +26,6 @@ public class SceneSystem : MonoBehaviour
     {
         collider = GetComponent<BoxCollider2D>();
         SpawnPosition();
-        DontDestroyOnLoad(player);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
