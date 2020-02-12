@@ -137,32 +137,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: door
       objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: ThisDoorIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SceneName
-      value: JJ_TEST
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SpawnToIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: lockDoor
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,7 +192,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: ThisDoorIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SpawnToIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: lockDoor
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2838397403094303981, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
 --- !u!1 &1283794163
 GameObject:
@@ -310,6 +311,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Name
+      value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_TagString
+      value: door
+      objectReference: {fileID: 0}
     - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_Offset.x
@@ -333,62 +344,6 @@ PrefabInstance:
     - target: {fileID: -3867126931694351507, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: lockDoor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SceneName
-      value: JJ_TEST
-      objectReference: {fileID: 0}
-    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: lockDoor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: doorToSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: DoorIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: isSpawner
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_Name
-      value: Door (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055916141204700129, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_TagString
-      value: door
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: ThisDoorIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SceneName
-      value: JJ_TEST
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: SpawnToIndex
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
@@ -446,5 +401,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: ThisDoorIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SpawnToIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: SceneName
+      value: JJ_TEST
+      objectReference: {fileID: 0}
+    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: lockDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: doorToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: DoorIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138778606743184132, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: isSpawner
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2838397403094303981, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
