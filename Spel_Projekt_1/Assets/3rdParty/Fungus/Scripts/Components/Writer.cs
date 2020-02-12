@@ -73,6 +73,7 @@ namespace Fungus {
 		protected string readAheadColor = "";
 		protected float readAheadSize = 16f;
 
+		protected bool hasTMP = false;
 		protected bool boldActive = false;
 		protected bool italicActive = false;
 		protected bool colorActive = false;
@@ -84,6 +85,7 @@ namespace Fungus {
 		protected bool exitFlag;
 
 		protected List<IWriterListener> writerListeners = new List<IWriterListener>();
+		protected WriterAudio defaultWriterAudio;
 
 		protected StringBuilder openString = new StringBuilder(256);
 		protected StringBuilder closeString = new StringBuilder(256);
@@ -92,6 +94,7 @@ namespace Fungus {
 		protected StringBuilder outputString = new StringBuilder(1024);
 		protected StringBuilder readAheadString = new StringBuilder(1024);
 
+		protected StringBuilder tmpTagsToAdd = new StringBuilder(256);
 		protected StringBuilder hiddenTextOpen = new StringBuilder(256);
 		protected StringBuilder hiddenTextClose = new StringBuilder(256);
 		protected string hiddenTextOpenCached = "";
@@ -118,6 +121,12 @@ namespace Fungus {
 			}
 
 			textAdapter.InitFromGameObject(go);
+		}
+
+		protected virtual void Start() {
+			if (forceRichText) {
+				textAdapter.ForceRichText();
+			}
 
 			// Cache the list of child writer listeners
 			var allComponents = GetComponentsInChildren<Component>();
@@ -126,13 +135,11 @@ namespace Fungus {
 				IWriterListener writerListener = component as IWriterListener;
 				if (writerListener != null) {
 					writerListeners.Add(writerListener);
+					var writerAudio = writerListener as WriterAudio;
+					if (writerAudio != null) {
+						defaultWriterAudio = writerAudio;
+					}
 				}
-			}
-		}
-
-		protected virtual void Start() {
-			if (forceRichText) {
-				textAdapter.ForceRichText();
 			}
 		}
 
@@ -186,6 +193,10 @@ namespace Fungus {
 			hiddenColorString = String.Format("<color=#{0:X2}{1:X2}{2:X2}{3:X2}>", c.r, c.g, c.b, c.a);
 
 			if (textAdapter.SupportsRichText()) {
+				if (hasTMP) {
+					hiddenTextOpen.Append("</mark></s></u>");
+				}
+
 				if (readAheadSizeActive) {
 					hiddenTextOpen.Append("<size=");
 					hiddenTextOpen.Append(readAheadSize);
@@ -246,6 +257,20 @@ namespace Fungus {
 			return false;
 		}
 
+		protected virtual void AppendTMProTag(StringBuilder builder, TextTagToken token) {
+			builder.Append('<');
+			for (var i = 0; i < token.paramList.Count; i++) {
+				if (i != 1) {
+					if (i >= 3) {
+						builder.Append(' ');
+					}
+					var str = token.paramList[i];
+					builder.Append(str);
+				}
+			}
+			builder.Append('>');
+		}
+
 		protected virtual HandleReadAheadTokenStatus HandleReadAheadToken(TextTagToken token) {
 			if (!textAdapter.SupportsRichText() && token.type != TokenType.Words && token.type != TokenType.WaitForInputAndClear) {
 				return HandleReadAheadTokenStatus.NoRichText;
@@ -264,6 +289,12 @@ namespace Fungus {
 					return HandleReadAheadTokenStatus.Break;
 				case TokenType.Clear:
 					return HandleReadAheadTokenStatus.Break;
+				case TokenType.TMProTag:
+					if (token.paramList[1] != "true" && token.paramList[1] != "True") {
+						AppendTMProTag(readAheadString, token);
+					}
+
+					return HandleReadAheadTokenStatus.Ok;
 				case TokenType.BoldStart:
 					readAheadBoldActive = true;
 					return HandleReadAheadTokenStatus.Ok;
@@ -329,6 +360,7 @@ namespace Fungus {
 
 		protected virtual IEnumerator ProcessTokens(List<TextTagToken> tokens, bool stopAudio, Action onComplete) {
 			// Reset control members
+			hasTMP = false;
 			boldActive = false;
 			italicActive = false;
 			colorActive = false;
@@ -360,7 +392,11 @@ namespace Fungus {
 						ReadAhead(tokens, i);
 						yield return StartCoroutine(DoWords(token.paramList, previousTokenType));
 						break;
+					case TokenType.TMProTag:
+						hasTMP = true;
+						AppendTMProTag(tmpTagsToAdd, token);
 
+						break;
 					case TokenType.BoldStart:
 						boldActive = true;
 						break;
@@ -573,6 +609,9 @@ namespace Fungus {
 				startText = textAdapter.Text.Substring(0, visibleCharacterCount);
 			}
 
+			startText = startText + tmpTagsToAdd.ToString();
+			tmpTagsToAdd.Length = 0;
+
 			UpdateOpenMarkup();
 			UpdateCloseMarkup();
 
@@ -771,6 +810,22 @@ namespace Fungus {
 			return go.GetComponent<AudioSource>();
 		}
 
+		protected virtual void SetWriterAudio(WriterAudio writerAudio) {
+			for (var i = 0; i < writerListeners.Count; i++) {
+				var w = writerListeners[i] as WriterAudio;
+				if (w != null) {
+					writerListeners.RemoveAt(i);
+					break;
+				}
+			}
+
+			if (writerAudio) {
+				writerListeners.Add(writerAudio);
+			} else if (defaultWriterAudio) {
+				writerListeners.Add(defaultWriterAudio);
+			}
+		}
+
 		protected virtual void NotifyInput() {
 			WriterSignals.DoWriterInput(this);
 
@@ -860,8 +915,9 @@ namespace Fungus {
 		/// <param name="stopAudio">Stops any currently playing audioclip.</param>
 		/// <param name="waitForVO">Wait for the Voice over to complete before proceeding</param>
 		/// <param name="audioClip">Audio clip to play when text starts writing.</param>
+		/// <param name="audioMode">Audio mode to use when playing audio.</param>
 		/// <param name="onComplete">Callback to call when writing is finished.</param>
-		public virtual IEnumerator Write(string content, bool clear, bool waitForInput, bool stopAudio, bool waitForVO, AudioClip audioClip, Action onComplete) {
+		public virtual IEnumerator Write(string content, bool clear, bool waitForInput, bool stopAudio, bool waitForVO, WriterAudio writerAudio, Action onComplete) {
 			if (clear) {
 				textAdapter.Text = "";
 				visibleCharacterCount = 0;
@@ -871,8 +927,10 @@ namespace Fungus {
 				yield break;
 			}
 
+			SetWriterAudio(writerAudio);
+
 			// If this clip is null then WriterAudio will play the default sound effect (if any)
-			NotifyStart(audioClip);
+			NotifyStart(null);
 
 			string tokenText = TextVariationHandler.SelectVariations(content);
 
