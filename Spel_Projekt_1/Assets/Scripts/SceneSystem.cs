@@ -11,10 +11,14 @@ public class SceneSystem : MonoBehaviour
     public int ThisDoorIndex;
     public int SpawnToIndex;
     private BoxCollider2D collider;
+    [Header("Side of door to spawn player")]
+    public bool leftofdoor;
+    public bool rightofdoor;
+    public bool underdoor;
     private void Awake()
     {
-
         door = gameObject.transform;
+
         if (PlayerStatic.DoorIndex == ThisDoorIndex)
         {
             SpawnPosition();
@@ -56,7 +60,27 @@ public class SceneSystem : MonoBehaviour
     {
         if(PlayerStatic.DoorIndex == ThisDoorIndex) 
         {
-            SpawnPos = door.position;
+            if (leftofdoor)
+            {
+                Vector3 offset = new Vector3(-0.8f, 0, 0);
+                SpawnPos = door.position + offset;
+            }
+            else if(rightofdoor)
+            {
+                Vector3 offset = new Vector3(0.8f, 0, 0);
+                SpawnPos = door.position + offset;
+            }
+            else if(underdoor)
+            {
+                Vector3 offset = new Vector3(0, -0.8f, 0);
+                SpawnPos = door.position + offset;
+            }
+            else
+            {
+                SpawnPos = door.position;
+                Debug.Log("default");
+            }
+       
             PlayerStatic.playerInstance.transform.position = SpawnPos;
         }
         return SpawnPos;
