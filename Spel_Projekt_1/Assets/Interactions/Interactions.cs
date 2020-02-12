@@ -38,11 +38,12 @@ public class Interactions : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+		if (other.gameObject.tag ==	"Player")
 		{
 			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
 			{
 				Debug.Log("Interacted");
+
 				Interact(other, onStay);
 			}
 		}
