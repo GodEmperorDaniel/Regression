@@ -217,6 +217,16 @@ PrefabInstance:
       propertyPath: SceneName
       value: JJ_TEST
       objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: underdoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: rightofdoor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e323a322c187a24a809f6180964bc7a, type: 3}
 --- !u!1001 &344285276
@@ -226,6 +236,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4727688074088416272, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Offset.y
@@ -246,30 +271,15 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.2299611
       objectReference: {fileID: 0}
-    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547923293149438665, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8176647778504872637, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.31
       objectReference: {fileID: 0}
     - target: {fileID: 8176647778504872637, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8176647778504872637, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
@@ -403,11 +413,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
-    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6947751228141276035, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,6 +486,26 @@ PrefabInstance:
     - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: SpawnToIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: underdoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: Underdoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723389639774643493, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: rightofdoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
