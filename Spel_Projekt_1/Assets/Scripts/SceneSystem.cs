@@ -7,20 +7,19 @@ public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
     public bool lockDoor;
-    public bool isSpawner = false;
-    public GameObject player;
+    public bool isSpawner = false; //vi behöver inte denna, alla dörrar 'kan vara' spawners om en dörr är kopplad till dess index sedan
     private Transform door;
-    Vector3 SpawnPos;
+    private Vector3 SpawnPos;
 
     private void Start()
     {
-        door = gameObject.transform;
+		//if !PlayerStatic.Player --> instantiate(Player) (dvs om ingen spelare finns skapa en) kanske borde använda load resource om inte public variabel funkar för prefaben
+		door = gameObject.transform;
         SpawnPosition();
-        DontDestroyOnLoad(player);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") //kan du göra om till layermask
+        if (collision.tag == "Player") //kan du göra om till layermask enligt mig - JB
         {
             if (!lockDoor) //kan ha två colliders på dörren, en aktiveras när den är låst --> för att man inte ska kunna gå igenom den
             {
@@ -32,10 +31,10 @@ public class SceneSystem : MonoBehaviour
             }
         }
     }
-    private void Update()
-    {
-       // Debug.Log(SpawnPos);
-    }
+	private void SpawnPlayer()
+	{
+
+	}
     private Vector3 SpawnPosition()
     {
         if(isSpawner) 

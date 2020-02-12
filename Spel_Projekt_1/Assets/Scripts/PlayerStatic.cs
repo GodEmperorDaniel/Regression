@@ -6,6 +6,7 @@ public class PlayerStatic : MonoBehaviour
     public static int DoorIndex;
     void Awake()
     {
-        player = gameObject.transform;
+		player = gameObject.transform;
+		DontDestroyOnLoad(gameObject);
     }
 }

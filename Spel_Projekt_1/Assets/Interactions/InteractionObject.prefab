@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8770800202487444054}
   - component: {fileID: 466387909143195110}
-  - component: {fileID: 4113949624459311268}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -81,27 +80,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4113949624459311268
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6253172506450102879}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &8140765884636441722
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888d8a4b05f7ca542b4f8e118d496c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  colliderRadius: 1
   onEnter:
     Active: 0
     flowchart: {fileID: 0}
