@@ -26,7 +26,7 @@ public class CharacterController2d : MonoBehaviour
     void Start()
     {
         Player = GetComponent<CharacterController>();
-        Ani = GetComponent<Animator>();
+        Ani = GetComponentInChildren<Animator>();
         
     }
 
