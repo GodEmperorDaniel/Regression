@@ -7,7 +7,6 @@ public class SceneSystem : MonoBehaviour
 {
     public string SceneName;
     public bool lockDoor;
-    public GameObject player;
     private Transform door;
     Vector3 SpawnPos;
     public int ThisDoorIndex;
@@ -26,7 +25,6 @@ public class SceneSystem : MonoBehaviour
     {
         collider = GetComponent<BoxCollider2D>();
         SpawnPosition();
-        DontDestroyOnLoad(player);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -60,7 +58,7 @@ public class SceneSystem : MonoBehaviour
         if(PlayerStatic.DoorIndex == ThisDoorIndex) 
         {
             SpawnPos = door.position;
-            PlayerStatic.player.position = SpawnPos;
+            PlayerStatic.playerInstance.transform.position = SpawnPos;
         }
         return SpawnPos;
     }
