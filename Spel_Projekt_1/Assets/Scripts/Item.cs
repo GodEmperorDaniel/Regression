@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+[CreateAssetMenu(fileName = "itemSettings", menuName = "ScriptableObjects/itemsettingsScriptableObject", order = 1)]
+public class Item : ScriptableObject
 {
     public int id;
     public string title;
