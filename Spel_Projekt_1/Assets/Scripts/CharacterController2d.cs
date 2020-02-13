@@ -33,12 +33,14 @@ public class CharacterController2d : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        keyboardMovement();
-        gamepadMovement();
-        getInteractionKey();
-        fixAnimator();
+        if (!PlayerStatic.freezePlayer)
+        {
+            keyboardMovement();
+            gamepadMovement();
+            getInteractionKey();
+            fixAnimator();
+        }
     }
-
     private void keyboardMovement()
     {
         if (playerMovement == null)
@@ -129,7 +131,7 @@ public class CharacterController2d : MonoBehaviour
 
     public bool getInteractionKey()
     {
-        if (Input.GetKey(interactionButton) || Input.GetKey(interactionButtonGamepad))
+        if (!PlayerStatic.freezePlayer && (Input.GetKey(interactionButton) || Input.GetKey(interactionButtonGamepad)))
             return true;
         else
         {
