@@ -26,19 +26,21 @@ public class CharacterController2d : MonoBehaviour
     void Start()
     {
         Player = GetComponent<CharacterController>();
-        Ani = GetComponent<Animator>();
+        Ani = GetComponentInChildren<Animator>();
         
     }
 
     // Update is called once per frame
     private void Update()
     {
-        keyboardMovement();
-        gamepadMovement();
-        getInteractionKey();
-        fixAnimator();
+        if (!PlayerStatic.freezePlayer)
+        {
+            keyboardMovement();
+            gamepadMovement();
+            getInteractionKey();
+            fixAnimator();
+        }
     }
-
     private void keyboardMovement()
     {
         if (playerMovement == null)
@@ -119,8 +121,8 @@ public class CharacterController2d : MonoBehaviour
 
         while(t < stepTimer)
         {
-            transform.position = Vector2.Lerp(startPos, destinationPos, t);
-            t += Time.deltaTime / stepDuration;
+            transform.position = Vector2.Lerp(startPos, destinationPos, t / stepTimer);
+            t += Time.deltaTime * MovementSpeed / stepDuration;
             yield return new WaitForEndOfFrame();
         }
         transform.position = destinationPos;
@@ -129,7 +131,7 @@ public class CharacterController2d : MonoBehaviour
 
     public bool getInteractionKey()
     {
-        if (Input.GetKey(interactionButton) || Input.GetKey(interactionButtonGamepad))
+        if (!PlayerStatic.freezePlayer && (Input.GetKey(interactionButton) || Input.GetKey(interactionButtonGamepad)))
             return true;
         else
         {
