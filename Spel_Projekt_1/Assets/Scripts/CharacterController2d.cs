@@ -27,7 +27,6 @@ public class CharacterController2d : MonoBehaviour
     {
         Player = GetComponent<CharacterController>();
         Ani = GetComponentInChildren<Animator>();
-        
     }
 
     // Update is called once per frame
