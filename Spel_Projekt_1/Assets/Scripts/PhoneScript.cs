@@ -46,25 +46,19 @@ public class PhoneScript : MonoBehaviour
 
     public void CheckNumber()
     {
-        bool match = false;
         for (int i = 0; i < sceneAndNumber.Count; i++)
         {
-            if (!match && phonedNumber == sceneAndNumber[i].numberCombinations)
+            if (phonedNumber == sceneAndNumber[i].numberCombinations)
             {
-                match = true;
-                Debug.Log("You got a signal!");
+                PlayerStatic.freezePlayer = false;
                 SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
             }
-            else if (match)
+            else
             {
-                break;
+                Debug.Log("No signal on this number... Try another");
             }
         }
-        if (!match)
-        {
-            Debug.Log("No signal on this number... Try another");
-            phonedNumber = null;
-        }
+        phonedNumber = null;
     }
 }
 
