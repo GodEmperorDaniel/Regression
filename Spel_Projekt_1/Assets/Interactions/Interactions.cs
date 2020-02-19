@@ -42,7 +42,7 @@ public class Interactions : MonoBehaviour
 		timer = Mathf.Min(timer += Time.deltaTime, 1);
 		if (other.gameObject.tag ==	"Player" && timer >= 1)
 		{
-			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
+			if (other.gameObject.GetComponentInParent<CharacterController2d>().GetInteractionKey())
 			{
 				Debug.Log("Interacted");
 				Interact(other, onStay);
