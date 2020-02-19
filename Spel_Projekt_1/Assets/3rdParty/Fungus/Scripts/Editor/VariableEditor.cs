@@ -356,6 +356,9 @@ namespace Fungus.EditorUtils
 	[CustomPropertyDrawer(typeof(CharacterData))]
 	public class CharacterDrawer : VariableDataDrawer<CharacterVariable> { }
 
+	[CustomPropertyDrawer(typeof(InventoryItemData))]
+	public class InventoryItemDrawer : VariableDataDrawer<InventoryItemVariable> { }
+
 	[CustomPropertyDrawer(typeof(Rigidbody2DData))]
     public class Rigidbody2DDataDrawer : VariableDataDrawer<Rigidbody2DVariable>
     { }

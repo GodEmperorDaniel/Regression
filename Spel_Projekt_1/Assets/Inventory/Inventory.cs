@@ -7,22 +7,45 @@ public class Inventory : MonoBehaviour {
 	public List<ItemCombination> possibleCombinations;
 
 	public void Start() {
-		for (var i = 0; i < items.Count; i++) {
-			items[i] = Instantiate(items[i]);
-		}
 	}
 
 	public bool HasItem(InventoryItem item) {
+		foreach (var i in items) {
+			if (i == item) {
+				return true;
+			}
+		}
+
 		return false;
+	}
+
+	public int CountItem(InventoryItem item) {
+		var count = 0;
+
+		foreach (var i in items) {
+			if (i == item) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	public void GiftItem(InventoryItem item) {
+		items.Add(item);
+	}
+
+	public void RemoveItem(InventoryItem item) {
+		items.Remove(item);
 	}
 
 	public bool TryCombine(InventoryItem partA, InventoryItem partB) {
 		foreach (var combination in possibleCombinations) {
 			if (combination.partA == partA && combination.partB == partB || combination.partA == partB && combination.partB == partA) {
-				items.Remove(partA);
-				items.Remove(partB);
+				RemoveItem(partA);
+				RemoveItem(partB);
 				foreach (var newItem in combination.result) {
-					items.Add(newItem);
+					GiftItem(newItem);
 				}
 
 				return true;
