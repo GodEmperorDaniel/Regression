@@ -238,8 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888d8a4b05f7ca542b4f8e118d496c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectSprite: {fileID: 0}
-  colliderRadius: 1
   onEnter:
     Active: 1
     flowchart: {fileID: 921433309}
@@ -285,17 +283,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 183338087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6233ec0c1c6aa45828a24f782c0b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 0}
   playOnAwake: 1
-  startColor: {r: 1, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 1, b: 0.16666651, a: 1}
-  playMode: 3
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  playMode: 0
   interpMode: 0
-  colorMode: 1
-  speed: 0.5
+  colorMode: 0
+  speed: 1
 --- !u!212 &183338089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -386,17 +384,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 214354221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6233ec0c1c6aa45828a24f782c0b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 0}
   playOnAwake: 1
-  startColor: {r: 1, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 1, b: 0.16470589, a: 1}
-  playMode: 3
-  interpMode: 1
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  playMode: 0
+  interpMode: 0
   colorMode: 0
-  speed: 0.5
+  speed: 1
 --- !u!212 &214354223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -689,17 +687,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 281822880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6233ec0c1c6aa45828a24f782c0b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 0}
   playOnAwake: 1
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
-  playMode: 3
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  playMode: 0
   interpMode: 0
   colorMode: 0
-  speed: 0.25
+  speed: 1
 --- !u!114 &281822883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,14 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphic: {fileID: 0}
-  playOnAwake: 1
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
-  playMode: 3
-  interpMode: 1
-  colorMode: 0
-  speed: 1
 --- !u!114 &345739320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,14 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphic: {fileID: 0}
-  playOnAwake: 1
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
-  playMode: 3
-  interpMode: 1
-  colorMode: 0
-  speed: 0.25
 --- !u!114 &441523981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,9 +1088,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpToScene:
-    sceneAsset: {fileID: 102900000, guid: d3b70c5c7a03cc845a66ce84f3c40e2d, type: 3}
-    scenePath: Assets/Scenes/EH_TEST2.unity
-  exitId: 5180921541970724287
+    sceneAsset: {fileID: 102900000, guid: 58f7764958af122429b7ba28aa2a099b, type: 3}
+    scenePath: Assets/Scenes/EH_TEST.unity
+  exitId: 5101282158902744845
 --- !u!61 &469338139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1483,7 +1465,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1257140217}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &650543688
 SpriteRenderer:
@@ -1871,14 +1853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphic: {fileID: 0}
-  playOnAwake: 1
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 1}
-  playMode: 3
-  interpMode: 0
-  colorMode: 0
-  speed: 1
 --- !u!114 &1076714697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +1970,8 @@ GameObject:
   - component: {fileID: 1172156439}
   - component: {fileID: 1172156438}
   - component: {fileID: 1172156437}
+  - component: {fileID: 1172156440}
+  - component: {fileID: 1172156441}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -2012,14 +1988,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172156436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6233ec0c1c6aa45828a24f782c0b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 0}
   playOnAwake: 1
   startColor: {r: 1, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 0, b: 1, a: 1}
-  playMode: 0
+  targetColor: {r: 0, g: 1, b: 0, a: 1}
+  playMode: 3
   interpMode: 0
   colorMode: 0
   speed: 1
@@ -2066,7 +2042,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -2091,12 +2067,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172156436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07, y: -0.25, z: 1.1}
+  m_LocalPosition: {x: -0.07, y: -0.25, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172156440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172156436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e997c80fd963c4d488ec72a64777fbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minWaitTime: 0.1
+  maxWaitTime: 0.5
+--- !u!114 &1172156441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172156436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1184595182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,8 +2365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888d8a4b05f7ca542b4f8e118d496c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectSprite: {fileID: 0}
-  colliderRadius: 1
   onEnter:
     Active: 1
     flowchart: {fileID: 921433309}
@@ -2415,7 +2418,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 148475095}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1263750949
 SpriteRenderer:
@@ -2484,14 +2487,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa83111d9b0e643a886fcb7020b35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
-  forwardKey: 119
-  backwardKey: 115
-  leftKey: 97
-  rightKey: 100
-  interactionButton: 101
-  interactionButtonGamepad: 351
-  Ani: {fileID: 1444696911}
+  movementSpeed: 2
+  stepSize: 0.25
+  deadZone: 0.1
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
+  interactionButton: InteractionButton
+  directionType: 2
+  speedType: 1
+  animator: {fileID: 1444696911}
+  animatorMovementBool: movement
+  animatorHorizontalFloat: horimovement
+  animatorVerticalFloat: vertimovement
 --- !u!58 &1444696907
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2548,6 +2555,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1444696914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1507637542, guid: 56952e903d86a694ab8bddae2a483aea,
+    type: 3}
+  m_PrefabInstance: {fileID: 260781202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444696905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807748208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,14 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphic: {fileID: 0}
-  playOnAwake: 1
-  startColor: {r: 1, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 1, b: 0.16666651, a: 1}
-  playMode: 3
-  interpMode: 1
-  colorMode: 1
-  speed: 0.5
 --- !u!212 &1807748210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2678,7 +2689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 921433309}
+  selectedFlowchart: {fileID: 1444696914}
 --- !u!4 &1949328563
 Transform:
   m_ObjectHideFlags: 1
@@ -2720,17 +2731,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1970434662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fbde760caf4224e82f4f41c5937a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6233ec0c1c6aa45828a24f782c0b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   graphic: {fileID: 0}
   playOnAwake: 1
-  startColor: {r: 1, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 1, b: 0.16470589, a: 1}
-  playMode: 3
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  playMode: 0
   interpMode: 0
   colorMode: 0
-  speed: 0.5
+  speed: 1
 --- !u!212 &1970434664
 SpriteRenderer:
   m_ObjectHideFlags: 0
