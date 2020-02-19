@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterController2d : MonoBehaviour {
 	static readonly float _r = Mathf.Cos(Mathf.PI / 8) * Mathf.Cos(Mathf.PI / 8) / (Mathf.Sin(Mathf.PI / 8) * Mathf.Sin(Mathf.PI / 8));
 	static readonly float _invSqr2 = 1 / Mathf.Sqrt(2);
-
+  
 	public enum DirectionType {
 		full360,
 		directions8,
