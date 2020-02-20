@@ -22,6 +22,9 @@ public class CharacterController2d : MonoBehaviour
     
     public float stepTimer;
     public bool isStepping = false;
+
+    public static object MyInstance { get; internal set; }
+
     // Start is called before the first frame update
     void Start()
     {
