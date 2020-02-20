@@ -32,7 +32,7 @@ namespace Fungus
 
         public override void OnEnter()
         {
-            SceneLoader.LoadScene(_sceneName.Value, loadingImage);
+            SceneLoader.LoadScene(_sceneName.Value, loadingImage, false);
         }
 
         public override string GetSummary()

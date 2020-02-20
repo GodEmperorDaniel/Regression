@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "itemSettings", menuName = "ScriptableObjects/itemsettingsScriptableObject", order = 1)]
 public class Item : ScriptableObject
 {
     public int id;

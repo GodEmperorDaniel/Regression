@@ -17,7 +17,7 @@ namespace Fungus
 
         public override void OnEnter()
         {
-            SceneLoader.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, loadingImage);
+            SceneLoader.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, loadingImage, false);
 
             Continue();
         }
