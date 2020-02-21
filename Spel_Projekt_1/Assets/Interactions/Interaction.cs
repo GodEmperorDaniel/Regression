@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactiontest : MonoBehaviour
+public class InteractionTest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player;
+    public float distanceToInteract;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (player)
+        {
+            Vector2 angle = transform.TransformDirection(Vector2.right);
+            Vector2 toOther = player.position - transform.position;
+
+            if (Vector2.Dot(angle, toOther) <= distanceToInteract)
+            {
+                //press e to interact GUI;
+                Debug.Log("The object has been interacted with");
+            }
+        }
     }
 }
