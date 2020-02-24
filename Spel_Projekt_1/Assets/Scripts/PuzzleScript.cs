@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using Fungus;
 
 public class PuzzleScript : MonoBehaviour
 {
     [SerializeField] protected Button startButton = null;
 
-    [SerializeField] protected string nameOfThisScene;
-
 	[SerializeField] protected TextMeshProUGUI showPuzzleGuess = null;
 
-    [SerializeField] protected List<puzzleAndScene> sceneAndNumber = new List<puzzleAndScene>();
+   // [SerializeField] protected List<puzzleAndScene> sceneAndNumber = new List<puzzleAndScene>();
 
     private string puzzleCombination;
 
@@ -30,8 +29,7 @@ public class PuzzleScript : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			PlayerStatic.freezePlayer = false;
-			SceneManager.UnloadSceneAsync(nameOfThisScene);
+			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 		}
 
 		AlwaysSelected();
@@ -57,43 +55,56 @@ public class PuzzleScript : MonoBehaviour
 		}
 	}
 
-	public void AddSceneAndPuzzle(puzzleAndScene number)
-    {
-        sceneAndNumber.Add(number);
-    }
+	//public void AddSceneAndPuzzle(puzzleAndScene number)
+	//   {
+	//       sceneAndNumber.Add(number);
+	//   }
 
-    public void RemoveSceneAndPuzzle(puzzleAndScene number)
-    {
-        sceneAndNumber.Remove(number);
-    }
+	//   public void RemoveSceneAndPuzzle(puzzleAndScene number)
+	//   {
+	//       sceneAndNumber.Remove(number);
+	//   }
 
-    public void AddPuzzlePiece(string puzzleCharacter)
-    { 
-        puzzleCombination += puzzleCharacter;
-    }
+	//   public void AddPuzzlePiece(string puzzleCharacter)
+	//   { 
+	//       puzzleCombination += puzzleCharacter;
+	//   }
 
-    public void CheckNumber()
-    {
-        for (int i = 0; i < sceneAndNumber.Count; i++)
-        {
-            if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
-            {
-                PlayerStatic.freezePlayer = false;
-                SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
-            }
-            else
-            {
-                Debug.Log("No signal on this number... Try another");
-            }
-        }
-        puzzleCombination = null;
-    }
+	//   public void CheckNumber()
+	//   {
+	//       for (int i = 0; i < sceneAndNumber.Count; i++)
+	//       {
+	//           if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
+	//           {
+	//               PlayerStatic.freezePlayer = false;
+	//               SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
+	//           }
+	//           else
+	//           {
+	//               Debug.Log("No signal on this number... Try another");
+	//           }
+	//       }
+	//       puzzleCombination = null;
+	//   }
+
+	private void CallBlock(InteractionSettings settings)
+	{
+		if (settings.flowchart && settings.block)
+		{
+			settings.flowchart.ExecuteBlock(settings.block);
+		}
+	}
 }
 
 [System.Serializable]
-public struct puzzleAndScene
+public struct PuzzleAndScene
 {
     public string puzzleSolution;
 
-    public string nameOfNextScene;
+	public Flowchart flowchart;
+
+	[HideInInspector] public Block block;
+
+	[HideInInspector] public bool _foldout;
+	[HideInInspector] public bool _showPopup;
 }
