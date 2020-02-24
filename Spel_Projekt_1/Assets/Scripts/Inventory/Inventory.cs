@@ -5,8 +5,14 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 	public List<InventoryItem> items;
 	public List<ItemCombination> possibleCombinations;
+	public GameObject uiPrefab;
+
+	protected InventoryCanvas canvas;
 
 	public void Start() {
+		if (uiPrefab != null) {
+			canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
+		}
 	}
 
 	public bool HasItem(InventoryItem item) {
@@ -53,5 +59,11 @@ public class Inventory : MonoBehaviour {
 		}
 
 		return false;
+	}
+
+	public void ShowUI() {
+		if (canvas != null) {
+			canvas.Show(this);
+		}
 	}
 }

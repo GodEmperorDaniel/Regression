@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Interactions : MonoBehaviour
-{
+public class Interactions : MonoBehaviour {
+	[System.Serializable]
+	public struct ItemInteraction {
+		public InventoryItem requiredItem;
+		public InteractionSettings interaction;
+	}
+
+	public static HashSet<Interactions> canUseItemOn = new HashSet<Interactions>();
+
 	private Collider2D objectCollider = null;
-	protected float timer = 1f;
 
 	[Header("Interaction Setting")]
 
 	public InteractionSettings onEnter;
 	public InteractionSettings onStay;
 	public InteractionSettings onExit;
+	public List<ItemInteraction> onItemUse;
+	[System.NonSerialized]
+	public bool insideTrigger;
 
 	private void Awake()
 	{
@@ -28,41 +37,61 @@ public class Interactions : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		Interact(other, onEnter);
+	private void OnDisable() {
+		canUseItemOn.Remove(this);
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Player") {
+			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
+			canUseItemOn.Add(this);
+			insideTrigger = true;
+			Interact(controller, onEnter);
+		}
 	}
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		Interact(other, onExit);
+		if (other.gameObject.tag == "Player") {
+			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
+			insideTrigger = false;
+			canUseItemOn.Remove(this);
+			Interact(controller, onExit);
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		timer = Mathf.Min(timer += Time.deltaTime, 1);
-		if (other.gameObject.tag ==	"Player" && timer >= 1)
+		if (other.gameObject.tag ==	"Player")
 		{
-			if (other.gameObject.GetComponentInParent<CharacterController2d>().GetInteractionKey())
+			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
+			if (controller.GetInteractionKeyDown())
 			{
-				Debug.Log("Interacted");
-				Interact(other, onStay);
-				timer = 0;
+				Interact(controller, onStay);
 			}
 		}
 	}
 
-	private void Interact(Collider2D other, InteractionSettings settings)
+	private bool Interact(CharacterController2d controller, InteractionSettings settings)
 	{
-		if (settings.Active)
-		{
-			if (other.gameObject.tag == "Player") //enbart en fråga men finns det någon anledning att använda tag över layermasks? - JB
-			{
-				if (settings.flowchart && settings.block)
-				{
-					settings.flowchart.ExecuteBlock(settings.block);
-				}
+		if (settings.Active) {
+			if (settings.flowchart && settings.block) {
+				settings.flowchart.ExecuteBlock(settings.block);
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public bool UseItem(CharacterController2d controller, InventoryItem item) {
+		foreach (var setting in onItemUse) {
+			if (item == setting.requiredItem) {
+				return Interact(controller, setting.interaction);
 			}
 		}
+
+		return false;
 	}
 
 	IEnumerator showImage(InteractionSettings settings)

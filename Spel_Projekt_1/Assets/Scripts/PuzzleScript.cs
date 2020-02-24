@@ -30,7 +30,7 @@ public class PuzzleScript : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			PlayerStatic.freezePlayer = false;
+			PlayerStatic.ResumePlayer("Puzzle");
 			SceneManager.UnloadSceneAsync(nameOfThisScene);
 		}
 
@@ -78,7 +78,7 @@ public class PuzzleScript : MonoBehaviour
         {
             if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
             {
-                PlayerStatic.freezePlayer = false;
+                PlayerStatic.ResumePlayer("Puzzle");
                 SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
             }
             else

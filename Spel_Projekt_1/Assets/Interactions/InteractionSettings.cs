@@ -8,6 +8,8 @@ using Fungus;
 public struct InteractionSettings
 {
 	public bool Active;
+	//public float interactableAngle;
+	//public float interactableAngleDot;
 	//public string text;
 
 	public Flowchart flowchart;

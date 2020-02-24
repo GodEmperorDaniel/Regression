@@ -24,7 +24,7 @@ namespace Fungus
 		#region Public members
 		public override void OnEnter()
 		{
-			PlayerStatic.freezePlayer = true;
+			PlayerStatic.FreezePlayer("Puzzle");
 			SceneLoader.LoadScene(sceneName, loadingScreen, loadMode);
 			Continue();
 		}
