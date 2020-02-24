@@ -202,7 +202,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 511.57
     y: 186.68388
-    width: 172.44887
+    width: 207.64705
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 764.57
     y: 182.68388
-    width: 120
+    width: 120.58823
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -269,11 +269,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -201.8985, y: 486.81253}
+  scrollPos: {x: -191.03568, y: 3.607756}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.49000046
+  zoom: 0.8500001
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -281,9 +281,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 208455704}
-  selectedCommands:
-  - {fileID: 208455702}
+  - {fileID: 208455699}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -353,6 +352,9 @@ MonoBehaviour:
   characterData:
     characterRef: {fileID: 0}
     characterVal: {fileID: 0}
+  inventoryItemData:
+    inventoryItemRef: {fileID: 0}
+    inventoryItemVal: {fileID: 0}
   colorData:
     colorRef: {fileID: 0}
     colorVal: {r: 0, g: 0, b: 0, a: 0}
@@ -420,6 +422,9 @@ MonoBehaviour:
   characterData:
     characterRef: {fileID: 0}
     characterVal: {fileID: 0}
+  inventoryItemData:
+    inventoryItemRef: {fileID: 0}
+    inventoryItemVal: {fileID: 0}
   colorData:
     colorRef: {fileID: 0}
     colorVal: {r: 0, g: 0, b: 0, a: 0}
@@ -466,7 +471,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 511.46265
     y: 124.00755
-    width: 127.55095
+    width: 144.11765
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -591,6 +596,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.040000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074157722477229196, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284780971577527873, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: interactionButton
+      value: InteractionButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
@@ -7608,7 +7653,7 @@ PrefabInstance:
     - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
         type: 3}
       propertyPath: onEnter.Active
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5784877030351037076, guid: a4164668b24941e4983d7a0e63737f23,
         type: 3}
@@ -8118,6 +8163,11 @@ PrefabInstance:
     - target: {fileID: 5148429352437611158, guid: 2e323a322c187a24a809f6180964bc7a,
         type: 3}
       propertyPath: underdoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7642921471105737719, guid: 2e323a322c187a24a809f6180964bc7a,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
