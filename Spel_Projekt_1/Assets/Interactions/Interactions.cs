@@ -12,7 +12,7 @@ public class Interactions : MonoBehaviour {
 
 	public static HashSet<Interactions> canUseItemOn = new HashSet<Interactions>();
 
-	private Collider2D objectCollider = null;
+	public Collider2D objectCollider = null;
 
 	[Header("Interaction Setting")]
 

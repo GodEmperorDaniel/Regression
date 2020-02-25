@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStatic : MonoBehaviour {
     public static GameObject playerInstance;
     public static int DoorIndex;
+	public static long exitID;
 	private static HashSet<string> freezeStack = new HashSet<string>();
 
     void Awake()
