@@ -30,7 +30,7 @@ public class PuzzleScript : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			PlayerStatic.ResumePlayer("Puzzle");
-			SceneManager.UnloadSceneAsync(nameOfThisScene);
+			//SceneManager.UnloadSceneAsync(nameOfThisScene);
 		}
 
 		AlwaysSelected();

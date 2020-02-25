@@ -19,8 +19,8 @@ namespace Fungus {
 		public Inventory Inventory {
 			get {
 				if (_inventory == null) {
-					if (PlayerStatic.playerInstance != null) {
-						_inventory = PlayerStatic.playerInstance.GetComponent<Inventory>();
+					if (PlayerStatic.inventoryInstance != null) {
+						_inventory = PlayerStatic.inventoryInstance;
 					}
 				}
 
@@ -49,7 +49,7 @@ namespace Fungus {
 				return "Error: No output selected";
 			}
 
-			return testItem.Value.name + " => " + key;
+			return testItem.Value.title + " => " + key;
 		}
 	}
 }

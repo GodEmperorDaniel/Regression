@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using Fungus;
 
 //Custom Property Drawer for interaction settings (by EH)
-[CustomPropertyDrawer(typeof(InteractionSettingsEditor))]
+[CustomPropertyDrawer(typeof(InteractionSettings))]
 public class InteractionSettingsEditor : PropertyDrawer {
 	protected int selectedIndex = 0;
 	protected float spaceBetweenLines = 2;
@@ -48,10 +48,10 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 			//Draw normal fields
 			var flowchartProperty = property.FindPropertyRelative("flowchart");
-			//var angleProperty = property.FindPropertyRelative("interactableAngle");
-			//var angleDotProperty = property.FindPropertyRelative("interactableAngleDot");
+			var angleProperty = property.FindPropertyRelative("interactableAngle");
+			var angleDotProperty = property.FindPropertyRelative("interactableAngleDot");
 			EditorGUI.PropertyField(activeRect, property.FindPropertyRelative("Active"));
-			/*
+			
 			//Angle defaults to 0 (because struct) but we want it to default to 360
 			var angle = angleProperty.floatValue;
 			if (angle == 0) {
@@ -64,7 +64,7 @@ public class InteractionSettingsEditor : PropertyDrawer {
 			if (angle == 0) {
 				angle = 361;
 			}
-			angleProperty.floatValue = angle;*/
+			angleProperty.floatValue = angle;
 
 			EditorGUI.PropertyField(flowchartRect, flowchartProperty);
 			var flowchart = flowchartProperty.objectReferenceValue as Flowchart;

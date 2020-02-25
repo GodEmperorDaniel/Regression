@@ -113,8 +113,8 @@ public class CharacterController2d : MonoBehaviour {
 	private void SetAnimatorVariables(bool moving) {
 		if (animator != null) {
 			animator.SetBool(animatorMovementBool, moving);
-			animator.SetFloat(animatorHorizontalFloat, _stepDir.x);
-			animator.SetFloat(animatorVerticalFloat, _stepDir.y);
+			animator.SetFloat(animatorHorizontalFloat, forward.x);
+			animator.SetFloat(animatorVerticalFloat, forward.y);
 		}
 	}
 
