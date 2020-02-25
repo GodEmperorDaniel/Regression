@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionTest : MonoBehaviour
+public class Interaction : MonoBehaviour
 {
     public Transform player;
     public float distanceToInteract;
+    public Canvas canvas;
+    private bool insideTrigger;
 
     void Update()
     {
@@ -16,9 +18,38 @@ public class InteractionTest : MonoBehaviour
 
             if (Vector2.Dot(angle, toOther) <= distanceToInteract)
             {
-                //press e to interact GUI;
-                Debug.Log("The object has been interacted with");
+                if (insideTrigger)
+                {
+                    canvas.gameObject.SetActive(true);
+                    Debug.Log("in range");
+                }
+                else
+                {
+                    canvas.gameObject.SetActive(false);
+                    Debug.Log("in range");
+                }
+
             }
+
+        }
+
+        Debug.Log(insideTrigger);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            insideTrigger = true;
+            Debug.Log("test true");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Debug.Log("test false");
+            insideTrigger = false;
         }
     }
 }
