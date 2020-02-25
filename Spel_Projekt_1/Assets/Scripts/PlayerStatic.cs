@@ -1,12 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatic : MonoBehaviour
 {
-    public static Transform player;
+    public static GameObject playerInstance;
+    public static bool freezePlayer = false;
     public static int DoorIndex;
     void Awake()
     {
-		player = gameObject.transform;
-		DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
+        if (playerInstance == null)
+        {
+            playerInstance = gameObject;
+        }
+        else
+        {
+           Destroy(gameObject);
+        }
     }
 }

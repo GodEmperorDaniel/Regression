@@ -19,6 +19,7 @@ namespace Fungus
                           typeof(AnimatorVariable),
 						  typeof(AudioSourceVariable),
 						  typeof(CharacterVariable),
+						  typeof(InventoryItemVariable),
 						  typeof(ColorVariable),
                           typeof(GameObjectVariable),
                           typeof(MaterialVariable),
@@ -49,8 +50,11 @@ namespace Fungus
 		[Tooltip("AudioSource value to compare against")]
 		[SerializeField] protected AudioSourceData audioSourceData;
 
-		[Tooltip("AudioSource value to compare against")]
+		[Tooltip("Character value to compare against")]
 		[SerializeField] protected CharacterData characterData;
+
+		[Tooltip("Inventory Item value to compare against")]
+		[SerializeField] protected InventoryItemData inventoryItemData;
 
 		[Tooltip("Color value to compare against")]
         [SerializeField] protected ColorData colorData;
@@ -125,6 +129,9 @@ namespace Fungus
 			} else if (t == typeof(CharacterVariable)) {
 				CharacterVariable characterVariable = (variable as CharacterVariable);
 				condition = characterVariable.Evaluate(compareOperator, characterData.Value);
+			} else if (t == typeof(InventoryItemVariable)) {
+				InventoryItemVariable itemVariable = (variable as InventoryItemVariable);
+				condition = itemVariable.Evaluate(compareOperator, inventoryItemData.Value);
 			} else if (t == typeof(ColorVariable))
             {
                 ColorVariable colorVariable = (variable as ColorVariable);
@@ -194,6 +201,7 @@ namespace Fungus
             { typeof(AnimatorVariable), AnimatorVariable.compareOperators },
 			{ typeof(AudioSourceVariable), AudioSourceVariable.compareOperators },
 			{ typeof(CharacterVariable), CharacterVariable.compareOperators },
+			{ typeof(InventoryItemVariable), InventoryItemVariable.compareOperators },
 			{ typeof(ColorVariable), ColorVariable.compareOperators },
             { typeof(GameObjectVariable), GameObjectVariable.compareOperators },
             { typeof(MaterialVariable), MaterialVariable.compareOperators },
@@ -248,6 +256,8 @@ namespace Fungus
                 summary += audioSourceData.GetDescription();
 			} else if (t == typeof(CharacterVariable)) {
 				summary += characterData.GetDescription();
+			} else if (t == typeof(InventoryItemVariable)) {
+				summary += inventoryItemData.GetDescription();
 			} else if (t == typeof(ColorVariable))
             {
                 summary += colorData.GetDescription();
@@ -324,6 +334,8 @@ namespace Fungus
                 retval |= audioSourceData.audioSourceRef == variable;
 			} else if (t == typeof(CharacterVariable)) {
 				retval |= characterData.characterRef == variable;
+			} else if (t == typeof(InventoryItemVariable)) {
+				retval |= inventoryItemData.inventoryItemRef == variable;
 			} else if (t == typeof(ColorVariable))
             {
                 retval |= colorData.colorRef == variable;

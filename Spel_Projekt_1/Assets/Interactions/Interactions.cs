@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Interactions : MonoBehaviour
 {
 	private Collider2D objectCollider = null;
+	protected float timer = 1f;
 
 	[Header("Interaction Setting")]
 
@@ -38,12 +39,14 @@ public class Interactions : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+		timer = Mathf.Min(timer += Time.deltaTime, 1);
+		if (other.gameObject.tag ==	"Player" && timer >= 1)
 		{
-			if (other.gameObject.GetComponentInParent<CharacterController2d>().getInteractionKey())
+			if (other.gameObject.GetComponentInParent<CharacterController2d>().GetInteractionKey())
 			{
 				Debug.Log("Interacted");
 				Interact(other, onStay);
+				timer = 0;
 			}
 		}
 	}

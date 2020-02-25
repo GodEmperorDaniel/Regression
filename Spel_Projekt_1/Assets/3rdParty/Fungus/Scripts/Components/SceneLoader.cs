@@ -21,6 +21,7 @@ namespace Fungus
         protected Texture2D loadingTexture;
         protected string sceneToLoad;
         protected bool displayedImage;
+		protected bool mode = false;
 
         protected virtual void Start()
         {
@@ -48,11 +49,18 @@ namespace Fungus
                 yield return new WaitForEndOfFrame();
             }
 
-            // Load the scene (happens at end of frame)
+			// Load the scene (happens at end of frame)
 #if UNITY_5_0 || UNITY_5_1 || UNITY_5_2
             Application.LoadLevel(sceneToLoad);
 #else
-            SceneManager.LoadScene(sceneToLoad);
+			if (mode)
+			{
+				SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
+			}
+			else
+			{
+				SceneManager.LoadScene(sceneToLoad);
+			}
 #endif
 
             yield return new WaitForEndOfFrame();
@@ -97,7 +105,7 @@ namespace Fungus
         /// </summary>
         /// <param name="_sceneToLoad">The name of the scene to load. Scenes must be added in project build settings.</param>
         /// <param name="_loadingTexture">Loading image to display while loading the new scene.</param>
-        public static void LoadScene(string _sceneToLoad, Texture2D _loadingTexture)
+        public static void LoadScene(string _sceneToLoad, Texture2D _loadingTexture, bool _mode)
         {
             // Unity does not provide a way to check if the named scene actually exists in the project.
             GameObject go = new GameObject("SceneLoader");
@@ -105,6 +113,7 @@ namespace Fungus
 
             SceneLoader sceneLoader = go.AddComponent<SceneLoader>();
             sceneLoader.sceneToLoad = _sceneToLoad;
+			sceneLoader.mode = _mode;
             sceneLoader.loadingTexture = _loadingTexture;
         }
 
