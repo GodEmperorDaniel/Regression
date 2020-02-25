@@ -244,14 +244,23 @@ namespace Fungus.EditorUtils
                     var prevEnabled = GUI.enabled;
                     GUI.enabled = false;
 
-                    EditorGUI.PropertyField(itemRects[2], globalValProp, emptyGUIContent);
+					if (variable is SceneVariable) {
+						SceneReferencePropertyDrawer.DrawSceneProperty(itemRects[2], globalValProp, emptyGUIContent);
+					} else {
+						EditorGUI.PropertyField(itemRects[2], globalValProp, emptyGUIContent);
+					}
 
-                    GUI.enabled = prevEnabled;
+					globalValue.ApplyModifiedProperties();
+					GUI.enabled = prevEnabled;
                 }
             }
             else
             {
-                EditorGUI.PropertyField(itemRects[2], defaultProp, emptyGUIContent);
+				if (variable is SceneVariable) {
+					SceneReferencePropertyDrawer.DrawSceneProperty(itemRects[2], defaultProp, emptyGUIContent);
+				} else {
+					EditorGUI.PropertyField(itemRects[2], defaultProp, emptyGUIContent);
+				}
             }
 
 

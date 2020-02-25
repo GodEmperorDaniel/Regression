@@ -29,7 +29,8 @@ public class PuzzleScript : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+			PlayerStatic.ResumePlayer("Puzzle");
+			SceneManager.UnloadSceneAsync(nameOfThisScene);
 		}
 
 		AlwaysSelected();
@@ -76,7 +77,6 @@ public class PuzzleScript : MonoBehaviour
 		{
 			if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
 			{
-				PlayerStatic.freezePlayer = false;
 				sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
 			}
 			else
