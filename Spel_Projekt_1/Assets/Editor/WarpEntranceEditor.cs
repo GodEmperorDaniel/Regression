@@ -43,7 +43,6 @@ public class WarpEntranceEditor : Editor {
 				ids = new List<long>();
 
 				if (!string.IsNullOrEmpty(scenePath)) {
-					Debug.Log("FINDING SCENE");
 					Scene scene = SceneManager.GetSceneByPath(scenePath);
 					bool newScene = false;
 					if (scene == null || !scene.IsValid()) {
