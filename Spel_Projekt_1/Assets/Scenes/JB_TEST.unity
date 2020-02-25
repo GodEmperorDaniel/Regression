@@ -280,8 +280,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 208455697}
+  selectedCommands:
+  - {fileID: 208455696}
   variables: []
   description: 
   stepPause: 0
@@ -7769,6 +7771,21 @@ PrefabInstance:
         type: 3}
       propertyPath: onStay._showPopup
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593647748043913766, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onStay._foldout
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593647748043913766, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onEnter._foldout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593647748043913766, guid: a4164668b24941e4983d7a0e63737f23,
+        type: 3}
+      propertyPath: onExit._foldout
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4164668b24941e4983d7a0e63737f23, type: 3}

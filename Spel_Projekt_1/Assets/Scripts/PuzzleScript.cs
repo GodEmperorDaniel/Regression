@@ -13,7 +13,7 @@ public class PuzzleScript : MonoBehaviour
 
 	[SerializeField] protected TextMeshProUGUI showPuzzleGuess = null;
 
-   // [SerializeField] protected List<puzzleAndScene> sceneAndNumber = new List<puzzleAndScene>();
+   [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
 
     private string puzzleCombination;
 
@@ -55,37 +55,37 @@ public class PuzzleScript : MonoBehaviour
 		}
 	}
 
-	//public void AddSceneAndPuzzle(puzzleAndScene number)
-	//   {
-	//       sceneAndNumber.Add(number);
-	//   }
+	public void AddSceneAndPuzzle(PuzzleAndScene number)
+	{
+		sceneAndNumber.Add(number);
+	}
 
-	//   public void RemoveSceneAndPuzzle(puzzleAndScene number)
-	//   {
-	//       sceneAndNumber.Remove(number);
-	//   }
+	public void RemoveSceneAndPuzzle(PuzzleAndScene number)
+	{
+		sceneAndNumber.Remove(number);
+	}
 
-	//   public void AddPuzzlePiece(string puzzleCharacter)
-	//   { 
-	//       puzzleCombination += puzzleCharacter;
-	//   }
+	public void AddPuzzlePiece(string puzzleCharacter)
+	{
+		puzzleCombination += puzzleCharacter;
+	}
 
-	//   public void CheckNumber()
-	//   {
-	//       for (int i = 0; i < sceneAndNumber.Count; i++)
-	//       {
-	//           if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
-	//           {
-	//               PlayerStatic.freezePlayer = false;
-	//               SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
-	//           }
-	//           else
-	//           {
-	//               Debug.Log("No signal on this number... Try another");
-	//           }
-	//       }
-	//       puzzleCombination = null;
-	//   }
+	public void CheckNumber()
+	{
+		for (int i = 0; i < sceneAndNumber.Count; i++)
+		{
+			if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
+			{
+				PlayerStatic.freezePlayer = false;
+				sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
+			}
+			else
+			{
+				Debug.Log("No signal on this number... Try another");
+			}
+		}
+		puzzleCombination = null;
+	}
 
 	private void CallBlock(InteractionSettings settings)
 	{
@@ -96,15 +96,4 @@ public class PuzzleScript : MonoBehaviour
 	}
 }
 
-[System.Serializable]
-public struct PuzzleAndScene
-{
-    public string puzzleSolution;
 
-	public Flowchart flowchart;
-
-	[HideInInspector] public Block block;
-
-	[HideInInspector] public bool _foldout;
-	[HideInInspector] public bool _showPopup;
-}
