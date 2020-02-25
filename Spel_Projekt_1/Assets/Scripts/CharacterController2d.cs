@@ -25,8 +25,11 @@ public class CharacterController2d : MonoBehaviour {
 	public string horizontalAxis = "Horizontal";
 	public string verticalAxis = "Vertical";
 	public string interactionButton = "InteractionButton";
+	public string inventoryButton = "InventoryButton";
 	public DirectionType directionType = DirectionType.directions4;
 	public SpeedType speedType = SpeedType.toggle;
+	[HideInInspector]
+	public Vector2 forward;
 
 	[FormerlySerializedAs("Ani")]
 	public Animator animator;
@@ -34,6 +37,8 @@ public class CharacterController2d : MonoBehaviour {
 	public string animatorHorizontalFloat = "horimovement";
 	public string animatorVerticalFloat = "vertimovement";
 
+	private bool _inventoryPressed = false;
+	private int _interactionPressed = 0;
 	private float _stepLeft;
 	private Vector2 _stepDir;
 
@@ -51,6 +56,12 @@ public class CharacterController2d : MonoBehaviour {
 		}
 
 		Translate();
+		CheckInventoryButton();
+		if (Input.GetAxisRaw(interactionButton) > deadZone) {
+			_interactionPressed++;
+		} else {
+			_interactionPressed = 0;
+		}
 	}
 
 	private void ReadInput() {
@@ -82,6 +93,8 @@ public class CharacterController2d : MonoBehaviour {
 					break;
 			}
 
+			forward = _stepDir;
+
 			if (speedType == SpeedType.smooth) {
 				_stepDir *= Mathf.Sqrt(h * h + v * v);
 			}
@@ -89,6 +102,7 @@ public class CharacterController2d : MonoBehaviour {
 			SetAnimatorVariables(true);
 		} else {
 			_stepDir = Vector2.zero;
+			SetAnimatorVariables(false);
 		}
 	}
 
@@ -104,7 +118,23 @@ public class CharacterController2d : MonoBehaviour {
 		}
 	}
 
+	private void CheckInventoryButton() {
+		if (!_inventoryPressed && Input.GetAxisRaw(inventoryButton) > deadZone) {
+			_inventoryPressed = true;
+			var inventory = GetComponent<Inventory>();
+			if (inventory != null) {
+				inventory.ShowUI();
+			}
+		} else if (_inventoryPressed && Input.GetAxisRaw(inventoryButton) <= deadZone) {
+			_inventoryPressed = false;
+		}
+	}
+
 	public bool GetInteractionKey() {
-		return isActiveAndEnabled && Input.GetAxisRaw(interactionButton) > 0;
+		return isActiveAndEnabled && _interactionPressed > 0;
+	}
+
+	public bool GetInteractionKeyDown() {
+		return isActiveAndEnabled && _interactionPressed == 1;
 	}
 }

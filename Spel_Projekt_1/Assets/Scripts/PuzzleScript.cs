@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using Fungus;
 
 public class PuzzleScript : MonoBehaviour
 {
     [SerializeField] protected Button startButton = null;
 
-    [SerializeField] protected string nameOfThisScene;
-
 	[SerializeField] protected TextMeshProUGUI showPuzzleGuess = null;
 
-    [SerializeField] protected List<puzzleAndScene> sceneAndNumber = new List<puzzleAndScene>();
+   [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
 
     private string puzzleCombination;
 
@@ -30,7 +29,7 @@ public class PuzzleScript : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			PlayerStatic.freezePlayer = false;
+			PlayerStatic.ResumePlayer("Puzzle");
 			SceneManager.UnloadSceneAsync(nameOfThisScene);
 		}
 
@@ -57,43 +56,44 @@ public class PuzzleScript : MonoBehaviour
 		}
 	}
 
-	public void AddSceneAndPuzzle(puzzleAndScene number)
-    {
-        sceneAndNumber.Add(number);
-    }
+	public void AddSceneAndPuzzle(PuzzleAndScene number)
+	{
+		sceneAndNumber.Add(number);
+	}
 
-    public void RemoveSceneAndPuzzle(puzzleAndScene number)
-    {
-        sceneAndNumber.Remove(number);
-    }
+	public void RemoveSceneAndPuzzle(PuzzleAndScene number)
+	{
+		sceneAndNumber.Remove(number);
+	}
 
-    public void AddPuzzlePiece(string puzzleCharacter)
-    { 
-        puzzleCombination += puzzleCharacter;
-    }
+	public void AddPuzzlePiece(string puzzleCharacter)
+	{
+		puzzleCombination += puzzleCharacter;
+	}
 
-    public void CheckNumber()
-    {
-        for (int i = 0; i < sceneAndNumber.Count; i++)
-        {
-            if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
-            {
-                PlayerStatic.freezePlayer = false;
-                SceneManager.LoadScene(sceneAndNumber[i].nameOfNextScene);
-            }
-            else
-            {
-                Debug.Log("No signal on this number... Try another");
-            }
-        }
-        puzzleCombination = null;
-    }
+	public void CheckNumber()
+	{
+		for (int i = 0; i < sceneAndNumber.Count; i++)
+		{
+			if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
+			{
+				sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
+			}
+			else
+			{
+				Debug.Log("No signal on this number... Try another");
+			}
+		}
+		puzzleCombination = null;
+	}
+
+	private void CallBlock(InteractionSettings settings)
+	{
+		if (settings.flowchart && settings.block)
+		{
+			settings.flowchart.ExecuteBlock(settings.block);
+		}
+	}
 }
 
-[System.Serializable]
-public struct puzzleAndScene
-{
-    public string puzzleSolution;
 
-    public string nameOfNextScene;
-}
