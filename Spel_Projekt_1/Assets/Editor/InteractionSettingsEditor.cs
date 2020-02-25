@@ -6,10 +6,11 @@ using UnityEngine.UIElements;
 using Fungus;
 
 //Custom Property Drawer for interaction settings (by EH)
-[CustomPropertyDrawer(typeof(InteractionSettings))]
+[CustomPropertyDrawer(typeof(InteractionSettingsEditor))]
 public class InteractionSettingsEditor : PropertyDrawer {
 	protected int selectedIndex = 0;
 	protected float spaceBetweenLines = 2;
+	const int propertyCount = 4;
 
 	//We are forced to handle layout manually as GUIEditorLayout is not available to Property Drawers :(
 	public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
@@ -18,9 +19,9 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 		if (foldoutProperty.boolValue) {
 			if (showPopupProperty.boolValue) {
-				return EditorGUIUtility.singleLineHeight * 4 + 3 * spaceBetweenLines;
+				return EditorGUIUtility.singleLineHeight * (propertyCount + 1) + propertyCount * spaceBetweenLines;
 			} else {
-				return EditorGUIUtility.singleLineHeight * 3 + 2 * spaceBetweenLines;
+				return EditorGUIUtility.singleLineHeight * propertyCount + (propertyCount - 1) * spaceBetweenLines;
 			}
 		} else {
 			return EditorGUIUtility.singleLineHeight;
@@ -36,8 +37,9 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 		if (foldoutProperty.boolValue) {
 			var activeRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
-			var flowchartRect = new Rect(position.x, position.y + 2 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
-			var popupRect = new Rect(position.x, position.y + 3 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
+			var angleRect = new Rect(position.x, position.y + 2 * EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
+			var flowchartRect = new Rect(position.x, position.y + 3 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
+			var popupRect = new Rect(position.x, position.y + 4 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
 
 			EditorGUI.indentLevel++;
 
@@ -46,9 +48,25 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 			//Draw normal fields
 			var flowchartProperty = property.FindPropertyRelative("flowchart");
+			//var angleProperty = property.FindPropertyRelative("interactableAngle");
+			//var angleDotProperty = property.FindPropertyRelative("interactableAngleDot");
 			EditorGUI.PropertyField(activeRect, property.FindPropertyRelative("Active"));
-			EditorGUI.PropertyField(flowchartRect, flowchartProperty);
+			/*
+			//Angle defaults to 0 (because struct) but we want it to default to 360
+			var angle = angleProperty.floatValue;
+			if (angle == 0) {
+				angle = 360;
+			} else if (angle == 361) {
+				angle = 0;
+			}
+			angle = EditorGUI.Slider(angleRect, "Interactable Angle", angle, 0, 360);
+			angleDotProperty.floatValue = Mathf.Cos(angle * 0.5f * Mathf.Deg2Rad);
+			if (angle == 0) {
+				angle = 361;
+			}
+			angleProperty.floatValue = angle;*/
 
+			EditorGUI.PropertyField(flowchartRect, flowchartProperty);
 			var flowchart = flowchartProperty.objectReferenceValue as Flowchart;
 
 			if (flowchart) {

@@ -176,8 +176,6 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
     /// </summary>
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        var sceneAssetProperty = GetSceneAssetProperty(property);
-
         // Draw the Box Background
         position.height -= footerHeight;
         GUI.Box(EditorGUI.IndentedRect(position), GUIContent.none, EditorStyles.helpBox);
@@ -188,29 +186,37 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
         label.tooltip = "The actual Scene Asset reference.\nOn serialize this is also stored as the asset's path.";
 
         EditorGUI.BeginProperty(position, GUIContent.none, property);
-        EditorGUI.BeginChangeCheck();
-        int sceneControlID = GUIUtility.GetControlID(FocusType.Passive);
-        var selectedObject = EditorGUI.ObjectField(position, label, sceneAssetProperty.objectReferenceValue, typeof(SceneAsset), false);
-        BuildUtils.BuildScene buildScene = BuildUtils.GetBuildScene(selectedObject);
 
-        if (EditorGUI.EndChangeCheck())
-        {
-            sceneAssetProperty.objectReferenceValue = selectedObject;
-
-            // If no valid scene asset was selected, reset the stored path accordingly
-            if (buildScene.scene == null)
-                GetScenePathProperty(property).stringValue = string.Empty;
-        }
+		int sceneControlID = GUIUtility.GetControlID(FocusType.Passive);
+		var buildScene = DrawSceneProperty(position, property, GUIContent.none);
+        
         position.y += paddedLine;
 
-        if (buildScene.assetGUID.Empty() == false)
-        {
-            // Draw the Build Settings Info of the selected Scene
-            DrawSceneInfoGUI(position, buildScene, sceneControlID + 1);
-        }
+		if (buildScene.assetGUID.Empty() == false) {
+			// Draw the Build Settings Info of the selected Scene
+			DrawSceneInfoGUI(position, buildScene, sceneControlID + 1);
+		}
 
-        EditorGUI.EndProperty();
+		EditorGUI.EndProperty();
     }
+
+	public static BuildUtils.BuildScene DrawSceneProperty(Rect position, SerializedProperty property, GUIContent label) {
+		var sceneAssetProperty = GetSceneAssetProperty(property);
+
+		EditorGUI.BeginChangeCheck();
+		var selectedObject = EditorGUI.ObjectField(position, label, sceneAssetProperty.objectReferenceValue, typeof(SceneAsset), false);
+		BuildUtils.BuildScene buildScene = BuildUtils.GetBuildScene(selectedObject);
+
+		if (EditorGUI.EndChangeCheck()) {
+			sceneAssetProperty.objectReferenceValue = selectedObject;
+
+			// If no valid scene asset was selected, reset the stored path accordingly
+			if (buildScene.scene == null)
+				GetScenePathProperty(property).stringValue = string.Empty;
+		}
+
+		return buildScene;
+	}
 
     /// <summary>
     /// Ensure that what we draw in OnGUI always has the room it needs
@@ -228,7 +234,7 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
     /// <summary>
     /// Draws info box of the provided scene
     /// </summary>
-    private void DrawSceneInfoGUI(Rect position, BuildUtils.BuildScene buildScene, int sceneControlID)
+    private static void DrawSceneInfoGUI(Rect position, BuildUtils.BuildScene buildScene, int sceneControlID)
     {
         bool readOnly = BuildUtils.IsReadOnly();
         string readOnlyWarning = readOnly ? "\n\nWARNING: Build Settings is not checked out and so cannot be modified." : "";
@@ -316,17 +322,17 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
 
     }
 
-    static SerializedProperty GetSceneAssetProperty(SerializedProperty property)
+    public static SerializedProperty GetSceneAssetProperty(SerializedProperty property)
     {
         return property.FindPropertyRelative(sceneAssetPropertyString);
     }
 
-    static SerializedProperty GetScenePathProperty(SerializedProperty property)
+	public static SerializedProperty GetScenePathProperty(SerializedProperty property)
     {
         return property.FindPropertyRelative(scenePathPropertyString);
     }
 
-    private static class DrawUtils
+	public static class DrawUtils
     {
         /// <summary>
         /// Draw a GUI button, choosing between a short and a long button text based on if it fits
@@ -365,7 +371,7 @@ public class SceneReferencePropertyDrawer : PropertyDrawer
     /// <summary>
     /// Various BuildSettings interactions
     /// </summary>
-    static private class BuildUtils
+    static public class BuildUtils
     {
         // time in seconds that we have to wait before we query again when IsReadOnly() is called.
         public static float minCheckWait = 3;
