@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using Fungus;
 
 //Custom Property Drawer for interaction settings (by EH)
-[CustomPropertyDrawer(typeof(InteractionSettings))]
+[CustomPropertyDrawer(typeof(InteractionSettingsEditor))]
 public class InteractionSettingsEditor : PropertyDrawer {
 	protected int selectedIndex = 0;
 	protected float spaceBetweenLines = 2;
