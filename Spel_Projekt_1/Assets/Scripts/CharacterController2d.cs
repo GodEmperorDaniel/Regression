@@ -48,7 +48,12 @@ public class CharacterController2d : MonoBehaviour {
 		}
 	}
 
-	private void Update() {
+    public void OnEnable()
+    {
+        _inventoryPressed = true;
+    }
+
+    private void Update() {
 		if (_stepLeft > 0) {
 			_stepLeft -= Time.deltaTime;
 		} else {
