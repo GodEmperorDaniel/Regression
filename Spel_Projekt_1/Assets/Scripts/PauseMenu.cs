@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenyUi;
+
+    public static CharacterController2d player;
 
     // Update is called once per frame
     void Update()
@@ -22,6 +23,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+
         }
     }
 
@@ -39,15 +41,30 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void LoadMenu()
+    public void LoadInventory()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        //Time.timeScale = 0f;
+        //player = playerInstance.GetComponent<Inventory>().ShowUi();
     }
+
+    //public void SaveGame()
+    //{
+    //    Debug.Log("Save game, please wait");
+    //}
+
+    //public void LoadGame()
+    //{
+    //    Debug.Log("Load Game...");
+        
+    //}
 
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
         Application.Quit();
     }
+
+
+
+
 }
