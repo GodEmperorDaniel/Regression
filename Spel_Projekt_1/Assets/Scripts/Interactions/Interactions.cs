@@ -93,36 +93,4 @@ public class Interactions : MonoBehaviour {
 
 		return false;
 	}
-
-	IEnumerator showImage(InteractionSettings settings)
-	{
-		//float timer = 0;
-
-		//sätt upp bilden på canvas
-
-		/*while (timer < settings.image.imageTimer)
-		{
-			timer += Time.deltaTime;
-			yield return null;
-		}
-
-		timer = 0;
-		Color t = scareImage.color;
-		while (timer < settings.image.fadeTimer)
-		{
-			timer += Time.deltaTime;
-			t.a = Mathf.Lerp(255, 0, timer / settings.image.fadeTimer);
-			scareImage.color = t;
-			yield return null;
-		}
-
-		//ta bort bilden från canvas
-	}
-
-	private void SkickaText()
-	{ 
-		//connecta till flowcharten och skicka string till specifikt block
-		}*/
-		yield return null;
-	}
 }

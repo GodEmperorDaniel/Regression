@@ -48,6 +48,11 @@ public class CharacterController2d : MonoBehaviour {
 		}
 	}
 
+	private void OnEnable()
+	{
+		_interactionPressed = 2;
+	}
+
 	private void Update() {
 		if (_stepLeft > 0) {
 			_stepLeft -= Time.deltaTime;
@@ -111,10 +116,15 @@ public class CharacterController2d : MonoBehaviour {
 	}
 
 	private void SetAnimatorVariables(bool moving) {
-		if (animator != null) {
+		if (animator != null && moving)
+		{
 			animator.SetBool(animatorMovementBool, moving);
 			animator.SetFloat(animatorHorizontalFloat, _stepDir.x);
 			animator.SetFloat(animatorVerticalFloat, _stepDir.y);
+		}
+		else if (animator != null && !moving)
+		{
+			animator.SetBool(animatorMovementBool, moving);
 		}
 	}
 

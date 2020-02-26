@@ -23,13 +23,15 @@ public class PuzzleScript : MonoBehaviour
     private void Start()
     {
         startButton.Select();
-    }
+		PlayerStatic.FreezePlayer("Puzzle");
+	}
 
     void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			PlayerStatic.ResumePlayer("Puzzle");
+			SceneManager.UnloadSceneAsync(gameObject.scene);
 		}
 
 		AlwaysSelected();
@@ -74,16 +76,14 @@ public class PuzzleScript : MonoBehaviour
 	{
 		for (int i = 0; i < sceneAndNumber.Count; i++)
 		{
-			if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
-			{
-				sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
-			}
-			else
-			{
-				Debug.Log("No signal on this number... Try another");
-			}
+			sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
 		}
 		puzzleCombination = null;
+	}
+
+	public string PassCombination()
+	{
+		return puzzleCombination;
 	}
 
 	private void CallBlock(InteractionSettings settings)
