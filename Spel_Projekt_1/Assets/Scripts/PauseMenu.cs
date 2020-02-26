@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenyUi;
-
-    public static CharacterController2d player;
+    public GameObject lastSelectedButton = null;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+        AlwaysSelected();
     }
 
     public void Resume()
@@ -44,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadInventory()
     {
         //Time.timeScale = 0f;
-        //player = playerInstance.GetComponent<Inventory>().ShowUi();
+        PlayerStatic.playerInstance.GetComponent<Inventory>().ShowUI();
     }
 
     //public void SaveGame()
@@ -61,10 +63,24 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
+        SceneManager.LoadScene("BT_MAINMENU");
         Application.Quit();
     }
 
-
+    private void AlwaysSelected()
+    {
+        foreach (Selectable button in Button.allSelectablesArray)
+        {
+            if (button.gameObject == EventSystem.current.currentSelectedGameObject)
+            {
+                lastSelectedButton = button.gameObject;
+            }
+        }
+        if (!EventSystem.current.alreadySelecting)
+        {
+            EventSystem.current.SetSelectedGameObject(lastSelectedButton);
+        }
+    }
 
 
 }

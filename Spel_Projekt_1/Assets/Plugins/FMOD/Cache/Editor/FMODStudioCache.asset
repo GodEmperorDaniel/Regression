@@ -18,6 +18,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-5614009223606626848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637183135253492916
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4328372095585277116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637183135253492916
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4241489305970685911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,11 +68,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637180869176997698
+  lastModified: 637183135253492916
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 872
+  Exists: 1
+--- !u!114 &-2983758612638776478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musik.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank
+  SubDir: 
+  lastModified: 637183135253961559
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &-2687066290733589403
 MonoBehaviour:
@@ -89,7 +143,7 @@ MonoBehaviour:
   Path: event:/Musik/Voidspirit
   guid: 8796e171edbd964eb04f187ab775ea7d
   Banks:
-  - {fileID: -2687066290733589403}
+  - {fileID: -2983758612638776478}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -111,18 +165,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4241489305970685911}
-  - {fileID: -1480375463441928053}
-  - {fileID: -2687066290733589403}
-  - {fileID: -8787241655883679979}
-  - {fileID: 2624836538242814186}
+  - {fileID: -4328372095585277116}
+  - {fileID: -2983758612638776478}
+  - {fileID: 4190540517810308545}
+  - {fileID: -5614009223606626848}
   EditorEvents:
   - {fileID: -1317647525093657872}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1480375463441928053}
+  - {fileID: -4328372095585277116}
   StringsBanks:
   - {fileID: -4241489305970685911}
-  stringsBankWriteTime: 637180869176997698
+  stringsBankWriteTime: 637183135253492916
   cacheVersion: 3
 --- !u!114 &2624836538242814186
 MonoBehaviour:
@@ -139,6 +193,24 @@ MonoBehaviour:
   Path: FMOD Projectpath/Regression FMOD/Build/Desktop/SFX.bank
   SubDir: 
   lastModified: 637180869190336698
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4190540517810308545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637183135253492916
   LoadResult: 0
   FileSizes: []
   Exists: 1

@@ -41,4 +41,9 @@ public class PlayerStatic : MonoBehaviour {
 			}
 		}
 	}
+
+    public void Update()
+    {
+        Debug.Log(freezeStack.Count);
+    }
 }

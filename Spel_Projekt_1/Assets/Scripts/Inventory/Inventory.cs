@@ -9,13 +9,15 @@ public class Inventory : MonoBehaviour {
 
 	protected InventoryCanvas canvas;
 
-	public void Start() {
-		if (uiPrefab != null) {
-			canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
-		}
-	}
+    public void Start()
+    {
+        if (uiPrefab != null)
+        {
+            canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
+        }
+    }
 
-	public bool HasItem(InventoryItem item) {
+    public bool HasItem(InventoryItem item) {
 		foreach (var i in items) {
 			if (i == item) {
 				return true;
