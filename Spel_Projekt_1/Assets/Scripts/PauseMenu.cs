@@ -12,6 +12,12 @@ public class PauseMenu : MonoBehaviour
     public EventSystem eventSystem;
     private Selectable lastSelectedButton = null;
 
+    SavePlayerPos PlayerPosData;
+
+    private void Start()
+    {
+        PlayerPosData = FindObjectOfType<SavePlayerPos>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -69,9 +75,8 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
+        PlayerPosData.PlayerPosSave();
         SceneManager.LoadScene("BT_MAINMENU");
-        Application.Quit();
     }
 
     private void AlwaysSelected()

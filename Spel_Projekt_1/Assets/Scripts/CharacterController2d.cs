@@ -42,6 +42,16 @@ public class CharacterController2d : MonoBehaviour {
 	private float _stepLeft;
 	private Vector2 _stepDir;
 
+
+	SavePlayerPos playerPosData;
+
+	private void Awake()
+	{
+		playerPosData = FindObjectOfType<SavePlayerPos>();
+		playerPosData.PlayerPosLoad();
+	}
+
+
 	private void Start() {
 		if (animator == null) {
 			animator = GetComponent<Animator>();
@@ -142,4 +152,6 @@ public class CharacterController2d : MonoBehaviour {
 	public bool GetInteractionKeyDown() {
 		return isActiveAndEnabled && _interactionPressed == 1;
 	}
+
+
 }
