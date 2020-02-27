@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,4 +9,7 @@ public class InventoryItem : ScriptableObject
 	public string name;
 	public string description;
 	public Sprite sprite;
+
+    public int items { get; internal set; }
+
 }

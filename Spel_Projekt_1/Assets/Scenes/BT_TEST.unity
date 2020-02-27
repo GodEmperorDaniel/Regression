@@ -656,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &855276428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1177596728}
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1177596728}
         m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
@@ -1289,6 +1289,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1177596726}
   - component: {fileID: 1177596725}
+  - component: {fileID: 1177596727}
+  - component: {fileID: 1177596728}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1323,6 +1325,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177596727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177596724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fa8280c0855af469f31df3e1d7e492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1177596728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177596724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721e2ee5b59caea419f6ead5833dd43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveGameUi: {fileID: 855276427}
 --- !u!1 &1310923398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,11 +1583,23 @@ PrefabInstance:
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: items.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25f743776e062f442b080959146cb03e,
+        type: 2}
+    - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25f743776e062f442b080959146cb03e,
+        type: 2}
+    - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: items.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 25f743776e062f442b080959146cb03e,
         type: 2}
@@ -1678,8 +1717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb268c7bec4a0740824d2a81aec4440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenyUi: {fileID: 0}
-  eventSystem: {fileID: 0}
+  pauseMenyUi: {fileID: 855276427}
+  eventSystem: {fileID: 963414959}
 --- !u!1 &2053611195
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+[Serializable]
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -58,21 +59,11 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadInventory()
     {
-        //Time.timeScale = 0f;
         PlayerStatic.playerInstance.GetComponent<Inventory>().ShowUI();
     }
 
-    //public void SaveGame()
-    //{
-    //    Debug.Log("Save game, please wait");
-    //}
 
-    //public void LoadGame()
-    //{
-    //    Debug.Log("Load Game...");
-        
-    //}
-
+    
     public void QuitGame()
     {
         PlayerPosData.PlayerPosSave();
