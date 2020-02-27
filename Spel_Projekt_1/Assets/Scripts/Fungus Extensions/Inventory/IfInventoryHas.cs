@@ -17,8 +17,8 @@ namespace Fungus {
 		protected Inventory _inventory;
 		public Inventory Inventory { get {
 				if (_inventory == null) {
-					if (PlayerStatic.playerInstance != null) {
-						_inventory = PlayerStatic.playerInstance.GetComponent<Inventory>();
+					if (PlayerStatic.inventoryInstance != null) {
+						_inventory = PlayerStatic.inventoryInstance;
 					}
 				}
 
@@ -48,7 +48,7 @@ namespace Fungus {
 				return "Error: No item selected";
 			}
 
-			string summary = "Inventory contains item " + testItem.Value.name + " == " + condition.Value;
+			string summary = "Inventory contains item " + testItem.Value.title + " == " + condition.Value;
 
 			return summary;
 		}
