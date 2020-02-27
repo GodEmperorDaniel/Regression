@@ -13,9 +13,12 @@ public class PuzzleScript : MonoBehaviour
 
 	[SerializeField] protected TextMeshProUGUI showPuzzleGuess = null;
 
-   [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
+    [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
 
-    private string puzzleCombination;
+	[Range(1,10)]
+	[SerializeField] protected int maxCharacters = 9;
+
+    private string puzzleCombination = null;
 
 	private GameObject lastSelectedButton = null;
 
@@ -36,7 +39,7 @@ public class PuzzleScript : MonoBehaviour
 
 		AlwaysSelected();
 
-		if (showPuzzleGuess != null)
+		if (showPuzzleGuess && !string.IsNullOrEmpty(puzzleCombination))
 		{
 			showPuzzleGuess.text = puzzleCombination;
 		}
@@ -69,7 +72,15 @@ public class PuzzleScript : MonoBehaviour
 
 	public void AddPuzzlePiece(string puzzleCharacter)
 	{
-		puzzleCombination += puzzleCharacter;
+		if (string.IsNullOrEmpty(puzzleCombination))
+		{
+			puzzleCombination += puzzleCharacter;
+		}
+		else if (puzzleCombination.Length < maxCharacters)
+		{
+			puzzleCombination += puzzleCharacter;
+		}
+
 	}
 
 	public void CheckNumber()

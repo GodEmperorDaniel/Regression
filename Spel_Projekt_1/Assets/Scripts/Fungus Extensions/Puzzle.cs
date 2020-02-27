@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Fungus
 {
@@ -19,6 +20,8 @@ namespace Fungus
 
 		[SerializeField] protected InteractionSettings ifUncorrect;
 
+		[SerializeField] protected TextMeshProUGUI textBox;
+
 		#region All Functions
 
 		public override void OnEnter()
@@ -29,10 +32,12 @@ namespace Fungus
 			{
 				PlayerStatic.ResumePlayer("Puzzle");
 				ifCorrect.block.StartExecution();
+				Continue();
 			}
 			else if (testedPassword != correctPassword)
 			{
 				ifUncorrect.block.StartExecution();
+				Continue();
 			}
 			else
 			{
