@@ -2,50 +2,12 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20007 (107206), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-=======
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
->>>>>>> Erik-J
-=======
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
->>>>>>> Melker-Ljung
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 10.67ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 00000218517EF158 isAsync 0 updatePeriod 0.02
-=======
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
-[LOG] DownMix::init                            : done.
-[LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 000002CFE4F51F38 isAsync 0 updatePeriod 0.02
->>>>>>> Billy
-=======
-[LOG] AsyncManager::init                       : manager 000001CEE219F188 isAsync 0 updatePeriod 0.02
->>>>>>> Erik-Hagberg
-=======
-[LOG] AsyncManager::init                       : manager 000000002B462A18 isAsync 0 updatePeriod 0.02
->>>>>>> Erik-J
-<<<<<<< HEAD
-=======
-[LOG] AsyncManager::init                       : manager 0000028662516228 isAsync 0 updatePeriod 0.02
->>>>>>> Max
-=======
->>>>>>> Working-Branch
-=======
-[LOG] AsyncManager::init                       : manager 00000000458AEC58 isAsync 0 updatePeriod 0.02
->>>>>>> Melker-Ljung
+[LOG] AsyncManager::init                       : manager 0000000038FC6CF8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -56,102 +18,13 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-<<<<<<< HEAD
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-<<<<<<< HEAD
-=======
-[LOG] SystemI::createSound                     : filename = FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 000002865C0ACB68 : node = 00000286681EB590
-[LOG] SystemI::createSound                     : add node to async list : head = 00000286628AEAA8.  list count = 0
-[LOG] SystemI::createSound                     : filename = FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000002865C389A98 : node = 00000286681EAB90
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002865C0ACB68
-[LOG] SystemI::createSound                     : add node to async list : head = 00000286628AEAA8.  list count = 0
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank', mode=0x02010082
-[LOG] SystemI::createSound                     :     filename = FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4479424
-[LOG] SystemI::createSound                     :     setdata soundi = 000002865C389588 : node = 00000286681EB090
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 10656
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000286628AEAA8.  list count = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286681EB6A0
-[LOG] SystemI::createSound                     :     filename = FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSound                     :     setdata soundi = 000002865C3893D8 : node = 00000286681EACD0
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000286628AEAA8.  list count = 2
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Peaceful Playground Bell stem (57bpm)', format=2, channels=2, frequency=48000, lengthbytes=443808, lengthpcm=4951579, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.229710.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002865C0ACB68
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002865C389A98
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4479424
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 10656
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286681EACA0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Peaceful Playground Wurl stem (57bpm)', format=2, channels=2, frequency=48000, lengthbytes=801664, lengthpcm=4951579, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.186710.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002865C389A98
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002865C389588
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4479424
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 10656
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286681EB1A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Peaceful Playground Piano diskant stem (57bpm)', format=2, channels=2, frequency=48000, lengthbytes=1011360, lengthpcm=4951579, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.068475.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002865C389588
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002865C3893D8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4479424
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 10656
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000286681EADE0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Peaceful Playground Piano stem (57bpm)', format=2, channels=2, frequency=48000, lengthbytes=1116448, lengthpcm=4951579, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.140827.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002865C3893D8
-[LOG] SoundI::getSubSound                      : sound 000002865C0ACB68.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000002865C389A98.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000002865C389588.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000002865C3893D8.  Subsound index 0 / 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002865C389DF8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002865C389DF8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028668272358
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028668272358
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000028668273798
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000028668273798
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000286682730D8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000286682730D8
-[LOG] SoundI::release                          : Peaceful Playground Piano stem (57bpm) (000002865C3893D8)
-[LOG] SoundI::release                          :     Peaceful Playground Piano stem (57bpm) (00000286628B0EB8)
-[LOG] SoundI::release                          :     Peaceful Playground Piano stem (57bpm) (0000028668273798)
-[LOG] SoundI::release                          : Peaceful Playground Piano diskant stem (57bpm) (000002865C389588)
-[LOG] SoundI::release                          :     Peaceful Playground Piano diskant stem (57bpm) (00000286628ABA38)
-[LOG] SoundI::release                          :     Peaceful Playground Piano diskant stem (57bpm) (00000286682730D8)
-[LOG] SoundI::release                          : Peaceful Playground Wurl stem (57bpm) (000002865C389A98)
-[LOG] SoundI::release                          :     Peaceful Playground Wurl stem (57bpm) (00000286628AE618)
-[LOG] SoundI::release                          :     Peaceful Playground Wurl stem (57bpm) (0000028668272358)
-[LOG] SoundI::release                          : Peaceful Playground Bell stem (57bpm) (000002865C0ACB68)
-[LOG] SoundI::release                          :     Peaceful Playground Bell stem (57bpm) (00000286628AD778)
-[LOG] SoundI::release                          :     Peaceful Playground Bell stem (57bpm) (000002865C389DF8)
->>>>>>> Max
-=======
->>>>>>> Melker-Ljung
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.

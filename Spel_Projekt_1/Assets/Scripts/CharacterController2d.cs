@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine;
-using UnityEngine.;
 
 [System.Serializable]
 public class CharacterController2d : MonoBehaviour {
@@ -43,15 +42,6 @@ public class CharacterController2d : MonoBehaviour {
 	private int _interactionPressed = 0;
 	private float _stepLeft;
 	private Vector2 _stepDir;
-
-
-	SavePlayerPos playerPosData;
-
-	private void Awake()
-	{
-		playerPosData = FindObjectOfType<SavePlayerPos>();
-		playerPosData.PlayerPosLoad();
-	}
 
 
 	private void Start() {
