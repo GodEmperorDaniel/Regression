@@ -107,6 +107,7 @@ public class InventoryCanvas : MonoBehaviour
 								Show(_inventory);//Check for any changes
 							}
 						} else {
+							UnFocus();
 							popup.Show(_inventory, this, item);
 						}
 					}
