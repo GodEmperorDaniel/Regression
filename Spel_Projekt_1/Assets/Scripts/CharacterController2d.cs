@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine;
 
+[System.Serializable]
 public class CharacterController2d : MonoBehaviour {
 	static readonly float _r = Mathf.Cos(Mathf.PI / 8) * Mathf.Cos(Mathf.PI / 8) / (Mathf.Sin(Mathf.PI / 8) * Mathf.Sin(Mathf.PI / 8));
 	static readonly float _invSqr2 = 1 / Mathf.Sqrt(2);
@@ -42,10 +43,16 @@ public class CharacterController2d : MonoBehaviour {
 	private float _stepLeft;
 	private Vector2 _stepDir;
 
+
 	private void Start() {
 		if (animator == null) {
 			animator = GetComponent<Animator>();
 		}
+	}
+
+	private void OnEnable()
+	{
+		_interactionPressed = 2;
 	}
 
 	private void Update() {
@@ -111,10 +118,15 @@ public class CharacterController2d : MonoBehaviour {
 	}
 
 	private void SetAnimatorVariables(bool moving) {
-		if (animator != null) {
+		if (animator != null && moving)
+		{
 			animator.SetBool(animatorMovementBool, moving);
 			animator.SetFloat(animatorHorizontalFloat, forward.x);
 			animator.SetFloat(animatorVerticalFloat, forward.y);
+		}
+		else if (animator != null && !moving)
+		{
+			animator.SetBool(animatorMovementBool, moving);
 		}
 	}
 
