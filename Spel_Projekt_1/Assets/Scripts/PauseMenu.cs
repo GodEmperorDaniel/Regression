@@ -1,15 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
+[Serializable]
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenyUi;
+    public EventSystem eventSystem;
+    private Selectable lastSelectedButton = null;
 
-    public static CharacterController2d player;
+    SavePlayerPos PlayerPosData;
 
+    private void Start()
+    {
+        PlayerPosData = FindObjectOfType<SavePlayerPos>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -25,46 +34,60 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+        AlwaysSelected();
     }
 
     public void Resume()
     {
         pauseMenyUi.SetActive(false);
-        Time.timeScale = 1f;
+        PlayerStatic.ResumePlayer("pause");
         GameIsPaused = false;
     }
 
     void Pause()
     {
+        if (eventSystem == null)
+        {
+            eventSystem = EventSystem.current;
+        }
         pauseMenyUi.SetActive(true);
-        Time.timeScale = 0f;
+        eventSystem.SetSelectedGameObject(null);
+        lastSelectedButton = null;
+        PlayerStatic.FreezePlayer("pause");
         GameIsPaused = true;
     }
 
     public void LoadInventory()
     {
-        //Time.timeScale = 0f;
-        //player = playerInstance.GetComponent<Inventory>().ShowUi();
+        PlayerStatic.playerInstance.GetComponent<Inventory>().ShowUI();
     }
 
-    //public void SaveGame()
-    //{
-    //    Debug.Log("Save game, please wait");
-    //}
 
-    //public void LoadGame()
-    //{
-    //    Debug.Log("Load Game...");
-        
-    //}
-
+    
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
-        Application.Quit();
+        PlayerPosData.PlayerPosSave();
+        SceneManager.LoadScene("BT_MAINMENU");
     }
 
-
+    private void AlwaysSelected()
+    {
+        foreach (Selectable button in Button.allSelectablesArray)
+        {
+            if (button.gameObject == eventSystem.currentSelectedGameObject)
+            {
+                lastSelectedButton = button;
+            }
+        }
+        if (!lastSelectedButton)
+        {
+            lastSelectedButton = eventSystem.firstSelectedGameObject.GetComponent<Selectable>();
+        }
+        if (!EventSystem.current.alreadySelecting)
+        {
+            lastSelectedButton.Select();
+        }
+    }
 
 
 }

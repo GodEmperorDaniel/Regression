@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 8176647778504872637}
   - component: {fileID: 7284780971577527873}
   - component: {fileID: 8436940793786779559}
+  - component: {fileID: 8545625253530492900}
   - component: {fileID: 1074157722477229196}
   - component: {fileID: 6685346484804266381}
   - component: {fileID: 4038089666863768761}
-  - component: {fileID: 1507637542}
-  - component: {fileID: 1507637544}
   - component: {fileID: 4781034780829146177}
   m_Layer: 0
   m_Name: Player
@@ -50,16 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa83111d9b0e643a886fcb7020b35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 2
-  forwardKey: 119
-  backwardKey: 115
-  leftKey: 97
-  rightKey: 100
+  movementSpeed: 2
+  stepSize: 0.5
+  deadZone: 0.1
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
   interactionButton: 101
-  interactionButtonGamepad: 351
-  Ani: {fileID: 4038089666863768761}
-  stepTimer: 1
-  isStepping: 1
+  inventoryButton: InventoryButton
+  directionType: 2
+  speedType: 1
+  forward: {x: 0, y: 0}
+  animator: {fileID: 4038089666863768761}
+  animatorMovementBool: movement
+  animatorHorizontalFloat: horimovement
+  animatorVerticalFloat: vertimovement
 --- !u!212 &8436940793786779559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,6 +112,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8545625253530492900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547923293149438665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3690f0109fa7af4aba1905079f72ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  possibleCombinations: []
+  uiPrefab: {fileID: 1387940634615777244, guid: 401125f5c319f5c4cb5cf709383fa252,
+    type: 3}
 --- !u!50 &1074157722477229196
 Rigidbody2D:
   serializedVersion: 4
@@ -128,7 +147,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6685346484804266381
 BoxCollider2D:
@@ -175,71 +194,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1507637542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547923293149438665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  scrollPos: {x: 0, y: 0}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 1
-  scrollViewRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  selectedBlocks:
-  - {fileID: 1507637544}
-  selectedCommands:
-  - {fileID: 0}
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  showLineNumbers: 0
-  hideCommands: []
-  luaEnvironment: {fileID: 0}
-  luaBindingName: flowchart
---- !u!114 &1507637544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547923293149438665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 312
-    y: 85
-    width: 120
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 0
-  blockName: New Block
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 0}
 --- !u!114 &4781034780829146177
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,27 +136,27 @@ namespace Fungus
                 }
             }
 
-            if (restartButton != null)
-            {
-                restartButton.interactable = saveMenuActive;
-            }
-            if (rewindButton != null)
-            {
-                rewindButton.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
-            }
-            if (forwardButton != null)
-            {
-                forwardButton.interactable = saveManager.NumRewoundSavePoints > 0 && saveMenuActive;
-            }
+            //if (restartButton != null)
+            //{
+            //    restartButton.interactable = saveMenuActive;
+            //}
+            //if (rewindButton != null)
+            //{
+            //    rewindButton.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
+            //}
+            //if (forwardButton != null)
+            //{
+            //    forwardButton.interactable = saveManager.NumRewoundSavePoints > 0 && saveMenuActive;
+            //}
 
-            if (debugView.enabled)
-            {
-                var debugText = debugView.GetComponentInChildren<Text>();
-                if (debugText != null)
-                {
-                    debugText.text = saveManager.GetDebugInfo();
-                }
-            }
+            //if (debugView.enabled)
+            //{
+            //    var debugText = debugView.GetComponentInChildren<Text>();
+            //    if (debugText != null)
+            //    {
+            //        debugText.text = saveManager.GetDebugInfo();
+            //    }
+            //}
 
         }
 

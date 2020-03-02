@@ -60,7 +60,7 @@ namespace Fungus
                 this.enabled = false;
             }
 
-            narLogViewtextAdapter.InitFromGameObject(narrativeLogView.gameObject, true);
+            //narLogViewtextAdapter.InitFromGameObject(narrativeLogView.gameObject, true);
         }
 
         protected virtual void Start()

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[AddComponentMenu("")]
 public class SceneReferenceTest : MonoBehaviour
 {
     private void OnGUI()
