@@ -1,11 +1,14 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 [Serializable]
+[DisallowMultipleComponent]
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -13,16 +16,12 @@ public class PauseMenu : MonoBehaviour
     public EventSystem eventSystem;
     private Selectable lastSelectedButton = null;
 
-    SavePlayerPos PlayerPosData;
-
-    private void Start()
-    {
-        PlayerPosData = FindObjectOfType<SavePlayerPos>();
-    }
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
+    void Update() {
+		if (!eventSystem) {
+			eventSystem = EventSystem.current;
+		}
+		if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(GameIsPaused)
             {
@@ -46,10 +45,6 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        if (eventSystem == null)
-        {
-            eventSystem = EventSystem.current;
-        }
         pauseMenyUi.SetActive(true);
         eventSystem.SetSelectedGameObject(null);
         lastSelectedButton = null;
@@ -66,7 +61,6 @@ public class PauseMenu : MonoBehaviour
     
     public void QuitGame()
     {
-        PlayerPosData.PlayerPosSave();
         SceneManager.LoadScene("BT_MAINMENU");
     }
 

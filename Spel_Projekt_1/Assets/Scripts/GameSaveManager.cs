@@ -7,20 +7,29 @@ using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GameSaveManager : MonoBehaviour
-{
+public class GameSaveManager : MonoBehaviour {
+	//The version number must be updated every time the save format changes
 	public const int version = 1;
 
-	public void SaveGame() {
-		var saveableObjects = new ISaveable[] {
+	public ISaveable[] GetAllSaveables() {
+		//Add to this array every object you need to save
+		//Order cannot be changed
+		return new ISaveable[] {
 			PlayerStatic.controllerInstance,
 			PlayerStatic.inventoryInstance,
 		};
+	}
 
-		int totalSize = 8;
+	public void SaveGame() {
+		var saveableObjects = GetAllSaveables();
+
+		//Signature is 4 bytes for the version number and 4 bytes for the number of blocks
+		//Each block is prefixed with 4 bytes determining the block's size, prefix not included
 		int count = saveableObjects.Length;
+		int totalSize = 8;
 		var saveData = new byte[count][];
 
+		//Collect all the data to save from the saveable objects
 		for (var i = 0; i < count; i++) {
 			var obj = saveableObjects[i];
 			var objData = obj.Save();
@@ -41,6 +50,7 @@ public class GameSaveManager : MonoBehaviour
 			index += objData.Length;
 		}
 
+		//Write the data to disc
 		CreateDirectory();
 		FileStream file = File.Create(Application.persistentDataPath + "/game_save/player_data/player_save.data");
 
@@ -53,10 +63,7 @@ public class GameSaveManager : MonoBehaviour
 		if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data")) {
 			FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);
 
-			var saveableObjects = new ISaveable[] {
-				PlayerStatic.controllerInstance,
-				PlayerStatic.inventoryInstance,
-			};
+			var saveableObjects = GetAllSaveables();
 
 			var saveData = new byte[file.Length];
 			file.Read(saveData, 0, (int)file.Length);
