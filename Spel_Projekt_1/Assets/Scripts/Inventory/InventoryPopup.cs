@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
 
+[DisallowMultipleComponent]
 public class InventoryPopup : MonoBehaviour
 {
 	public Selectable firstSelectable;

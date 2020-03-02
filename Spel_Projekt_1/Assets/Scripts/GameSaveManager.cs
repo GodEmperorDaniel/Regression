@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -6,137 +7,86 @@ using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[System.Serializable]
-[SerializeField]
-public class VectorWrapper
-{
-    public float x;
-    public float y;
-    public float z;
-
-    public VectorWrapper(Vector3 vec)
-    {
-        x = vec.x;
-        y = vec.y;
-        z = vec.z;
-    }
-}
-
-[System.Serializable]
-[SerializeField]
-public class RegressionSave
-{
-    public CharacterController2d controller;
-    public Inventory inventory;
-    public VectorWrapper position;
-}
-
-[System.Serializable]
-[SerializeField]
 public class GameSaveManager : MonoBehaviour
 {
+	public const int version = 1;
 
-    [SerializeField]
-    public static GameSaveManager instance;
-    public static CharacterController2d player
-    {
-        get
-        {
-            return PlayerStatic.playerInstance.GetComponent<CharacterController2d>();
-        }
-    }
-    public GameObject SaveGameUi;
-    [SerializeField]
-    void awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(this);
-        }
-        DontDestroyOnLoad(this);
-    }
+	public void SaveGame() {
+		var saveableObjects = new ISaveable[] {
+			PlayerStatic.controllerInstance,
+			PlayerStatic.inventoryInstance,
+		};
 
-    [SerializeField]
-    public bool IsSaveFile()
-    {
-        return Directory.Exists(Application.persistentDataPath + "/game_save");
-    }
-    [SerializeField]
-    public void SaveGame()
-    {
-        FindObjectOfType<SavePlayerPos>().PlayerPosSave();
-        Debug.Log(Application.persistentDataPath);
-        PauseMenu.FindObjectOfType<PauseMenu>().Resume();
-        Debug.Log("Save game, please wait");
-        if (!IsSaveFile())
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/game_save");
-        }
-        if (!Directory.Exists(Application.persistentDataPath + "/game_save/player_data"))
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/game_save/player_data");
-        }
+		int totalSize = 8;
+		int count = saveableObjects.Length;
+		var saveData = new byte[count][];
 
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/game_save/player_data/player_save.data");
-        var data = new RegressionSave();
-        data.controller = player;
-        data.inventory = player.GetComponent<Inventory>();
-        data.position = new VectorWrapper(player.transform.position);
-        var json = JsonUtility.ToJson(data);
-        Debug.Log(bf);
-        Debug.Log(file);
-        Debug.Log(json);
-        bf.Serialize(file,json);
-        
+		for (var i = 0; i < count; i++) {
+			var obj = saveableObjects[i];
+			var objData = obj.Save();
+			saveData[i] = objData;
+			totalSize += 4 + objData.Length;
+		}
 
-        file.Close();
-    }
-    [SerializeField]
-    public void LoadGame()
-    {
-        FindObjectOfType<SavePlayerPos>().PlayerPosLoad();
+		var output = new byte[totalSize];
+		BitConverter.GetBytes(version).CopyTo(output, 0);
+		BitConverter.GetBytes(count).CopyTo(output, 4);
+		var index = 8;
 
-        Debug.Log(Application.persistentDataPath);
-        FindObjectOfType<PauseMenu>().Resume();
-        Debug.Log("Load Game...");
-        if (!Directory.Exists(Application.persistentDataPath + "/game_save/player_data"))
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/game_save/player_data");
-            
-        }
+		for (var i = 0; i < count; i++) {
+			var objData = saveData[i];
+			BitConverter.GetBytes(objData.Length).CopyTo(output, index);
+			index += 4;
+			objData.CopyTo(output, index);
+			index += objData.Length;
+		}
 
-        BinaryFormatter bf = new BinaryFormatter();
-        if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data"))
-        {
-            FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);
-            var data = new RegressionSave();
-            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), data);
+		CreateDirectory();
+		FileStream file = File.Create(Application.persistentDataPath + "/game_save/player_data/player_save.data");
 
-            JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(data.controller), player);
-            JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(data.inventory), player.GetComponent<Inventory>());
-            player.transform.position = new Vector3(data.position.x, data.position.y, data.position.z);
-            file.Close();
-        }
-    }
+		file.Write(output,0,totalSize);
+		file.Close();
+	}
 
-    /*public object HeaderHandle(Header[] headers)
-    {
-        foreach (var h in headers)
-        {
-            Debug.Log(h.Name + " " + h.Value.ToString());
-            if (h.Name == "Pos")
-            {
-                var v = (VectorWrapper)h.Value;
-                player.transform.position = new Vector3(v.x, v.y, v.z);
+	public void LoadGame() {
+		CreateDirectory();
+		if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data")) {
+			FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);
 
-            }
-        }
+			var saveableObjects = new ISaveable[] {
+				PlayerStatic.controllerInstance,
+				PlayerStatic.inventoryInstance,
+			};
 
-        return null;
-    }*/
+			var saveData = new byte[file.Length];
+			file.Read(saveData, 0, (int)file.Length);
+
+			var ver = BitConverter.ToInt32(saveData, 0);
+			var count = BitConverter.ToInt32(saveData, 4);
+			var index = 8;
+
+			for (var i = 0; i < count; i++) {
+				var size = BitConverter.ToInt32(saveData, index);
+				index += 4;
+				var obj = saveableObjects[i];
+				var objData = new byte[size];
+				Array.Copy(saveData,index,objData,0,size);
+
+				obj.Load(objData, ver);
+
+				index += size;
+			}
+			
+			file.Close();
+		}
+	}
+
+	private void CreateDirectory() {
+		if (!Directory.Exists(Application.persistentDataPath + "/game_save")) {
+			Directory.CreateDirectory(Application.persistentDataPath + "/game_save");
+		}
+		if (!Directory.Exists(Application.persistentDataPath + "/game_save/player_data")) {
+			Directory.CreateDirectory(Application.persistentDataPath + "/game_save/player_data");
+		}
+	}
 }

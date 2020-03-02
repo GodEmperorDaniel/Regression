@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DisallowMultipleComponent]
 public class InventoryCanvas : MonoBehaviour
 {
 	public int rowLength;
@@ -54,9 +55,9 @@ public class InventoryCanvas : MonoBehaviour
 
 		_currentCursor = cursor;
 		_inventory = inventory;
-		_shownFrames = Mathf.Max(minimumFramesShown, inventory.items.Count);
+		_shownFrames = Mathf.Max(minimumFramesShown, inventory.Count);
 
-		for (var i = itemIcons.Count; i < inventory.items.Count; i++) {
+		for (var i = itemIcons.Count; i < inventory.Count; i++) {
 			itemIcons.Add(CreateFrame());
 		}
 
@@ -74,8 +75,8 @@ public class InventoryCanvas : MonoBehaviour
 				var frame = itemIcons[i];
 				frame.rectTransform.parent.gameObject.SetActive(true);
 				frame.rectTransform.parent.localPosition = new Vector3(xOffset + x * horizontalSpacing, yOffset - y * verticalSpacing, 0);
-				if (i < inventory.items.Count) {
-					frame.sprite = inventory.items[i].sprite;
+				if (i < inventory.Count) {
+					frame.sprite = inventory.Items[i].sprite;
 				} else {
 					frame.sprite = null;
 				}
@@ -97,12 +98,12 @@ public class InventoryCanvas : MonoBehaviour
 				if (!_selectButtonPressed) {
 					_selectButtonPressed = true;
 
-					if (cursorPos < _inventory.items.Count) {
-						var item = _inventory.items[cursorPos];
+					if (cursorPos < _inventory.Count) {
+						var item = _inventory.Items[cursorPos];
 
 						if (_combining) {
 							if (_combiningWith != cursorPos) {
-								var otherItem = _inventory.items[_combiningWith];
+								var otherItem = _inventory.Items[_combiningWith];
 								_inventory.TryCombine(item, otherItem);
 								Show(_inventory);//Check for any changes
 							}
