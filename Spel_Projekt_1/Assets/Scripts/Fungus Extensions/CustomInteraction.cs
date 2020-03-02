@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace Fungus
 {
-	[CommandInfo("Flow",
-		"Custom Interaction",
+	[CommandInfo("Custom",
+		"Custom LoadScene",
 		"A custom made interaction block for ease of use with fungus")] 
 	[AddComponentMenu("")]
 	public class CustomInteraction : Command

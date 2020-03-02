@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine;
-using UnityEngine.;
 
 [System.Serializable]
 public class CharacterController2d : MonoBehaviour {
@@ -45,27 +44,18 @@ public class CharacterController2d : MonoBehaviour {
 	private Vector2 _stepDir;
 
 
-	SavePlayerPos playerPosData;
-
-	private void Awake()
-	{
-		playerPosData = FindObjectOfType<SavePlayerPos>();
-		playerPosData.PlayerPosLoad();
-	}
-
-
 	private void Start() {
 		if (animator == null) {
 			animator = GetComponent<Animator>();
 		}
 	}
 
-    public void OnEnable()
-    {
-        _inventoryPressed = true;
-    }
+	private void OnEnable()
+	{
+		_interactionPressed = 2;
+	}
 
-    private void Update() {
+	private void Update() {
 		if (_stepLeft > 0) {
 			_stepLeft -= Time.deltaTime;
 		} else {
@@ -128,10 +118,15 @@ public class CharacterController2d : MonoBehaviour {
 	}
 
 	private void SetAnimatorVariables(bool moving) {
-		if (animator != null) {
+		if (animator != null && moving)
+		{
 			animator.SetBool(animatorMovementBool, moving);
-			animator.SetFloat(animatorHorizontalFloat, _stepDir.x);
-			animator.SetFloat(animatorVerticalFloat, _stepDir.y);
+			animator.SetFloat(animatorHorizontalFloat, forward.x);
+			animator.SetFloat(animatorVerticalFloat, forward.y);
+		}
+		else if (animator != null && !moving)
+		{
+			animator.SetBool(animatorMovementBool, moving);
 		}
 	}
 
