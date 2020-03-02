@@ -33,7 +33,6 @@ namespace Fungus
                 textMesh = go.GetComponent<TextMesh>();
 #if UNITY_2018_1_OR_NEWER
                 tmpro = go.GetComponent<TMPro.TMP_Text>();
-				Debug.Log(tmpro);
 #endif
                 writerTextDestination = go.GetComponent<IWriterTextDestination>();
             }

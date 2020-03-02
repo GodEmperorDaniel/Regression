@@ -74,11 +74,15 @@ public class Interactions : MonoBehaviour {
 	private bool Interact(CharacterController2d controller, InteractionSettings settings)
 	{
 		if (settings.Active) {
-			if (settings.flowchart && settings.block) {
-				settings.flowchart.ExecuteBlock(settings.block);
-			}
+			var facingAngle = controller.forward;
+			var dirAngle = (transform.position - controller.transform.position).normalized;
+			if (Vector2.Dot(facingAngle, dirAngle) >= settings.interactableAngleDot) {
+				if (settings.flowchart && settings.block) {
+					settings.flowchart.ExecuteBlock(settings.block);
+				}
 
-			return true;
+				return true;
+			}
 		}
 
 		return false;
