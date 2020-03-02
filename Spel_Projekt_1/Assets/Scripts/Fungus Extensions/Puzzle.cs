@@ -14,7 +14,7 @@ namespace Fungus
 	{
 		[SerializeField] protected string correctPassword;
 
-		[SerializeField] protected string testedPassword;
+		protected string testedPassword;
 
 		[SerializeField] protected InteractionSettings ifCorrect;
 
