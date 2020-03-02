@@ -13,9 +13,12 @@ public class PuzzleScript : MonoBehaviour
 
 	[SerializeField] protected TextMeshProUGUI showPuzzleGuess = null;
 
-   [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
+    [SerializeField] protected List<PuzzleAndScene> sceneAndNumber = new List<PuzzleAndScene>();
 
-    private string puzzleCombination;
+	[Range(1,10)]
+	[SerializeField] protected int maxCharacters = 9;
+
+    private string puzzleCombination = null;
 
 	private GameObject lastSelectedButton = null;
 
@@ -23,19 +26,20 @@ public class PuzzleScript : MonoBehaviour
     private void Start()
     {
         startButton.Select();
-    }
+		PlayerStatic.FreezePlayer("Puzzle");
+	}
 
     void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			PlayerStatic.ResumePlayer("Puzzle");
-			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+			SceneManager.UnloadSceneAsync(gameObject.scene);
 		}
 
 		AlwaysSelected();
 
-		if (showPuzzleGuess != null)
+		if (showPuzzleGuess && !string.IsNullOrEmpty(puzzleCombination))
 		{
 			showPuzzleGuess.text = puzzleCombination;
 		}
@@ -68,23 +72,29 @@ public class PuzzleScript : MonoBehaviour
 
 	public void AddPuzzlePiece(string puzzleCharacter)
 	{
-		puzzleCombination += puzzleCharacter;
+		if (string.IsNullOrEmpty(puzzleCombination))
+		{
+			puzzleCombination += puzzleCharacter;
+		}
+		else if (puzzleCombination.Length < maxCharacters)
+		{
+			puzzleCombination += puzzleCharacter;
+		}
+
 	}
 
 	public void CheckNumber()
 	{
 		for (int i = 0; i < sceneAndNumber.Count; i++)
 		{
-			if (puzzleCombination == sceneAndNumber[i].puzzleSolution)
-			{
-				sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
-			}
-			else
-			{
-				Debug.Log("No signal on this number... Try another");
-			}
+			sceneAndNumber[i].flowchart.ExecuteBlock(sceneAndNumber[i].block);
 		}
 		puzzleCombination = null;
+	}
+
+	public string PassCombination()
+	{
+		return puzzleCombination;
 	}
 
 	private void CallBlock(InteractionSettings settings)
