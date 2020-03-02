@@ -6,8 +6,6 @@ using Fungus;
 [System.Serializable]
 public struct PuzzleAndScene
 {
-	[HideInInspector] public string puzzleSolution;
-
 	public Flowchart flowchart;
 
 	[HideInInspector] public Block block;

@@ -24,6 +24,7 @@ public class WarpExit : MonoBehaviour {
 		AssignID();
 		if (GetID() == PlayerStatic.exitID && PlayerStatic.exitID != 0) {
 			PlayerStatic.exitID = 0;
+			WarpPlayer();
 		}
 	}
 
@@ -45,12 +46,11 @@ public class WarpExit : MonoBehaviour {
 	}
 
 	void AssignID() {
-		var preId = id;
-		if (ShouldAssignID()) {
-			if (allIds == null) {
-				allIds = new Dictionary<long, WarpExit>();
-			}
+		if (allIds == null) {
+			allIds = new Dictionary<long, WarpExit>();
+		}
 
+		if (ShouldAssignID()) {
 			while (!HasValidId()) {
 				var guid = System.Guid.NewGuid().ToByteArray();
 				id = System.BitConverter.ToInt64(guid, 0);
