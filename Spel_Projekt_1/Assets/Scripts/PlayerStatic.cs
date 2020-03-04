@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController2d))]
 [RequireComponent(typeof(Inventory))]
+[DisallowMultipleComponent]
 public class PlayerStatic : MonoBehaviour {
 	public static GameObject playerInstance;
 	public static CharacterController2d controllerInstance;
