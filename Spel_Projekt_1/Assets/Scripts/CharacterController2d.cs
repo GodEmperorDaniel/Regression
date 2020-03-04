@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine;
-using UnityEngine.;
 
 [System.Serializable]
-public class CharacterController2d : MonoBehaviour {
+[DisallowMultipleComponent]
+public class CharacterController2d : MonoBehaviour, ISaveable {
 	static readonly float _r = Mathf.Cos(Mathf.PI / 8) * Mathf.Cos(Mathf.PI / 8) / (Mathf.Sin(Mathf.PI / 8) * Mathf.Sin(Mathf.PI / 8));
 	static readonly float _invSqr2 = 1 / Mathf.Sqrt(2);
   
@@ -43,15 +44,6 @@ public class CharacterController2d : MonoBehaviour {
 	private int _interactionPressed = 0;
 	private float _stepLeft;
 	private Vector2 _stepDir;
-
-
-	SavePlayerPos playerPosData;
-
-	private void Awake()
-	{
-		playerPosData = FindObjectOfType<SavePlayerPos>();
-		playerPosData.PlayerPosLoad();
-	}
 
 
 	private void Start() {
@@ -128,15 +120,11 @@ public class CharacterController2d : MonoBehaviour {
 	}
 
 	private void SetAnimatorVariables(bool moving) {
-		if (animator != null && moving)
+		if (animator != null)
 		{
 			animator.SetBool(animatorMovementBool, moving);
 			animator.SetFloat(animatorHorizontalFloat, forward.x);
 			animator.SetFloat(animatorVerticalFloat, forward.y);
-		}
-		else if (animator != null && !moving)
-		{
-			animator.SetBool(animatorMovementBool, moving);
 		}
 	}
 
@@ -158,5 +146,29 @@ public class CharacterController2d : MonoBehaviour {
 
 	public bool GetInteractionKeyDown() {
 		return isActiveAndEnabled && _interactionPressed == 1;
+	}
+
+	public byte[] Save() {
+		var data = new byte[8 * 4];
+
+		BitConverter.GetBytes(transform.position.x).CopyTo(data, 0);
+		BitConverter.GetBytes(transform.position.y).CopyTo(data, 4);
+		BitConverter.GetBytes(transform.position.z).CopyTo(data, 8);
+		BitConverter.GetBytes(forward.x).CopyTo(data, 12);
+		BitConverter.GetBytes(forward.y).CopyTo(data, 16);
+		BitConverter.GetBytes(_stepLeft).CopyTo(data, 20);
+		BitConverter.GetBytes(_stepDir.x).CopyTo(data, 24);
+		BitConverter.GetBytes(_stepDir.y).CopyTo(data, 28);
+
+		return data;
+	}
+
+	public void Load(byte[] data, int version) {
+		transform.position = new Vector3(BitConverter.ToSingle(data, 0), BitConverter.ToSingle(data, 4), BitConverter.ToSingle(data, 8));
+		forward = new Vector2(BitConverter.ToSingle(data, 12), BitConverter.ToSingle(data, 16));
+		_stepLeft = BitConverter.ToSingle(data, 20);
+		_stepDir = new Vector2(BitConverter.ToSingle(data, 24), BitConverter.ToSingle(data, 28));
+
+		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
 	}
 }
