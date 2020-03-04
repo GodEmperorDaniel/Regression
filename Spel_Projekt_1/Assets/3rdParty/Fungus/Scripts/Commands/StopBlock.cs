@@ -38,6 +38,7 @@ namespace Fungus
                 !block.IsExecuting())
             {
                 Continue();
+				return;
             }
 
             block.Stop();

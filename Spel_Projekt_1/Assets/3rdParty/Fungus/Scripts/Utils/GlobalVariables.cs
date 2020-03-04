@@ -61,5 +61,56 @@ namespace Fungus
 
             return vAsT;
         }
+
+		public FungusSaver.SaveObj StoreVariables() {
+			var data = new FungusSaver.SaveObj();
+
+			data.boolVars = new List<BoolVar>();
+			data.intVars = new List<IntVar>();
+			data.floatVars = new List<FloatVar>();
+			data.stringVars = new List<StringVar>();
+
+			foreach (var pair in variables) {
+				var v = pair.Value;
+
+				// Save string
+				var stringVariable = v as StringVariable;
+				if (stringVariable != null) {
+					var d = new StringVar();
+					d.Key = stringVariable.Key;
+					d.Value = stringVariable.Value;
+					data.stringVars.Add(d);
+				}
+
+				// Save int
+				var intVariable = v as IntegerVariable;
+				if (intVariable != null) {
+					var d = new IntVar();
+					d.Key = intVariable.Key;
+					d.Value = intVariable.Value;
+					data.intVars.Add(d);
+				}
+
+				// Save float
+				var floatVariable = v as FloatVariable;
+				if (floatVariable != null) {
+					var d = new FloatVar();
+					d.Key = floatVariable.Key;
+					d.Value = floatVariable.Value;
+					data.floatVars.Add(d);
+				}
+
+				// Save bool
+				var boolVariable = v as BooleanVariable;
+				if (boolVariable != null) {
+					var d = new BoolVar();
+					d.Key = boolVariable.Key;
+					d.Value = boolVariable.Value;
+					data.boolVars.Add(d);
+				}
+			}
+
+			return data;
+		} 
     }
 }

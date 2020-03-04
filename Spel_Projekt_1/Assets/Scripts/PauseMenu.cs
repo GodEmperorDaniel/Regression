@@ -13,7 +13,8 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenyUi;
-    public EventSystem eventSystem;
+	public Selectable firstSelected;
+    private EventSystem eventSystem;
     private Selectable lastSelectedButton = null;
 
     // Update is called once per frame
@@ -26,14 +27,13 @@ public class PauseMenu : MonoBehaviour
             if(GameIsPaused)
             {
                 Resume();
-            }
-            else
-            {
+            } else if (!PlayerStatic.IsFrozen()) {
                 Pause();
             }
-
         }
-        AlwaysSelected();
+		if (GameIsPaused) {
+			AlwaysSelected();
+		}
     }
 
     public void Resume()
@@ -75,7 +75,7 @@ public class PauseMenu : MonoBehaviour
         }
         if (!lastSelectedButton)
         {
-            lastSelectedButton = eventSystem.firstSelectedGameObject.GetComponent<Selectable>();
+            lastSelectedButton = firstSelected;
         }
         if (!EventSystem.current.alreadySelecting)
         {

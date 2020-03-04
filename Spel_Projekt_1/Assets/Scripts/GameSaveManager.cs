@@ -9,19 +9,27 @@ using UnityEngine.EventSystems;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
-	public const int version = 1;
+	public const int version = 3;
 
-	public ISaveable[] GetAllSaveables() {
-		//Add to this array every object you need to save
-		//Order cannot be changed
-		return new ISaveable[] {
-			PlayerStatic.controllerInstance,
-			PlayerStatic.inventoryInstance,
-		};
+	//private static ISaveable[] _saveables;
+
+	public ISaveable[] GetAllSaveables(int version) {
+		if (version >= 2) {
+			return new ISaveable[] {
+				PlayerStatic.controllerInstance,
+				PlayerStatic.inventoryInstance,
+				FungusSaver.Instance
+			};
+		} else {
+			return new ISaveable[] {
+				PlayerStatic.controllerInstance,
+				PlayerStatic.inventoryInstance,
+			};
+		}
 	}
 
 	public void SaveGame() {
-		var saveableObjects = GetAllSaveables();
+		var saveableObjects = GetAllSaveables(version);
 
 		//Signature is 4 bytes for the version number and 4 bytes for the number of blocks
 		//Each block is prefixed with 4 bytes determining the block's size, prefix not included
@@ -63,7 +71,6 @@ public class GameSaveManager : MonoBehaviour {
 		if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data")) {
 			FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);
 
-			var saveableObjects = GetAllSaveables();
 
 			var saveData = new byte[file.Length];
 			file.Read(saveData, 0, (int)file.Length);
@@ -71,6 +78,8 @@ public class GameSaveManager : MonoBehaviour {
 			var ver = BitConverter.ToInt32(saveData, 0);
 			var count = BitConverter.ToInt32(saveData, 4);
 			var index = 8;
+
+			var saveableObjects = GetAllSaveables(ver);
 
 			for (var i = 0; i < count; i++) {
 				var size = BitConverter.ToInt32(saveData, index);
