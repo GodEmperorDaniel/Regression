@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
-	public const int version = 2;
+	public const int version = 3;
 
 	//private static ISaveable[] _saveables;
 
