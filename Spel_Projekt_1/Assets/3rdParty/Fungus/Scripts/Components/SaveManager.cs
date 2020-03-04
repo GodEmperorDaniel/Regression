@@ -179,7 +179,6 @@ namespace Fungus
 
         protected virtual void Start()
         {
-            Debug.Log(Application.persistentDataPath);
             // The OnSceneLoaded callback above may not be called for the initial scene load in the game,
             // so we call ExecuteStartBlock when the SaveManager starts up too.
             if (loadAction == null)
