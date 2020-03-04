@@ -1,6 +1,8 @@
 ﻿// This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
+using System;
+using System.Text;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,8 +22,23 @@ namespace Fungus
         public string Key { get { return key; } set { key = value; } }
         public string Value { get { return value; } set { this.value = value; } }
 
-        #endregion
-    }
+		public byte[] Save() {
+			var k = FungusSaver.StringEncoding.GetBytes(Key);
+			var v = FungusSaver.StringEncoding.GetBytes(Value);
+			var kL = BitConverter.GetBytes(k.Length);
+			var vL = BitConverter.GetBytes(v.Length);
+			var data = new byte[8 + k.Length + v.Length];
+
+			kL.CopyTo(data, 0);
+			vL.CopyTo(data, 4);
+			k.CopyTo(data, 8);
+			v.CopyTo(data, 8 + k.Length);
+
+			return data;
+		}
+
+		#endregion
+	}
 
     /// <summary>
     /// Serializable container for an integer variable.
@@ -37,8 +54,23 @@ namespace Fungus
         public string Key { get { return key; } set { key = value; } }
         public int Value { get { return value; } set { this.value = value; } }
 
-        #endregion
-    }
+		public byte[] Save() {
+			var k = FungusSaver.StringEncoding.GetBytes(Key);
+			var v = BitConverter.GetBytes(Value);
+			var kL = BitConverter.GetBytes(k.Length);
+			var vL = BitConverter.GetBytes(v.Length);
+			var data = new byte[8 + k.Length + v.Length];
+
+			kL.CopyTo(data, 0);
+			vL.CopyTo(data, 4);
+			k.CopyTo(data, 8);
+			v.CopyTo(data, 8 + k.Length);
+
+			return data;
+		}
+
+		#endregion
+	}
 
     /// <summary>
     /// Serializable container for a float variable.
@@ -54,8 +86,23 @@ namespace Fungus
         public string Key { get { return key; } set { key = value; } }
         public float Value { get { return value; } set { this.value = value; } }
 
-        #endregion
-    }
+		public byte[] Save() {
+			var k = FungusSaver.StringEncoding.GetBytes(Key);
+			var v = BitConverter.GetBytes(Value);
+			var kL = BitConverter.GetBytes(k.Length);
+			var vL = BitConverter.GetBytes(v.Length);
+			var data = new byte[8 + k.Length + v.Length];
+
+			kL.CopyTo(data, 0);
+			vL.CopyTo(data, 4);
+			k.CopyTo(data, 8);
+			v.CopyTo(data, 8 + k.Length);
+
+			return data;
+		}
+
+		#endregion
+	}
 
     /// <summary>
     /// Serializable container for a boolean variable.
@@ -71,8 +118,23 @@ namespace Fungus
         public string Key { get { return key; } set { key = value; } }
         public bool Value { get { return value; } set { this.value = value; } }
 
-        #endregion
-    }
+		public byte[] Save() {
+			var k = FungusSaver.StringEncoding.GetBytes(Key);
+			var v = BitConverter.GetBytes(Value);
+			var kL = BitConverter.GetBytes(k.Length);
+			var vL = BitConverter.GetBytes(v.Length);
+			var data = new byte[8 + k.Length + v.Length];
+
+			kL.CopyTo(data, 0);
+			vL.CopyTo(data, 4);
+			k.CopyTo(data, 8);
+			v.CopyTo(data, 8 + k.Length);
+
+			return data;
+		}
+
+		#endregion
+	}
 
     /// <summary>
     /// Serializable container for encoding the state of a Flowchart's variables.
