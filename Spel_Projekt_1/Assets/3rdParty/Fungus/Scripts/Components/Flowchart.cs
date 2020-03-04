@@ -142,6 +142,8 @@ namespace Fungus
 
         protected virtual void OnEnable()
         {
+			FungusSaver.Instance.FlowchartEnabled(this);
+
             if (!cachedFlowcharts.Contains(this))
             {
                 cachedFlowcharts.Add(this);
@@ -161,9 +163,10 @@ namespace Fungus
         protected virtual void OnDisable()
         {
             cachedFlowcharts.Remove(this);
+			FungusSaver.Instance.FlowchartDisabled(this);
 
-            #if UNITY_5_4_OR_NEWER
-            UnityEngine.SceneManagement.SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
+#if UNITY_5_4_OR_NEWER
+			UnityEngine.SceneManagement.SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
             #endif
 
             StringSubstituter.UnregisterHandler(this);   
