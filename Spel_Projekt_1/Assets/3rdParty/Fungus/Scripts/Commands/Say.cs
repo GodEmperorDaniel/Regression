@@ -48,12 +48,18 @@ namespace Fungus
         [Tooltip("Stop playing voiceover when text finishes writing.")]
         [SerializeField] protected bool stopVoiceover = true;
 
-        [Tooltip("Wait for the Voice Over to complete before continuing")]
-        [SerializeField] protected bool waitForVO = false;
+		[Tooltip("Wait for the Voice Over to complete before continuing")]
+		[SerializeField] protected bool waitForVO = false;
 
-        //add wait for vo that overrides stopvo
+		[Tooltip("Stops the player until the writing is finished")]
+		[SerializeField] protected bool freezePlayer = true;
 
-        [Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. All story text will now display using this Say Dialog.")]
+		[Tooltip("Interrupts the player's current movement")]
+		[SerializeField] protected bool interruptPlayer = true;
+
+		//add wait for vo that overrides stopvo
+
+		[Tooltip("Sets the active Say dialog with a reference to a Say Dialog object in the scene. All story text will now display using this Say Dialog.")]
         [SerializeField] protected SayDialog setSayDialog;
 
         protected int executionCount;
@@ -95,6 +101,14 @@ namespace Fungus
             {
                 SayDialog.ActiveSayDialog = setSayDialog;
             }
+
+			if (freezePlayer) {
+				PlayerStatic.FreezePlayer("Say " + storyText);
+			}
+
+			if (interruptPlayer) {
+				PlayerStatic.controllerInstance.InterruptMove();
+			}
 
             var sayDialog = SayDialog.GetSayDialog();
             if (sayDialog == null)
@@ -156,7 +170,9 @@ namespace Fungus
 
         public override void OnStopExecuting()
         {
-            var sayDialog = SayDialog.GetSayDialog();
+			PlayerStatic.ResumePlayer("Say " + storyText);
+
+			var sayDialog = SayDialog.GetSayDialog();
             if (sayDialog == null)
             {
                 return;
@@ -165,11 +181,16 @@ namespace Fungus
             sayDialog.Stop();
         }
 
-        #endregion
+		public override void OnExit() {
+			PlayerStatic.ResumePlayer("Say " + storyText);
+			base.OnExit();
+		}
 
-        #region ILocalizable implementation
+		#endregion
 
-        public virtual string GetStandardText()
+		#region ILocalizable implementation
+
+		public virtual string GetStandardText()
         {
             return storyText;
         }

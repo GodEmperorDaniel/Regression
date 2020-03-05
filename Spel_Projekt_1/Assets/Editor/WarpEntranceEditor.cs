@@ -41,10 +41,11 @@ public class WarpEntranceEditor : Editor {
 				selectedIndex = -1;
 				exitNames = new List<string>();
 				ids = new List<long>();
+				Scene scene;
+				bool newScene = false;
 
 				if (!string.IsNullOrEmpty(scenePath)) {
-					Scene scene = SceneManager.GetSceneByPath(scenePath);
-					bool newScene = false;
+					scene = SceneManager.GetSceneByPath(scenePath);
 					if (scene == null || !scene.IsValid()) {
 						newScene = true;
 						if (!EditorApplication.isPlaying) {
@@ -56,35 +57,34 @@ public class WarpEntranceEditor : Editor {
 							//scene = SceneManager.GetSceneByPath(scenePath);
 						}
 					}
+				} else {
+					scene = SceneManager.GetActiveScene();
+				}
 
-					if (scene.IsValid()) {
-						foreach (var obj in scene.GetRootGameObjects()) {
-							var children = obj.GetComponentsInChildren<WarpExit>();
-							foreach (var c in children) {
-								var id = c.GetID();
-								if (id != 0) {
-									exitNames.Add(string.Format("{0} (id: {1})", c.gameObject.name, id));
-									ids.Add(id);
-									if (id == exitIdProperty.longValue || id == rememberedId) {
-										exitIdProperty.longValue = id;
-										selectedIndex = exitNames.Count - 1;
-									}
+				if (scene.IsValid()) {
+					foreach (var obj in scene.GetRootGameObjects()) {
+						var children = obj.GetComponentsInChildren<WarpExit>();
+						foreach (var c in children) {
+							var id = c.GetID();
+							if (id != 0) {
+								exitNames.Add(string.Format("{0} (id: {1})", c.gameObject.name, id));
+								ids.Add(id);
+								if (id == exitIdProperty.longValue || id == rememberedId) {
+									exitIdProperty.longValue = id;
+									selectedIndex = exitNames.Count - 1;
 								}
 							}
 						}
+					}
 
-						guiContent = new GUIContent[exitNames.Count];
+					guiContent = new GUIContent[exitNames.Count];
 
-						for (var i = 0; i < exitNames.Count; i++) {
-							guiContent[i] = new GUIContent(exitNames[i]);
-						}
+					for (var i = 0; i < exitNames.Count; i++) {
+						guiContent[i] = new GUIContent(exitNames[i]);
+					}
 
-						if (newScene) {
-							SceneManager.UnloadSceneAsync(scene);
-						}
-					} else {
-						guiContent = new GUIContent[0];
-						exitIdProperty.longValue = 0;
+					if (newScene) {
+						SceneManager.UnloadSceneAsync(scene);
 					}
 				} else {
 					guiContent = new GUIContent[0];

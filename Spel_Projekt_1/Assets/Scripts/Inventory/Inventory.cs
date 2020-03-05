@@ -25,14 +25,16 @@ public class Inventory : MonoBehaviour, ISaveable
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
         }
 
-		_items.TrimExcess();
-
-		for (var i = 0; i < _items.Count; i++) {
+		for (var i = _items.Count - 1; i >= 0; i--) {
 			var item = _items[i];
-			CheckId(item);
+			if (item == null) {
+				_items.RemoveAt(i);
+			} else {
+				CheckId(item);
 
-			_items[i] = Instantiate(item);
-			_items[i].itemId = item.itemId;
+				_items[i] = Instantiate(item);
+				_items[i].itemId = item.itemId;
+			}
 		}
     }
     

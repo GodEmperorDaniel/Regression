@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-/*public class SceneWarpManager : MonoBehaviour
+public class SceneWarpManager : MonoBehaviour
 {
 	private static SceneWarpManager _instance;
 	private long waitingForId = 0;

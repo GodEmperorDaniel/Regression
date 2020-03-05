@@ -81,9 +81,11 @@ namespace Fungus.EditorUtils
         protected SerializedProperty waitForClickProp;
         protected SerializedProperty stopVoiceoverProp;
         protected SerializedProperty setSayDialogProp;
-        protected SerializedProperty waitForVOProp;
+		protected SerializedProperty waitForVOProp;
+		protected SerializedProperty freezePlayerProp;
+		protected SerializedProperty interruptPlayerProp;
 
-        public override void OnEnable()
+		public override void OnEnable()
         {
             base.OnEnable();
 
@@ -97,9 +99,11 @@ namespace Fungus.EditorUtils
             extendPreviousProp = serializedObject.FindProperty("extendPrevious");
             fadeWhenDoneProp = serializedObject.FindProperty("fadeWhenDone");
             waitForClickProp = serializedObject.FindProperty("waitForClick");
-            stopVoiceoverProp = serializedObject.FindProperty("stopVoiceover");
-            setSayDialogProp = serializedObject.FindProperty("setSayDialog");
-            waitForVOProp = serializedObject.FindProperty("waitForVO");
+			stopVoiceoverProp = serializedObject.FindProperty("stopVoiceover");
+			setSayDialogProp = serializedObject.FindProperty("setSayDialog");
+			freezePlayerProp = serializedObject.FindProperty("freezePlayer");
+			interruptPlayerProp = serializedObject.FindProperty("interruptPlayer");
+			waitForVOProp = serializedObject.FindProperty("waitForVO");
 
             if (blackTex == null)
             {
@@ -199,8 +203,10 @@ namespace Fungus.EditorUtils
             EditorGUILayout.PropertyField(stopVoiceoverProp);
             EditorGUILayout.PropertyField(setSayDialogProp);
             EditorGUILayout.PropertyField(waitForVOProp);
-            
-            if (showPortraits && t.Portrait != null)
+			EditorGUILayout.PropertyField(freezePlayerProp);
+			EditorGUILayout.PropertyField(interruptPlayerProp);
+
+			if (showPortraits && t.Portrait != null)
             {
                 Texture2D characterTexture = t.Portrait.texture;
                 float aspect = (float)characterTexture.width / (float)characterTexture.height;

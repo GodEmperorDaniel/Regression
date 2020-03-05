@@ -1544,14 +1544,13 @@ GameObject:
   - component: {fileID: 4973996812020571481}
   - component: {fileID: 4973996812020571486}
   - component: {fileID: 4973996812020571487}
-  - component: {fileID: 4973996812020571484}
-  - component: {fileID: 4973996812020571485}
   - component: {fileID: 4973996812020571474}
   - component: {fileID: 4973996812020571475}
   - component: {fileID: 4973996811434974761}
   - component: {fileID: 4973996811434974762}
   - component: {fileID: 4973996811434974763}
   - component: {fileID: 4973996811434974764}
+  - component: {fileID: 5652882106712840572}
   m_Layer: 5
   m_Name: PuzzleCanvas
   m_TagString: Untagged
@@ -1653,12 +1652,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 4973996811734173563}
   showPuzzleGuess: {fileID: 0}
-  sceneAndNumber:
-  - flowchart: {fileID: 4973996812020571487}
-    block: {fileID: 4973996812020571484}
+  solutions:
+  - solution: 
+    flowchart: {fileID: 4973996812020571487}
+    block: {fileID: 4973996812020571474}
     _foldout: 1
     _showPopup: 1
+    _defaultSolution: 0
+  defaultSolution:
+    solution: 
+    flowchart: {fileID: 4973996812020571487}
+    block: {fileID: 4973996811434974764}
+    _foldout: 1
+    _showPopup: 1
+    _defaultSolution: 1
   maxCharacters: 9
+  escapeAxis: Cancel
 --- !u!114 &4973996812020571487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,11 +1692,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 4973996812020571474}
-  selectedCommands:
-  - {fileID: 4973996812020571475}
-  variables: []
+  selectedBlocks: []
+  selectedCommands: []
+  variables:
+  - {fileID: 5652882106712840572}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -1698,64 +1706,6 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
---- !u!114 &4973996812020571484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973996812020571472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 159
-    y: 157
-    width: 120
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 0
-  blockName: Puzzle
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 4973996812020571485}
---- !u!114 &4973996812020571485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973996812020571472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cedef913f543f3c4098937d11c131555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 1
-  indentLevel: 0
-  correctPassword: 12
-  ifCorrect:
-    Active: 0
-    interactableAngle: 360
-    interactableAngleDot: -1
-    flowchart: {fileID: 4973996812020571487}
-    block: {fileID: 4973996812020571474}
-    _foldout: 1
-    _showPopup: 1
-  ifUncorrect:
-    Active: 0
-    interactableAngle: 360
-    interactableAngleDot: -1
-    flowchart: {fileID: 4973996812020571487}
-    block: {fileID: 4973996811434974764}
-    _foldout: 1
-    _showPopup: 1
-  textBox: {fileID: 0}
 --- !u!114 &4973996812020571474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,6 +2060,21 @@ MonoBehaviour:
   commandList:
   - {fileID: 4973996811434974761}
   - {fileID: 4973996811434974763}
+--- !u!114 &5652882106712840572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4973996812020571472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: SolutionGiven
+  value: 
 --- !u!1 &4973996812183749136
 GameObject:
   m_ObjectHideFlags: 0
