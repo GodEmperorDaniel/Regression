@@ -33,23 +33,32 @@ public class WarpEntranceEditor : Editor {
 			rememberedId = exitIdProperty.longValue;
 		}
 
-		if (scenePath != lastScenePath || selectedIndex == -2) {
-			lastScenePath = scenePath;
-			selectedIndex = -1;
-			exitNames = new List<string>();
-			ids = new List<long>();
-
-			if (!string.IsNullOrEmpty(scenePath)) {
-				Scene scene = SceneManager.GetSceneByPath(scenePath);
+		if (EditorApplication.isPlaying) {
+			EditorGUILayout.HelpBox("Warps cannot be edited during play", MessageType.Warning);
+		} else {
+			if (scenePath != lastScenePath || selectedIndex == -2) {
+				lastScenePath = scenePath;
+				selectedIndex = -1;
+				exitNames = new List<string>();
+				ids = new List<long>();
+				Scene scene;
 				bool newScene = false;
-				if (scene == null || !scene.IsValid()) {
-					newScene = true;
-					if (!EditorApplication.isPlaying) {
-						scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
-					} else {
-						SceneManager.LoadScene(scenePath, LoadSceneMode.Additive);
-						scene = SceneManager.GetSceneByPath(scenePath);
+
+				if (!string.IsNullOrEmpty(scenePath)) {
+					scene = SceneManager.GetSceneByPath(scenePath);
+					if (scene == null || !scene.IsValid()) {
+						newScene = true;
+						if (!EditorApplication.isPlaying) {
+							scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
+						} else {
+							Debug.LogWarning("Warps cannot be edited during play");
+							return;
+							//SceneManager.LoadScene(scenePath, LoadSceneMode.Additive);
+							//scene = SceneManager.GetSceneByPath(scenePath);
+						}
 					}
+				} else {
+					scene = SceneManager.GetActiveScene();
 				}
 
 				if (scene.IsValid()) {
@@ -75,23 +84,20 @@ public class WarpEntranceEditor : Editor {
 					}
 
 					if (newScene) {
-						EditorSceneManager.UnloadSceneAsync(scene);
+						SceneManager.UnloadSceneAsync(scene);
 					}
 				} else {
 					guiContent = new GUIContent[0];
 					exitIdProperty.longValue = 0;
 				}
-			} else {
-				guiContent = new GUIContent[0];
-				exitIdProperty.longValue = 0;
 			}
-		}
 
-		selectedIndex = EditorGUILayout.Popup(new GUIContent("Exit Location"), selectedIndex, guiContent);
-		exitIdProperty.longValue = 0;
-		if (selectedIndex >= 0 && selectedIndex < ids.Count) {
-			exitIdProperty.longValue = ids[selectedIndex];
-			rememberedId = ids[selectedIndex];
+			selectedIndex = EditorGUILayout.Popup(new GUIContent("Exit Location"), selectedIndex, guiContent);
+			exitIdProperty.longValue = 0;
+			if (selectedIndex >= 0 && selectedIndex < ids.Count) {
+				exitIdProperty.longValue = ids[selectedIndex];
+				rememberedId = ids[selectedIndex];
+			}
 		}
 
 		serializedObject.ApplyModifiedProperties();

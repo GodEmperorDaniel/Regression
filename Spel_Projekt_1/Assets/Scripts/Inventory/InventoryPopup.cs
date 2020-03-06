@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
 
+[DisallowMultipleComponent]
 public class InventoryPopup : MonoBehaviour
 {
 	public Selectable firstSelectable;
@@ -59,7 +60,7 @@ public class InventoryPopup : MonoBehaviour
 
 	public void Inspect() {
 		flowchart.GetVariable<InventoryItemVariable>("SelectedItem").Value = _item;
-		flowchart.SetStringVariable("Name", _item.name);
+		flowchart.SetStringVariable("Name", _item.title);
 		flowchart.SetStringVariable("Description", _item.description);
 		Hide();
 		_canvas.Hide();

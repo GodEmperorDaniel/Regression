@@ -8,8 +8,8 @@ using Fungus;
 public struct InteractionSettings
 {
 	public bool Active;
-	//public float interactableAngle;
-	//public float interactableAngleDot;
+	public float interactableAngle;
+	public float interactableAngleDot;
 	//public string text;
 
 	public Flowchart flowchart;
@@ -17,10 +17,12 @@ public struct InteractionSettings
 	[HideInInspector]
 	public Block block;
 
+#if UNITY_EDITOR
 	//Helpers for the custom Property Drawer
 	[HideInInspector]
 	public bool _foldout;
 	[HideInInspector]
 	public bool _showPopup;
+#endif
 }
 

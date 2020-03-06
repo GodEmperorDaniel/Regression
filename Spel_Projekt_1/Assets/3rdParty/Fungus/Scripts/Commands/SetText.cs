@@ -35,6 +35,7 @@ namespace Fungus
             
             if (targetTextObject == null)
             {
+				Debug.Log("null");
                 Continue();
                 return;
             }
@@ -43,8 +44,9 @@ namespace Fungus
             textAdapter.InitFromGameObject(targetTextObject);
 
             if (textAdapter.HasTextObject())
-            {
-                textAdapter.Text = newText;
+			{
+				Debug.Log("No");
+				textAdapter.Text = newText;
             }
 
             Continue();

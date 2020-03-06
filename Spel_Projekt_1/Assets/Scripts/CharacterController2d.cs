@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
-public class CharacterController2d : MonoBehaviour {
+[System.Serializable]
+[DisallowMultipleComponent]
+public class CharacterController2d : MonoBehaviour, ISaveable {
 	static readonly float _r = Mathf.Cos(Mathf.PI / 8) * Mathf.Cos(Mathf.PI / 8) / (Mathf.Sin(Mathf.PI / 8) * Mathf.Sin(Mathf.PI / 8));
 	static readonly float _invSqr2 = 1 / Mathf.Sqrt(2);
   
@@ -42,13 +46,19 @@ public class CharacterController2d : MonoBehaviour {
 	private float _stepLeft;
 	private Vector2 _stepDir;
 
+
 	private void Start() {
 		if (animator == null) {
 			animator = GetComponent<Animator>();
 		}
 	}
 
-	private void Update() {
+	private void OnEnable()
+	{
+		_interactionPressed = 2;
+	}
+
+	private void FixedUpdate() {
 		if (_stepLeft > 0) {
 			_stepLeft -= Time.deltaTime;
 		} else {
@@ -111,11 +121,25 @@ public class CharacterController2d : MonoBehaviour {
 	}
 
 	private void SetAnimatorVariables(bool moving) {
-		if (animator != null) {
+		if (animator != null)
+		{
 			animator.SetBool(animatorMovementBool, moving);
-			animator.SetFloat(animatorHorizontalFloat, _stepDir.x);
-			animator.SetFloat(animatorVerticalFloat, _stepDir.y);
+			animator.SetFloat(animatorHorizontalFloat, forward.x);
+			animator.SetFloat(animatorVerticalFloat, forward.y);
 		}
+	}
+
+	public void SetFacing(Vector2 facing) {
+		facing.Normalize();
+		forward = facing;
+		_stepDir = _stepDir.magnitude * facing;
+		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
+	}
+
+	public void InterruptMove() {
+		_stepLeft = 0;
+		_stepDir = Vector2.zero;
+		SetAnimatorVariables(false);
 	}
 
 	private void CheckInventoryButton() {
@@ -136,5 +160,43 @@ public class CharacterController2d : MonoBehaviour {
 
 	public bool GetInteractionKeyDown() {
 		return isActiveAndEnabled && _interactionPressed == 1;
+	}
+
+	public byte[] Save() {
+		var scene = SceneManager.GetActiveScene();
+		var sceneName = FungusSaver.StringEncoding.GetBytes(scene.name);
+
+		var data = new byte[9 * 4 + sceneName.Length];
+
+		BitConverter.GetBytes(transform.position.x).CopyTo(data, 0);
+		BitConverter.GetBytes(transform.position.y).CopyTo(data, 4);
+		BitConverter.GetBytes(transform.position.z).CopyTo(data, 8);
+		BitConverter.GetBytes(forward.x).CopyTo(data, 12);
+		BitConverter.GetBytes(forward.y).CopyTo(data, 16);
+		BitConverter.GetBytes(_stepLeft).CopyTo(data, 20);
+		BitConverter.GetBytes(_stepDir.x).CopyTo(data, 24);
+		BitConverter.GetBytes(_stepDir.y).CopyTo(data, 28);
+		BitConverter.GetBytes(sceneName.Length).CopyTo(data, 32);
+		sceneName.CopyTo(data, 36);
+
+		return data;
+	}
+
+	public void Load(byte[] data, int version) {
+		transform.position = new Vector3(BitConverter.ToSingle(data, 0), BitConverter.ToSingle(data, 4), BitConverter.ToSingle(data, 8));
+		forward = new Vector2(BitConverter.ToSingle(data, 12), BitConverter.ToSingle(data, 16));
+		_stepLeft = BitConverter.ToSingle(data, 20);
+		_stepDir = new Vector2(BitConverter.ToSingle(data, 24), BitConverter.ToSingle(data, 28));
+
+		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
+
+		if (version >= 3) {
+			var sceneNameLength = BitConverter.ToInt32(data, 32);
+			var sceneName = FungusSaver.StringEncoding.GetString(data, 36, sceneNameLength);
+			var currentScene = SceneManager.GetActiveScene();
+			if (currentScene.name != sceneName) {
+				SceneManager.LoadScene(sceneName);
+			}
+		}
 	}
 }

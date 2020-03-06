@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Interactions : MonoBehaviour {
@@ -16,10 +17,16 @@ public class Interactions : MonoBehaviour {
 
 	[Header("Interaction Setting")]
 
-	public InteractionSettings onEnter;
-	public InteractionSettings onStay;
-	public InteractionSettings onExit;
-	public List<ItemInteraction> onItemUse;
+
+	[FormerlySerializedAs("onEnter")]
+	public InteractionSettings OnEnter;
+	[FormerlySerializedAs("onStay")]
+	public InteractionSettings OnKeyPressed;
+	public InteractionSettings OnStay;
+	[FormerlySerializedAs("onExit")]
+	public InteractionSettings OnExit;
+	[FormerlySerializedAs("onItemUse")]
+	public List<ItemInteraction> OnItemUse;
 	[System.NonSerialized]
 	public bool insideTrigger;
 
@@ -46,7 +53,7 @@ public class Interactions : MonoBehaviour {
 			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
 			canUseItemOn.Add(this);
 			insideTrigger = true;
-			Interact(controller, onEnter);
+			Interact(controller, OnEnter);
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other)
@@ -55,18 +62,20 @@ public class Interactions : MonoBehaviour {
 			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
 			insideTrigger = false;
 			canUseItemOn.Remove(this);
-			Interact(controller, onExit);
+			Interact(controller, OnExit);
 		}
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.tag ==	"Player")
-		{
+		if (other.gameObject.tag ==	"Player") {
 			var controller = other.gameObject.GetComponentInParent<CharacterController2d>();
+			if (controller.isActiveAndEnabled) {
+				Interact(controller, OnStay);
+			}
 			if (controller.GetInteractionKeyDown())
 			{
-				Interact(controller, onStay);
+				Interact(controller, OnKeyPressed);
 			}
 		}
 	}
@@ -74,55 +83,27 @@ public class Interactions : MonoBehaviour {
 	private bool Interact(CharacterController2d controller, InteractionSettings settings)
 	{
 		if (settings.Active) {
-			if (settings.flowchart && settings.block) {
-				settings.flowchart.ExecuteBlock(settings.block);
-			}
+			var facingAngle = controller.forward;
+			var dirAngle = (transform.position - controller.transform.position).normalized;
+			if (Vector2.Dot(facingAngle, dirAngle) >= settings.interactableAngleDot) {
+				if (settings.flowchart && settings.block) {
+					settings.flowchart.ExecuteBlock(settings.block);
+				}
 
-			return true;
+				return true;
+			}
 		}
 
 		return false;
 	}
 
 	public bool UseItem(CharacterController2d controller, InventoryItem item) {
-		foreach (var setting in onItemUse) {
-			if (item == setting.requiredItem) {
+		foreach (var setting in OnItemUse) {
+			if (item.itemId == setting.requiredItem.itemId) {
 				return Interact(controller, setting.interaction);
 			}
 		}
 
 		return false;
-	}
-
-	IEnumerator showImage(InteractionSettings settings)
-	{
-		//float timer = 0;
-
-		//sätt upp bilden på canvas
-
-		/*while (timer < settings.image.imageTimer)
-		{
-			timer += Time.deltaTime;
-			yield return null;
-		}
-
-		timer = 0;
-		Color t = scareImage.color;
-		while (timer < settings.image.fadeTimer)
-		{
-			timer += Time.deltaTime;
-			t.a = Mathf.Lerp(255, 0, timer / settings.image.fadeTimer);
-			scareImage.color = t;
-			yield return null;
-		}
-
-		//ta bort bilden från canvas
-	}
-
-	private void SkickaText()
-	{ 
-		//connecta till flowcharten och skicka string till specifikt block
-		}*/
-		yield return null;
 	}
 }

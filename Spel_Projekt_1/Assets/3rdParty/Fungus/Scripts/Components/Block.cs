@@ -249,11 +249,16 @@ namespace Fungus
 
                 // Skip disabled commands, comments and labels
                 while (i < commandList.Count &&
-                      (!commandList[i].enabled || 
+                      (commandList[i] == null ||
+					  !commandList[i].enabled || 
                         commandList[i].GetType() == typeof(Comment) ||
                         commandList[i].GetType() == typeof(Label)))
                 {
-                    i = commandList[i].CommandIndex + 1;
+					if (commandList[i] == null) {
+						i++;
+					} else {
+						i = commandList[i].CommandIndex + 1;
+					}
                 }
 
                 if (i >= commandList.Count)

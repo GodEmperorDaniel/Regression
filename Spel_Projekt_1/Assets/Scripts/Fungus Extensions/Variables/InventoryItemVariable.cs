@@ -43,7 +43,7 @@ namespace Fungus {
 		}
 
 		public override string ToString() {
-			return Value.name;
+			return Value.title;
 		}
 	}
 
@@ -78,7 +78,7 @@ namespace Fungus {
 				if (inventoryItemVal == null) {
 					return "Null";
 				} else {
-					return inventoryItemVal.name;
+					return inventoryItemVal.title;
 				}
 			} else {
 				return inventoryItemRef.Key;

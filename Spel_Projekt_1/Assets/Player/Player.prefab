@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8176647778504872637}
   - component: {fileID: 7284780971577527873}
   - component: {fileID: 8436940793786779559}
+  - component: {fileID: 8545625253530492900}
   - component: {fileID: 1074157722477229196}
   - component: {fileID: 6685346484804266381}
   - component: {fileID: 4038089666863768761}
@@ -48,16 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa83111d9b0e643a886fcb7020b35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 2
-  forwardKey: 119
-  backwardKey: 115
-  leftKey: 97
-  rightKey: 100
-  interactionButton: 101
-  interactionButtonGamepad: 351
-  Ani: {fileID: 4038089666863768761}
-  stepTimer: 1.075
-  isStepping: 1
+  movementSpeed: 2
+  stepSize: 0.05
+  deadZone: 0.1
+  horizontalAxis: Horizontal
+  verticalAxis: Vertical
+  interactionButton: InteractionButton
+  inventoryButton: InventoryButton
+  directionType: 2
+  speedType: 1
+  forward: {x: 0, y: 0}
+  animator: {fileID: 4038089666863768761}
+  animatorMovementBool: movement
+  animatorHorizontalFloat: horimovement
+  animatorVerticalFloat: vertimovement
 --- !u!212 &8436940793786779559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +101,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 1204401379406812287, guid: dbaaaaf177cfef04ea40e937f7d056e7,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,6 +113,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8545625253530492900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547923293149438665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3690f0109fa7af4aba1905079f72ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  possibleCombinations: []
+  uiPrefab: {fileID: 1387940634615777244, guid: 401125f5c319f5c4cb5cf709383fa252,
+    type: 3}
 --- !u!50 &1074157722477229196
 Rigidbody2D:
   serializedVersion: 4
@@ -119,7 +141,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -127,7 +149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6685346484804266381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,18 +163,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010391951, y: -0.32006848}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.30391836, y: 0.54085183}
   m_EdgeRadius: 0
 --- !u!95 &4038089666863768761
 Animator:
