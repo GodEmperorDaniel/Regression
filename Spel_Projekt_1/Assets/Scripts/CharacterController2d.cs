@@ -58,7 +58,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 		_interactionPressed = 2;
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		if (_stepLeft > 0) {
 			_stepLeft -= Time.deltaTime;
 		} else {
@@ -127,6 +127,19 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 			animator.SetFloat(animatorHorizontalFloat, forward.x);
 			animator.SetFloat(animatorVerticalFloat, forward.y);
 		}
+	}
+
+	public void SetFacing(Vector2 facing) {
+		facing.Normalize();
+		forward = facing;
+		_stepDir = _stepDir.magnitude * facing;
+		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
+	}
+
+	public void InterruptMove() {
+		_stepLeft = 0;
+		_stepDir = Vector2.zero;
+		SetAnimatorVariables(false);
 	}
 
 	private void CheckInventoryButton() {
