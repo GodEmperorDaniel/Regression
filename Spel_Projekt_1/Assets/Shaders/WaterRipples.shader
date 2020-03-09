@@ -6,7 +6,7 @@ Shader "Regression/WaterRipples"
 	{
 		[PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
 		_Color("Tint", Color) = (1,1,1,1)
-		_NormalTex("Normalmap", 2D) = "bump" {}
+		[PerRendererData] _NormalTex("Normalmap", 2D) = "bump" {}
 		//_NormalTex2("Normalmap2", 2D) = "bump" {}
 		_Magnitude("Magnitude", Range(0,1)) = 0.05
 		//_SpecularDir("Specular Direction", Vector) = (0, 0, 0, 0)
