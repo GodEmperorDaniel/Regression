@@ -67,6 +67,9 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 
 		Translate();
 		CheckInventoryButton();
+	}
+
+	private void FixedUpdate() {
 		if (Input.GetAxisRaw(interactionButton) > deadZone) {
 			_interactionPressed++;
 		} else {

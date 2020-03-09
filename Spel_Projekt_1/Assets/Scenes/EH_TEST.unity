@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1058,6 +1059,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bf3d47f4a87c945a181ccef1f04a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: fdd3ea2f7f505024baa73fa36c471ae3, type: 2}
+  delay: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1433,6 +1448,7 @@ MonoBehaviour:
     _defaultSolution: 0
   maxCharacters: 9
   escapeAxis: Cancel
+  previewString: 
 --- !u!4 &799645619
 Transform:
   m_ObjectHideFlags: 0
@@ -1538,8 +1554,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 921433315}
-  selectedCommands:
-  - {fileID: 921433319}
+  selectedCommands: []
   variables:
   - {fileID: 921433310}
   - {fileID: 921433317}

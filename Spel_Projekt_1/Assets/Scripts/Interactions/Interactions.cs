@@ -73,8 +73,7 @@ public class Interactions : MonoBehaviour {
 			if (controller.isActiveAndEnabled) {
 				Interact(controller, OnStay);
 			}
-			if (controller.GetInteractionKeyDown())
-			{
+			if (controller.GetInteractionKeyDown()) {
 				Interact(controller, OnKeyPressed);
 			}
 		}
