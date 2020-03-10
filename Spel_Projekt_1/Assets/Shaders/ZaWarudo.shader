@@ -3,7 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_screenRatio("Screen Ratio", Float) = 0
+		[HideInInspector] _screenRatio("Screen Ratio", Float) = 0
 		[HideInInspector] _startT("Start Time", Float) = 0
 		_bounceT("Bounce Time", Float) = 2
 		_speed("Speed", Float) = 5

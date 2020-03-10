@@ -3,7 +3,7 @@
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}
-		_startT("Start Time", Float) = 0
+		[HideInInspector] _startT("Start Time", Float) = 0
 		_fT("Time Frequency", Float) = 1
 		_fD("Space Frequency", Float) = 1
 		_amp("Amplitude", Float) = 0.0625

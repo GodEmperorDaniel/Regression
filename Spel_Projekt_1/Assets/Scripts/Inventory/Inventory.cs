@@ -36,7 +36,22 @@ public class Inventory : MonoBehaviour, ISaveable
 				_items[i].itemId = item.itemId;
 			}
 		}
-    }
+
+		/*Texture2D noiseTex = new Texture2D(100, 100);
+		Color[] pix = new Color[noiseTex.width * noiseTex.height];
+
+		for (var i = 0; i < pix.Length; i++) {
+			var v = UnityEngine.Random.value;
+			pix[i] = new Color(v, v, v);
+		}
+
+		noiseTex.SetPixels(pix);
+		noiseTex.Apply();
+		byte[] _bytes = noiseTex.EncodeToPNG();
+		var _fullPath = "D:\\Spel\\Unity\\Spel_Projekt_1\\Spel_Projekt_1\\Assets\\Shaders\\Static.png";
+		System.IO.File.WriteAllBytes(_fullPath, _bytes);
+		Debug.Log(_bytes.Length / 1024 + "Kb was saved as: " + _fullPath);*/
+	}
     
     public bool HasItem(InventoryItem item) {
 		CheckId(item);
