@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: fdd3ea2f7f505024baa73fa36c471ae3, type: 2}
+  waterMovement: {x: 0, y: 0}
   delay: 0
 --- !u!20 &519420031
 Camera:
@@ -3796,7 +3797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  stepSize: 0.25
+  stepSize: 0.025
   deadZone: 0.1
   horizontalAxis: Horizontal
   verticalAxis: Vertical
@@ -4092,7 +4093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 921433309}
+  selectedFlowchart: {fileID: 0}
 --- !u!4 &1949328563
 Transform:
   m_ObjectHideFlags: 1
