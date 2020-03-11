@@ -98,7 +98,7 @@ public class Interactions : MonoBehaviour {
 
 	public bool UseItem(CharacterController2d controller, InventoryItem item) {
 		foreach (var setting in OnItemUse) {
-			if (item.itemId == setting.requiredItem.itemId) {
+			if (setting.interaction.Active && item.itemId == setting.requiredItem.itemId) {
 				return Interact(controller, setting.interaction);
 			}
 		}
