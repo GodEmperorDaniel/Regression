@@ -23,16 +23,6 @@ namespace Fungus
 		{
 			return new Color32(235, 191, 217, 255);
 		}
-
-<<<<<<< HEAD
-=======
-		//public override bool HasReference(Variable variable)
-		//{
-		//	return sceneName.stringRef == variable ||
-		//		base.HasReference(variable);
-		//}
-
->>>>>>> Billy
 		#endregion
 	}
 
