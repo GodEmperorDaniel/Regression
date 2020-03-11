@@ -18,7 +18,7 @@ namespace Fungus
 
 		public override void OnEnter()
 		{
-			playerStatic.FreezePlayer(stopPlayerString);
+			PlayerStatic.FreezePlayer(stopPlayerString);
 		}
 
 		public override Color GetButtonColor()
@@ -26,11 +26,11 @@ namespace Fungus
 			return new Color32(235, 191, 217, 255);
 		}
 
-		public override bool HasReference(Variable variable)
-		{
-			return sceneName.stringRef == variable ||
-				base.HasReference(variable);
-		}
+		//public override bool HasReference(Variable variable)
+		//{
+		//	return sceneName.stringRef == variable ||
+		//		base.HasReference(variable);
+		//}
 
 		#endregion
 	}
