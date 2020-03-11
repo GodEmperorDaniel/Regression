@@ -46,6 +46,7 @@ public class GroundDetection : MonoBehaviour
 [System.Serializable]
 public struct SoundAndGround
 {
+	[FMODUnity.EventRef]
 	public string nameOfSound;
 	public Sprite spriteOfTile;
 }
