@@ -2,10 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Remoting.Messaging;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
@@ -13,3 +13,4 @@ public struct PuzzleAndScene
 	[HideInInspector] public bool _foldout;
 	[HideInInspector] public bool _showPopup;
 }
+*/

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 [AddComponentMenu("")]
@@ -19,4 +19,4 @@ public class ColourLerp : MonoBehaviour
     {
         spriteRenderer.color = Color.Lerp(A, B, Mathf.PingPong(Time.time * speed, 1.0f));
     }
-}
+}*/

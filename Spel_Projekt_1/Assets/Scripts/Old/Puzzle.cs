@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -30,7 +30,6 @@ namespace Fungus
 
 			if (testedPassword == correctPassword)
 			{
-				PlayerStatic.ResumePlayer("Puzzle");
 				ifCorrect.block.StartExecution();
 				Continue();
 			}
@@ -53,4 +52,4 @@ namespace Fungus
 		#endregion
 
 	}
-}
+}*/

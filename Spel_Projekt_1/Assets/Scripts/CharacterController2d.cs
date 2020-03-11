@@ -67,6 +67,9 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 
 		Translate();
 		CheckInventoryButton();
+	}
+
+	private void FixedUpdate() {
 		if (Input.GetAxisRaw(interactionButton) > deadZone) {
 			_interactionPressed++;
 		} else {
@@ -127,6 +130,19 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 			animator.SetFloat(animatorHorizontalFloat, forward.x);
 			animator.SetFloat(animatorVerticalFloat, forward.y);
 		}
+	}
+
+	public void SetFacing(Vector2 facing) {
+		facing.Normalize();
+		forward = facing;
+		_stepDir = _stepDir.magnitude * facing;
+		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
+	}
+
+	public void InterruptMove() {
+		_stepLeft = 0;
+		_stepDir = Vector2.zero;
+		SetAnimatorVariables(false);
 	}
 
 	private void CheckInventoryButton() {
