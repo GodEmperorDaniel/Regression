@@ -14,7 +14,11 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenyUi;
 	public Selectable firstSelected;
-    private EventSystem eventSystem;
+	[Header("Music Parameters")]
+	public GameObject inMenu;
+	public GameObject outMenu;
+
+	private EventSystem eventSystem;
     private Selectable lastSelectedButton = null;
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
+				FixSettings();
                 Resume();
             } else if (!PlayerStatic.IsFrozen()) {
                 Pause();
@@ -39,13 +44,16 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenyUi.SetActive(false);
+		FixSettings();
         PlayerStatic.ResumePlayer("pause");
         GameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenyUi.SetActive(true);
+		inMenu.SetActive(true);
+		outMenu.SetActive(false);
+		pauseMenyUi.SetActive(true);
         eventSystem.SetSelectedGameObject(null);
         lastSelectedButton = null;
         PlayerStatic.FreezePlayer("pause");
@@ -83,5 +91,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+	void FixSettings()
+	{
+		inMenu.SetActive(false);
+		outMenu.SetActive(true);
+	}
 
 }
