@@ -17,10 +17,12 @@ public struct InteractionSettings
 	[HideInInspector]
 	public Block block;
 
+#if UNITY_EDITOR
 	//Helpers for the custom Property Drawer
 	[HideInInspector]
 	public bool _foldout;
 	[HideInInspector]
 	public bool _showPopup;
+#endif
 }
 

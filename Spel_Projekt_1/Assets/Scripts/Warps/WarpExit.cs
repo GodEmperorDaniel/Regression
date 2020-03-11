@@ -11,6 +11,16 @@ using UnityEditor.Experimental.SceneManagement;
 
 [ExecuteInEditMode]
 public class WarpExit : MonoBehaviour {
+	public enum FaceDirection {
+		dontChange,
+		up,
+		down,
+		right,
+		left
+	}
+
+	public bool interruptMove = true;
+	public FaceDirection faceDirection;
 	private static Dictionary<long, WarpExit> allIds;
 	[HideInInspector]
 	[SerializeField]
@@ -18,6 +28,23 @@ public class WarpExit : MonoBehaviour {
 
 	public void WarpPlayer() {
 		PlayerStatic.playerInstance.transform.position = transform.position;
+		switch (faceDirection) {
+			case FaceDirection.up:
+				PlayerStatic.controllerInstance.SetFacing(Vector2.up);
+				break;
+			case FaceDirection.down:
+				PlayerStatic.controllerInstance.SetFacing(Vector2.down);
+				break;
+			case FaceDirection.right:
+				PlayerStatic.controllerInstance.SetFacing(Vector2.right);
+				break;
+			case FaceDirection.left:
+				PlayerStatic.controllerInstance.SetFacing(Vector2.left);
+				break;
+		}
+		if (interruptMove) {
+			PlayerStatic.controllerInstance.InterruptMove();
+		}
 	}
 
 	void Awake() {

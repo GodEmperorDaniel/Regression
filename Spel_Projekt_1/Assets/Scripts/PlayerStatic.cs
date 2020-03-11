@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController2d))]
 [RequireComponent(typeof(Inventory))]
+[DisallowMultipleComponent]
 public class PlayerStatic : MonoBehaviour {
 	public static GameObject playerInstance;
 	public static CharacterController2d controllerInstance;
@@ -37,9 +36,12 @@ public class PlayerStatic : MonoBehaviour {
 
 	public static void ResumePlayer(string key) {
 		freezeStack.Remove(key);
-		if (controllerInstance && freezeStack.Count <= 0) {
+		if (controllerInstance && !IsFrozen()) {
 			controllerInstance.enabled = true;
 		}
 	}
 
+	public static bool IsFrozen() {
+		return freezeStack.Count > 0;
+	}
 }
