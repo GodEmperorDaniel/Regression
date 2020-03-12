@@ -6,7 +6,7 @@ public class GroundDetection : MonoBehaviour
 {
 	public List<SoundAndGround> sounds = new List<SoundAndGround>();
 	[Min(0)]
-	public int speed;
+	public float speed;
 	public Animator ani;
 	public Tilemap tileMap;
 	private Vector3Int gridCoords;
@@ -16,14 +16,14 @@ public class GroundDetection : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating("PlaySound", 0, speed);
+		InvokeRepeating("PlaySound", 0, 1 / speed);
 		player = PlayerStatic.playerInstance;
 		grid = tileMap.layoutGrid;
 	}
 
 	private void Update()
 	{
-		if (ani.GetBool("moving"))
+		if (ani.GetBool("movement"))
 		{
 			gridCoords = grid.WorldToCell(player.transform.position);
 			tile = tileMap.GetTile(gridCoords) as Tile;
@@ -40,6 +40,7 @@ public class GroundDetection : MonoBehaviour
 	private void PlaySound(string sound)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(sound);
+		Debug.Log("Sound played");
 	}
 }
 
