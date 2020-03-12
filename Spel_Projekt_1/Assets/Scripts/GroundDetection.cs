@@ -43,7 +43,6 @@ public class GroundDetection : MonoBehaviour
 	private void PlaySound(string sound)
 	{
 		FMODUnity.RuntimeManager.PlayOneShot(sound);
-		Debug.Log("Sound played");
 	}
 }
 

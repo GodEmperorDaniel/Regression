@@ -81,9 +81,9 @@ public class PuzzleScript : MonoBehaviour {
 		}
 	}
 
-	public void RemovePuzzlePiece(string puzzleCharacter) {
+	public void RemovePuzzlePiece() {
 		if (puzzleCombination.Length < maxCharacters) {
-			puzzleCombination += puzzleCharacter;
+			puzzleCombination = puzzleCombination.Remove(puzzleCombination.Length - 1);
 		}
 	}
 
