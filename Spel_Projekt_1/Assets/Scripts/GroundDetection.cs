@@ -6,7 +6,8 @@ public class GroundDetection : MonoBehaviour
 {
 	public List<SoundAndGround> sounds = new List<SoundAndGround>();
 	[Min(0)]
-	public float speed;
+	public float stepTimer;
+	private float stepTimer_;
 	public Animator ani;
 	public Tilemap tileMap;
 	private Vector3Int gridCoords;
@@ -14,24 +15,26 @@ public class GroundDetection : MonoBehaviour
 	private Tile tile;
 	private GameObject player;
 
-	private void Start()
+	public void Start()
 	{
-		InvokeRepeating("PlaySound", 0, 1 / speed);
 		player = PlayerStatic.playerInstance;
 		grid = tileMap.layoutGrid;
+		stepTimer_ = stepTimer;
 	}
 
-	private void Update()
+	public void Update()
 	{
+		stepTimer_ -= Time.deltaTime;
 		if (ani.GetBool("movement"))
 		{
 			gridCoords = grid.WorldToCell(player.transform.position);
 			tile = tileMap.GetTile(gridCoords) as Tile;
 			for (int i = 0; i < sounds.Count; i++)
 			{
-				if (tile.sprite == sounds[i].spriteOfTile)
+				if (stepTimer_ <= 0 && tile.sprite == sounds[i].spriteOfTile)
 				{
 					PlaySound(sounds[i].nameOfSound);
+					stepTimer_ = stepTimer;
 				}
 			}
 		}
