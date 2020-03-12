@@ -26,25 +26,34 @@ public class Menu : MonoBehaviour
 
     public void Options()
     {
-        
+
     }
 
-    //private void AlwaysSelected()
-    //{
-    //    foreach (Selectable button in Button.allSelectablesArray)
-    //    {
-    //        if (button.gameObject == eventSystem.currentSelectedGameObject)
-    //        {
-    //            lastSelectedButton = button;
-    //        }
-    //    }
-    //    if (!lastSelectedButton)
-    //    {
-    //        lastSelectedButton = firstSelected;
-    //    }
-    //    if (!EventSystem.current.alreadySelecting)
-    //    {
-    //        lastSelectedButton.Select();
-    //    }
-    //}
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("BT_CREDITS");
+    }
+        
+                
+            
+        //private void AlwaysSelected()
+        //{
+        //    foreach (Selectable button in Button.allSelectablesArray)
+        //    {
+        //        if (button.gameObject == eventSystem.currentSelectedGameObject)
+        //        {
+        //            lastSelectedButton = button;
+        //        }
+        //    }
+        //    if (!lastSelectedButton)
+        //    {
+        //        lastSelectedButton = firstSelected;
+        //    }
+        //    if (!EventSystem.current.alreadySelecting)
+        //    {
+        //        lastSelectedButton.Select();
+        //    }
+        //}
+    
 }
