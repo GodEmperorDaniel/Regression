@@ -56,6 +56,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private void OnEnable()
 	{
 		_interactionPressed = 2;
+		_inventoryPressed = true;
 	}
 
 	private void Update() {
