@@ -86,8 +86,10 @@ public class InventoryCanvas : MonoBehaviour
 
 				if (i < inventory.Count) {
 					frame.sprite = inventory.Items[i].sprite;
+					frame.enabled = true;
 				} else {
 					frame.sprite = null;
+					frame.enabled = false;
 				};
 			} else {
 				itemIcons[i].transform.parent.gameObject.SetActive(false);
@@ -220,10 +222,12 @@ public class InventoryCanvas : MonoBehaviour
 	private void MoveCursor(int byAmount) {
 		cursorPos += byAmount;
 		if (cursorPos >= _shownFrames) {
-			cursorPos = _shownFrames - 1;
+			//cursorPos = _shownFrames - 1;
+			cursorPos -= _shownFrames;
 		}
-		if (cursorPos < 0) {
-			cursorPos = 0;
+		if (cursorPos < 0)
+		{
+			cursorPos += _shownFrames;
 		}
 
 		if (cursorPos < itemIcons.Count) {

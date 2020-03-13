@@ -59,18 +59,30 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 		_inventoryPressed = true;
 	}
 
-	private void Update() {
-		if (_stepLeft > 0) {
+	//private void Update() {
+	//	if (_stepLeft > 0) {
+	//		_stepLeft -= Time.deltaTime;
+	//	} else {
+	//		ReadInput();
+	//	}
+
+	//	Translate();
+	//	CheckInventoryButton();
+	//}
+
+	private void FixedUpdate() {
+		if (_stepLeft > 0)
+		{
 			_stepLeft -= Time.deltaTime;
-		} else {
+		}
+		else
+		{
 			ReadInput();
 		}
 
 		Translate();
 		CheckInventoryButton();
-	}
 
-	private void FixedUpdate() {
 		if (Input.GetAxisRaw(interactionButton) > deadZone) {
 			_interactionPressed++;
 		} else {

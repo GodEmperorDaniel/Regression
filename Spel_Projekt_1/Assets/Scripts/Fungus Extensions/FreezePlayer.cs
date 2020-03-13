@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Fungus
 {
-	[CommandInfo("Custom" +
+	[CommandInfo("Custom",
 		"FreezePlayer",
-		"A costum script to freeze the player to prevent it from moving when in dialog or something or another", "")]
+		"A costum script to freeze the player to prevent it from moving when in dialog or something or another")]
 	[AddComponentMenu("")]
 	public class FreezePlayer : Command
 	{
@@ -17,6 +17,7 @@ namespace Fungus
 		public override void OnEnter()
 		{
 			PlayerStatic.FreezePlayer(stopPlayerString);
+			Continue();
 		}
 
 		public override Color GetButtonColor()
