@@ -18,12 +18,17 @@ public struct PuzzleSolution {
 	[HideInInspector]
 	public Block block;
 
+	[HideInInspector]
+	public StringVariable output;
+
 #if UNITY_EDITOR
 	//Helpers for the custom Property Drawer
 	[HideInInspector]
 	public bool _foldout;
 	[HideInInspector]
 	public bool _showPopup;
+	[HideInInspector]
+	public bool _showVariablePopup;
 	[HideInInspector]
 	public bool _defaultSolution;
 #endif
