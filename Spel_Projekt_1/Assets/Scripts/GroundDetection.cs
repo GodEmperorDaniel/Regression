@@ -6,8 +6,6 @@ public class GroundDetection : MonoBehaviour
 {
 	public List<SoundAndGround> sounds = new List<SoundAndGround>();
 	[Min(0)]
-	public float stepTimer;
-	private float stepTimer_;
 	public Animator ani;
 	public Tilemap tileMap;
 	private Vector3Int gridCoords;
@@ -19,22 +17,19 @@ public class GroundDetection : MonoBehaviour
 	{
 		player = PlayerStatic.playerInstance;
 		grid = tileMap.layoutGrid;
-		stepTimer_ = stepTimer;
 	}
 
-	public void Update()
+	public void CheckSound()
 	{
-		stepTimer_ -= Time.deltaTime;
 		if (ani.GetBool("movement"))
 		{
 			gridCoords = grid.WorldToCell(player.transform.position);
 			tile = tileMap.GetTile(gridCoords) as Tile;
 			for (int i = 0; i < sounds.Count; i++)
 			{
-				if (stepTimer_ <= 0 && tile.sprite == sounds[i].spriteOfTile)
+				if (tile.sprite == sounds[i].spriteOfTile)
 				{
 					PlaySound(sounds[i].nameOfSound);
-					stepTimer_ = stepTimer;
 				}
 			}
 		}

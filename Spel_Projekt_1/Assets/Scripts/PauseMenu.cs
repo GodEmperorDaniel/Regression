@@ -69,6 +69,7 @@ public class PauseMenu : MonoBehaviour
     
     public void QuitGame()
     {
+		Destroy(PlayerStatic.playerInstance);
         SceneManager.LoadScene("BT_MAINMENU");
     }
 
