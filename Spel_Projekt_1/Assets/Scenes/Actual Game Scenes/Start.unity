@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 15985541}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -285,7 +285,7 @@ MonoBehaviour:
     block: {fileID: 796438712}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -293,7 +293,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &15985543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -636,6 +644,16 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1834285429}
+    - target: {fileID: 2108923796933503937, guid: fc81ef3bf3cbd944e9fb1ff820289fdf,
+        type: 3}
+      propertyPath: inMenu
+      value: 
+      objectReference: {fileID: 1462670974}
+    - target: {fileID: 2108923796933503937, guid: fc81ef3bf3cbd944e9fb1ff820289fdf,
+        type: 3}
+      propertyPath: outMenu
+      value: 
+      objectReference: {fileID: 611372118}
     - target: {fileID: 2108923797836319388, guid: fc81ef3bf3cbd944e9fb1ff820289fdf,
         type: 3}
       propertyPath: m_IsActive
@@ -651,6 +669,12 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2108923797836319386, guid: fc81ef3bf3cbd944e9fb1ff820289fdf,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f892f37a6498d9742b99a2f109ee5c94,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc81ef3bf3cbd944e9fb1ff820289fdf, type: 3}
 --- !u!1001 &190124643
@@ -2251,61 +2275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_s
       objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238617, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: selectedBlocks.Array.size
@@ -2381,6 +2350,61 @@ PrefabInstance:
       propertyPath: variables.Array.data[6]
       value: 
       objectReference: {fileID: 796438693}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238614, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238616, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: commandList.Array.size
@@ -2481,11 +2505,6 @@ PrefabInstance:
       propertyPath: commandList.Array.data[13]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238609, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: value
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238818, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: blockName
@@ -2510,66 +2529,6 @@ PrefabInstance:
         type: 3}
       propertyPath: useCustomTint
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: commandList.Array.data[1]
-      value: 
-      objectReference: {fileID: 796438667}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: commandList.Array.data[2]
-      value: 
-      objectReference: {fileID: 796438666}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: nodeRect.width
-      value: 175.88239
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: nodeRect.x
-      value: 423.79852
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: nodeRect.y
-      value: -238.28456
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: blockName
-      value: Mitch & Lynda (Adults) Intro
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: tint.r
-      value: 0.21960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: tint.g
-      value: 0.21960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: tint.b
-      value: 0.21960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: useCustomTint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238613, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: Why, hello! I'm Mitch. {wi} And I'm Lynda.
       objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238820, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
@@ -2741,6 +2700,71 @@ PrefabInstance:
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238609, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 796438667}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 796438666}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: nodeRect.width
+      value: 175.88239
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 423.79852
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: -238.28456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: blockName
+      value: Mitch & Lynda (Adults) Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: tint.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: tint.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: tint.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238610, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: useCustomTint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238613, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: Why, hello! I'm Mitch. {wi} And I'm Lynda.
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6356340249110238619, guid: 1414d3aee28fa1a4ca78638a848a7037, type: 3}
     - {fileID: 6356340249110238615, guid: 1414d3aee28fa1a4ca78638a848a7037, type: 3}
@@ -2847,7 +2871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 413937320}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 360
     interactableAngleDot: -1
@@ -2855,7 +2879,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -2863,7 +2887,7 @@ MonoBehaviour:
     block: {fileID: 796438698}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -2871,7 +2895,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &413937320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3078,7 +3110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -3086,7 +3118,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -3094,7 +3126,7 @@ MonoBehaviour:
     block: {fileID: 796438678}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -3102,7 +3134,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!114 &468473000 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9140805763991721412, guid: 49b8a4c2f2dd2874fbae0bd586720851,
@@ -3414,6 +3454,19 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList: []
+--- !u!114 &566825354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566825348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!114 &566825357
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3464,6 +3517,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
+--- !u!1 &611372118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611372120}
+  - component: {fileID: 611372119}
+  m_Layer: 0
+  m_Name: Meny parameter off
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &611372119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611372118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1635568487}
+    Params:
+    - Name: Lekplats Ambience Master
+      Value: 100
+  - Target: {fileID: 1635568486}
+    Params:
+    - Name: Underwater
+      Value: 0
+  TriggerEvent: 11
+--- !u!4 &611372120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611372118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &615258945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3796,7 +3903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 666176558}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -3804,7 +3911,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -3812,7 +3919,7 @@ MonoBehaviour:
     block: {fileID: 796438672}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -3820,7 +3927,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &666176558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4162,12 +4277,12 @@ PrefabInstance:
         type: 3}
       propertyPath: commandList.Array.data[1]
       value: 
-      objectReference: {fileID: 859501521}
+      objectReference: {fileID: 0}
     - target: {fileID: 4973996812020571484, guid: 49b8a4c2f2dd2874fbae0bd586720851,
         type: 3}
       propertyPath: commandList.Array.data[0]
       value: 
-      objectReference: {fileID: 859501521}
+      objectReference: {fileID: 0}
     - target: {fileID: 4973996812020571484, guid: 49b8a4c2f2dd2874fbae0bd586720851,
         type: 3}
       propertyPath: nodeRect.x
@@ -4302,7 +4417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -4310,7 +4425,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -4318,7 +4433,7 @@ MonoBehaviour:
     block: {fileID: 1564546268}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -4326,7 +4441,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &792327694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4400,6 +4523,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438667
 MonoBehaviour:
@@ -4428,6 +4553,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438668
 MonoBehaviour:
@@ -4497,6 +4624,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438671
 MonoBehaviour:
@@ -4524,6 +4653,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438672
 MonoBehaviour:
@@ -4712,6 +4843,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438680
 MonoBehaviour:
@@ -4828,6 +4961,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438683 stripped
 MonoBehaviour:
@@ -4879,6 +5014,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438686 stripped
 MonoBehaviour:
@@ -4942,6 +5079,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438690
 MonoBehaviour:
@@ -5025,6 +5164,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438693
 MonoBehaviour:
@@ -5264,6 +5405,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438705
 MonoBehaviour:
@@ -5624,6 +5767,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438712
 MonoBehaviour:
@@ -5681,6 +5826,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438714
 MonoBehaviour:
@@ -6290,6 +6437,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438728
 MonoBehaviour:
@@ -6317,6 +6466,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438729
 MonoBehaviour:
@@ -6435,6 +6586,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438732
 MonoBehaviour:
@@ -6646,6 +6799,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &796438739
 MonoBehaviour:
@@ -7387,18 +7542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &859501521 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4973996812020571485, guid: 49b8a4c2f2dd2874fbae0bd586720851,
-    type: 3}
-  m_PrefabInstance: {fileID: 783153536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859501512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cedef913f543f3c4098937d11c131555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &859501529
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7466,7 +7609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -7474,7 +7617,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -7482,7 +7625,7 @@ MonoBehaviour:
     block: {fileID: 1564546268}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -7490,7 +7633,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &924734870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7917,7 +8068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -7925,7 +8076,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -7933,7 +8084,7 @@ MonoBehaviour:
     block: {fileID: 1564546297}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -7941,7 +8092,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &1126453835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8119,7 +8278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8127,7 +8286,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -8135,7 +8294,7 @@ MonoBehaviour:
     block: {fileID: 796438688}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8143,7 +8302,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &1226718415
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8183,7 +8350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8191,7 +8358,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8199,7 +8366,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8207,7 +8374,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!1001 &1244876411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8841,7 +9016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 1380288190}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8849,7 +9024,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -8857,7 +9032,7 @@ MonoBehaviour:
     block: {fileID: 796438737}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -8865,7 +9040,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!1 &1406501413
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,6 +9814,60 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1462670974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462670976}
+  - component: {fileID: 1462670975}
+  m_Layer: 0
+  m_Name: Meny parameter on
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1462670975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462670974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1635568487}
+    Params:
+    - Name: Lekplats Ambience Master
+      Value: 0
+  - Target: {fileID: 1635568486}
+    Params:
+    - Name: Underwater
+      Value: 100
+  TriggerEvent: 11
+--- !u!4 &1462670976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462670974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472573764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8140765884636441722, guid: a4164668b24941e4983d7a0e63737f23,
@@ -9656,7 +9893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -9664,7 +9901,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -9672,7 +9909,7 @@ MonoBehaviour:
     block: {fileID: 1564546268}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -9680,7 +9917,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &1472573767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9824,6 +10069,71 @@ PrefabInstance:
       propertyPath: variables.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1564546265}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1564546267}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: blockName
+      value: Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1564546266}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1564546279}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1564546281}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1564546264}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1564546280}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 306.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: -7.1363525
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208966, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208960, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7535735824444208962, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: commandList.Array.size
@@ -9909,120 +10219,20 @@ PrefabInstance:
       propertyPath: nodeRect.y
       value: 140.89896
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: nodeRect.width
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[1]
-      value: 
-      objectReference: {fileID: 1564546260}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: blockName
-      value: Swings
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1564546249}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1564546261}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[3]
-      value: 
-      objectReference: {fileID: 1564546259}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1564546278}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: nodeRect.x
-      value: 137.49191
+      value: 312.4786
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: nodeRect.y
-      value: -104.65891
+      value: -54.512524
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208966, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[1]
-      value: 
-      objectReference: {fileID: 1564546265}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1564546267}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: blockName
-      value: Trees
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[3]
-      value: 
-      objectReference: {fileID: 1564546266}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1564546279}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1564546281}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[5]
-      value: 
-      objectReference: {fileID: 1564546264}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.data[6]
-      value: 
-      objectReference: {fileID: 1564546280}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: nodeRect.x
-      value: 306.591
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208964, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: nodeRect.y
-      value: -7.1363525
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208960, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 0
+      value: Stones
       objectReference: {fileID: 0}
     - target: {fileID: 7535735824444209018, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
@@ -10114,20 +10324,20 @@ PrefabInstance:
       propertyPath: nodeRect.y
       value: -56.144104
       objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209015, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: indentLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209015, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: storyText
+      value: The frame's the closest thing to a local firestation.
+      objectReference: {fileID: 0}
     - target: {fileID: 7535735824444209008, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: commandList.Array.size
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209006, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: commandList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209006, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: nodeRect.x
-      value: 265.7143
       objectReference: {fileID: 0}
     - target: {fileID: 7535735824444209010, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
@@ -10149,30 +10359,65 @@ PrefabInstance:
       propertyPath: blockName
       value: Merry-go-round
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209015, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
-      propertyPath: indentLevel
-      value: 1
+      propertyPath: commandList.Array.size
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209015, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
-      propertyPath: storyText
-      value: The frame's the closest thing to a local firestation.
+      propertyPath: nodeRect.width
+      value: 120
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
-      propertyPath: nodeRect.x
-      value: 312.4786
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: nodeRect.y
-      value: -54.512524
-      objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444209016, guid: 736fd6e50705c07498cc366c73bcbc29,
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1564546260}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: blockName
-      value: Stones
+      value: Swings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1564546249}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1564546261}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1564546259}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1564546278}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 137.49191
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209004, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: -104.65891
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209006, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: commandList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444209006, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 265.7143
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7535735824444209009, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
@@ -10592,6 +10837,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546256 stripped
 MonoBehaviour:
@@ -10643,6 +10890,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546259
 MonoBehaviour:
@@ -10966,13 +11215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069145a26358e064e8928312b4955295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 29
-  indentLevel: 0
-  sceneName:
-    stringRef: {fileID: 0}
-    stringVal: JB_TELEFON_MEK
-  loadingScreen: {fileID: 0}
-  loadMode: 1
 --- !u!114 &1564546271
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -10998,7 +11240,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1564546270}
+  - {fileID: 0}
 --- !u!114 &1564546272
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -11100,6 +11342,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546274
 MonoBehaviour:
@@ -11210,6 +11454,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546279
 MonoBehaviour:
@@ -11258,6 +11504,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546281
 MonoBehaviour:
@@ -11286,6 +11534,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546282
 MonoBehaviour:
@@ -11409,6 +11659,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546285
 MonoBehaviour:
@@ -11436,6 +11688,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546286
 MonoBehaviour:
@@ -11573,6 +11827,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546290
 MonoBehaviour:
@@ -11600,6 +11856,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546291
 MonoBehaviour:
@@ -11767,6 +12025,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546296
 MonoBehaviour:
@@ -11794,6 +12054,8 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
   setSayDialog: {fileID: 0}
 --- !u!114 &1564546297
 MonoBehaviour:
@@ -11921,6 +12183,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588920453}
   m_CullTransparentMesh: 0
+--- !u!1 &1635568485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635568488}
+  - component: {fileID: 1635568486}
+  - component: {fileID: 1635568487}
+  m_Layer: 0
+  m_Name: Musik+Ambience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1635568486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635568485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Musik/Playground Theme
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1635568487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635568485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/World/Lekplats Ambience
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &1635568488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635568485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1642729759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8176647778504872637, guid: 56952e903d86a694ab8bddae2a483aea,
@@ -12872,7 +13212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 1815440561}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -12880,7 +13220,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -12888,7 +13228,7 @@ MonoBehaviour:
     block: {fileID: 796438684}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -12896,7 +13236,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &1815440563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13070,16 +13418,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3696036159979077822, guid: 266c40f3384c11c43839a53e282bda92,
-        type: 3}
-      propertyPath: orthographic size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3696036159979077822, guid: 266c40f3384c11c43839a53e282bda92,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3696036159675758787, guid: 266c40f3384c11c43839a53e282bda92,
         type: 3}
       propertyPath: m_Enabled
@@ -13094,6 +13432,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RefResolutionY
       value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077822, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: orthographic size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077822, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266c40f3384c11c43839a53e282bda92, type: 3}
@@ -13283,6 +13631,12 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+--- !u!95 &1882829248 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4038089666863768761, guid: 56952e903d86a694ab8bddae2a483aea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882829247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1894108708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13387,6 +13741,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4164668b24941e4983d7a0e63737f23, type: 3}
+--- !u!1 &1943516159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943516161}
+  - component: {fileID: 1943516160}
+  m_Layer: 0
+  m_Name: Footsteps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1943516160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943516159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab3640f9ae514949a2e22185f6f99c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - nameOfSound: 
+    spriteOfTile: {fileID: 21300000, guid: 6a4299cae61753945bd3ce20482830a8, type: 3}
+  speed: 1
+  ani: {fileID: 1882829248}
+  tileMap: {fileID: 281268161}
+--- !u!4 &1943516161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943516159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994871560
 GameObject:
   m_ObjectHideFlags: 0
@@ -13603,7 +14006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 2086635472}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -13611,7 +14014,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -13619,7 +14022,7 @@ MonoBehaviour:
     block: {fileID: 1564546271}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -13627,7 +14030,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &2086635472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13802,7 +14213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -13810,7 +14221,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -13818,7 +14229,7 @@ MonoBehaviour:
     block: {fileID: 1564546263}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -13826,7 +14237,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!1 &2089958556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8140765884636441722, guid: a4164668b24941e4983d7a0e63737f23,
@@ -13955,7 +14374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 2097961740}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 360
     interactableAngleDot: -1
@@ -13963,7 +14382,7 @@ MonoBehaviour:
     block: {fileID: 796438686}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -13971,7 +14390,7 @@ MonoBehaviour:
     block: {fileID: 796438686}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -13979,7 +14398,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &2097961739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14150,7 +14577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 2130621551}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14158,7 +14585,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -14166,7 +14593,7 @@ MonoBehaviour:
     block: {fileID: 796438677}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14174,7 +14601,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &2130621553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14226,7 +14661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 0}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14234,7 +14669,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -14242,7 +14677,7 @@ MonoBehaviour:
     block: {fileID: 1564546268}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14250,7 +14685,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &2137274859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14373,7 +14816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 2141448905}
-  onEnter:
+  OnEnter:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14381,7 +14824,7 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onStay:
+  OnKeyPressed:
     Active: 1
     interactableAngle: 360
     interactableAngleDot: -1
@@ -14389,7 +14832,7 @@ MonoBehaviour:
     block: {fileID: 796438686}
     _foldout: 1
     _showPopup: 1
-  onExit:
+  OnStay:
     Active: 0
     interactableAngle: 0
     interactableAngleDot: 0
@@ -14397,7 +14840,15 @@ MonoBehaviour:
     block: {fileID: 0}
     _foldout: 0
     _showPopup: 0
-  onItemUse: []
+  OnExit:
+    Active: 0
+    interactableAngle: 0
+    interactableAngleDot: 0
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+  OnItemUse: []
 --- !u!61 &2141448905
 BoxCollider2D:
   m_ObjectHideFlags: 0
