@@ -17,6 +17,23 @@ MonoBehaviour:
   Max: 100
   Default: 67
   Exists: 1
+--- !u!114 &-8701756681036281585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korridor Chase/Intro
+  m_EditorClassIdentifier: 
+  Name: Intro
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8284235933298877539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,12 +66,12 @@ MonoBehaviour:
   Path: event:/Musik/Korridor Chase
   guid: 6445af2f03ccd040b58198b300b91a25
   Banks:
-  - {fileID: 1868463066083927224}
+  - {fileID: -4248831008319900431}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8694825609920565532}
+  - {fileID: -8701756681036281585}
   MinDistance: 0
   MaxDistance: 0
   Length: 185648
@@ -73,18 +90,35 @@ MonoBehaviour:
   Path: event:/SFX/World/Lekplats Ambience
   guid: 36e0e55f93099e40b195703ae0d02296
   Banks:
-  - {fileID: 8063084874261673031}
+  - {fileID: -5068046658926211674}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1417007013734705308}
-  - {fileID: -5245161812056320315}
-  - {fileID: -8284235933298877539}
-  - {fileID: -375702811867110968}
+  - {fileID: -6973277271522700016}
+  - {fileID: -1663551451933365777}
+  - {fileID: 8493898006336167818}
+  - {fileID: 4370664817560680996}
   MinDistance: 0
   MaxDistance: 0
   Length: 204000
+--- !u!114 &-6973277271522700016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Ungar
+  m_EditorClassIdentifier: 
+  Name: Ungar
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &-6966303753618985133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,20 +134,20 @@ MonoBehaviour:
   Path: event:/Musik/Playground Theme
   guid: 8a20dd5c99b805479769766190a80af8
   Banks:
-  - {fileID: 1868463066083927224}
+  - {fileID: -4248831008319900431}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9080286532239384532}
-  - {fileID: -5207927481846522114}
-  - {fileID: -5681373744676991693}
-  - {fileID: 5531952892305405321}
-  - {fileID: -8795469291675592976}
-  - {fileID: 6713745882625367283}
-  - {fileID: 5975122238040724499}
-  - {fileID: 5050069565650441723}
-  - {fileID: 3096362388551464485}
+  - {fileID: 2859186421054271887}
+  - {fileID: 4017298621809820401}
+  - {fileID: -90184535228657640}
+  - {fileID: 4507847210781807370}
+  - {fileID: 8558263479214890601}
+  - {fileID: -4426925266362831197}
+  - {fileID: -1272206722384430681}
+  - {fileID: 1886431878441815149}
+  - {fileID: 6104879179270529647}
   MinDistance: 0
   MaxDistance: 0
   Length: 214736
@@ -132,8 +166,8 @@ MonoBehaviour:
   Path: "event:/SFX/World/tr\xE4fotsteg"
   guid: 7235b16baca3374c974e8c31b71a5136
   Banks:
-  - {fileID: 8350643726007726312}
-  - {fileID: 8063084874261673031}
+  - {fileID: 2306914564718572649}
+  - {fileID: -5068046658926211674}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -156,12 +190,12 @@ MonoBehaviour:
   Path: event:/Musik/Badrum Slutscen
   guid: a4e072248c314e4dabcbffb379a71688
   Banks:
-  - {fileID: 1868463066083927224}
+  - {fileID: -4248831008319900431}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -4619958162093235538}
+  - {fileID: 5000092291593663910}
   MinDistance: 0
   MaxDistance: 0
   Length: 30150
@@ -180,7 +214,7 @@ MonoBehaviour:
   Path: event:/Musik/Voidspirit
   guid: 8796e171edbd964eb04f187ab775ea7d
   Banks:
-  - {fileID: 1868463066083927224}
+  - {fileID: -4248831008319900431}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -239,6 +273,24 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &-5068046658926211674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637197097549856360
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4619958162093235538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +308,75 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-4426925266362831197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Diskant Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Diskant Piano Stem
+  Min: 0
+  Max: 100
+  Default: 80
+  Exists: 1
+--- !u!114 &-4248831008319900431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musik.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank
+  SubDir: 
+  lastModified: 637197088744268930
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1663551451933365777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Lekplats Ambience/F\xE5glar Volym"
+  m_EditorClassIdentifier: 
+  Name: "F\xE5glar Volym"
+  Min: 0
+  Max: 100
+  Default: 88
+  Exists: 1
+--- !u!114 &-1272206722384430681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Highcut
+  m_EditorClassIdentifier: 
+  Name: Highcut
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-1009540556093060723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637199525474857969
+  lastModified: 637197097549022610
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -293,6 +414,23 @@ MonoBehaviour:
   Max: 100
   Default: 85
   Exists: 1
+--- !u!114 &-90184535228657640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Bell Stem
+  m_EditorClassIdentifier: 
+  Name: Bell Stem
+  Min: 0
+  Max: 100
+  Default: 80
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,10 +445,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -1009540556093060723}
-  - {fileID: 8350643726007726312}
-  - {fileID: 1868463066083927224}
-  - {fileID: 127157141951116734}
-  - {fileID: 8063084874261673031}
+  - {fileID: -4248831008319900431}
+  - {fileID: 283888111956308804}
+  - {fileID: 2306914564718572649}
+  - {fileID: -5068046658926211674}
   EditorEvents:
   - {fileID: -6555040578283091297}
   - {fileID: 911242739685863218}
@@ -321,10 +459,10 @@ MonoBehaviour:
   - {fileID: -7608525562984915268}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8350643726007726312}
+  - {fileID: 2306914564718572649}
   StringsBanks:
   - {fileID: -1009540556093060723}
-  stringsBankWriteTime: 637199525474857969
+  stringsBankWriteTime: 637197097549022610
   cacheVersion: 3
 --- !u!114 &127157141951116734
 MonoBehaviour:
@@ -344,6 +482,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &283888111956308804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637196120485586980
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &911242739685863218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,8 +515,8 @@ MonoBehaviour:
   Path: event:/SFX/World/sand
   guid: e56c150f23af5747900ded9ae9b0697e
   Banks:
-  - {fileID: 8350643726007726312}
-  - {fileID: 8063084874261673031}
+  - {fileID: 2306914564718572649}
+  - {fileID: -5068046658926211674}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -403,6 +559,58 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &1886431878441815149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Lowcut
+  m_EditorClassIdentifier: 
+  Name: Lowcut
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &2306914564718572649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637197097548971750
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2859186421054271887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Piano Stem
+  Min: 0
+  Max: 100
+  Default: 90
+  Exists: 1
 --- !u!114 &3096362388551464485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +626,74 @@ MonoBehaviour:
   Name: Underwater
   Min: 0
   Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &4017298621809820401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Oh Shit
+  m_EditorClassIdentifier: 
+  Name: Oh Shit
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &4370664817560680996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Ungar Volym
+  m_EditorClassIdentifier: 
+  Name: Ungar Volym
+  Min: 0
+  Max: 100
+  Default: 85
+  Exists: 1
+--- !u!114 &4507847210781807370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Wurl Stem
+  m_EditorClassIdentifier: 
+  Name: Wurl Stem
+  Min: 0
+  Max: 100
+  Default: 85
+  Exists: 1
+--- !u!114 &5000092291593663910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Badrum Slutscen/Synth Tail
+  m_EditorClassIdentifier: 
+  Name: Synth Tail
+  Min: 0
+  Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &5050069565650441723
@@ -467,6 +743,23 @@ MonoBehaviour:
   m_Name: parameter:/Playground Theme/Highcut
   m_EditorClassIdentifier: 
   Name: Highcut
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &6104879179270529647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
   Min: 0
   Max: 100
   Default: 0
@@ -523,6 +816,40 @@ MonoBehaviour:
   lastModified: 637199525474808104
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &8493898006336167818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Lekplats Ambience Master
+  m_EditorClassIdentifier: 
+  Name: Lekplats Ambience Master
+  Min: 0
+  Max: 100
+  Default: 100
+  Exists: 1
+--- !u!114 &8558263479214890601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Master Music
+  m_EditorClassIdentifier: 
+  Name: Master Music
+  Min: 0
+  Max: 100
+  Default: 67
   Exists: 1
 --- !u!114 &8694825609920565532
 MonoBehaviour:

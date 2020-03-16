@@ -2066,19 +2066,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe6075a5e4ecc246bd7c4728eb28dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 477981372}
-  showPuzzleGuess: {fileID: 2105919364}
   solutions: []
   defaultSolution:
     solution: 
     flowchart: {fileID: 0}
     block: {fileID: 0}
+    output: {fileID: 0}
     _foldout: 0
     _showPopup: 0
+    _showVariablePopup: 0
     _defaultSolution: 0
   maxCharacters: 9
+  onIndexSet:
+    solution: 
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    output: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+    _showVariablePopup: 0
+    _defaultSolution: 0
+  onPuzzlePieceAdded:
+    solution: 
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    output: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+    _showVariablePopup: 0
+    _defaultSolution: 0
   escapeAxis: Cancel
+  resetPuzzleOnCancel: 1
   previewString: 
+  startButton: {fileID: 477981372}
+  showPuzzleGuess: {fileID: 2105919364}
+  autoEnable: []
+  autoDisable: []
 --- !u!114 &630512310
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2232,8 +2255,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 630512315}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -2280,7 +2302,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1152, y: 768}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
