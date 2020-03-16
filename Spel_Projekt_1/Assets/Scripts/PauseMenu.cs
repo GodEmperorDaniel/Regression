@@ -67,10 +67,15 @@ public class PauseMenu : MonoBehaviour
 
 
     
-    public void QuitGame()
+    public void BackToMainMenu()
     {
 		Destroy(PlayerStatic.playerInstance);
         SceneManager.LoadScene("BT_MAINMENU");
+    }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
     }
 
     private void AlwaysSelected()
