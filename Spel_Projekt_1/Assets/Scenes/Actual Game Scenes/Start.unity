@@ -3030,6 +3030,16 @@ PrefabInstance:
       propertyPath: useCustomTint
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238821, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: '{speed = 30} Hum-di-dum-di-dee- ehm...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238821, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 174786784}
     - target: {fileID: 6356340249110238820, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: commandList.Array.size
@@ -3060,6 +3070,16 @@ PrefabInstance:
       propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 796438792}
+    - target: {fileID: 6356340249110238823, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: '{speed = 30} Halt!{w=1} What''s the password?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238823, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 740190093}
     - target: {fileID: 6356340249110238822, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: nodeRect.width
@@ -3079,6 +3099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: useCustomTint
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238825, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: '{speed = 30} Nay, stand back!'
       objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238824, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
@@ -3120,6 +3145,11 @@ PrefabInstance:
       propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 796438762}
+    - target: {fileID: 6356340249110238827, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: '{speed = 20} You. {w=0.5} Won''t. {w=0.5} Pass.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238826, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
       propertyPath: commandList.Array.size
@@ -3204,6 +3234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: commandList.Array.data[10]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356340249110238829, guid: 1414d3aee28fa1a4ca78638a848a7037,
+        type: 3}
+      propertyPath: storyText
+      value: '{speed = 30} Hey, I found something up here! Would you help me down?'
       objectReference: {fileID: 0}
     - target: {fileID: 6356340249110238828, guid: 1414d3aee28fa1a4ca78638a848a7037,
         type: 3}
@@ -3330,41 +3365,6 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 738813751}
-    - target: {fileID: 6356340249110238829, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: '{speed = 30} Hey, I found something up here! Would you help me down?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238821, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: '{speed = 30} Hum-di-dum-di-dee- ehm...'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238821, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 174786784}
-    - target: {fileID: 6356340249110238823, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: '{speed = 30} Halt!{w=1} What''s the password?'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238823, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 740190093}
-    - target: {fileID: 6356340249110238825, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: '{speed = 30} Nay, stand back!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356340249110238827, guid: 1414d3aee28fa1a4ca78638a848a7037,
-        type: 3}
-      propertyPath: storyText
-      value: '{speed = 20} You. {w=0.5} Won''t. {w=0.5} Pass.'
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6356340249110238619, guid: 1414d3aee28fa1a4ca78638a848a7037, type: 3}
     - {fileID: 6356340249110238615, guid: 1414d3aee28fa1a4ca78638a848a7037, type: 3}
@@ -12585,11 +12585,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objects
       objectReference: {fileID: 0}
-    - target: {fileID: 7535735824444208971, guid: 736fd6e50705c07498cc366c73bcbc29,
-        type: 3}
-      propertyPath: hideComponents
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7535735824444208970, guid: 736fd6e50705c07498cc366c73bcbc29,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12645,6 +12640,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7535735824444208971, guid: 736fd6e50705c07498cc366c73bcbc29,
+        type: 3}
+      propertyPath: hideComponents
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546271, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: nodeRect.x
+      value: 138.91074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546271, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: nodeRect.y
+      value: -281.0829
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546316, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: spriteRenderers.Array.data[0]
       value: 
@@ -12653,10 +12661,18 @@ PrefabInstance:
       propertyPath: _targetGameObject.gameObjectVal
       value: 
       objectReference: {fileID: 201788602}
+    - target: {fileID: 1564546321, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: nodeRect.y
+      value: -282.09015
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546324, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: _targetGameObject.gameObjectVal
       value: 
       objectReference: {fileID: 201788602}
+    - target: {fileID: 1564546328, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: nodeRect.x
+      value: -34.187984
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546330, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: images.Array.data[0]
       value: 
@@ -13752,6 +13768,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22488902, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404316, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204022475, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
@@ -14918,6 +14938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nodeRect.x
       value: 291.49252
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119620012730946576, guid: 04d760ad590024848971756b4dfcfbae,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: 147.41386
       objectReference: {fileID: 0}
     - target: {fileID: 7119620013350164305, guid: 04d760ad590024848971756b4dfcfbae,
         type: 3}
