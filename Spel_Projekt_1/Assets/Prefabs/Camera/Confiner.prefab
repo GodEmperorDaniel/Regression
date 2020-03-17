@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8986919527264796864}
   - component: {fileID: 8986919527264796867}
   - component: {fileID: 8986919527264796866}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -74,20 +74,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 8986919527264796866}
     m_ColliderPaths:
-    - - X: 159309011
-        Y: -99650552
-      - X: 159309011
-        Y: 99650688
-      - X: -209215584
-        Y: 99650659
-      - X: -209215555
-        Y: -99650552
+    - - X: -17725525
+        Y: -31362218
+      - X: -17725525
+        Y: 60187644
+      - X: -149849392
+        Y: 60187615
+      - X: -149849363
+        Y: -31362218
   m_CompositePaths:
     m_Paths:
-    - - {x: 15.930898, y: -9.965055}
-      - {x: 15.930898, y: 9.965069}
-      - {x: -20.921558, y: 9.965063}
-      - {x: -20.921553, y: -9.965055}
+    - - {x: -1.7725555, y: -3.136222}
+      - {x: -1.7725555, y: 6.0187645}
+      - {x: -14.98494, y: 6.0187583}
+      - {x: -14.984933, y: -3.136222}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.000005
 --- !u!61 &8986919527264796866
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -2.495328, y: 0.00000667572}
+  m_Offset: {x: -8.378744, y: 1.4412713}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -114,5 +114,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 36.852463, y: 19.930124}
+  m_Size: {x: 13.212389, y: 9.154986}
   m_EdgeRadius: 0
