@@ -69,7 +69,7 @@ public class PauseMenu : MonoBehaviour
     
     public void BackToMainMenu()
     {
-		Destroy(PlayerStatic.playerInstance);
+		//Destroy(PlayerStatic.playerInstance);
         SceneManager.LoadScene("BT_MAINMENU");
     }
 

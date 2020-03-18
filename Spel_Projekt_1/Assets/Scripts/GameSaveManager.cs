@@ -64,6 +64,7 @@ public class GameSaveManager : MonoBehaviour {
 	}
 
 	public void LoadGame() {
+		PlayerStatic.ResumePlayer("pause");
 		CreateDirectory();
 		if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data")) {
 			FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);

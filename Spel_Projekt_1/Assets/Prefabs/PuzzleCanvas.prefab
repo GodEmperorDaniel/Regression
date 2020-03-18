@@ -1650,24 +1650,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe6075a5e4ecc246bd7c4728eb28dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 4973996811734173563}
-  showPuzzleGuess: {fileID: 0}
   solutions:
   - solution: 
     flowchart: {fileID: 4973996812020571487}
     block: {fileID: 4973996812020571474}
+    output: {fileID: 0}
     _foldout: 1
     _showPopup: 1
+    _showVariablePopup: 0
     _defaultSolution: 0
   defaultSolution:
     solution: 
     flowchart: {fileID: 4973996812020571487}
     block: {fileID: 4973996811434974764}
+    output: {fileID: 0}
     _foldout: 1
     _showPopup: 1
+    _showVariablePopup: 1
     _defaultSolution: 1
   maxCharacters: 9
+  onIndexSet:
+    solution: 
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    output: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+    _showVariablePopup: 0
+    _defaultSolution: 0
+  onPuzzlePieceAdded:
+    solution: 
+    flowchart: {fileID: 0}
+    block: {fileID: 0}
+    output: {fileID: 0}
+    _foldout: 0
+    _showPopup: 0
+    _showVariablePopup: 0
+    _defaultSolution: 0
   escapeAxis: Cancel
+  resetPuzzleOnCancel: 1
+  previewString: 
+  startButton: {fileID: 4973996811734173563}
+  showPuzzleGuess: {fileID: 0}
+  autoEnable: []
+  autoDisable: []
 --- !u!114 &4973996812020571487
 MonoBehaviour:
   m_ObjectHideFlags: 0
