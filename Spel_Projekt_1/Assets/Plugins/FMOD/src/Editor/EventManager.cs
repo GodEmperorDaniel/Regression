@@ -801,7 +801,6 @@ namespace FMODUnity
 				return null;
 			}
 			return eventCache.EditorEvents.Find((x) => {
-				Debug.Log(x);
 				return x && x.Path.Equals(path, StringComparison.CurrentCultureIgnoreCase);
 			});
         }
