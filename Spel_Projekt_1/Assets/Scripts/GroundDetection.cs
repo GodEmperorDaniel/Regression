@@ -7,7 +7,7 @@ public class GroundDetection : MonoBehaviour
 	public List<SoundAndGround> sounds = new List<SoundAndGround>();
 	[Min(0)]
 	public Animator ani;
-	public Tilemap tileMap;
+	private Tilemap tileMap;
 	private Vector3Int gridCoords;
 	private GridLayout grid;
 	private Tile tile;
@@ -15,6 +15,7 @@ public class GroundDetection : MonoBehaviour
 
 	public void Start()
 	{
+
 		player = PlayerStatic.playerInstance;
 		grid = tileMap.layoutGrid;
 	}
