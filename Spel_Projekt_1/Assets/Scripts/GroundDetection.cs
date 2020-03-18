@@ -21,15 +21,19 @@ public class GroundDetection : MonoBehaviour
 
 	public void CheckSound()
 	{
-		if (ani.GetBool("movement"))
+		if (ani.GetBool("movement") && grid)
 		{
 			gridCoords = grid.WorldToCell(player.transform.position);
 			tile = tileMap.GetTile(gridCoords) as Tile;
 			for (int i = 0; i < sounds.Count; i++)
 			{
-				if (tile.sprite == sounds[i].spriteOfTile)
+				for (int j = 0; j < sounds[i].spritesOfTile.Count; j++)
 				{
-					PlaySound(sounds[i].nameOfSound);
+					if (tile.sprite == sounds[i].spritesOfTile[j])
+					{
+						PlaySound(sounds[i].nameOfSound);
+						break;
+					}
 				}
 			}
 		}
@@ -42,9 +46,9 @@ public class GroundDetection : MonoBehaviour
 }
 
 [System.Serializable]
-public struct SoundAndGround
+public class SoundAndGround
 {
 	[FMODUnity.EventRef]
 	public string nameOfSound;
-	public Sprite spriteOfTile;
+	public List<Sprite> spritesOfTile = new List<Sprite>();
 }
