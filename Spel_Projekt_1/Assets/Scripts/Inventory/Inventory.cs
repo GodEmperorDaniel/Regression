@@ -18,9 +18,13 @@ public class Inventory : MonoBehaviour, ISaveable
 	public int Count { get { return _items.Count; } }
 	public InventoryItem[] Items { get { return _items.ToArray(); } }
 
-	public void Start()
+	ItemAddedText itemAddedText; // Simons skit, remove if bad
+
+    public void Start()
     {
-        if (uiPrefab != null)
+		itemAddedText = GameObject.FindObjectOfType<ItemAddedText>(); // Simons skit, remove if bad
+
+		if (uiPrefab != null)
         {
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
         }
@@ -66,6 +70,7 @@ public class Inventory : MonoBehaviour, ISaveable
 		var newItem = Instantiate(item);
 		newItem.itemId = item.itemId;
 		_items.Add(newItem);
+		itemAddedText?.DisplayText(); // Simons skit, remove if bad
 	}
     
     public bool RemoveItem(InventoryItem item) {
