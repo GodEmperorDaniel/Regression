@@ -15,6 +15,7 @@ public class GroundDetection : MonoBehaviour
 
 	public void Start()
 	{
+		//fix so grid is found
 
 		player = PlayerStatic.playerInstance;
 		grid = tileMap.layoutGrid;
