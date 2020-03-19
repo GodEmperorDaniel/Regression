@@ -15,8 +15,8 @@ namespace Fungus {
 		public Inventory Inventory {
 			get {
 				if (_inventory == null) {
-					if (PlayerStatic.inventoryInstance != null) {
-						_inventory = PlayerStatic.inventoryInstance;
+					if (PlayerStatic.InventoryInstance != null) {
+						_inventory = PlayerStatic.InventoryInstance;
 					}
 				}
 

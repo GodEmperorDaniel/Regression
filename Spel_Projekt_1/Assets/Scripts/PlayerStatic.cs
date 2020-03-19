@@ -15,19 +15,19 @@ public class PlayerStatic : MonoBehaviour {
 			Array.Copy(data, 8, controllerData, 0, controllerDataLength);
 			Array.Copy(data, 8 + controllerDataLength, inventoryData, 0, inventoryDataLength);
 
-			if (playerInstance == null) {
+			if (PlayerInstance == null) {
 				_controllerData = controllerData;
 				_inventoryData = inventoryData;
 				_version = version;
 			} else {
-				controllerInstance.Load(controllerData, version);
-				inventoryInstance.Load(inventoryData, version);
+				ControllerInstance.Load(controllerData, version);
+				InventoryInstance.Load(inventoryData, version);
 			}
 		}
 
 		public byte[] Save() {
-			var controllerData = controllerInstance.Save();
-			var inventoryData = inventoryInstance.Save();
+			var controllerData = ControllerInstance.Save();
+			var inventoryData = InventoryInstance.Save();
 
 			var data = new byte[8 + controllerData.Length + inventoryData.Length];
 
@@ -38,14 +38,27 @@ public class PlayerStatic : MonoBehaviour {
 
 			return data;
 		}
+
+		public void ClearSave() {
+			freezeStack.Clear();
+			if (PlayerInstance) {
+				//ControllerInstance.ClearSave();
+				//InventoryInstance.ClearSave();
+				Destroy(_player);
+				_player = null;
+				_controller = null;
+				_inventory = null;
+			}
+		}
 	}
 
 	public static int DoorIndex;
 	public static long exitID;
 
-	public static GameObject playerInstance;
-	public static CharacterController2d controllerInstance;
-	public static Inventory inventoryInstance;
+	public static GameObject PlayerInstance { get { return _player; } }
+	public static CharacterController2d ControllerInstance { get { return _controller; } }
+	public static Inventory InventoryInstance { get { return _inventory; } }
+
 	public static SaveablePlayerStatic Saveable {
 		get {
 			if (_saveable == null) {
@@ -55,6 +68,9 @@ public class PlayerStatic : MonoBehaviour {
 		}
 	}
 
+	private static GameObject _player;
+	private static CharacterController2d _controller;
+	private static Inventory _inventory;
 	private static SaveablePlayerStatic _saveable;
 	private static byte[] _controllerData;
 	private static byte[] _inventoryData;
@@ -65,14 +81,14 @@ public class PlayerStatic : MonoBehaviour {
     {
 		Cursor.visible = false;
 		DontDestroyOnLoad(gameObject);
-        if (playerInstance == null)
+        if (_player == null)
         {
-            playerInstance = gameObject;
-			controllerInstance = GetComponent<CharacterController2d>();
-			inventoryInstance = GetComponent<Inventory>();
+            _player = gameObject;
+			_controller = GetComponent<CharacterController2d>();
+			_inventory = GetComponent<Inventory>();
 			if (_controllerData != null) {
-				controllerInstance.Load(_controllerData, _version);
-				inventoryInstance.Load(_inventoryData, _version);
+				ControllerInstance.Load(_controllerData, _version);
+				InventoryInstance.Load(_inventoryData, _version);
 				_controllerData = null;
 				_inventoryData = null;
 			}
@@ -85,15 +101,15 @@ public class PlayerStatic : MonoBehaviour {
 
 	public static void FreezePlayer(string key) {
 		freezeStack.Add(key);
-		if (controllerInstance) {
-			controllerInstance.enabled = false;
+		if (ControllerInstance) {
+			ControllerInstance.enabled = false;
 		}
 	}
 
 	public static void ResumePlayer(string key) {
 		freezeStack.Remove(key);
-		if (controllerInstance && !IsFrozen()) {
-			controllerInstance.enabled = true;
+		if (ControllerInstance && !IsFrozen()) {
+			ControllerInstance.enabled = true;
 		}
 	}
 

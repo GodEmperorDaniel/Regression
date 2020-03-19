@@ -21,8 +21,8 @@ public class ScenSaver : MonoBehaviour, ISaveable
 	}
 
 	public void Load(byte[] data, int version) {
-		var sceneNameLength = BitConverter.ToInt32(data, 32);
-		var sceneName = FungusSaver.StringEncoding.GetString(data, 36, sceneNameLength);
+		var sceneNameLength = BitConverter.ToInt32(data, 0);
+		var sceneName = FungusSaver.StringEncoding.GetString(data, 4, sceneNameLength);
 		var currentScene = SceneManager.GetActiveScene();
 		if (currentScene.name != sceneName) {
 			SceneManager.LoadScene(sceneName);
@@ -40,4 +40,6 @@ public class ScenSaver : MonoBehaviour, ISaveable
 
 		return data;
 	}
+
+	public void ClearSave() {}
 }

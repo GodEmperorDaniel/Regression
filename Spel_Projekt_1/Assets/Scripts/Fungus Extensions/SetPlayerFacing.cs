@@ -23,16 +23,16 @@ namespace Fungus {
 
 			switch (facingDirection) {
 				case FacingDirection.up:
-					PlayerStatic.controllerInstance.SetFacing(Vector2.up);
+					PlayerStatic.ControllerInstance.SetFacing(Vector2.up);
 					break;
 				case FacingDirection.down:
-					PlayerStatic.controllerInstance.SetFacing(Vector2.down);
+					PlayerStatic.ControllerInstance.SetFacing(Vector2.down);
 					break;
 				case FacingDirection.left:
-					PlayerStatic.controllerInstance.SetFacing(Vector2.left);
+					PlayerStatic.ControllerInstance.SetFacing(Vector2.left);
 					break;
 				case FacingDirection.right:
-					PlayerStatic.controllerInstance.SetFacing(Vector2.right);
+					PlayerStatic.ControllerInstance.SetFacing(Vector2.right);
 					break;
 			}
 

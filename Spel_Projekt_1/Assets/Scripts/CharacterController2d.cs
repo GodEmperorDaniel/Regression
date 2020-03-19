@@ -223,4 +223,6 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 			}
 		}
 	}
+
+	public void ClearSave() {}
 }

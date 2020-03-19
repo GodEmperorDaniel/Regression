@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
 	public const int version = 4;
+	public static GameSaveManager instance;
 
 	//private static ISaveable[] _saveables;
 
@@ -19,14 +20,14 @@ public class GameSaveManager : MonoBehaviour {
 			};
 		} else if (version >= 2) {
 			return new ISaveable[] {
-				PlayerStatic.controllerInstance,
-				PlayerStatic.inventoryInstance,
+				PlayerStatic.ControllerInstance,
+				PlayerStatic.InventoryInstance,
 				FungusSaver.Instance
 			};
 		} else {
 			return new ISaveable[] {
-				PlayerStatic.controllerInstance,
-				PlayerStatic.inventoryInstance,
+				PlayerStatic.ControllerInstance,
+				PlayerStatic.InventoryInstance,
 			};
 		}
 	}
@@ -65,7 +66,7 @@ public class GameSaveManager : MonoBehaviour {
 		CreateDirectory();
 		FileStream file = File.Create(Application.persistentDataPath + "/game_save/player_data/player_save.data");
 
-		file.Write(output,0,totalSize);
+		file.Write(output, 0, totalSize);
 		file.Close();
 	}
 
@@ -90,14 +91,20 @@ public class GameSaveManager : MonoBehaviour {
 				index += 4;
 				var obj = saveableObjects[i];
 				var objData = new byte[size];
-				Array.Copy(saveData,index,objData,0,size);
+				Array.Copy(saveData, index, objData, 0, size);
 
 				obj.Load(objData, ver);
 
 				index += size;
 			}
-			
+
 			file.Close();
+		}
+	}
+
+	public void ClearSave() {
+		foreach (var obj in GetAllSaveables(version)) {
+			obj.ClearSave();
 		}
 	}
 
@@ -108,5 +115,9 @@ public class GameSaveManager : MonoBehaviour {
 		if (!Directory.Exists(Application.persistentDataPath + "/game_save/player_data")) {
 			Directory.CreateDirectory(Application.persistentDataPath + "/game_save/player_data");
 		}
+	}
+
+	private void Awake() {
+		instance = this;
 	}
 }
