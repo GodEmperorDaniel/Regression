@@ -21,7 +21,7 @@ namespace Fungus
 			PlayerStatic.ResumePlayer(stopPlayerString);
 			if (setPlayerActive)
 			{
-				PlayerStatic.playerInstance.SetActive(!PlayerStatic.playerInstance.activeSelf);
+				PlayerStatic.PlayerInstance.SetActive(!PlayerStatic.PlayerInstance.activeSelf);
 			}
 			Continue();
 		}

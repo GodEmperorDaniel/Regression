@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -192,10 +192,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	}
 
 	public byte[] Save() {
-		var scene = SceneManager.GetActiveScene();
-		var sceneName = FungusSaver.StringEncoding.GetBytes(scene.name);
-
-		var data = new byte[9 * 4 + sceneName.Length];
+		var data = new byte[8 * 4];
 
 		BitConverter.GetBytes(transform.position.x).CopyTo(data, 0);
 		BitConverter.GetBytes(transform.position.y).CopyTo(data, 4);
@@ -205,8 +202,6 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 		BitConverter.GetBytes(_stepLeft).CopyTo(data, 20);
 		BitConverter.GetBytes(_stepDir.x).CopyTo(data, 24);
 		BitConverter.GetBytes(_stepDir.y).CopyTo(data, 28);
-		BitConverter.GetBytes(sceneName.Length).CopyTo(data, 32);
-		sceneName.CopyTo(data, 36);
 
 		return data;
 	}
@@ -219,7 +214,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 
 		SetAnimatorVariables(_stepDir.sqrMagnitude > deadZone * deadZone);
 
-		if (version >= 3) {
+		if (version == 3) {
 			var sceneNameLength = BitConverter.ToInt32(data, 32);
 			var sceneName = FungusSaver.StringEncoding.GetString(data, 36, sceneNameLength);
 			var currentScene = SceneManager.GetActiveScene();
@@ -228,4 +223,6 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 			}
 		}
 	}
+
+	public void ClearSave() {}
 }
