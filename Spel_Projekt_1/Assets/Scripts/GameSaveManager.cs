@@ -6,12 +6,18 @@ using UnityEngine;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
-	public const int version = 3;
+	public const int version = 4;
 
 	//private static ISaveable[] _saveables;
 
 	public ISaveable[] GetAllSaveables(int version) {
-		if (version >= 2) {
+		if (version >= 4) {
+			return new ISaveable[] {
+				ScenSaver.Instance,
+				PlayerStatic.Saveable,
+				FungusSaver.Instance
+			};
+		} else if (version >= 2) {
 			return new ISaveable[] {
 				PlayerStatic.controllerInstance,
 				PlayerStatic.inventoryInstance,

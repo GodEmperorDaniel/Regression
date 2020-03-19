@@ -792,16 +792,13 @@ namespace FMODUnity
             UpdateCache();
 			if (eventCache == null)
 			{
-				Debug.LogWarning("Cache is null :(");
 				return null;
 			}
 			if (eventCache.EditorEvents == null)
 			{
-				Debug.LogWarning("EditorEvents is null :(");
 				return null;
 			}
 			return eventCache.EditorEvents.Find((x) => {
-				Debug.Log(x);
 				return x && x.Path.Equals(path, StringComparison.CurrentCultureIgnoreCase);
 			});
         }
