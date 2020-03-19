@@ -21,6 +21,7 @@ public class Menu : MonoBehaviour
 
     public void NewGame()
     {
+
         SceneManager.LoadScene("Start");
     }
 
@@ -29,6 +30,10 @@ public class Menu : MonoBehaviour
 
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
     public void Credits()
     {
