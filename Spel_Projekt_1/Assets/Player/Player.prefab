@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4038089666863768761}
   - component: {fileID: 4781034780829146177}
   - component: {fileID: 471277476}
+  - component: {fileID: 471277470}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -162,7 +163,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547923293149438665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -225,7 +226,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - nameOfSound: event:/SFX/World/sand
-    spriteOfTile: {fileID: 21300000, guid: 6a4299cae61753945bd3ce20482830a8, type: 3}
+  - nameOfSound: event:/SFX/World/Sandfotsteg
+    spritesOfTile:
+    - {fileID: 21300000, guid: 6a4299cae61753945bd3ce20482830a8, type: 3}
+  - nameOfSound: "event:/SFX/World/Gr\xE4sfotsteg"
+    spritesOfTile:
+    - {fileID: 21300000, guid: 6a4299cae61753945bd3ce20482830a8, type: 3}
+    - {fileID: -6132537817567154718, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -7856797430394631804, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 893564558254965463, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -8299291311520291832, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 3056889398641686283, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 4776383846081951617, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -7659134697830729379, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 1848067031659517561, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -2178402438178694638, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 7913181257121874939, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 5628427073335832439, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 9185070945151050393, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 953689111172738046, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 8804160772157989722, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -2942583278096747758, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -8171440798927462797, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -7759168031941417080, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -4396267879870113240, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -8519268636917612709, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -2082221998499463842, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 7526348847766427005, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 9212436077009872760, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: 8305999846797146237, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -2160872117965680365, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
+    - {fileID: -4830294402442987642, guid: 4045d44a538b79344b7d5375ed621b28, type: 3}
   ani: {fileID: 4038089666863768761}
-  tileMap: {fileID: 0}
+--- !u!60 &471277470
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547923293149438665}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.15145588, y: -0.42372227}
+      - {x: 0.1510427, y: -0.34687448}
+      - {x: 0.040249825, y: -0.21826482}
+      - {x: -0.047798634, y: -0.21682787}
+      - {x: -0.151505, y: -0.3354106}
+      - {x: -0.15064716, y: -0.4083867}
+      - {x: -0.036420584, y: -0.5236819}
+      - {x: 0.04863739, y: -0.5230417}

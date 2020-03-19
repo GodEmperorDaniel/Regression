@@ -143,14 +143,9 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	}
 
 	private void Translate() {
-		Debug.DrawRay(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.37f), forward * 0.17f, Color.green);
 		if (!hit)
 		{
 			transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
-		}
-		else
-		{
-			Debug.Log(hit.collider.name);
 		}
 	}
 
