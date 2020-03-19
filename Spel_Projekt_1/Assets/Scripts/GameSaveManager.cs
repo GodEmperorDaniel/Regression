@@ -2,9 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
@@ -66,6 +64,7 @@ public class GameSaveManager : MonoBehaviour {
 	}
 
 	public void LoadGame() {
+		PlayerStatic.ResumePlayer("pause");
 		CreateDirectory();
 		if (File.Exists(Application.persistentDataPath + "/game_save/player_data/player_save.data")) {
 			FileStream file = File.Open(Application.persistentDataPath + "/game_save/player_data/player_save.data", FileMode.Open);

@@ -46,6 +46,8 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private float _stepLeft;
 	private Vector2 _stepDir;
 
+	private RaycastHit2D hit;
+
 
 	private void Start() {
 		if (animator == null) {
@@ -56,17 +58,34 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private void OnEnable()
 	{
 		_interactionPressed = 2;
+		_inventoryPressed = true;
 	}
 
+	//private void Update() {
+	//	if (_stepLeft > 0) {
+	//		_stepLeft -= Time.deltaTime;
+	//	} else {
+	//		ReadInput();
+	//	}
+
+	//	Translate();
+	//	CheckInventoryButton();
+	//}
+
 	private void FixedUpdate() {
-		if (_stepLeft > 0) {
+		if (_stepLeft > 0)
+		{
 			_stepLeft -= Time.deltaTime;
-		} else {
+		}
+		else
+		{
 			ReadInput();
 		}
+		
 
 		Translate();
 		CheckInventoryButton();
+
 		if (Input.GetAxisRaw(interactionButton) > deadZone) {
 			_interactionPressed++;
 		} else {
@@ -102,14 +121,21 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 					}
 					break;
 			}
-
 			forward = _stepDir;
+
+			hit = Physics2D.BoxCast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.37f), new Vector2(0.1f,0.1f), 0, forward, 0.17f);
 
 			if (speedType == SpeedType.smooth) {
 				_stepDir *= Mathf.Sqrt(h * h + v * v);
 			}
-
-			SetAnimatorVariables(true);
+			if (!hit)
+			{
+				SetAnimatorVariables(true);
+			}
+			else
+			{
+				SetAnimatorVariables(false);
+			}
 		} else {
 			_stepDir = Vector2.zero;
 			SetAnimatorVariables(false);
@@ -117,7 +143,10 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	}
 
 	private void Translate() {
-		transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
+		if (!hit)
+		{
+			transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
+		}
 	}
 
 	private void SetAnimatorVariables(bool moving) {

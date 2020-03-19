@@ -31,6 +31,11 @@ public class FungusSaver : ISaveable {
 		}
 	}
 
+	public void ResetSave() {
+		flowcharts = new Dictionary<string, Flowchart>();
+		saveData = new Dictionary<string, SaveObj>();
+	}
+
 	public void Load(byte[] data, int version) {
 		var flowchartCount = BitConverter.ToInt32(data, 0);
 

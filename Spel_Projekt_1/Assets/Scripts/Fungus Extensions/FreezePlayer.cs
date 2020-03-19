@@ -12,11 +12,17 @@ namespace Fungus
 	{
 		[SerializeField] protected string stopPlayerString;
 
+		[SerializeField] protected bool setPlayerActive;
+
 		#region public members
 
 		public override void OnEnter()
 		{
 			PlayerStatic.FreezePlayer(stopPlayerString);
+			if (setPlayerActive)
+			{
+				PlayerStatic.playerInstance.SetActive(!PlayerStatic.playerInstance.activeSelf);
+			}
 			Continue();
 		}
 
@@ -24,7 +30,6 @@ namespace Fungus
 		{
 			return new Color32(235, 191, 217, 255);
 		}
-
 		#endregion
 	}
 

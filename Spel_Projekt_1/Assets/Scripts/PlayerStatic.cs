@@ -14,7 +14,8 @@ public class PlayerStatic : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+		Cursor.visible = false;
+		DontDestroyOnLoad(gameObject);
         if (playerInstance == null)
         {
             playerInstance = gameObject;
