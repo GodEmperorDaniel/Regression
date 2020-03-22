@@ -107,7 +107,7 @@ namespace Fungus
 			}
 
 			if (interruptPlayer) {
-				PlayerStatic.controllerInstance.InterruptMove();
+				PlayerStatic.ControllerInstance.InterruptMove();
 			}
 
             var sayDialog = SayDialog.GetSayDialog();

@@ -12,7 +12,7 @@ namespace Fungus {
 		public override void OnEnter() {
 			base.OnEnter();
 
-			PlayerStatic.controllerInstance.InterruptMove();
+			PlayerStatic.ControllerInstance.InterruptMove();
 
 			Continue();
 		}

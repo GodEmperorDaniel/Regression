@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
 
     public void NewGame()
     {
-
+		GameSaveManager.instance.ClearSave();
         SceneManager.LoadScene("Start");
     }
 

@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour, ISaveable
 	public List<ItemCombination> possibleCombinations;
 	public GameObject uiPrefab;
 
-	protected InventoryCanvas canvas;
+	protected static InventoryCanvas canvas;
 	[SerializeField]
 	protected List<InventoryItem> _items;
 
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour, ISaveable
     {
 		itemAddedText = GameObject.FindObjectOfType<ItemAddedText>(); // Simons skit, remove if bad
 
-		if (uiPrefab != null)
+		if (!canvas && uiPrefab != null)
         {
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
         }
@@ -107,7 +107,7 @@ public class Inventory : MonoBehaviour, ISaveable
 	}
     
     public void ShowUI() {
-		if (canvas != null) {
+		if (canvas) {
 			canvas.Show(this);
 		}
 	}
@@ -151,4 +151,6 @@ public class Inventory : MonoBehaviour, ISaveable
 			}
 		}
 	}
+
+	public void ClearSave() {}
 }

@@ -16,7 +16,7 @@ namespace Fungus
 
 		public override void OnEnter()
 		{
-			PlayerStatic.playerInstance.transform.position = position;
+			PlayerStatic.PlayerInstance.transform.position = position;
 			Continue();
 		}
 

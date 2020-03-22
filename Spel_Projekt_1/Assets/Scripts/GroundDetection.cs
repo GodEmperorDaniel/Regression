@@ -17,7 +17,7 @@ public class GroundDetection : MonoBehaviour
 	{
 		//fix so grid is found
 		tileMap = GameObject.FindGameObjectWithTag("ground").GetComponent<Tilemap>();
-		player = PlayerStatic.playerInstance;
+		player = PlayerStatic.PlayerInstance;
 		grid = tileMap.layoutGrid;
 	}
 
