@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1564546327}
   - component: {fileID: 1564546328}
   - component: {fileID: 1564546330}
+  - component: {fileID: -4713819559401340922}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -146,6 +147,7 @@ MonoBehaviour:
   variables:
   - {fileID: 1564546277}
   - {fileID: 1564546274}
+  - {fileID: -4713819559401340922}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -2656,6 +2658,7 @@ MonoBehaviour:
   itemId: 172
   indentLevel: 0
   stopPlayerString: ordflata
+  setPlayerActive: 0
 --- !u!114 &1564546320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2790,6 +2793,7 @@ MonoBehaviour:
   itemId: 176
   indentLevel: 1
   stopPlayerString: ordflata
+  setPlayerActive: 0
 --- !u!114 &1564546324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,3 +2967,18 @@ MonoBehaviour:
   images:
   - {fileID: 0}
   sprite: {fileID: 21300000, guid: 81a052f56ed892142b2d98a5e0c1d753, type: 3}
+--- !u!114 &-4713819559401340922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824444209000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Var
+  value: 0
