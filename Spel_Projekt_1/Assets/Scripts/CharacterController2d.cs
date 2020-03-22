@@ -61,17 +61,6 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 		_inventoryPressed = true;
 	}
 
-	//private void Update() {
-	//	if (_stepLeft > 0) {
-	//		_stepLeft -= Time.deltaTime;
-	//	} else {
-	//		ReadInput();
-	//	}
-
-	//	Translate();
-	//	CheckInventoryButton();
-	//}
-
 	private void FixedUpdate() {
 		if (_stepLeft > 0)
 		{
@@ -122,8 +111,11 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 					break;
 			}
 			forward = _stepDir;
-
-			hit = Physics2D.BoxCast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.37f), new Vector2(0.1f,0.1f), 0, forward, 0.17f);
+			
+			if (gameObject.layer != LayerMask.NameToLayer("Clone"))
+			{
+				hit = Physics2D.BoxCast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.37f), new Vector2(0.1f, 0.1f), 0, forward, 0.17f);
+			}
 
 			if (speedType == SpeedType.smooth) {
 				_stepDir *= Mathf.Sqrt(h * h + v * v);

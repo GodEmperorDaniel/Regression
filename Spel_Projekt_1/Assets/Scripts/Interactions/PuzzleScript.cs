@@ -64,11 +64,15 @@ public class PuzzleScript : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetAxisRaw(escapeAxis) > 0) {
-			if (!escapePressed) {
+		if (Input.GetAxisRaw(escapeAxis) > 0)
+		{
+			if (!escapePressed)
+			{
 				Cancel();
 			}
-		} else {
+		}
+		else
+		{
 			escapePressed = false;
 		}
 
@@ -76,11 +80,18 @@ public class PuzzleScript : MonoBehaviour {
 
 		if (showPuzzleGuess)
 		{
-			if (string.IsNullOrEmpty(puzzleCombination)) {
+			if (string.IsNullOrEmpty(puzzleCombination))
+			{
 				showPuzzleGuess.text = previewString;
-			} else {
+			}
+			else
+			{
 				showPuzzleGuess.text = puzzleCombination;
 			}
+		}
+		if (puzzleCombination.Length >= maxCharacters)
+		{
+			CheckNumber();
 		}
 	}
 
@@ -135,14 +146,15 @@ public class PuzzleScript : MonoBehaviour {
 		}
 	}
 
-	public void CheckNumber() {
-		for (int i = 0; i < solutions.Count; i++) {
-			if (puzzleCombination == solutions[i].solution) {
+	private void CheckNumber() {
+		for (int i = 0; i < solutions.Count; i++)
+		{
+			if (puzzleCombination == solutions[i].solution)
+			{
 				RunSolution(solutions[i], puzzleCombination);
 				return;
 			}
 		}
-
 		RunSolution(defaultSolution, puzzleCombination);
 	}
 
