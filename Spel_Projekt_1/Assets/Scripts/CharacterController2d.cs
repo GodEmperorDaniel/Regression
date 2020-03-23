@@ -47,6 +47,8 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private Vector2 _stepDir;
 
 	private RaycastHit2D hit;
+	private Vector3 lastPos = new Vector3(0,0);
+	private bool clone;
 
 
 	private void Start() {
@@ -111,22 +113,29 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 					break;
 			}
 			forward = _stepDir;
-			
+
 			if (gameObject.layer != LayerMask.NameToLayer("Clone"))
 			{
 				hit = Physics2D.BoxCast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.37f), new Vector2(0.1f, 0.1f), 0, forward, 0.17f);
-			}
 
-			if (speedType == SpeedType.smooth) {
-				_stepDir *= Mathf.Sqrt(h * h + v * v);
-			}
-			if (!hit)
-			{
-				SetAnimatorVariables(true);
+
+				if (speedType == SpeedType.smooth)
+				{
+					_stepDir *= Mathf.Sqrt(h * h + v * v);
+				}
+				if (!hit)
+				{
+					SetAnimatorVariables(true);
+				}
+				else
+				{
+					SetAnimatorVariables(false);
+				}
 			}
 			else
 			{
-				SetAnimatorVariables(false);
+				clone = true;
+				SetAnimatorVariables(PlayerStatic.PlayerInstance.GetComponent<CharacterController2d>().animator.GetBool("movement"));
 			}
 		} else {
 			_stepDir = Vector2.zero;
@@ -135,9 +144,19 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	}
 
 	private void Translate() {
-		if (!hit)
+		if (!clone)
 		{
-			transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
+			if (!hit)
+			{
+				transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
+			}
+		}
+		else
+		{
+			if (PlayerStatic.PlayerInstance.GetComponent<CharacterController2d>().animator.GetBool("movement"))
+			{
+				transform.Translate(_stepDir * movementSpeed * Time.deltaTime);
+			}
 		}
 	}
 
