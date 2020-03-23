@@ -14,6 +14,7 @@ public class RandomSpawns : MonoBehaviour
         {
             if (randomSpawns[i].keepTime > randomSpawns[i].timeRange)
             {
+                randomSpawns[i].keepTime = 0;
                 rnd = Random.Range(1, 100);
 
                 if (randomSpawns[i].chance >= rnd)
@@ -47,5 +48,5 @@ public class Chances
     public string nameOfSound;
 
     [HideInInspector]
-    public float keepTime;
+    public float keepTime = 0;
 }
