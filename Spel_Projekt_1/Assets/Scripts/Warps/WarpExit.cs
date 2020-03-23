@@ -27,23 +27,23 @@ public class WarpExit : MonoBehaviour {
 	private long id = 0;
 
 	public void WarpPlayer() {
-		PlayerStatic.playerInstance.transform.position = transform.position;
+		PlayerStatic.PlayerInstance.transform.position = transform.position;
 		switch (faceDirection) {
 			case FaceDirection.up:
-				PlayerStatic.controllerInstance.SetFacing(Vector2.up);
+				PlayerStatic.ControllerInstance.SetFacing(Vector2.up);
 				break;
 			case FaceDirection.down:
-				PlayerStatic.controllerInstance.SetFacing(Vector2.down);
+				PlayerStatic.ControllerInstance.SetFacing(Vector2.down);
 				break;
 			case FaceDirection.right:
-				PlayerStatic.controllerInstance.SetFacing(Vector2.right);
+				PlayerStatic.ControllerInstance.SetFacing(Vector2.right);
 				break;
 			case FaceDirection.left:
-				PlayerStatic.controllerInstance.SetFacing(Vector2.left);
+				PlayerStatic.ControllerInstance.SetFacing(Vector2.left);
 				break;
 		}
 		if (interruptMove) {
-			PlayerStatic.controllerInstance.InterruptMove();
+			PlayerStatic.ControllerInstance.InterruptMove();
 		}
 	}
 

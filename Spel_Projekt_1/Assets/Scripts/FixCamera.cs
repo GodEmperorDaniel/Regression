@@ -6,6 +6,6 @@ public class FixCamera : MonoBehaviour
 {
 	private void Start()
 	{
-		GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = PlayerStatic.playerInstance.transform;
+		GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = PlayerStatic.PlayerInstance.transform;
 	}
 }

@@ -11,16 +11,20 @@ public class Inventory : MonoBehaviour, ISaveable
 	public List<ItemCombination> possibleCombinations;
 	public GameObject uiPrefab;
 
-	protected InventoryCanvas canvas;
+	protected static InventoryCanvas canvas;
 	[SerializeField]
 	protected List<InventoryItem> _items;
 
 	public int Count { get { return _items.Count; } }
 	public InventoryItem[] Items { get { return _items.ToArray(); } }
 
-	public void Start()
+	ItemAddedText itemAddedText; // Simons skit, remove if bad
+
+    public void Start()
     {
-        if (uiPrefab != null)
+		itemAddedText = GameObject.FindObjectOfType<ItemAddedText>(); // Simons skit, remove if bad
+
+		if (!canvas && uiPrefab != null)
         {
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();
         }
@@ -36,21 +40,6 @@ public class Inventory : MonoBehaviour, ISaveable
 				_items[i].itemId = item.itemId;
 			}
 		}
-
-		/*Texture2D noiseTex = new Texture2D(100, 100);
-		Color[] pix = new Color[noiseTex.width * noiseTex.height];
-
-		for (var i = 0; i < pix.Length; i++) {
-			var v = UnityEngine.Random.value;
-			pix[i] = new Color(v, v, v);
-		}
-
-		noiseTex.SetPixels(pix);
-		noiseTex.Apply();
-		byte[] _bytes = noiseTex.EncodeToPNG();
-		var _fullPath = "D:\\Spel\\Unity\\Spel_Projekt_1\\Spel_Projekt_1\\Assets\\Shaders\\Static.png";
-		System.IO.File.WriteAllBytes(_fullPath, _bytes);
-		Debug.Log(_bytes.Length / 1024 + "Kb was saved as: " + _fullPath);*/
 	}
     
     public bool HasItem(InventoryItem item) {
@@ -81,6 +70,7 @@ public class Inventory : MonoBehaviour, ISaveable
 		var newItem = Instantiate(item);
 		newItem.itemId = item.itemId;
 		_items.Add(newItem);
+		itemAddedText?.DisplayText(); // Simons skit, remove if bad
 	}
     
     public bool RemoveItem(InventoryItem item) {
@@ -117,7 +107,7 @@ public class Inventory : MonoBehaviour, ISaveable
 	}
     
     public void ShowUI() {
-		if (canvas != null) {
+		if (canvas) {
 			canvas.Show(this);
 		}
 	}
@@ -161,4 +151,6 @@ public class Inventory : MonoBehaviour, ISaveable
 			}
 		}
 	}
+
+	public void ClearSave() {}
 }

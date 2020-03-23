@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class InventoryCanvas : MonoBehaviour
 {
-	public int rowLength;
-	public int minimumFramesShown;
-	public GameObject itemFrame;
+	[Header("References")]
 	public GameObject cursor;
 	public GameObject combineCursor;
 	public InventoryPopup popup;
+	public CanvasGroup canvasGroup;
+	public List<Image> itemIcons = new List<Image>();
 
-	public float horizontalSpacing = 72;
-	public float verticalSpacing = 80;
+	[Header("Appearance")]
+	public int rowLength;
+	public float fadeInTime;
+	public float fadeOutTime;
 
-	//protected List<Image> itemFrames;
-	private List<Image> itemIcons = new List<Image>();
-	private int cursorPos;
-
+	[Header("Input")]
 	public string horizontalAxis = "Horizontal";
 	public string verticalAxis = "Vertical";
 	public string selectAxis = "InteractionButton";
@@ -30,6 +30,14 @@ public class InventoryCanvas : MonoBehaviour
 	public float delayBeforeKeyRepeat = 1;
 	public float keyRepeatTime = 0.25f;
 
+	[Header("Automatic Itemframe Generation")]
+	[FormerlySerializedAs("itemFrame")]
+	public GameObject itemFramePrefab;
+	public float horizontalSpacing = 72;
+	public float verticalSpacing = 80;
+	public int minimumFramesShown;
+
+	private int cursorPos;
 	private Inventory _inventory;
 	private float _delay = 0;
 	private int _dirPressed = 0;
@@ -40,16 +48,18 @@ public class InventoryCanvas : MonoBehaviour
 	private bool _combining;
 	private int _combiningWith;
 	private GameObject _currentCursor;
+	private float _fadeInTimeLeft = 0;
+	private float _fadeOutTimeLeft = 0;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		DontDestroyOnLoad(transform.parent.gameObject);
-		Hide();
+		Hide(true);
 	}
 
-	public void Show(Inventory inventory) {
-		gameObject.SetActive(true);
+	public void Show(Inventory inventory, bool skipFadeIn = false) {
+		transform.parent.gameObject.SetActive(true);
 		combineCursor.SetActive(false);
 		PlayerStatic.FreezePlayer("Inventory");
 
@@ -58,32 +68,38 @@ public class InventoryCanvas : MonoBehaviour
 		_shownFrames = Mathf.Max(minimumFramesShown, inventory.Count);
 
 		for (var i = itemIcons.Count; i < inventory.Count; i++) {
-			itemIcons.Add(CreateFrame());
+			itemIcons.Add(CreateFrame(i));
 		}
-
-		var xOffset = -0.5f * horizontalSpacing * (Mathf.Min(rowLength, _shownFrames) - 1);
-		var yOffset = 0.5f * verticalSpacing * (Mathf.Ceil((float)_shownFrames / rowLength) - 1);
-		var x = 0;
-		var y = 0;
 
 		for (var i = 0; i < itemIcons.Count; i++) {
 			if (i < _shownFrames) {
-				if (x >= rowLength) {
+				var frame = itemIcons[i];
+				frame.rectTransform.parent.gameObject.SetActive(true);
+
+				/*if (x >= rowLength) {
 					x = 0;
 					y++;
 				}
-				var frame = itemIcons[i];
-				frame.rectTransform.parent.gameObject.SetActive(true);
+				
 				frame.rectTransform.parent.localPosition = new Vector3(xOffset + x * horizontalSpacing, yOffset - y * verticalSpacing, 0);
+				x++*/
+
 				if (i < inventory.Count) {
 					frame.sprite = inventory.Items[i].sprite;
+					frame.enabled = true;
 				} else {
 					frame.sprite = null;
-				}
-				x++;
+					frame.enabled = false;
+				};
 			} else {
 				itemIcons[i].transform.parent.gameObject.SetActive(false);
 			}
+		}
+
+		if (!skipFadeIn) {
+			_fadeInTimeLeft = fadeInTime;
+		} else {
+			canvasGroup.alpha = 1;
 		}
 
 		Focus();
@@ -105,7 +121,7 @@ public class InventoryCanvas : MonoBehaviour
 							if (_combiningWith != cursorPos) {
 								var otherItem = _inventory.Items[_combiningWith];
 								_inventory.TryCombine(item, otherItem);
-								Show(_inventory);//Check for any changes
+								Show(_inventory, true);//Check for any changes
 							}
 						} else {
 							UnFocus();
@@ -131,6 +147,17 @@ public class InventoryCanvas : MonoBehaviour
 				}
 			} else {
 				_closeButtonPressed = false;
+			}
+		}
+
+		if (_fadeInTimeLeft > 0 && canvasGroup) {
+			_fadeInTimeLeft -= Time.deltaTime;
+			canvasGroup.alpha = 1 - (_fadeInTimeLeft / fadeInTime);
+		} else if (_fadeOutTimeLeft > 0 && canvasGroup) {
+			_fadeOutTimeLeft -= Time.deltaTime;
+			canvasGroup.alpha = _fadeOutTimeLeft / fadeInTime;
+			if (_fadeOutTimeLeft <= 0) {
+				Hide(true);
 			}
 		}
 	}
@@ -195,10 +222,12 @@ public class InventoryCanvas : MonoBehaviour
 	private void MoveCursor(int byAmount) {
 		cursorPos += byAmount;
 		if (cursorPos >= _shownFrames) {
-			cursorPos = _shownFrames - 1;
+			//cursorPos = _shownFrames - 1;
+			cursorPos -= _shownFrames;
 		}
-		if (cursorPos < 0) {
-			cursorPos = 0;
+		if (cursorPos < 0)
+		{
+			cursorPos += _shownFrames;
 		}
 
 		if (cursorPos < itemIcons.Count) {
@@ -209,20 +238,24 @@ public class InventoryCanvas : MonoBehaviour
 		}
 	}
 
-	protected Image CreateFrame() {
-		var newObj = Instantiate(itemFrame);
+	protected Image CreateFrame(int i) {
+		var newObj = Instantiate(itemFramePrefab);
 		newObj.transform.SetParent(transform);
 		return newObj.GetComponentInChildren<Image>();
 	}
 
-	public void Hide() {
-		if (_combining) {
-			EndCombine();
+	public void Hide(bool skipFadeOut = false) {
+		if (!skipFadeOut && canvasGroup && fadeOutTime > 0) {
+			_fadeOutTimeLeft = fadeOutTime;
+		} else {
+			if (_combining) {
+				EndCombine();
+			}
+			transform.parent.gameObject.SetActive(false);
+			cursor.SetActive(false);
+			combineCursor.SetActive(false);
+			PlayerStatic.ResumePlayer("Inventory");
 		}
-		gameObject.SetActive(false);
-		cursor.SetActive(false);
-		combineCursor.SetActive(false);
-		PlayerStatic.ResumePlayer("Inventory");
 	}
 
 	public void Focus() {

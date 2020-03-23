@@ -12,11 +12,17 @@ namespace Fungus
 	{
 		[SerializeField] protected string stopPlayerString;
 
+		[SerializeField] protected bool setPlayerActive;
+
 		#region public members
 
 		public override void OnEnter()
 		{
 			PlayerStatic.ResumePlayer(stopPlayerString);
+			if (setPlayerActive)
+			{
+				PlayerStatic.PlayerInstance.SetActive(!PlayerStatic.PlayerInstance.activeSelf);
+			}
 			Continue();
 		}
 

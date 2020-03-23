@@ -4,19 +4,26 @@ using UnityEngine;
 
 namespace Fungus
 {
-	[CommandInfo("Custom" +
+	[CommandInfo("Custom",
 		"FreezePlayer",
-		"A costum script to freeze the player to prevent it from moving when in dialog or something or another", "")]
+		"A costum script to freeze the player to prevent it from moving when in dialog or something or another")]
 	[AddComponentMenu("")]
 	public class FreezePlayer : Command
 	{
 		[SerializeField] protected string stopPlayerString;
+
+		[SerializeField] protected bool setPlayerActive;
 
 		#region public members
 
 		public override void OnEnter()
 		{
 			PlayerStatic.FreezePlayer(stopPlayerString);
+			if (setPlayerActive)
+			{
+				PlayerStatic.PlayerInstance.SetActive(!PlayerStatic.PlayerInstance.activeSelf);
+			}
+			Continue();
 		}
 
 		public override Color GetButtonColor()

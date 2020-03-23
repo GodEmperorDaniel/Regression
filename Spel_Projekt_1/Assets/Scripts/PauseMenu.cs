@@ -51,8 +51,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-		inMenu.SetActive(true);
-		outMenu.SetActive(false);
+        FixSettings();
 		pauseMenyUi.SetActive(true);
         eventSystem.SetSelectedGameObject(null);
         lastSelectedButton = null;
@@ -62,14 +61,20 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadInventory()
     {
-        PlayerStatic.playerInstance.GetComponent<Inventory>().ShowUI();
+        PlayerStatic.PlayerInstance.GetComponent<Inventory>().ShowUI();
     }
 
 
     
-    public void QuitGame()
+    public void BackToMainMenu()
     {
+		Destroy(PlayerStatic.PlayerInstance);
         SceneManager.LoadScene("BT_MAINMENU");
+    }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
     }
 
     private void AlwaysSelected()
@@ -91,10 +96,12 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-	void FixSettings()
-	{
-		inMenu.SetActive(false);
-		outMenu.SetActive(true);
-	}
-
+    void FixSettings()
+    {
+        if (inMenu && outMenu)
+        {
+            inMenu.SetActive(!inMenu.activeSelf);
+            outMenu.SetActive(!outMenu.activeSelf);
+        }
+    }
 }

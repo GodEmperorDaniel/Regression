@@ -790,7 +790,17 @@ namespace FMODUnity
         public static EditorEventRef EventFromString(string path)
         {
             UpdateCache();
-            return eventCache.EditorEvents.Find((x) => x.Path.Equals(path, StringComparison.CurrentCultureIgnoreCase));
+			if (eventCache == null)
+			{
+				return null;
+			}
+			if (eventCache.EditorEvents == null)
+			{
+				return null;
+			}
+			return eventCache.EditorEvents.Find((x) => {
+				return x && x.Path.Equals(path, StringComparison.CurrentCultureIgnoreCase);
+			});
         }
 
         public static EditorEventRef EventFromGUID(Guid guid)
