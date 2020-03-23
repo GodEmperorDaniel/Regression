@@ -11,7 +11,7 @@ public class WallEyes : MonoBehaviour
     bool eyesOpen = false;
 
     [Header("After what x-position should the eyes open?")]
-    int eyeOpenPos = 40;
+    [SerializeField] int eyeOpenPos = 40;
 
     [Header("How often should the eyes blink?")]
     [SerializeField] float blinkFrequency = 10f;
