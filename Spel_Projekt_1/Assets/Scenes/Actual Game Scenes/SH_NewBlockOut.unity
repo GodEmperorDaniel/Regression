@@ -4292,6 +4292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 65796663}
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: possibleCombinations.Array.size
@@ -4336,10 +4340,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
-      propertyPath: tileMap
-      value: 
-      objectReference: {fileID: 65796663}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
 --- !u!1001 &95968081
@@ -34596,7 +34596,7 @@ PrefabInstance:
     - target: {fileID: 6847339781477294583, guid: f556497fcad27a64fac40378adfd26cd,
         type: 3}
       propertyPath: randomSpawns.Array.data[0].timeRange
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6847339781477294583, guid: f556497fcad27a64fac40378adfd26cd,
         type: 3}
@@ -34700,6 +34700,10 @@ GameObject:
   - component: {fileID: 3158489084964856392}
   - component: {fileID: 3158489084964856391}
   - component: {fileID: 3158489084964856390}
+  - component: {fileID: 3158489084964856397}
+  - component: {fileID: 3158489084964856396}
+  - component: {fileID: 3158489084964856395}
+  - component: {fileID: 3158489084964856394}
   m_Layer: 10
   m_Name: Footsteps
   m_TagString: footsteps
@@ -34824,7 +34828,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.6622787, y: -3.7171726}
+  m_Offset: {x: -4.6622787, y: -2.0564585}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -34835,7 +34839,111 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.324561, y: 8.434345}
+  m_Size: {x: 10.324561, y: 5.112917}
+  m_EdgeRadius: 0
+--- !u!61 &3158489084964856394
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158489084964856388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.4135594, y: -4.978179}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.6452484, y: 0.72343636}
+  m_EdgeRadius: 0
+--- !u!61 &3158489084964856395
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158489084964856388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.1881053, y: -6.7350883}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.3762116, y: 2.8153496}
+  m_EdgeRadius: 0
+--- !u!61 &3158489084964856396
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158489084964856388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -7.2562966, y: -5.2317905}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2031698, y: 1.2176914}
+  m_EdgeRadius: 0
+--- !u!61 &3158489084964856397
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158489084964856388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.968238, y: -4.9785666}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3021832, y: 0.8035841}
   m_EdgeRadius: 0
 --- !u!4 &3158489084964857274
 Transform:
@@ -34864,15 +34972,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - nameOfSound: event:/SFX/World/Sandfotsteg
+  - nameOfSound: event:/SFX/Player/Footsteps/Sandfotsteg
     ColliderForSound:
     - {fileID: 3158489084964856389}
-  - nameOfSound: "event:/SFX/World/Gr\xE4sfotsteg"
+  - nameOfSound: "event:/SFX/Player/Footsteps/Gr\xE4sfotsteg"
     ColliderForSound:
     - {fileID: 3158489084964856393}
     - {fileID: 3158489084964856392}
     - {fileID: 3158489084964856391}
     - {fileID: 3158489084964856390}
+    - {fileID: 3158489084964856396}
+    - {fileID: 3158489084964856395}
+    - {fileID: 3158489084964856394}
+  - nameOfSound: event:/SFX/Player/Footsteps/Vattenfotsteg
+    ColliderForSound:
+    - {fileID: 3158489084964856397}
 --- !u!1 &5136806224604148006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2883917304472114769, guid: 33ab35da47f0cde45a9beb9430531c79,
@@ -35447,7 +35561,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 35
+  itemId: 408
   blockName: Playhouse Door
   description: 
   eventHandler: {fileID: 0}
