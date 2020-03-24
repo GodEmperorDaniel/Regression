@@ -5,37 +5,17 @@ using UnityEngine.Tilemaps;
 public class GroundDetection : MonoBehaviour
 {
 	public List<SoundAndGround> sounds = new List<SoundAndGround>();
-	[Min(0)]
-	public Animator ani;
-	private Tilemap tileMap;
-	private Vector3Int gridCoords;
-	private GridLayout grid;
-	private Tile tile;
-	private GameObject player;
 
-	public void Start()
+	public void CheckSound(Collider2D col)
 	{
-		//fix so grid is found
-		tileMap = GameObject.FindGameObjectWithTag("ground").GetComponent<Tilemap>();
-		player = PlayerStatic.PlayerInstance;
-		grid = tileMap.layoutGrid;
-	}
-
-	public void CheckSound()
-	{
-		if (ani.GetBool("movement") && grid)
+		for (int i = 0; i < sounds.Count; i++)
 		{
-			gridCoords = grid.WorldToCell(player.transform.position);
-			tile = tileMap.GetTile(gridCoords) as Tile;
-			for (int i = 0; i < sounds.Count; i++)
+			for (int j = 0; j < sounds[i].ColliderForSound.Count; j++)
 			{
-				for (int j = 0; j < sounds[i].spritesOfTile.Count; j++)
+				if (col == sounds[i].ColliderForSound[j])
 				{
-					if (tile.sprite == sounds[i].spritesOfTile[j])
-					{
-						PlaySound(sounds[i].nameOfSound);
-						break;
-					}
+					PlaySound(sounds[i].nameOfSound);
+					break;
 				}
 			}
 		}
@@ -52,5 +32,5 @@ public class SoundAndGround
 {
 	[FMODUnity.EventRef]
 	public string nameOfSound;
-	public List<Sprite> spritesOfTile = new List<Sprite>();
+	public List<Collider2D> ColliderForSound = new List<Collider2D>();
 }
