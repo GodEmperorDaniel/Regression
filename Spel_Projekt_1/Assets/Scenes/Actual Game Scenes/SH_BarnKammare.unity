@@ -4745,7 +4745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &630512308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6447,7 +6447,7 @@ PrefabInstance:
     - target: {fileID: 6193911771833042881, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.246
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6193911771833042881, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
@@ -6497,7 +6497,7 @@ PrefabInstance:
     - target: {fileID: 6193911771833042880, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6193911771833042880, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
@@ -8871,12 +8871,12 @@ MonoBehaviour:
   - {fileID: 7535735823097404111}
   - {fileID: 1578571271}
   - {fileID: 1578571270}
-  - {fileID: 1578571269}
   - {fileID: 1578571408}
   - {fileID: 1578571407}
   - {fileID: 1578571260}
   - {fileID: 1578571333}
   - {fileID: 1578571268}
+  - {fileID: 1578571269}
   - {fileID: 1578571267}
   - {fileID: 1578571266}
   - {fileID: 1578571265}
@@ -9632,7 +9632,7 @@ MonoBehaviour:
   m_Instructions:
   - m_FullHash: 0
     m_VirtualCamera: {fileID: 1401754044}
-    m_ActivateAfter: 0
+    m_ActivateAfter: 3
     m_MinDuration: 0
   - m_FullHash: -497480721
     m_VirtualCamera: {fileID: 910353950}
@@ -9652,11 +9652,11 @@ MonoBehaviour:
     m_MinDuration: 0
   - m_FullHash: 534704670
     m_VirtualCamera: {fileID: 910353950}
-    m_ActivateAfter: 0
-    m_MinDuration: 0
-  - m_FullHash: -1641890008
+    m_ActivateAfter: 200
+    m_MinDuration: 1
+  - m_FullHash: -497480721
     m_VirtualCamera: {fileID: 1401754044}
-    m_ActivateAfter: 0
+    m_ActivateAfter: 4
     m_MinDuration: 0
   m_DefaultBlend:
     m_Style: 1
@@ -9710,7 +9710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 630512316}
+  selectedFlowchart: {fileID: 7535735823097404142}
 --- !u!4 &1725238847
 Transform:
   m_ObjectHideFlags: 1
@@ -10780,7 +10780,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &7535735823097404110
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10825,7 +10825,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &7535735823097404111
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10854,7 +10854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -230.3757, y: 415.74115}
+  scrollPos: {x: -132.50336, y: 284.88995}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -10867,7 +10867,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1578571280}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1578571269}
   variables:
   - {fileID: 747092288}
   - {fileID: 747092295}
