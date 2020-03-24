@@ -6,6 +6,7 @@ public class CallFootstepsEvent : MonoBehaviour
 {
     private GameObject footsteps = null;
     private GroundDetection footstepManager = null;
+    private Collider2D col;
 
     // Update is called once per frame
     void Update()
@@ -17,8 +18,16 @@ public class CallFootstepsEvent : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            col = other;
+        }
+    }
+
     public void GetFootstep()
     {
-        footstepManager.CheckSound();
+        footstepManager.CheckSound(col);
     }
 }
