@@ -5136,18 +5136,6 @@ PrefabInstance:
     - {fileID: 4973996811434974762, guid: 49b8a4c2f2dd2874fbae0bd586720851, type: 3}
     - {fileID: 4973996811434974763, guid: 49b8a4c2f2dd2874fbae0bd586720851, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 49b8a4c2f2dd2874fbae0bd586720851, type: 3}
---- !u!114 &783153537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4973996812020571487, guid: 49b8a4c2f2dd2874fbae0bd586720851,
-    type: 3}
-  m_PrefabInstance: {fileID: 783153536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859501512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &796438664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6356340249110238618, guid: 1414d3aee28fa1a4ca78638a848a7037,
@@ -7478,53 +7466,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 98
   indentLevel: 0
---- !u!114 &796438735
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796438664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 256.3663
-    y: -508.8
-    width: 120
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 110
-  blockName: random
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 796438736}
---- !u!114 &796438736
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796438664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af5dac98b0624702b476c1eac319eab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 103
-  indentLevel: 0
-  variable: {fileID: 0}
-  minValue:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  maxValue:
-    integerRef: {fileID: 0}
-    integerVal: 0
 --- !u!114 &796438737
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8985,7 +8926,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -121.4292
-    y: -256.95413
+    y: -255.68831
     width: 220.88612
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -9023,8 +8964,8 @@ MonoBehaviour:
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: ColorInterp
   targetMethod: Play
-  targetMethodText: 'Play (Color, Color, Single, PlayMode, InterpMode, ColorMode):
-    Void'
+  targetMethodText: 'Play (Color, Color, Single, PlayMode, InterpMode, ColorMode,
+    Boolean): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -9115,6 +9056,23 @@ MonoBehaviour:
       typeAssemblyname: ColorInterp+ColorMode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       typeFullname: ColorInterp+ColorMode
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
       intValue: 0
       boolValue: 0
       floatValue: 0
@@ -10827,7 +10785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 783153537}
+  selectedFlowchart: {fileID: 796438687}
 --- !u!4 &985159086
 Transform:
   m_ObjectHideFlags: 1
@@ -11213,6 +11171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161957407389347368, guid: df79e94ae54ab9341a0ad8b3b8feca47,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df79e94ae54ab9341a0ad8b3b8feca47, type: 3}
@@ -16954,12 +16917,12 @@ PrefabInstance:
     - target: {fileID: 7119620012730946576, guid: 04d760ad590024848971756b4dfcfbae,
         type: 3}
       propertyPath: nodeRect.x
-      value: 291.49252
+      value: 301.9402
       objectReference: {fileID: 0}
     - target: {fileID: 7119620012730946576, guid: 04d760ad590024848971756b4dfcfbae,
         type: 3}
       propertyPath: nodeRect.y
-      value: 147.41386
+      value: 165.32433
       objectReference: {fileID: 0}
     - target: {fileID: 7119620013350164305, guid: 04d760ad590024848971756b4dfcfbae,
         type: 3}
@@ -17351,6 +17314,16 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119620013350164334, guid: 04d760ad590024848971756b4dfcfbae,
+        type: 3}
+      propertyPath: nodeRect.x
+      value: 303.94025
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119620013350164334, guid: 04d760ad590024848971756b4dfcfbae,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: 64.62685
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7119620013350164306, guid: 04d760ad590024848971756b4dfcfbae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 04d760ad590024848971756b4dfcfbae, type: 3}
@@ -17389,10 +17362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - nameOfSound: event:/SFX/World/Sandfotsteg
+  - nameOfSound: event:/SFX/Player/Footsteps/Sandfotsteg
     ColliderForSound:
     - {fileID: 1250990725}
-  - nameOfSound: "event:/SFX/World/Gr\xE4sfotsteg"
+  - nameOfSound: "event:/SFX/Player/Footsteps/Gr\xE4sfotsteg"
     ColliderForSound:
     - {fileID: 1250990721}
     - {fileID: 1250990722}

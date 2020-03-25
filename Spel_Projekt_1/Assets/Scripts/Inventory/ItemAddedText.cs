@@ -10,10 +10,12 @@ public class ItemAddedText : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
 	private static ItemAddedText _instance;
 	private InventoryItem _item;
+    private string defaultText;
 
     void Awake() {
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
 		_instance = this;
+        defaultText = text.text;
 	}
 
 	public static void DisplayItem(InventoryItem item) {
@@ -24,6 +26,7 @@ public class ItemAddedText : MonoBehaviour
 	}
 
 	public void DisplayText() {
+        text.text = _instance._item.title + defaultText;
 		StartCoroutine(FadeText(textAliveTime, fadeSpeed, text));
 	}
 
