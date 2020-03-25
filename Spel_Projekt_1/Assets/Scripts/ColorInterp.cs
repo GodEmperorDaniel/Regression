@@ -92,6 +92,7 @@ public class ColorInterp : MonoBehaviour {
 	protected ColorMode _colorMode;
 	protected float _speed;
 
+	protected bool _paused = false;
 	protected bool _playing = false;
 	protected float _progress = 0;
 	protected bool _bouncing = false;
@@ -128,7 +129,7 @@ public class ColorInterp : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-		if (_playing) {
+		if (_playing && !_paused) {
 			if (_bouncing) {
 				_progress -= _speed * Time.deltaTime;
 
@@ -141,6 +142,13 @@ public class ColorInterp : MonoBehaviour {
 							break;
 						case PlayMode.LoopBounce:
 							_progress = 0;
+							break;
+						case PlayMode.PlayOnce:
+							_progress = 0;
+							_playing = false;
+							break;
+						case PlayMode.Loop:
+							_progress += 1;
 							break;
 					}
 				}
@@ -189,6 +197,18 @@ public class ColorInterp : MonoBehaviour {
 		}
 	}
 
+	public bool IsRunning() {
+		return _playing;
+	}
+
+	public void Pause() {
+		_paused = true;
+	}
+
+	public void Resume() {
+		_paused = false;
+	}
+
 	public Color LerpHSV(Color c0, Color c1, float t) {
 		float h0, s0, v0, h1, s1, v1;
 		Color.RGBToHSV(c0, out h0, out s0, out v0);
@@ -216,7 +236,7 @@ public class ColorInterp : MonoBehaviour {
 		return Color.HSVToRGB(h, s, v);
 	}
 
-	public void Play(Color startColor,Color targetColor, float speed, PlayMode playMode,InterpMode interpMode, ColorMode colorMode) {
+	public void Play(Color startColor,Color targetColor, float speed, PlayMode playMode,InterpMode interpMode, ColorMode colorMode, bool reverse = false) {
 		if (component.component != null) {
 			_c0 = startColor;
 			_c1 = targetColor;
@@ -225,26 +245,53 @@ public class ColorInterp : MonoBehaviour {
 			_interp = interpMode;
 			_colorMode = colorMode;
 
-			_progress = 0;
-			component.color = startColor;
-			_bouncing = false;
+			if (reverse) {
+				_progress = 1;
+				_bouncing = true;
+				component.color = targetColor;
+			} else {
+				_progress = 0;
+				_bouncing = false;
+				component.color = startColor;
+			}
 			_playing = true;
+			_paused = false;
 		}
 	}
 
 	public void Play(Color targetColor, float speed, PlayMode playMode, InterpMode interpMode, ColorMode colorMode) {
-		Play(component.color, targetColor, speed, playMode, interpMode, colorMode);
+		Play(component.color, targetColor, speed, playMode, interpMode, colorMode, false);
 	}
 
 	public void Play(Color targetColor, float speed) {
-		Play(component.color, targetColor, speed, playMode, interpMode, colorMode);
+		Play(component.color, targetColor, speed, playMode, interpMode, colorMode, false);
 	}
 
 	public void Play(Color startColor, Color targetColor, float speed) {
-		Play(startColor, targetColor, speed, playMode, interpMode, colorMode);
+		Play(startColor, targetColor, speed, playMode, interpMode, colorMode, false);
 	}
 
 	public void Play() {
-		Play(startColor, targetColor, speed, playMode, interpMode, colorMode);
+		Play(startColor, targetColor, speed, playMode, interpMode, colorMode, false);
+	}
+
+	public void PlayReverse() {
+		Play(startColor, targetColor, speed, playMode, interpMode, colorMode, true);
+	}
+
+	public void PlayReverse(Color targetColor, float speed, PlayMode playMode, InterpMode interpMode, ColorMode colorMode) {
+		Play(component.color, targetColor, speed, playMode, interpMode, colorMode, true);
+	}
+
+	public void PlayReverse(Color targetColor, float speed) {
+		Play(component.color, targetColor, speed, playMode, interpMode, colorMode, true);
+	}
+
+	public void PlayReverse(Color startColor, Color targetColor, float speed) {
+		Play(startColor, targetColor, speed, playMode, interpMode, colorMode, true);
+	}
+
+	public void PlayReverse(Color startColor, Color targetColor, float speed, PlayMode playMode, InterpMode interpMode, ColorMode colorMode) {
+		Play(startColor, targetColor, speed, playMode, interpMode, colorMode, true);
 	}
 }
