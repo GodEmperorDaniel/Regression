@@ -20,6 +20,8 @@ public class Inventory : MonoBehaviour, ISaveable
 
     public void Start()
     {
+		itemAddedText = GameObject.FindObjectOfType<ItemAddedText>(); // Simons skit, remove if bad
+
 		if (!canvas && uiPrefab != null)
         {
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();

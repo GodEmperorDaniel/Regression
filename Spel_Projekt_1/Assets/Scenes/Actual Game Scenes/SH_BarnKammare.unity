@@ -136,7 +136,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 924.2464
     y: -82.96946
-    width: 139.8734
+    width: 134.04254
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 357
   indentLevel: 2
-  storyText: '{speed=30}What''s this? Some form of trick?'
+  storyText: '{speed=30}What''s that doing here? Is this some form of trick?'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -898,7 +898,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 752.5319
     y: -207.10126
-    width: 131.01263
+    width: 124.46808
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 331
   indentLevel: 1
-  storyText: Everything's been taken from me.
+  storyText: Everything's taken from me!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1392,7 +1392,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 517.84296
     y: -303.22952
-    width: 187.97466
+    width: 179.78723
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1608,7 +1608,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 703.96
     y: -303.2762
-    width: 190.50629
+    width: 180.85106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1695,7 +1695,12 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 9150947}
+  - {fileID: 9150946}
+  - {fileID: 9150957}
   - {fileID: 9150956}
+  - {fileID: 9150959}
+  - {fileID: 9150958}
+  - {fileID: 9150955}
   - {fileID: 9150953}
   - {fileID: 9150952}
 --- !u!114 &9150945
@@ -1728,6 +1733,27 @@ MonoBehaviour:
   freezePlayer: 1
   interruptPlayer: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &9150946
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af5dac98b0624702b476c1eac319eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 339
+  indentLevel: 1
+  variable: {fileID: 747092288}
+  minValue:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  maxValue:
+    integerRef: {fileID: 0}
+    integerVal: 2
 --- !u!114 &9150947
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1935,7 +1961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 345
   indentLevel: 1
-  storyText: '{speed=30}What have I done!? Please, I can''t live here alone.'
+  storyText: '{speed=30}Why... Why?'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1964,6 +1990,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 344
   indentLevel: 0
+--- !u!114 &9150955
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 346
+  indentLevel: 1
 --- !u!114 &9150956
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1977,8 +2017,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 341
-  indentLevel: 1
-  storyText: '{speed=30}When you sleep it looks like you''re swinming. '
+  indentLevel: 2
+  storyText: '{speed=30}Your very own little pool, darling. Sleeping pool. '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1993,6 +2033,125 @@ MonoBehaviour:
   freezePlayer: 1
   interruptPlayer: 1
   setSayDialog: {fileID: 0}
+--- !u!114 &9150957
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 340
+  indentLevel: 1
+  compareOperator: 0
+  variable: {fileID: 747092288}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  characterData:
+    characterRef: {fileID: 0}
+    characterVal: {fileID: 0}
+  sceneData:
+    sceneRef: {fileID: 0}
+    sceneVal:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+  inventoryItemData:
+    inventoryItemRef: {fileID: 0}
+    inventoryItemVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &9150958
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 343
+  indentLevel: 2
+  storyText: '{speed=30}At bedtime, we say "It''s time to go swimming!" You''re so
+    cute sleeping in your swimming trunks. '
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &9150959
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 342
+  indentLevel: 1
 --- !u!114 &9150966
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3507,6 +3666,7 @@ Transform:
   m_Children:
   - {fileID: 1839147794}
   - {fileID: 120533850}
+  - {fileID: 1197424878}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4385,6 +4545,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551032700}
   m_CullTransparentMesh: 0
+--- !u!1 &565100194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 565100195}
+  - component: {fileID: 565100196}
+  m_Layer: 0
+  m_Name: Enabla mig i menyn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &565100195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565100194}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1197424878}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565100196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565100194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1197424879}
+    Params:
+    - Name: Underwater
+      Value: 100
+  TriggerEvent: 11
 --- !u!1 &575368943
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,7 +4796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &630512308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5809,6 +6019,56 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266c40f3384c11c43839a53e282bda92, type: 3}
+--- !u!1 &833648989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833648990}
+  - component: {fileID: 833648991}
+  m_Layer: 0
+  m_Name: Enabla mig i cutscenen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &833648990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833648989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1197424878}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833648991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833648989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1197424879}
+    Params:
+    - Name: Vattenbarn cutscene
+      Value: 1
+  TriggerEvent: 11
 --- !u!1 &844850505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,7 +6548,7 @@ PrefabInstance:
     - target: {fileID: 6193911771833042881, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.55
+      value: -1.246
       objectReference: {fileID: 0}
     - target: {fileID: 6193911771833042881, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
@@ -6854,6 +7114,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181049293}
   m_CullTransparentMesh: 0
+--- !u!1 &1197424877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197424878}
+  - component: {fileID: 1197424879}
+  - component: {fileID: 1197424880}
+  m_Layer: 0
+  m_Name: Musik
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1197424878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197424877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 833648990}
+  - {fileID: 565100195}
+  - {fileID: 1383789821}
+  m_Father: {fileID: 410736193}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197424879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197424877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Musik/Barnrum
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1197424880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197424877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &1230538619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7727,6 +8058,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1383789820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383789821}
+  - component: {fileID: 1383789822}
+  m_Layer: 0
+  m_Name: Enabla mig ur menyn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1383789821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383789820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1197424878}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383789822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383789820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1197424879}
+    Params:
+    - Name: Underwater
+      Value: 0
+  TriggerEvent: 11
 --- !u!1 &1393503099
 GameObject:
   m_ObjectHideFlags: 0
@@ -8691,7 +9072,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 910.6352
     y: -219.68227
-    width: 155.06326
+    width: 148.93616
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8712,12 +9093,12 @@ MonoBehaviour:
   - {fileID: 7535735823097404111}
   - {fileID: 1578571271}
   - {fileID: 1578571270}
+  - {fileID: 1578571269}
   - {fileID: 1578571408}
   - {fileID: 1578571407}
   - {fileID: 1578571260}
   - {fileID: 1578571333}
   - {fileID: 1578571268}
-  - {fileID: 1578571269}
   - {fileID: 1578571267}
   - {fileID: 1578571266}
   - {fileID: 1578571265}
@@ -8758,7 +9139,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 709.22284
     y: -355.90775
-    width: 190.50629
+    width: 180.85106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9473,7 +9854,7 @@ MonoBehaviour:
   m_Instructions:
   - m_FullHash: 0
     m_VirtualCamera: {fileID: 1401754044}
-    m_ActivateAfter: 3
+    m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -497480721
     m_VirtualCamera: {fileID: 910353950}
@@ -9493,11 +9874,11 @@ MonoBehaviour:
     m_MinDuration: 0
   - m_FullHash: 534704670
     m_VirtualCamera: {fileID: 910353950}
-    m_ActivateAfter: 200
-    m_MinDuration: 1
-  - m_FullHash: -497480721
+    m_ActivateAfter: 0
+    m_MinDuration: 0
+  - m_FullHash: -1641890008
     m_VirtualCamera: {fileID: 1401754044}
-    m_ActivateAfter: 4
+    m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
     m_Style: 1
@@ -10480,32 +10861,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105919362}
   m_CullTransparentMesh: 0
---- !u!61 &2130016440
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6437754946453073248}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.49880958, y: -1.0168059}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.036885, y: 3.0336118}
-  m_EdgeRadius: 0
 --- !u!114 &4509552476124278179
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -10521,54 +10876,6 @@ MonoBehaviour:
   scope: 0
   key: AnimationPlayed
   value: 0
---- !u!4 &6437754946453072542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6437754946453073248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6437754946453072543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6437754946453073248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7b4ff273130a44884f484fe86ab26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - nameOfSound: "event:/SFX/Player/Footsteps/Tr\xE4fotsteg"
-    ColliderForSound:
-    - {fileID: 2130016440}
---- !u!1 &6437754946453073248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6437754946453072542}
-  - component: {fileID: 6437754946453072543}
-  - component: {fileID: 2130016440}
-  m_Layer: 10
-  m_Name: Footsteps
-  m_TagString: footsteps
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &7535735823097404109
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,9 +10916,14 @@ GameObject:
   - component: {fileID: 9150945}
   - component: {fileID: 9150944}
   - component: {fileID: 9150947}
+  - component: {fileID: 9150946}
+  - component: {fileID: 9150957}
   - component: {fileID: 9150956}
+  - component: {fileID: 9150959}
+  - component: {fileID: 9150958}
   - component: {fileID: 9150953}
   - component: {fileID: 9150952}
+  - component: {fileID: 9150955}
   - component: {fileID: 9150966}
   - component: {fileID: 9150968}
   - component: {fileID: 9150971}
@@ -10764,11 +11076,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -132.50336, y: 284.88995}
+  scrollPos: {x: -230.3757, y: 415.74115}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.7900002
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -10777,8 +11089,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1578571280}
-  selectedCommands:
-  - {fileID: 1578571269}
+  selectedCommands: []
   variables:
   - {fileID: 747092288}
   - {fileID: 747092295}
