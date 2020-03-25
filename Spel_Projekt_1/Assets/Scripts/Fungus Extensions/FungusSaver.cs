@@ -31,7 +31,7 @@ public class FungusSaver : ISaveable {
 		}
 	}
 
-	public void ResetSave() {
+	public void ClearSave() {
 		flowcharts = new Dictionary<string, Flowchart>();
 		saveData = new Dictionary<string, SaveObj>();
 	}

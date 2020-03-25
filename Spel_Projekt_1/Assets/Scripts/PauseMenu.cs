@@ -61,14 +61,14 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadInventory()
     {
-        PlayerStatic.playerInstance.GetComponent<Inventory>().ShowUI();
+        PlayerStatic.PlayerInstance.GetComponent<Inventory>().ShowUI();
     }
 
 
     
     public void BackToMainMenu()
     {
-		Destroy(PlayerStatic.playerInstance);
+		Destroy(PlayerStatic.PlayerInstance);
         SceneManager.LoadScene("BT_MAINMENU");
     }
 
