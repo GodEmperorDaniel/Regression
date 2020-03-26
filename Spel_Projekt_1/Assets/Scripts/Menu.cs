@@ -21,6 +21,10 @@ public class Menu : MonoBehaviour
 
     public void NewGame()
     {
+        if (PlayerStatic.PlayerInstance)
+        {
+            Destroy(PlayerStatic.PlayerInstance);
+        }
 		GameSaveManager.instance.ClearSave();
         SceneManager.LoadScene("Start");
     }
