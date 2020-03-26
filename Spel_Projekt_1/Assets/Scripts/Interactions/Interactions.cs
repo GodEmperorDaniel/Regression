@@ -83,7 +83,7 @@ public class Interactions : MonoBehaviour {
 	{
 		if (settings.Active) {
 			var facingAngle = controller.forward;
-			var dirAngle = (transform.position - controller.transform.position).normalized;
+			var dirAngle = (transform.position + (Vector3)(settings.offset) - controller.transform.position).normalized;
 			if (Vector2.Dot(facingAngle, dirAngle) >= settings.interactableAngleDot) {
 				if (settings.flowchart && settings.block) {
 					settings.flowchart.ExecuteBlock(settings.block);

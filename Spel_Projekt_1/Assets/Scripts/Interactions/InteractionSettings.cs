@@ -10,6 +10,7 @@ public struct InteractionSettings
 	public bool Active;
 	public float interactableAngle;
 	public float interactableAngleDot;
+	public Vector2 offset;
 	//public string text;
 
 	public Flowchart flowchart;
