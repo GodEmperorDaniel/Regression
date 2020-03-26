@@ -341,35 +341,6 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
---- !u!114 &137056713
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137056704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 191
-  indentLevel: 1
-  storyText: It's covered in blood! IIIH! What's-
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  freezePlayer: 1
-  interruptPlayer: 1
-  setSayDialog: {fileID: 0}
 --- !u!114 &137056714
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -486,7 +457,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 137056714}
-  - {fileID: 137056713}
   - {fileID: 137056712}
   - {fileID: 137056711}
   - {fileID: 137056884}
@@ -541,7 +511,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 271.1107
     y: -193.58147
-    width: 133.54428
+    width: 140.42554
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -579,7 +549,7 @@ MonoBehaviour:
   indentLevel: 1
   _targetGameObject:
     gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 566886989}
+    gameObjectVal: {fileID: 0}
   activeState:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -2127,15 +2097,31 @@ PrefabInstance:
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1564546272, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546275, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1564546288, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+    - target: {fileID: 1564546276, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546282, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546283, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1564546287, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546288, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
@@ -2144,14 +2130,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1564546327, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546283, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546282, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
@@ -2172,34 +2150,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1900874811, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546272, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546276, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546293, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546294, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546265, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546266, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
-      propertyPath: variable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1564546279, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
@@ -2247,6 +2197,14 @@ PrefabInstance:
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1564546293, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546294, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546294, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
@@ -2255,7 +2213,19 @@ PrefabInstance:
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1564546265, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1564546266, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546266, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
+      propertyPath: variable
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564546279, guid: 736fd6e50705c07498cc366c73bcbc29, type: 3}
       propertyPath: variable
       value: 
       objectReference: {fileID: 0}
@@ -2765,7 +2735,7 @@ MonoBehaviour:
     - {fileID: 2123671087}
   - nameOfSound: event:/SFX/World/Blodfotsteg
     ColliderForSound:
-    - {fileID: 566886990}
+    - {fileID: 0}
 --- !u!4 &2927322751739309805
 Transform:
   m_ObjectHideFlags: 0
@@ -2778,7 +2748,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2123671088}
-  - {fileID: 566886991}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
