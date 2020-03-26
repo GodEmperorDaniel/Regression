@@ -8,14 +8,14 @@ public class GroundDetection : MonoBehaviour
 
 	public void CheckSound(Collider2D col)
 	{
-		for (int i = 0; i < sounds.Count; i++)
-		{
-			for (int j = 0; j < sounds[i].ColliderForSound.Count; j++)
-			{
-				if (col == sounds[i].ColliderForSound[j])
-				{
-					PlaySound(sounds[i].nameOfSound);
-					break;
+		for (int i = 0; i < sounds.Count; i++)
+		{
+			for (int j = 0; j < sounds[i].ColliderForSound.Count; j++)
+			{
+				if (col == sounds[i].ColliderForSound[j])
+				{
+					PlaySound(sounds[i].nameOfSound);
+					break;
 				}
 			}
 		}

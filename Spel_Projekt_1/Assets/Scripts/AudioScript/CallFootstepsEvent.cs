@@ -36,6 +36,9 @@ public class CallFootstepsEvent : MonoBehaviour
 
     public void GetFootstep()
     {
-        footstepManager.CheckSound(col);
+        if (col)
+        { 
+            footstepManager.CheckSound(col);
+        }
     }
 }
