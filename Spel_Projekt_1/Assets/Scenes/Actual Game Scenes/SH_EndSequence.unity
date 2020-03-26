@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
         type: 3}
       propertyPath: sounds.Array.data[0].nameOfSound
-      value: event:/SFX/Player/Footsteps/Sandfotsteg
+      value: event:/SFX/Player/Footsteps/Stenfotsteg
       objectReference: {fileID: 0}
     - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
         type: 3}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282199038}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -568,6 +568,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.3064475, y: 0.6009693}
   m_EdgeRadius: 0
+--- !u!114 &630397032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630397028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73588f8598b9be4eae893a3838ae31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 1511232378}
 --- !u!1 &671948630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6193911771833042887, guid: d6afe226b8f970f4197d78c586427f39,
@@ -1382,6 +1395,16 @@ PrefabInstance:
       propertyPath: m_PixelSnapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077823, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: m_UpdateMethod
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077823, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266c40f3384c11c43839a53e282bda92, type: 3}
 --- !u!1 &1511232372 stripped
@@ -1711,7 +1734,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4038089666863768761, guid: 56952e903d86a694ab8bddae2a483aea,
+    - target: {fileID: 5489503083156705701, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1719,12 +1742,12 @@ PrefabInstance:
     - target: {fileID: 5489503083156705701, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5489503083156705701, guid: 56952e903d86a694ab8bddae2a483aea,
+    - target: {fileID: 4038089666863768761, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
       propertyPath: m_Enabled
@@ -1804,6 +1827,11 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 448030190}
+    - target: {fileID: 6193911771833042880, guid: d6afe226b8f970f4197d78c586427f39,
+        type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6193911771845149110, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
       propertyPath: m_LookaheadIgnoreY

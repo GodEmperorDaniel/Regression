@@ -348,6 +348,16 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.b
       value: 0.18867922
       objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077823, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: m_UpdateMethod
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696036159979077823, guid: 266c40f3384c11c43839a53e282bda92,
+        type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266c40f3384c11c43839a53e282bda92, type: 3}
 --- !u!1001 &408319157
@@ -417,15 +427,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5723229145762833854, guid: d6afe226b8f970f4197d78c586427f39,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6193911771833042880, guid: d6afe226b8f970f4197d78c586427f39,
         type: 3}
       propertyPath: m_Follow
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723229145762833854, guid: d6afe226b8f970f4197d78c586427f39,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6afe226b8f970f4197d78c586427f39, type: 3}
@@ -509,19 +519,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &500052422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6437754946287767273, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1623918742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!61 &500052423
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500052422}
+  m_GameObject: {fileID: 6437754945754367615}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1493,7 +1497,7 @@ PrefabInstance:
     - target: {fileID: 5489503083156705701, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
@@ -1548,95 +1552,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1623918742
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6437754946287767273, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Footsteps (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765783, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: sounds.Array.data[0].ColliderForSound.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: sounds.Array.data[0].nameOfSound
-      value: event:/SFX/Player/Footsteps/Stenfotsteg
-      objectReference: {fileID: 0}
-    - target: {fileID: 6437754946287765782, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2,
-        type: 3}
-      propertyPath: sounds.Array.data[0].ColliderForSound.Array.data[0]
-      value: 
-      objectReference: {fileID: 500052423}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 419bcbbac8bad7d4aa26d0b893ebe4e2, type: 3}
 --- !u!1 &1658209981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,3 +1827,51 @@ Transform:
   m_Father: {fileID: 1448562466}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6437754945754366336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437754945754367615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7b4ff273130a44884f484fe86ab26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - nameOfSound: event:/SFX/Player/Footsteps/Stenfotsteg
+    ColliderForSound:
+    - {fileID: 500052423}
+--- !u!4 &6437754945754366337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437754945754367615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6437754945754367615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6437754945754366337}
+  - component: {fileID: 6437754945754366336}
+  - component: {fileID: 500052423}
+  m_Layer: 10
+  m_Name: Footsteps
+  m_TagString: footsteps
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
