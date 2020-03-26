@@ -32,8 +32,8 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	public string inventoryButton = "InventoryButton";
 	public DirectionType directionType = DirectionType.directions4;
 	public SpeedType speedType = SpeedType.toggle;
-	[HideInInspector]
-	public Vector2 forward;
+	public Vector2 forward { get; private set; }
+	public Vector2 velocity { get; private set; }
 
 	[FormerlySerializedAs("Ani")]
 	public Animator animator;
@@ -138,6 +138,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 				SetAnimatorVariables(PlayerStatic.PlayerInstance.GetComponent<CharacterController2d>().animator.GetBool("movement"));
 			}
 		} else {
+			velocity = Vector2.zero;
 			_stepDir = Vector2.zero;
 			SetAnimatorVariables(false);
 		}
