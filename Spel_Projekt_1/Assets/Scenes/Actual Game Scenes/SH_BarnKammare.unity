@@ -1403,6 +1403,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 9150915}
   - {fileID: 9150912}
+  - {fileID: 7535735823097404118}
   - {fileID: 9150913}
   - {fileID: 9150918}
 --- !u!114 &9150915
@@ -2718,6 +2719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listOfSounds:
   - nameOfSound: event:/SFX/World/Effekter/Scary 4
+  - nameOfSound: event:/SFX/World/Objekt/Papper
 --- !u!1 &168557790
 GameObject:
   m_ObjectHideFlags: 0
@@ -9955,7 +9957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 630512316}
+  selectedFlowchart: {fileID: 7535735823097404142}
 --- !u!4 &1725238847
 Transform:
   m_ObjectHideFlags: 1
@@ -11127,6 +11129,7 @@ GameObject:
   - component: {fileID: 7535735823097404112}
   - component: {fileID: 7535735823097404117}
   - component: {fileID: 7535735823097404116}
+  - component: {fileID: 7535735823097404118}
   m_Layer: 0
   m_Name: NewObjects
   m_TagString: Untagged
@@ -11283,7 +11286,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735823097404116
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11311,7 +11314,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &7535735823097404117
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11335,6 +11338,51 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 7535735823097404116}
+--- !u!114 &7535735823097404118
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823097404109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 483
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 120533849}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &7535735823097404142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11348,7 +11396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 49.496162, y: 275.51813}
+  scrollPos: {x: -145.62573, y: 462.1036}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -11360,9 +11408,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 7535735823097404117}
+  - {fileID: 9150914}
   selectedCommands:
-  - {fileID: 7535735823097404116}
+  - {fileID: 7535735823097404118}
   variables:
   - {fileID: 747092288}
   - {fileID: 747092295}
