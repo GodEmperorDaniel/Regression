@@ -964,6 +964,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6afe226b8f970f4197d78c586427f39, type: 3}
+--- !u!1 &1237141007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237141009}
+  - component: {fileID: 1237141008}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1237141008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237141007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1dc2950ee927340845647dde32d1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomSpawns:
+  - timeRange: 20
+    chance: 40
+    nameOfSound: event:/SFX/World/Objekt/Knarr
+    keepTime: 0
+--- !u!4 &1237141009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237141007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1268207451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1236,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 290.82803
     y: -176.33192
-    width: 124.62683
+    width: 135
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1961,7 +2009,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 280.444
     y: -218.89671
-    width: 120
+    width: 126
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2030,8 +2078,7 @@ MonoBehaviour:
   blockName: Bookshelf 1
   description: 
   eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 0}
+  commandList: []
 --- !u!114 &1341147619
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5147,21 +5194,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 465.6852, y: 402.25757}
+  scrollPos: {x: 297.14862, y: 407.09125}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.6700003
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1341147564}
-  selectedCommands:
-  - {fileID: 7535735823870858027}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 1341147614}
   - {fileID: 1341147613}
@@ -5381,7 +5426,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 135.01451
     y: -82.82829
-    width: 129.10443
+    width: 140
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5436,7 +5481,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 131.69325
     y: -131.648
-    width: 130.59698
+    width: 140
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

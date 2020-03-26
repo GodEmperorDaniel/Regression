@@ -7279,7 +7279,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 194.0889
     y: -28.243137
-    width: 137.6712
+    width: 142
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7374,7 +7374,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 23.648666
     y: -86.00723
-    width: 125.34244
+    width: 127
     height: 40
   tint: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   useCustomTint: 1
@@ -7673,7 +7673,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 384.12427
     y: -30.730812
-    width: 178.76707
+    width: 185
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11670,7 +11670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 7535735824343373624}
+  selectedFlowchart: {fileID: 188570967}
 --- !u!4 &498638050
 Transform:
   m_ObjectHideFlags: 1
@@ -11887,7 +11887,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 498703655}
   - {fileID: 7535735824343373604}
-  - {fileID: 498703678}
   - {fileID: 498703676}
   - {fileID: 498703679}
   - {fileID: 498703677}
@@ -13071,6 +13070,7 @@ MonoBehaviour:
   - {fileID: 498703650}
   - {fileID: 7535735824343373602}
   - {fileID: 498703651}
+  - {fileID: 7535735824343373605}
   - {fileID: 498703649}
   - {fileID: 498703647}
   - {fileID: 498703643}
@@ -13726,22 +13726,6 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
---- !u!114 &498703678
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7535735824343373595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b3bfc4d56c42d4a8aa18300e22e0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 245
-  indentLevel: 1
-  stopPlayerString: 
-  setPlayerActive: 0
 --- !u!114 &498703679
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -35200,7 +35184,6 @@ GameObject:
   - component: {fileID: 498703674}
   - component: {fileID: 498703676}
   - component: {fileID: 498703677}
-  - component: {fileID: 498703678}
   - component: {fileID: 498703679}
   - component: {fileID: 498703755}
   - component: {fileID: 7535735824343373597}
@@ -35210,6 +35193,7 @@ GameObject:
   - component: {fileID: 7535735824343373602}
   - component: {fileID: 7535735824343373601}
   - component: {fileID: 7535735824343373604}
+  - component: {fileID: 7535735824343373605}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -35473,7 +35457,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735824343373604
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -35499,6 +35483,24 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &7535735824343373605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 413
+  indentLevel: 1
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
 --- !u!114 &7535735824343373624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35512,7 +35514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 426.46158, y: 515.0132}
+  scrollPos: {x: 416.887, y: 515.0132}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -35524,9 +35526,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 498703614}
+  - {fileID: 498703652}
   selectedCommands:
-  - {fileID: 7535735824343373604}
+  - {fileID: 7535735824343373605}
   variables:
   - {fileID: 498703620}
   - {fileID: 498703619}
