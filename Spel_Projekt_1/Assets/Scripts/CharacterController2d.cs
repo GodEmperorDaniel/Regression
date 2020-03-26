@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class CharacterController2d : MonoBehaviour, ISaveable {
 	static readonly float _r = Mathf.Cos(Mathf.PI / 8) * Mathf.Cos(Mathf.PI / 8) / (Mathf.Sin(Mathf.PI / 8) * Mathf.Sin(Mathf.PI / 8));
 	static readonly float _invSqr2 = 1 / Mathf.Sqrt(2);
-  
+
 	public enum DirectionType {
 		full360,
 		directions8,
@@ -24,7 +24,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	[FormerlySerializedAs("MovementSpeed")]
 	public float movementSpeed = 2;
 	public float stepSize = 0.5f;
-	[Range(0,1)]
+	[Range(0, 1)]
 	public float deadZone = 0.1f;
 	public string horizontalAxis = "Horizontal";
 	public string verticalAxis = "Vertical";
@@ -47,7 +47,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private Vector2 _stepDir;
 
 	private RaycastHit2D hit;
-	private Vector3 lastPos = new Vector3(0,0);
+	private Vector3 lastPos = new Vector3(0, 0);
 	private bool clone;
 
 
@@ -72,7 +72,7 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 		{
 			ReadInput();
 		}
-		
+
 
 		Translate();
 		CheckInventoryButton();
@@ -233,6 +233,10 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 				SceneManager.LoadScene(sceneName);
 			}
 		}
+	}
+	private void OnDisable()
+	{
+		animator.SetBool("movement", false);
 	}
 
 	public void ClearSave() {}
