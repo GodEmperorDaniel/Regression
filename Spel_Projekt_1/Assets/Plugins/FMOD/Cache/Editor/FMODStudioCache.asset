@@ -414,12 +414,12 @@ MonoBehaviour:
   Path: event:/Musik/Bibliotek
   guid: 7a3c39d8df26b842ab1708e47e9b180c
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 591486703135740593}
+  - {fileID: 6255669076181168647}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
   Path: "event:/SFX/World/UI/Flytta mark\xF6r"
   guid: 0ee8a0154527854ea3bfed8be40e3cfb
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -513,7 +513,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8675683677438178635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Statue stab
   guid: 836ac8cb08ee6b4c98ed96c304fcb075
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -921,6 +921,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8408795027719797363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637205122274401738
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8400463842829565221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,7 +1350,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8172004385984857146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,7 +1419,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 65
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8138196083907415489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,6 +1437,40 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-8133858851429796987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korridor Chase v.2/Jakt
+  m_EditorClassIdentifier: 
+  Name: Jakt
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-8130051004525145867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korridor Chase/Intro
+  m_EditorClassIdentifier: 
+  Name: Intro
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8126446737391027479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,7 +2008,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7755442890592831835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,7 +2179,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7664864726180272547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,7 +2248,7 @@ MonoBehaviour:
   lastModified: 637208368770831770
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7627833009335542402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2247,7 +2299,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7575002562384260431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2400,7 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637208368770901581
+  lastModified: 637208373687669457
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -2558,20 +2610,20 @@ MonoBehaviour:
   Path: event:/Musik/Playground Theme
   guid: 8a20dd5c99b805479769766190a80af8
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5085986294231963968}
-  - {fileID: -6964232997371497154}
-  - {fileID: 1493905489882015218}
-  - {fileID: 3198455092767627963}
-  - {fileID: 7606494808294650641}
-  - {fileID: -6722566128973296310}
-  - {fileID: -8679300252413747526}
-  - {fileID: 2243094369579781999}
-  - {fileID: -7767195114605751057}
+  - {fileID: 1368336383357343771}
+  - {fileID: -2376836271159469984}
+  - {fileID: 4795262655315766923}
+  - {fileID: -4706727146735898935}
+  - {fileID: 1517848590203821732}
+  - {fileID: 8229618619183334670}
+  - {fileID: -1877088960595576627}
+  - {fileID: 2184154480518816998}
+  - {fileID: -3601087725079131326}
   MinDistance: 0
   MaxDistance: 0
   Length: 224736
@@ -3037,7 +3089,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6962752608037726327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,7 +3122,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Effekter/Scary 4
   guid: d387a5b2f2479647b55142523a8ebf7e
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3233,7 +3285,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 80
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6720427883715358374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,6 +3695,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &-6445920385577479958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Master Natur
+  m_EditorClassIdentifier: 
+  Name: Master Natur
+  Min: 0
+  Max: 1
+  Default: 1
   Exists: 1
 --- !u!114 &-6430771122561728240
 MonoBehaviour:
@@ -3660,7 +3729,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6422215848520465642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3744,7 +3813,7 @@ MonoBehaviour:
   Path: event:/SFX/Player/Footsteps/Vattenfotsteg
   guid: 5cdc6a8022041a43949bd87af870314c
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5141,6 +5210,24 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 0
+--- !u!114 &-5346932434325870888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637205721523381755
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5295599663975742949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5362,7 +5449,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 90
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5083914067913204691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5775,6 +5862,40 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4732448716932643236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Barnrum/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-4706727146735898935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Wurl Stem
+  m_EditorClassIdentifier: 
+  Name: Wurl Stem
+  Min: 0
+  Max: 100
+  Default: 85
+  Exists: 1
 --- !u!114 &-4698305466316616700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5876,7 +5997,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4658847980892986225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5893,7 +6014,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4650761027674789475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5928,6 +6049,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-4620975296074623822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Korrupt intro
+  m_EditorClassIdentifier: 
+  Name: Korrupt intro
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &-4586136286956673082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6224,7 +6362,7 @@ MonoBehaviour:
   Path: event:/Musik/Stop korridor chase v.2
   guid: 5c2db9e9b0d1c64996ae1282f2eeae1d
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6838,7 +6976,7 @@ MonoBehaviour:
   Path: event:/Musik/Credits
   guid: 4b28f2d228515f428f903ebe9b02acf6
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -6896,7 +7034,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3777271680969523509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7033,6 +7171,24 @@ MonoBehaviour:
   Max: 100
   Default: 88
   Exists: 0
+--- !u!114 &-3714247024067346001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637208373687789134
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3677677043857984698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7089,6 +7245,23 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 0
+--- !u!114 &-3601087725079131326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-3593804423654009142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8440,6 +8613,23 @@ MonoBehaviour:
   Max: 100
   Default: 80
   Exists: 1
+--- !u!114 &-2376836271159469984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Oh Shit
+  m_EditorClassIdentifier: 
+  Name: Oh Shit
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-2354798091118079537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9080,6 +9270,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-1877088960595576627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Highcut
+  m_EditorClassIdentifier: 
+  Name: Highcut
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-1868062048229960507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9412,13 +9619,13 @@ MonoBehaviour:
   Path: event:/Musik/Barnrum
   guid: 009485fd64ec824aa43db2d2121c837f
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1632505486266440977}
-  - {fileID: 3260308335195602003}
+  - {fileID: -4732448716932643236}
+  - {fileID: 3452314756877878711}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -9574,7 +9781,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1609114689919013131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9643,7 +9850,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1576712181643560530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9836,7 +10043,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1486616549530301403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10029,7 +10236,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Effekter/Random Scary
   guid: d87438086eca2147b6dff49529d6b670
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -10383,12 +10590,12 @@ MonoBehaviour:
   Path: event:/Musik/Badrum Slutscen
   guid: a4e072248c314e4dabcbffb379a71688
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1584129731545537146}
+  - {fileID: 4193138640316802895}
   MinDistance: 0
   MaxDistance: 0
   Length: 30150
@@ -10582,7 +10789,7 @@ MonoBehaviour:
   Path: "event:/SFX/World/Objekt/\xD6ga"
   guid: 9ed8bb0743c4654281f35b141064bc90
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -11455,7 +11662,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-289854009918848868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11765,6 +11972,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &-56607192932317126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Lekplats Ambience/F\xE5glar Volym"
+  m_EditorClassIdentifier: 
+  Name: "F\xE5glar Volym"
+  Min: 0
+  Max: 100
+  Default: 83
   Exists: 1
 --- !u!114 &-46196435759945808
 MonoBehaviour:
@@ -11833,10 +12057,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -7427018442884662915}
-  - {fileID: -7643983668345822606}
-  - {fileID: 1728546969277134675}
-  - {fileID: 4854278176463236599}
-  - {fileID: 5010108674108679581}
+  - {fileID: -3714247024067346001}
+  - {fileID: 2399828511387800345}
+  - {fileID: -8408795027719797363}
+  - {fileID: -5346932434325870888}
   EditorEvents:
   - {fileID: 6420914488698861081}
   - {fileID: 2963621583996744763}
@@ -11878,10 +12102,10 @@ MonoBehaviour:
   - {fileID: 7634458757083084308}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   StringsBanks:
   - {fileID: -7427018442884662915}
-  stringsBankWriteTime: 637208368770901581
+  stringsBankWriteTime: 637208373687669457
   cacheVersion: 3
 --- !u!114 &8183370161504586
 MonoBehaviour:
@@ -12015,7 +12239,7 @@ MonoBehaviour:
   Path: event:/Musik/Main menu
   guid: ad6c964a255c734aa9f65ad52d7ff3d7
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -12211,6 +12435,23 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
+  Exists: 1
+--- !u!114 &219721922875641877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Ungar Volym
+  m_EditorClassIdentifier: 
+  Name: Ungar Volym
+  Min: 0
+  Max: 100
+  Default: 65
   Exists: 1
 --- !u!114 &245748449563533936
 MonoBehaviour:
@@ -12869,7 +13110,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &642122493268807384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12956,6 +13197,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &771553240672911953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Korrupt Klocka
+  m_EditorClassIdentifier: 
+  Name: Korrupt Klocka
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &791667318720596643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13143,6 +13401,23 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 83
+  Exists: 1
+--- !u!114 &961330302588324518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Ungar
+  m_EditorClassIdentifier: 
+  Name: Ungar
+  Min: 0
+  Max: 1
+  Default: 1
   Exists: 1
 --- !u!114 &970154275237247835
 MonoBehaviour:
@@ -13416,7 +13691,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Effekter/Symbal
   guid: 1d104235a235e547a0cd766cd9253520
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -13567,6 +13842,23 @@ MonoBehaviour:
   Max: 100
   Default: 90
   Exists: 0
+--- !u!114 &1170726990147257290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Lekplats Ambience/Lekplats Ambience Master
+  m_EditorClassIdentifier: 
+  Name: Lekplats Ambience Master
+  Min: 0
+  Max: 100
+  Default: 90
+  Exists: 1
 --- !u!114 &1199167035629150782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13687,6 +13979,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &1337735552876974003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korridor Chase v.2/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &1340875841344303727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13722,6 +14031,23 @@ MonoBehaviour:
   Max: 100
   Default: 85
   Exists: 0
+--- !u!114 &1368336383357343771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Piano Stem
+  Min: 0
+  Max: 100
+  Default: 90
+  Exists: 1
 --- !u!114 &1385674110186881691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13933,7 +14259,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 80
-  Exists: 1
+  Exists: 0
 --- !u!114 &1501427492241905870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13951,6 +14277,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &1517848590203821732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Master Music
+  m_EditorClassIdentifier: 
+  Name: Master Music
+  Min: 0
+  Max: 100
+  Default: 80
+  Exists: 1
 --- !u!114 &1536150294421125452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14190,7 +14533,7 @@ MonoBehaviour:
   lastModified: 637208368772620565
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1738122195053152406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14419,7 +14762,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &1831088469608448874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14855,6 +15198,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &2184154480518816998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Lowcut
+  m_EditorClassIdentifier: 
+  Name: Lowcut
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &2190567085023066523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14939,7 +15299,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2244397689853824093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14955,7 +15315,7 @@ MonoBehaviour:
   Path: "event:/SFX/World/Objekt/D\xF6rr"
   guid: 56e836e84f93cd4fa861c3f65699cce2
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -15048,6 +15408,23 @@ MonoBehaviour:
   Max: 100
   Default: 65
   Exists: 0
+--- !u!114 &2284357303725957530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blodrum/Intro synth loop
+  m_EditorClassIdentifier: 
+  Name: Intro synth loop
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &2291371128366033991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15205,7 +15582,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Blood spurt
   guid: 6ff567655720914b9b209c6ffea4ad57
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -15231,6 +15608,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2399828511387800345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musik.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projectpath/Regression FMOD/Build/Desktop/Musik.bank
+  SubDir: 
+  lastModified: 637207529192530943
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2417507977495103362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15246,7 +15641,7 @@ MonoBehaviour:
   Path: event:/SFX/Player/Footsteps/Sandfotsteg
   guid: b61a2971ff3de145925235bfa21f7a72
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -15426,7 +15821,7 @@ MonoBehaviour:
   Path: "event:/SFX/Player/Footsteps/Tr\xE4fotsteg"
   guid: fda2527c659dbd489f2a40debac3fcbf
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -15434,6 +15829,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 230
+--- !u!114 &2526166820487125968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Highlight 1
+  m_EditorClassIdentifier: 
+  Name: Highlight 1
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &2538046257896913680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15656,6 +16068,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &2685879982086343971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Skip intro
+  m_EditorClassIdentifier: 
+  Name: Skip intro
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &2687125845117326450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15740,6 +16169,23 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+  Exists: 1
+--- !u!114 &2731332207935741286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Crows
+  m_EditorClassIdentifier: 
+  Name: Crows
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &2744139626352082585
 MonoBehaviour:
@@ -15967,7 +16413,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 83
-  Exists: 1
+  Exists: 0
 --- !u!114 &2883288051762981951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16068,7 +16514,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Telefon knapp
   guid: 35613fbd5b538743b51e80d2e453ff58
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -16091,12 +16537,12 @@ MonoBehaviour:
   Path: event:/Musik/Korridor Chase
   guid: 6445af2f03ccd040b58198b300b91a25
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -87176314198228931}
+  - {fileID: -8130051004525145867}
   MinDistance: 0
   MaxDistance: 0
   Length: 185648
@@ -16429,7 +16875,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 85
-  Exists: 1
+  Exists: 0
 --- !u!114 &3207143385789830474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16514,7 +16960,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3272150475205639713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16760,6 +17206,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 264
+--- !u!114 &3452314756877878711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Barnrum/Vattenbarn cutscene
+  m_EditorClassIdentifier: 
+  Name: Vattenbarn cutscene
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &3455270499041758739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17110,7 +17573,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Vatten droppe
   guid: b6405c86007836489e390daf292f192f
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -17340,7 +17803,7 @@ MonoBehaviour:
   Path: "event:/SFX/World/Effekter/Kl\xE4ttra ned"
   guid: 9271003e135c2a4b9e3daf7e79137265
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -17536,6 +17999,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &4193138640316802895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Badrum Slutscen/Synth Tail
+  m_EditorClassIdentifier: 
+  Name: Synth Tail
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &4230245038892581301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17694,6 +18174,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &4406430687094457917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Vindloop
+  m_EditorClassIdentifier: 
+  Name: Vindloop
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
 --- !u!114 &4438552711616342260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18417,6 +18914,23 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 0
+--- !u!114 &4795262655315766923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Bell Stem
+  m_EditorClassIdentifier: 
+  Name: Bell Stem
+  Min: 0
+  Max: 100
+  Default: 80
+  Exists: 1
 --- !u!114 &4799151825349811964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18520,7 +19034,7 @@ MonoBehaviour:
   lastModified: 637208368772680176
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4859737972620812220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18727,7 +19241,7 @@ MonoBehaviour:
   lastModified: 637208368773218725
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &5013508620823428310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18864,7 +19378,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &5108841149540140520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18988,7 +19502,7 @@ MonoBehaviour:
   Path: event:/Musik/Voidspirit
   guid: 8796e171edbd964eb04f187ab775ea7d
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -19656,6 +20170,23 @@ MonoBehaviour:
   Max: 1
   Default: 1
   Exists: 0
+--- !u!114 &5867467168595763824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korridor Chase v.2/Jakt end
+  m_EditorClassIdentifier: 
+  Name: Jakt end
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5868588783972801424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19722,7 +20253,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Telephone Calling
   guid: 9b85e3c8c91cec4a81c32e5e9626457f
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -20173,6 +20704,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6255669076181168647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bibliotek/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &6265334221439888780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20279,7 +20827,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Knarr
   guid: 4cd8babcf6b2ae4196ff66b930f668cf
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -20423,13 +20971,13 @@ MonoBehaviour:
   Path: event:/Musik/Blodrum
   guid: 31a9ffbf7024dc459bf6362c65755a24
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1814692507452767289}
-  - {fileID: -7593491104111324667}
+  - {fileID: 2284357303725957530}
+  - {fileID: 7393623147063743123}
   MinDistance: 0
   MaxDistance: 0
   Length: 61544
@@ -20552,7 +21100,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Papper
   guid: b44c9b67e299fe42aa946be233a27420
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -21009,7 +21557,7 @@ MonoBehaviour:
   Path: event:/SFX/World/UI/Negativ Select
   guid: 2c7ea0417fb74441b42fe0a39684f112
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -21527,7 +22075,7 @@ MonoBehaviour:
   Path: event:/SFX/Player/Footsteps/Stenfotsteg
   guid: dffaf40aa860124895f30dceeffec36c
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -21619,7 +22167,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7159815558226142748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21652,14 +22200,14 @@ MonoBehaviour:
   Path: event:/Musik/Korridor Chase v.2
   guid: e294e81b68d78741a35030d5b743d0a7
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3782034206472586940}
-  - {fileID: -6462943532698789111}
-  - {fileID: -1487904144417092412}
+  - {fileID: 5867467168595763824}
+  - {fileID: -8133858851429796987}
+  - {fileID: 1337735552876974003}
   MinDistance: 0
   MaxDistance: 0
   Length: 32000
@@ -21678,7 +22226,7 @@ MonoBehaviour:
   Path: event:/SFX/World/UI/Positiv select
   guid: ebf0b6ca08ddb24193de569d670b75ba
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -21865,7 +22413,7 @@ MonoBehaviour:
   Path: event:/SFX/Player/Footsteps/Blodfotsteg
   guid: 211f2fa45262cb4dbfd685e8358f2ed4
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -21924,6 +22472,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &7393623147063743123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blodrum/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &7421639364512971264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22146,7 +22711,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 80
-  Exists: 1
+  Exists: 0
 --- !u!114 &7608148530542451187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22164,6 +22729,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &7629538308990215301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Korrupt lekplats & natur/Underwater
+  m_EditorClassIdentifier: 
+  Name: Underwater
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &7634458757083084308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22179,7 +22761,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Clock
   guid: a60f5eadfb403842940a7d92c8985450
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -22456,7 +23038,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 90
-  Exists: 1
+  Exists: 0
 --- !u!114 &7859026961443879563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22593,7 +23175,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &7977296789850895018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22773,19 +23355,19 @@ MonoBehaviour:
   Path: event:/Musik/Korrupt lekplats & natur
   guid: 64e1fa2d92859445b5653c4c431224cd
   Banks:
-  - {fileID: 1728546969277134675}
+  - {fileID: 2399828511387800345}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4658847980892986225}
-  - {fileID: -7670273382751261562}
-  - {fileID: 7131045153843660100}
-  - {fileID: -6430771122561728240}
-  - {fileID: -294453155864430874}
-  - {fileID: 5101953976735410656}
-  - {fileID: -4667008129194344962}
-  - {fileID: 7954716230747830429}
+  - {fileID: 7629538308990215301}
+  - {fileID: 2526166820487125968}
+  - {fileID: 2731332207935741286}
+  - {fileID: -6445920385577479958}
+  - {fileID: 2685879982086343971}
+  - {fileID: 4406430687094457917}
+  - {fileID: 771553240672911953}
+  - {fileID: -4620975296074623822}
   MinDistance: 0
   MaxDistance: 0
   Length: 180352
@@ -22859,6 +23441,23 @@ MonoBehaviour:
   Default: 0
   Exists: 1
 --- !u!114 &8220274537186674025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Playground Theme/Diskant Piano Stem
+  m_EditorClassIdentifier: 
+  Name: Diskant Piano Stem
+  Min: 0
+  Max: 100
+  Default: 80
+  Exists: 1
+--- !u!114 &8229618619183334670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23101,7 +23700,7 @@ MonoBehaviour:
   Path: "event:/SFX/Player/Footsteps/Gr\xE4sfotsteg"
   guid: 75073b0f05bbac41a56755aad52d9005
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -23694,15 +24293,15 @@ MonoBehaviour:
   Path: event:/SFX/World/Lekplats Ambience
   guid: 36e0e55f93099e40b195703ae0d02296
   Banks:
-  - {fileID: 5010108674108679581}
+  - {fileID: -5346932434325870888}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8174829020878046841}
-  - {fileID: 2851504614871977090}
-  - {fileID: 7835961991140060054}
-  - {fileID: -8150186278422187969}
+  - {fileID: 961330302588324518}
+  - {fileID: -56607192932317126}
+  - {fileID: 1170726990147257290}
+  - {fileID: 219721922875641877}
   MinDistance: 0
   MaxDistance: 0
   Length: 214000
@@ -23738,7 +24337,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Arm
   guid: 81f136ec34b53a4f94479bd8db242e36
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -23881,7 +24480,7 @@ MonoBehaviour:
   Path: event:/SFX/World/Objekt/Call line dead
   guid: 7ef5c0fa1915f14ab9a55cfde7991174
   Banks:
-  - {fileID: -7643983668345822606}
+  - {fileID: -3714247024067346001}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
