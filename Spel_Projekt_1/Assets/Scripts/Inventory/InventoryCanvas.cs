@@ -24,6 +24,7 @@ public class InventoryCanvas : MonoBehaviour
 	public string verticalAxis = "Vertical";
 	public string selectAxis = "InteractionButton";
 	public string closeAxis = "InventoryButton";
+	public string closeAxis2 = "Cancel";
 	[Range(0,1)]
 	public float deadZone;
 
@@ -137,7 +138,7 @@ public class InventoryCanvas : MonoBehaviour
 				_selectButtonPressed = false;
 			}
 
-			if (Input.GetAxisRaw(closeAxis) > deadZone) {
+			if (Input.GetAxisRaw(closeAxis) > deadZone || Input.GetAxisRaw(closeAxis2) > deadZone) {
 				if (!_closeButtonPressed) {
 					if (_combining) {
 						EndCombine();
