@@ -4300,10 +4300,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
-      propertyPath: tileMap
-      value: 
-      objectReference: {fileID: 65796663}
+    - target: {fileID: 6685346484804266381, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: possibleCombinations.Array.size
@@ -4343,11 +4344,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6685346484804266381, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 65796663}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
 --- !u!1001 &95968081
@@ -7333,9 +7333,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 38
   indentLevel: 2
-  storyText: "Kanske beh\xF6ver mer \xF6gon"
+  storyText: The world as you see it is coloured by emotions.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1815280668}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11790,8 +11790,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -106.739426
-    y: -196.0007
+    x: -154.61177
+    y: -209.83043
     width: 123.40425
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -11808,6 +11808,7 @@ MonoBehaviour:
   - {fileID: 498703667}
   - {fileID: 498703635}
   - {fileID: 498703636}
+  - {fileID: 7535735824343373611}
 --- !u!114 &498703612
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -11822,7 +11823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 31
   indentLevel: 1
-  storyText: Oh no, it's spilling out!
+  storyText: '{speed=30}Oh no, it''s spilling out!'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -11880,6 +11881,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 498703655}
+  - {fileID: 7535735824343373606}
+  - {fileID: 7535735824343373604}
   - {fileID: 498703676}
   - {fileID: 498703679}
   - {fileID: 498703677}
@@ -12003,7 +12006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 375
   indentLevel: 1
-  storyText: It's smooth as concrete.
+  storyText: '{speed=30}...{wc} It''s smooth as concrete.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12121,8 +12124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 52.988785
-    y: -329.79126
+    x: 67.88239
+    y: -257.45087
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -12169,7 +12172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 379
   indentLevel: 2
-  storyText: It's not from a living thing.
+  storyText: Whatever that is, t's not from a living thing.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12288,7 +12291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 381
   indentLevel: 0
-  storyText: Please don't scream... .
+  storyText: '{speed=30}Please don''t scream... if you can do that at all'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12392,7 +12395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 383
   indentLevel: 2
-  storyText: Did it just give me a hand?
+  storyText: It wanted me to take it, I think..
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12825,7 +12828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 231
   indentLevel: 0
-  storyText: I can't breathe. Is that thing alive? Smells like it's rotten...
+  storyText: '{speed=30}I can''t breathe. Is that thing alive? Smells like it''s rotten...'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13127,7 +13130,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -292.38635
-    y: -307.97995
+    y: -309.0438
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -13152,7 +13155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 237
   indentLevel: 0
-  storyText: Jesus, no! I'm not a murderer! ...I'm alone here, right?
+  storyText: '{speed=30}Jesus, no! I''m not a murderer! ...I''m alone here, right?'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13181,8 +13184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -81.82743
-    y: -135.72424
+    x: -160.55086
+    y: -141.04338
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -13546,7 +13549,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 283.47443
-    y: -288.06198
+    y: -289.12582
     width: 151.06381
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -23980,7 +23983,7 @@ MonoBehaviour:
     interactableAngle: 90
     interactableAngleDot: 0.70710677
     offset: {x: 0, y: 0}
-    flowchart: {fileID: 6356340247877577574}
+    flowchart: {fileID: 188570967}
     block: {fileID: 188570969}
     _foldout: 1
     _showPopup: 1
@@ -26904,8 +26907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 128.95721
-    y: -130.11562
+    x: 168.3189
+    y: -124.79648
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -31167,7 +31170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Eye-child
+  nameText: Four-eyes
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   portraits: []
   portraitsFace: 0
@@ -33092,7 +33095,7 @@ MonoBehaviour:
     interactableAngle: 90
     interactableAngleDot: 0.70710677
     offset: {x: 0, y: 0}
-    flowchart: {fileID: 6356340247877577574}
+    flowchart: {fileID: 188570967}
     block: {fileID: 188570971}
     _foldout: 1
     _showPopup: 1
@@ -33937,37 +33940,6 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!114 &2089905970
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089905967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  Emitters:
-  - Target: {fileID: 1965771350}
-    Params:
-    - Name: Easteregg
-      Value: 1
-  TriggerEvent: 5
---- !u!4 &2093213032 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2194470773314837457, guid: c9b1b8fca8b0dcb4aac1b1bac010e123,
-    type: 3}
-  m_PrefabInstance: {fileID: 1470476143}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &2093213033 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8112820245583552745, guid: c9b1b8fca8b0dcb4aac1b1bac010e123,
-    type: 3}
-  m_PrefabInstance: {fileID: 1470476143}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2098586335
-PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -35286,6 +35258,12 @@ GameObject:
   - component: {fileID: 7535735824343373601}
   - component: {fileID: 7535735824343373604}
   - component: {fileID: 7535735824343373605}
+  - component: {fileID: 7535735824343373606}
+  - component: {fileID: 7535735824343373608}
+  - component: {fileID: 7535735824343373607}
+  - component: {fileID: 7535735824343373610}
+  - component: {fileID: 7535735824343373609}
+  - component: {fileID: 7535735824343373611}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -35392,8 +35370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 129.59717
-    y: -182.29045
+    x: 166.83119
+    y: -176.97131
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -35404,7 +35382,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1464054950}
-  - {fileID: 0}
   - {fileID: 7535735824343373598}
   - {fileID: 1464054944}
   - {fileID: 1464054933}
@@ -35565,6 +35542,176 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 1
   durationOLD: 0
+--- !u!114 &7535735824343373606
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 414
+  indentLevel: 1
+  storyText: '{speed=30} Ugh... my head throbs real bad.'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &7535735824343373607
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 416
+  indentLevel: 0
+  storyText: Atleast they're secured to the ground. But I'm really too close.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &7535735824343373608
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 25.757889
+    y: -121.77585
+    width: 138.29787
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 415
+  blockName: Corrupt Horses
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7535735824343373607}
+--- !u!114 &7535735824343373609
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 418
+  indentLevel: 0
+  storyText: '{speed=30}I don''t see anything down there. {w=0.5} Probably I don''t
+    wish to.'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
+--- !u!114 &7535735824343373610
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 28.949425
+    y: -181.35043
+    width: 137.23404
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 417
+  blockName: Corrupt Swings
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7535735824343373609}
+--- !u!114 &7535735824343373611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735824343373595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 419
+  indentLevel: 1
+  storyText: '{speed=30}That blood isn''t real, and if it is it doesn''t matter. I''ll
+    find a way out!'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &7535735824343373624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35578,10 +35725,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 648.7099, y: 419.64798}
+  scrollPos: {x: 590.1995, y: 491.9886}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 280
   zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
@@ -35589,10 +35736,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 498703614}
-  selectedCommands:
-  - {fileID: 498703677}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 498703620}
   - {fileID: 498703619}
