@@ -8,13 +8,56 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001EB98DAE738 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000022F4454E8D8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] SystemI::createSound                     : filename = FMOD Projectpath\Regression FMOD\Build\Desktop/Musik.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000022F2806B3E8 : node = 0000022F3205B480
+[LOG] SystemI::createSound                     : add node to async list : head = 0000022F2F2B05E8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022F2806B3E8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD Projectpath\Regression FMOD\Build\Desktop/Musik.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 19757088
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 89472
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022F3205B590
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 12500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Regression Slutscen synth', format=2, channels=2, frequency=48000, lengthbytes=203360, lengthpcm=1242146, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.069800.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022F2806B3E8
+[LOG] SoundI::getSubSound                      : sound 0000022F2806B3E8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Regression Slutscen synth (0000022F2166CEE8)
+[LOG] SoundI::release                          :     Regression Slutscen synth (0000022F2F2B1E98)
+[LOG] SoundI::release                          :     Regression Slutscen synth (0000022F2166BE08)
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] SoundI::release                          :  (0000022F3C3EDB08)
+[LOG] SoundI::release                          :     Regression thunder (0000022F2F2B33B8)
+[LOG] SoundI::release                          :  (0000022F3C3F0798)
+[LOG] SoundI::release                          :     Regression succ (0000022F2F2B2518)
+[LOG] SoundI::release                          : Regression Slutscen synth (0000022F2806B3E8)
+[LOG] SoundI::release                          :     Regression Slutscen synth (0000022F2F2B2ED8)
+[LOG] SoundI::release                          :     Regression Slutscen synth (0000022F2806B598)
+[LOG] SoundI::release                          :  (0000022F3C3F0908)
+[LOG] SoundI::release                          :     Regression subbass heart (0000022F2F2B3218)
+[LOG] SoundI::release                          :  (0000022F3C3ED3D8)
+[LOG] SoundI::release                          :     Scary 3 - SP1 (0000022F2F2B3558)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
@@ -28,4 +71,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.
