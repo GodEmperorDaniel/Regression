@@ -7625,7 +7625,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 194.0889
     y: -28.243137
-    width: 152.53162
+    width: 145.2941
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7653,9 +7653,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 27.407158
-    y: -30.773613
-    width: 124.683525
+    x: 28.583628
+    y: -31.950083
+    width: 120
     height: 40
   tint: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   useCustomTint: 1
@@ -7666,11 +7666,12 @@ MonoBehaviour:
   commandList:
   - {fileID: 188570982}
   - {fileID: 188570999}
+  - {fileID: 188570970}
   - {fileID: 188570998}
   - {fileID: 188570997}
   - {fileID: 188570974}
   - {fileID: 188570973}
-  - {fileID: 188570970}
+  - {fileID: 6356340247877577575}
   - {fileID: 188570981}
   - {fileID: 188570980}
   - {fileID: 188570979}
@@ -7689,7 +7690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 38
   indentLevel: 2
-  storyText: The world as you see it is coloured by emotions.
+  storyText: Do you think you could fix it?
   description: 
   character: {fileID: 1815280668}
   portrait: {fileID: 0}
@@ -7720,7 +7721,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 23.648666
     y: -86.00723
-    width: 134.8101
+    width: 128.82352
     height: 40
   tint: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   useCustomTint: 1
@@ -8019,7 +8020,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 384.12427
     y: -30.730812
-    width: 199.36705
+    width: 188.8235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13155,7 +13156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 7535735824343373624}
+  selectedFlowchart: {fileID: 6356340247877577574}
 --- !u!4 &498638050
 Transform:
   m_ObjectHideFlags: 1
@@ -36866,7 +36867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Four-eyes
+  nameText: Is that... Evelyn?
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   portraits: []
   portraitsFace: 0
@@ -41458,6 +41459,7 @@ GameObject:
   - component: {fileID: 188571007}
   - component: {fileID: 188571008}
   - component: {fileID: 188571023}
+  - component: {fileID: 6356340247877577575}
   m_Layer: 0
   m_Name: NPC_s
   m_TagString: Untagged
@@ -41478,11 +41480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 757.8854, y: 125.29375}
+  scrollPos: {x: 851.5757, y: 289.4588}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.7900002
+  zoom: 0.8500002
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -41490,8 +41492,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 188570969}
-  selectedCommands: []
+  - {fileID: 188570984}
+  selectedCommands:
+  - {fileID: 188570988}
   variables:
   - {fileID: 6356340247877577582}
   - {fileID: 188570996}
@@ -41508,6 +41511,36 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
+--- !u!114 &6356340247877577575
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356340247877577573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  indentLevel: 2
+  storyText: 'Hello... {vc}You, you''ll have to help me again. My eyes... {vc}No,
+    I''m not hurt. I can''t see and I won''t go with you. The noises scare me. '
+  description: 
+  character: {fileID: 1815280668}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  freezePlayer: 1
+  interruptPlayer: 1
+  setSayDialog: {fileID: 0}
 --- !u!114 &6356340247877577576
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -41596,7 +41629,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 196.81508
     y: 80.946976
-    width: 191.77211
+    width: 181.76468
     height: 40
   tint: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   useCustomTint: 1
@@ -41622,7 +41655,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 194.81508
     y: 42.94702
-    width: 166.45566
+    width: 158.23526
     height: 40
   tint: {r: 0.5660378, g: 0.26432896, b: 0.26432896, a: 1}
   useCustomTint: 1
@@ -42002,7 +42035,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735824343373604
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42242,7 +42275,7 @@ MonoBehaviour:
   - {fileID: 7535735824343373614}
 --- !u!114 &7535735824343373613
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42273,7 +42306,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &7535735824343373614
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
