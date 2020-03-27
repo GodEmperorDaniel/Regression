@@ -26,8 +26,19 @@ public class CallFootstepsEvent : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            col = null;
+        }
+    }
+
     public void GetFootstep()
     {
-        footstepManager.CheckSound(col);
+        if (col)
+        { 
+            footstepManager.CheckSound(col);
+        }
     }
 }

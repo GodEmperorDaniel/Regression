@@ -37,21 +37,34 @@ public class PuzzleScript : MonoBehaviour {
 	private bool escapePressed;
 	private int selectedIndex;
 
-    private void OnEnable() {
-		if (startButton) {
-			if (EventSystem.current) {
+    private void OnEnable()
+	{
+		StartCoroutine(WaitOnGui());
+	}
+
+	private IEnumerator WaitOnGui()
+	{
+		yield return new WaitForEndOfFrame();
+
+		if (startButton)
+		{
+			if (EventSystem.current)
+			{
 				EventSystem.current.SetSelectedGameObject(null);
 			}
 			startButton.Select();
 		}
-		foreach (var o in autoEnable) {
+		foreach (var o in autoEnable)
+		{
 			o.SetActive(true);
 		}
-		foreach (var o in autoDisable) {
+		foreach (var o in autoDisable)
+		{
 			o.SetActive(false);
 		}
 
-		if (resetPuzzleOnCancel) {
+		if (resetPuzzleOnCancel)
+		{
 			puzzleCombination = string.Empty;
 		}
 

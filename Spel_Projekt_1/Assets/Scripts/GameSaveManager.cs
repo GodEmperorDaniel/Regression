@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSaveManager : MonoBehaviour {
 	//The version number must be updated every time the save format changes
 	public const int version = 4;
 	public static GameSaveManager instance;
+	public float iconShowTime = 1;
+	public ColorInterp saveIcon;
 
 	//private static ISaveable[] _saveables;
 
@@ -68,6 +71,23 @@ public class GameSaveManager : MonoBehaviour {
 
 		file.Write(output, 0, totalSize);
 		file.Close();
+
+		if (saveIcon) {
+			StartCoroutine(ShowSaveIcon());
+		}
+	}
+
+	private IEnumerator ShowSaveIcon() {
+		saveIcon.Play();
+		while (saveIcon.IsRunning()) {
+			yield return null;
+		}
+		var t = iconShowTime;
+		while (t > 0) {
+			yield return null;
+			t -= Time.deltaTime;
+		}
+		saveIcon.PlayReverse();
 	}
 
 	public void LoadGame() {

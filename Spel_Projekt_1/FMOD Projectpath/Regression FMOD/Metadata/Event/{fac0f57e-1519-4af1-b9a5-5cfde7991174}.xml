@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{fac0f57e-1519-4af1-b9a5-5cfde7991174}">
 		<property name="name">
-			<value>New Event</value>
+			<value>Call line dead</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{06d3f58f-ea29-44ee-8e36-4bf5e32094f7}</destination>
+			<destination>{5cb02c36-d57b-4ca2-9eda-fdac0e595601}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{91ebd340-eb18-45a1-aec5-fc131f8fee50}</destination>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{28e94026-f52c-4c9c-81c6-39e8cf1a145e}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{91dd8e31-008b-42d9-88d4-13bba4adefdb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{91ebd340-eb18-45a1-aec5-fc131f8fee50}">

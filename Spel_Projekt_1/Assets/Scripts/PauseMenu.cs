@@ -30,7 +30,6 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
-				FixSettings();
                 Resume();
             } else if (!PlayerStatic.IsFrozen()) {
                 Pause();
