@@ -3707,6 +3707,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 814588148}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &833648989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833648990}
+  - component: {fileID: 833648991}
+  m_Layer: 0
+  m_Name: Enabla mig i cutscenen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &833648990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833648989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1899269519}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833648991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833648989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 0}
+    Params:
+    - Name: Vattenbarn cutscene
+      Value: 1
+  TriggerEvent: 11
 --- !u!1 &863105428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5240,7 +5290,7 @@ MonoBehaviour:
   indentLevel: 2
   item:
     inventoryItemRef: {fileID: 0}
-    inventoryItemVal: {fileID: 11400000, guid: da7a15fca842af44b8f1af1d8e7ca962, type: 2}
+    inventoryItemVal: {fileID: 0}
 --- !u!114 &863105481
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5464,7 +5514,7 @@ MonoBehaviour:
   indentLevel: 2
   item:
     inventoryItemRef: {fileID: 0}
-    inventoryItemVal: {fileID: 11400000, guid: da7a15fca842af44b8f1af1d8e7ca962, type: 2}
+    inventoryItemVal: {fileID: 0}
 --- !u!114 &863105487
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7157,7 +7207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1899269519}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &881986365
 MonoBehaviour:
@@ -8009,7 +8059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1899269519}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1416277428
 MonoBehaviour:
@@ -8843,6 +8893,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 833648990}
   - {fileID: 1416277427}
   - {fileID: 881986364}
   m_Father: {fileID: 1827940953}
