@@ -10,13 +10,9 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class Menu : MonoBehaviour
 {
-    public Selectable firstSelected;
-    public GameObject startMenyUi;
-    public EventSystem eventSystem;
-    private Selectable lastSelectedButton = null;
+   
     public void Update()
     {
-        AlwaysSelected();
     }
 
     public void NewGame()
@@ -42,30 +38,6 @@ public class Menu : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("BT_CREDITS");
-    }
-
-
-
-    private void AlwaysSelected()
-    {
-        if (!eventSystem.currentSelectedGameObject)
-        {
-            lastSelectedButton.Select();
-        }
-        else
-        {
-            foreach (Selectable button in Button.allSelectablesArray)
-            {
-                if (button.gameObject == eventSystem.currentSelectedGameObject)
-                {
-                    lastSelectedButton = button;
-                }
-            }
-            if (!lastSelectedButton)
-            {
-                lastSelectedButton = firstSelected;
-            }
-        }
     }
 
 }
