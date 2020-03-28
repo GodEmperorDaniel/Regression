@@ -159,7 +159,7 @@ public class PuzzleScript : MonoBehaviour {
 		}
 	}
 
-	private void CheckNumber() {
+	public void CheckNumber() {
 		for (int i = 0; i < solutions.Count; i++)
 		{
 			if (puzzleCombination == solutions[i].solution)

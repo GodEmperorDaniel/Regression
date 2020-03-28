@@ -18,8 +18,12 @@ public class Inventory : MonoBehaviour, ISaveable
 	public int Count { get { return _items.Count; } }
 	public InventoryItem[] Items { get { return _items.ToArray(); } }
 
-    public void Start()
+	private ItemAddedText itemAddedtxt;
+
+	public void Start()
     {
+		itemAddedtxt = GameObject.FindObjectOfType<ItemAddedText>(); // Simons skit, remove if bad
+
 		if (!canvas && uiPrefab != null)
         {
             canvas = Instantiate(uiPrefab).GetComponentInChildren<InventoryCanvas>();

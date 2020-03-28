@@ -10,7 +10,7 @@ using Fungus;
 public class InteractionSettingsEditor : PropertyDrawer {
 	protected int selectedIndex = 0;
 	protected float spaceBetweenLines = 2;
-	const int propertyCount = 4;
+	const int propertyCount = 5;
 
 	//We are forced to handle layout manually as GUIEditorLayout is not available to Property Drawers :(
 	public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
@@ -37,9 +37,10 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 		if (foldoutProperty.boolValue) {
 			var activeRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
-			var angleRect = new Rect(position.x, position.y + 2 * EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
-			var flowchartRect = new Rect(position.x, position.y + 3 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
-			var popupRect = new Rect(position.x, position.y + 4 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
+			var offsetRect = new Rect(position.x, position.y + 2* EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
+			var angleRect = new Rect(position.x, position.y + 3 * EditorGUIUtility.singleLineHeight + spaceBetweenLines, position.width, EditorGUIUtility.singleLineHeight);
+			var flowchartRect = new Rect(position.x, position.y + 4 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
+			var popupRect = new Rect(position.x, position.y + 5 * (EditorGUIUtility.singleLineHeight + spaceBetweenLines), position.width, EditorGUIUtility.singleLineHeight);
 
 			EditorGUI.indentLevel++;
 
@@ -48,9 +49,11 @@ public class InteractionSettingsEditor : PropertyDrawer {
 
 			//Draw normal fields
 			var flowchartProperty = property.FindPropertyRelative("flowchart");
+			var offsetProperty = property.FindPropertyRelative("offset");
 			var angleProperty = property.FindPropertyRelative("interactableAngle");
 			var angleDotProperty = property.FindPropertyRelative("interactableAngleDot");
 			EditorGUI.PropertyField(activeRect, property.FindPropertyRelative("Active"));
+			EditorGUI.PropertyField(offsetRect, offsetProperty);
 			
 			//Angle defaults to 0 (because struct) but we want it to default to 360
 			var angle = angleProperty.floatValue;
