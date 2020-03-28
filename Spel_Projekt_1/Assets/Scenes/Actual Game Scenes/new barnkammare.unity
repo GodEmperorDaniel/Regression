@@ -202,8 +202,8 @@ MonoBehaviour:
     _showPopup: 0
   OnKeyPressed:
     Active: 1
-    interactableAngle: 360
-    interactableAngleDot: -1
+    interactableAngle: 180
+    interactableAngleDot: -0.00000004371139
     offset: {x: 0, y: 0}
     flowchart: {fileID: 863105543}
     block: {fileID: 863105493}
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 863105543}
+  selectedFlowchart: {fileID: 1401982422}
 --- !u!4 &31630136
 Transform:
   m_ObjectHideFlags: 1
@@ -2502,7 +2502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &501312114
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,11 +2542,11 @@ MonoBehaviour:
     _showPopup: 0
   OnKeyPressed:
     Active: 1
-    interactableAngle: 360
-    interactableAngleDot: -1
+    interactableAngle: 180
+    interactableAngleDot: -0.00000004371139
     offset: {x: 0, y: 0}
-    flowchart: {fileID: 1401982422}
-    block: {fileID: 1401982419}
+    flowchart: {fileID: 863105543}
+    block: {fileID: 863105431}
     _foldout: 1
     _showPopup: 1
   OnStay:
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   indentLevel: 2
   item:
     inventoryItemRef: {fileID: 0}
-    inventoryItemVal: {fileID: 0}
+    inventoryItemVal: {fileID: 11400000, guid: 4ba9c6a67f54d03459546dba6904cc25, type: 2}
 --- !u!114 &863105481
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5514,7 +5514,7 @@ MonoBehaviour:
   indentLevel: 2
   item:
     inventoryItemRef: {fileID: 0}
-    inventoryItemVal: {fileID: 0}
+    inventoryItemVal: {fileID: 11400000, guid: 4ba9c6a67f54d03459546dba6904cc25, type: 2}
 --- !u!114 &863105487
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7001,8 +7001,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 863105492}
-  selectedCommands: []
+  - {fileID: 863105490}
+  selectedCommands:
+  - {fileID: 863105480}
   variables:
   - {fileID: 863105541}
   - {fileID: 863105542}
@@ -8689,7 +8690,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 985906795, guid: d6afe226b8f970f4197d78c586427f39, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6afe226b8f970f4197d78c586427f39, type: 3}
 --- !u!4 &1771662942 stripped
 Transform:

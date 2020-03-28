@@ -12,11 +12,11 @@ public class Menu : MonoBehaviour
 {
     public Selectable firstSelected;
     public GameObject startMenyUi;
+    public EventSystem eventSystem;
     private Selectable lastSelectedButton = null;
-    private EventSystem eventSystem;
     public void Update()
     {
-        //AlwaysSelected();
+        AlwaysSelected();
     }
 
     public void NewGame()
@@ -43,26 +43,29 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("BT_CREDITS");
     }
-        
-                
-            
-        //private void AlwaysSelected()
-        //{
-        //    foreach (Selectable button in Button.allSelectablesArray)
-        //    {
-        //        if (button.gameObject == eventSystem.currentSelectedGameObject)
-        //        {
-        //            lastSelectedButton = button;
-        //        }
-        //    }
-        //    if (!lastSelectedButton)
-        //    {
-        //        lastSelectedButton = firstSelected;
-        //    }
-        //    if (!EventSystem.current.alreadySelecting)
-        //    {
-        //        lastSelectedButton.Select();
-        //    }
-        //}
-    
+
+
+
+    private void AlwaysSelected()
+    {
+        if (!eventSystem.currentSelectedGameObject)
+        {
+            lastSelectedButton.Select();
+        }
+        else
+        {
+            foreach (Selectable button in Button.allSelectablesArray)
+            {
+                if (button.gameObject == eventSystem.currentSelectedGameObject)
+                {
+                    lastSelectedButton = button;
+                }
+            }
+            if (!lastSelectedButton)
+            {
+                lastSelectedButton = firstSelected;
+            }
+        }
+    }
+
 }
