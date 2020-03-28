@@ -4434,15 +4434,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
-      propertyPath: tileMap
-      value: 
-      objectReference: {fileID: 65796663}
-    - target: {fileID: 4038089666863768761, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: possibleCombinations.Array.size
@@ -4477,6 +4468,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 505a6bcdaba0f14479bedcf23b6081e5,
         type: 2}
+    - target: {fileID: 4038089666863768761, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 65796663}
     - target: {fileID: 6685346484804266381, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: m_Enabled
@@ -7674,7 +7674,6 @@ MonoBehaviour:
   - {fileID: 6356340247877577575}
   - {fileID: 188570981}
   - {fileID: 188570980}
-  - {fileID: 188570979}
   - {fileID: 188570978}
 --- !u!114 &188570970
 MonoBehaviour:
@@ -7864,22 +7863,6 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
---- !u!114 &188570979
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6356340247877577573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b3bfc4d56c42d4a8aa18300e22e0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 54
-  indentLevel: 1
-  stopPlayerString: 
-  setPlayerActive: 0
 --- !u!114 &188570980
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8018,7 +8001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 384.12427
+    x: 385.30075
     y: -30.730812
     width: 188.8235
     height: 40
@@ -13156,7 +13139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 6356340247877577574}
+  selectedFlowchart: {fileID: 1571370778}
 --- !u!4 &498638050
 Transform:
   m_ObjectHideFlags: 1
@@ -31942,6 +31925,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1256291739452521418, guid: 80564e2f70458b742b5067c8c9effb20,
+        type: 3}
+      propertyPath: nodeRect.y
+      value: 264.31976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80564e2f70458b742b5067c8c9effb20, type: 3}
 --- !u!1001 &1458873749
@@ -33957,6 +33945,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1455945506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571370778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1256291739452521408, guid: 80564e2f70458b742b5067c8c9effb20,
+    type: 3}
+  m_PrefabInstance: {fileID: 1455945506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571370722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1571628326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3980146534715322210, guid: a1da48df577bd424b9ff17d7fdd498e2,
@@ -41468,7 +41468,6 @@ GameObject:
   - component: {fileID: 188570976}
   - component: {fileID: 188570977}
   - component: {fileID: 188570978}
-  - component: {fileID: 188570979}
   - component: {fileID: 188570980}
   - component: {fileID: 188570981}
   - component: {fileID: 188570982}
@@ -41513,7 +41512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 851.5757, y: 289.4588}
+  scrollPos: {x: 640.9875, y: 156.51772}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -41525,9 +41524,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 188570984}
-  selectedCommands:
-  - {fileID: 188570988}
+  - {fileID: 188570969}
+  selectedCommands: []
   variables:
   - {fileID: 6356340247877577582}
   - {fileID: 188570996}
