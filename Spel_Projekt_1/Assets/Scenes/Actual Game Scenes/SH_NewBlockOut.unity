@@ -35267,6 +35267,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5692884374466513571, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
         type: 3}
       propertyPath: inMenu
@@ -35277,11 +35282,6 @@ PrefabInstance:
       propertyPath: outMenu
       value: 
       objectReference: {fileID: 470434734}
-    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3c1eac98f31e74da39d7b5fafc8e94, type: 3}
 --- !u!1001 &1724423877
@@ -40392,8 +40392,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089905968}
-  - component: {fileID: 2089905970}
   - component: {fileID: 2089905969}
+  - component: {fileID: 2089905970}
   m_Layer: 0
   m_Name: Easteregg
   m_TagString: Untagged
@@ -40450,9 +40450,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2089905967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1965771350}
+    Params:
+    - Name: Easteregg
+      Value: 1
+  TriggerEvent: 5
 --- !u!1001 &2100229414
 PrefabInstance:
   m_ObjectHideFlags: 0
