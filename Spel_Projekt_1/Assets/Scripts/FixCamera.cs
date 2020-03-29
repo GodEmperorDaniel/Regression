@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class FixCamera : MonoBehaviour
 {
-	private void Start()
+	private void OnEnable()
 	{
+		StartCoroutine(FixIt());
+	}
+
+	private IEnumerator FixIt()
+	{
+		yield return new WaitForEndOfFrame();
 		GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = PlayerStatic.PlayerInstance.transform;
 	}
 }
