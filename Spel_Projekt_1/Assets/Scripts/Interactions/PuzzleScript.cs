@@ -206,6 +206,11 @@ public class PuzzleScript : MonoBehaviour {
 			}
 		}
 	}
+
+	public void indexUp(int index)
+	{ 
+		
+	}
 }
 
 

@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639656954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -2.5, z: 0}
+  m_LocalPosition: {x: -1.4, y: -2.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2046467883}
@@ -1440,7 +1440,7 @@ MonoBehaviour:
     Active: 1
     interactableAngle: 90
     interactableAngleDot: 0.70710677
-    offset: {x: 0, y: 0}
+    offset: {x: 0.54, y: -0.16}
     flowchart: {fileID: 7535735823870857993}
     block: {fileID: 1341147617}
     _foldout: 1
@@ -1548,7 +1548,7 @@ MonoBehaviour:
     Active: 1
     interactableAngle: 90
     interactableAngleDot: 0.70710677
-    offset: {x: 0, y: 0}
+    offset: {x: -0.51, y: -0.21}
     flowchart: {fileID: 7535735823870857993}
     block: {fileID: 1341147618}
     _foldout: 1
@@ -3081,7 +3081,7 @@ MonoBehaviour:
     Active: 1
     interactableAngle: 90
     interactableAngleDot: 0.70710677
-    offset: {x: 0, y: 0}
+    offset: {x: 0.3, y: 0.1}
     flowchart: {fileID: 7535735823870857993}
     block: {fileID: 1341147626}
     _foldout: 1
@@ -3522,6 +3522,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 5692884374466513571, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
         type: 3}
       propertyPath: inMenu
@@ -3532,11 +3537,6 @@ PrefabInstance:
       propertyPath: outMenu
       value: 
       objectReference: {fileID: 17421473}
-    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3c1eac98f31e74da39d7b5fafc8e94, type: 3}
 --- !u!1 &2046467881
@@ -3995,8 +3995,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1341147616}
-  selectedCommands:
-  - {fileID: 1341147595}
+  selectedCommands: []
   variables:
   - {fileID: 1341147614}
   - {fileID: 1341147613}
@@ -4167,7 +4166,7 @@ MonoBehaviour:
   variable: {fileID: 1341147625}
   booleanData:
     booleanRef: {fileID: 0}
-    booleanVal: 0
+    booleanVal: 1
   integerData:
     integerRef: {fileID: 0}
     integerVal: 0
