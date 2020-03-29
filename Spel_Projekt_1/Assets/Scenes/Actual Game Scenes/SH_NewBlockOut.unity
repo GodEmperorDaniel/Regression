@@ -7733,6 +7733,7 @@ MonoBehaviour:
   - {fileID: 188570992}
   - {fileID: 188570991}
   - {fileID: 188571023}
+  - {fileID: 6356340247877577580}
 --- !u!114 &188570972
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7747,7 +7748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 36
   indentLevel: 0
-  storyText: I fell out of time. I can't feel my arms.
+  storyText: No arms. No hands. No time.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8226,7 +8227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 64
   indentLevel: 0
-  storyText: Catch up, catch up.
+  storyText: Catch up, catch up. I have no hands to help you.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13139,7 +13140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1571370778}
+  selectedFlowchart: {fileID: 6356340247877577574}
 --- !u!4 &498638050
 Transform:
   m_ObjectHideFlags: 1
@@ -14631,7 +14632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 237
   indentLevel: 0
-  storyText: '{speed=30}Jesus, no! I''m not a murderer! ...I''m alone here, right?'
+  storyText: '{speed=30}What''s that doing here!? Murderer? NO! No, no-no-no-no...
+    {v=0.5} I... I''m alone here, right?'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -33945,18 +33947,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1455945506}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1571370778 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1256291739452521408, guid: 80564e2f70458b742b5067c8c9effb20,
-    type: 3}
-  m_PrefabInstance: {fileID: 1455945506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571370722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1571628326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3980146534715322210, guid: a1da48df577bd424b9ff17d7fdd498e2,
@@ -36885,7 +36875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Is that... Evelyn?
+  nameText: '...Evelyn?'
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   portraits: []
   portraitsFace: 0
@@ -41388,6 +41378,7 @@ GameObject:
   - component: {fileID: 188571008}
   - component: {fileID: 188571023}
   - component: {fileID: 6356340247877577575}
+  - component: {fileID: 6356340247877577580}
   m_Layer: 0
   m_Name: NPC_s
   m_TagString: Untagged
@@ -41419,8 +41410,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 188570969}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 6356340247877577582}
@@ -41566,6 +41556,81 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 6356340247877577576}
+--- !u!114 &6356340247877577580
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356340247877577573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 0}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  characterData:
+    characterRef: {fileID: 0}
+    characterVal: {fileID: 0}
+  sceneData:
+    sceneRef: {fileID: 0}
+    sceneVal:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+  inventoryItemData:
+    inventoryItemRef: {fileID: 0}
+    inventoryItemVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &6356340247877577581
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -42180,8 +42245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 419
   indentLevel: 1
-  storyText: '{speed=30}That blood isn''t real, and if it is it doesn''t matter. I''ll
-    find a way out!'
+  storyText: '{speed=30} Gosh... I didn''t even touch the eye.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -42395,7 +42459,7 @@ MonoBehaviour:
   value: 0
 --- !u!114 &7535735824343373618
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42470,7 +42534,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &7535735824343373619
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42484,7 +42548,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &7535735824343373620
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42559,7 +42623,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &7535735824343373621
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42573,7 +42637,7 @@ MonoBehaviour:
   waitForFrames: 1
 --- !u!114 &7535735824343373622
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42594,7 +42658,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735824343373623
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42666,7 +42730,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7535735824343373626
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42782,7 +42846,7 @@ MonoBehaviour:
   - {fileID: 7535735824343373632}
 --- !u!114 &7535735824343373628
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42799,7 +42863,7 @@ MonoBehaviour:
   sprite: {fileID: 7024122771911509671, guid: 36041b86e71463d488b104722616ad30, type: 3}
 --- !u!114 &7535735824343373629
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42874,7 +42938,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &7535735824343373630
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42888,7 +42952,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &7535735824343373631
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42905,7 +42969,7 @@ MonoBehaviour:
   sprite: {fileID: 3662992571331161300, guid: 36041b86e71463d488b104722616ad30, type: 3}
 --- !u!114 &7535735824343373632
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42919,7 +42983,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &7535735824343373633
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42940,7 +43004,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735824343373634
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42957,7 +43021,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: bd9e016eb0634e049b05306e26b565d9, type: 3}
 --- !u!114 &7535735824343373635
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -43032,7 +43096,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &7535735824343373636
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -43046,7 +43110,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &7535735824343373637
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -43067,7 +43131,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &7535735824343373638
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
