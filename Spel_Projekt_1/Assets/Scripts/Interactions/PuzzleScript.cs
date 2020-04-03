@@ -37,7 +37,10 @@ public class PuzzleScript : MonoBehaviour {
 	private bool escapePressed;
 	private int selectedIndex;
 
-    private void OnEnable()
+	[Header("Eyepuzzle")]
+	public List<GameObject> allButtons = new List<GameObject>();
+
+	private void OnEnable()
 	{
 		StartCoroutine(WaitOnGui());
 	}
@@ -176,21 +179,29 @@ public class PuzzleScript : MonoBehaviour {
 		return puzzleCombination;
 	}
 
-	public void SelectButton(GameObject buttonObject) {
-		var selectable = buttonObject.GetComponent<Selectable>();
-		if (selectable.isActiveAndEnabled) {
-			selectable.Select();
-		} else {
-			Vector3 vector3 = new Vector3(0,-1,0);
-			for (var i = 0; i < 4; i++) {
-				var nearbySelectable = selectable.FindSelectable(vector3);
-				if (nearbySelectable) {
-					nearbySelectable.Select();
-					break;
-				}
-				vector3 = new Vector3(-vector3.y, vector3.x, 0);
+	public void SelectAButton() {
+		EventSystem.current.SetSelectedGameObject(null);
+		for (int i = 0; i < allButtons.Count; i++)
+		{
+			if (allButtons[i].transform.parent.gameObject.activeSelf && allButtons[i].activeSelf)
+			{
+				EventSystem.current.SetSelectedGameObject(allButtons[i]);
+				break;
 			}
 		}
+		//if (selectable.isActiveAndEnabled) {
+		//	selectable.Select();
+		//} else {
+		//	Vector3 vector3 = new Vector3(0, -1, 0);
+		//	for (var i = 0; i < 4; i++) {
+		//		var nearbySelectable = selectable.FindSelectable(vector3);
+		//		if (nearbySelectable) {
+		//			nearbySelectable.Select();
+		//			break;
+		//		}
+		//		vector3 = new Vector3(-vector3.y, vector3.x, 0);
+		//	}
+		//}
 	}
 
 	private void RunSolution(PuzzleSolution solution, string combination)
