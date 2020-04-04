@@ -205,7 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7b3ce5faae1ee4fa6e7a4e303873e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfSounds: []
+  listOfSounds:
+  - nameOfSound: event:/SFX/World/Objekt/Arm
+  - nameOfSound: "event:/SFX/World/Objekt/\xD6ga"
 --- !u!4 &267686465
 Transform:
   m_ObjectHideFlags: 0
@@ -2294,6 +2296,7 @@ MonoBehaviour:
   - {fileID: 1341147600}
   - {fileID: 1341147599}
   - {fileID: 1341147597}
+  - {fileID: 7535735823870858045}
   - {fileID: 1341147598}
   - {fileID: 1341147596}
   - {fileID: 1341147595}
@@ -2656,6 +2659,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1341147624}
   - {fileID: 7535735823870858028}
+  - {fileID: 7535735823870858044}
   - {fileID: 1341147623}
   - {fileID: 1341147622}
   - {fileID: 1341147621}
@@ -2702,8 +2706,8 @@ MonoBehaviour:
     _showPopup: 0
   OnKeyPressed:
     Active: 1
-    interactableAngle: 360
-    interactableAngleDot: -1
+    interactableAngle: 150
+    interactableAngleDot: 0.25881907
     offset: {x: 0, y: 0}
     flowchart: {fileID: 7535735823870857993}
     block: {fileID: 1341147564}
@@ -3994,7 +3998,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1341147616}
+  - {fileID: 7535735823870858029}
   selectedCommands: []
   variables:
   - {fileID: 1341147614}
@@ -4070,6 +4074,8 @@ GameObject:
   - component: {fileID: 7535735823870858037}
   - component: {fileID: 7535735823870858041}
   - component: {fileID: 7535735823870858033}
+  - component: {fileID: 7535735823870858045}
+  - component: {fileID: 7535735823870858044}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -4610,6 +4616,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 7535735823870858031}
   waitForFrames: 1
+--- !u!114 &7535735823870858044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 418
+  indentLevel: 1
+  description: 
+  targetObject: {fileID: 267686463}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &7535735823870858045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 417
+  indentLevel: 2
+  description: 
+  targetObject: {fileID: 267686463}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!95 &8560832131403451500
 Animator:
   serializedVersion: 3

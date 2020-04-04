@@ -37,6 +37,9 @@ public class PuzzleScript : MonoBehaviour {
 	private bool escapePressed;
 	private int selectedIndex;
 
+	private int hour;
+	private int minute;
+
 	[Header("Eyepuzzle")]
 	public List<GameObject> allButtons = new List<GameObject>();
 
@@ -143,11 +146,11 @@ public class PuzzleScript : MonoBehaviour {
 	}
 
 	public void SetPuzzlePieceAtPreviouslySelectedIndex(string puzzleCharacter) {
-		puzzleCombination = puzzleCombination.PadRight(selectedIndex + 1);
-		var charArray = puzzleCombination.ToCharArray();
-		charArray[selectedIndex] = puzzleCharacter[0];
-		puzzleCombination = new string(charArray);
-		RunSolution(onPuzzlePieceAdded, puzzleCharacter);
+			puzzleCombination = puzzleCombination.PadRight(selectedIndex + 1);
+			var charArray = puzzleCombination.ToCharArray();
+			charArray[selectedIndex] = puzzleCharacter[0];
+			puzzleCombination = new string(charArray);
+			RunSolution(onPuzzlePieceAdded, puzzleCharacter);
 	}
 
 	public void RemovePuzzlePiece() {
@@ -189,19 +192,6 @@ public class PuzzleScript : MonoBehaviour {
 				break;
 			}
 		}
-		//if (selectable.isActiveAndEnabled) {
-		//	selectable.Select();
-		//} else {
-		//	Vector3 vector3 = new Vector3(0, -1, 0);
-		//	for (var i = 0; i < 4; i++) {
-		//		var nearbySelectable = selectable.FindSelectable(vector3);
-		//		if (nearbySelectable) {
-		//			nearbySelectable.Select();
-		//			break;
-		//		}
-		//		vector3 = new Vector3(-vector3.y, vector3.x, 0);
-		//	}
-		//}
 	}
 
 	private void RunSolution(PuzzleSolution solution, string combination)
@@ -218,9 +208,40 @@ public class PuzzleScript : MonoBehaviour {
 		}
 	}
 
-	public void indexUp(int index)
-	{ 
-		
+	public void SetHour(int puzzlePiece)
+	{
+		hour += puzzlePiece;
+		if (hour > 12)
+		{
+			hour = 1;
+		}
+		else if (hour < 1)
+		{
+			hour = 12;
+		}
+
+		FixTime();
+	}
+	public void SetMinute(int puzzlePiece)
+	{
+		minute += puzzlePiece;
+		if (minute > 59)
+		{
+			minute = 0;
+		}
+		else if (minute < 0)
+		{
+			minute = 55;
+		}
+
+		FixTime();
+	}
+
+	private void FixTime()
+	{
+		puzzleCombination = hour.ToString() + ":" + minute.ToString();
+		RunSolution(onIndexSet, hour.ToString());
+		RunSolution(onPuzzlePieceAdded, minute.ToString());
 	}
 }
 

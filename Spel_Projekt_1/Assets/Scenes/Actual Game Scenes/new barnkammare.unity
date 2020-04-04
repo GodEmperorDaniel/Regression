@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1401982422}
+  selectedFlowchart: {fileID: 863105543}
 --- !u!4 &31630136
 Transform:
   m_ObjectHideFlags: 1
@@ -873,6 +873,8 @@ MonoBehaviour:
   listOfSounds:
   - nameOfSound: event:/SFX/World/Effekter/Scary 4
   - nameOfSound: event:/SFX/World/Objekt/Papper
+  - nameOfSound: event:/SFX/World/Objekt/Call line dead
+  - nameOfSound: event:/SFX/World/Objekt/Telephone Calling
 --- !u!4 &131533248
 Transform:
   m_ObjectHideFlags: 0
@@ -3868,6 +3870,8 @@ GameObject:
   - component: {fileID: 863105431}
   - component: {fileID: 863105430}
   - component: {fileID: 863105429}
+  - component: {fileID: 863105525}
+  - component: {fileID: 863105526}
   m_Layer: 0
   m_Name: NewObjects
   m_TagString: Untagged
@@ -3964,7 +3968,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 582.2111
     y: -207.22546
-    width: 147.56096
+    width: 151.26581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4624,7 +4628,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 709.22284
     y: -355.90775
-    width: 185.36583
+    width: 190.50629
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4669,7 +4673,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 910.6352
     y: -219.68227
-    width: 151.21948
+    width: 155.06326
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5710,7 +5714,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 924.2464
     y: -82.96946
-    width: 136.58536
+    width: 139.8734
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5722,12 +5726,14 @@ MonoBehaviour:
   - {fileID: 863105489}
   - {fileID: 863105488}
   - {fileID: 863105487}
+  - {fileID: 863105526}
   - {fileID: 863105486}
   - {fileID: 863105485}
   - {fileID: 863105484}
   - {fileID: 863105483}
   - {fileID: 863105482}
   - {fileID: 863105481}
+  - {fileID: 863105525}
   - {fileID: 863105480}
   - {fileID: 863105479}
   - {fileID: 863105478}
@@ -5795,7 +5801,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 517.84296
     y: -303.22952
-    width: 182.9268
+    width: 187.97466
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5955,7 +5961,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 703.96
     y: -303.2762
-    width: 185.36583
+    width: 190.50629
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6872,6 +6878,96 @@ MonoBehaviour:
   - {fileID: 863105522}
   - {fileID: 863105521}
   - {fileID: 863105520}
+--- !u!114 &863105525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863105428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 484
+  indentLevel: 2
+  description: 
+  targetObject: {fileID: 131533246}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &863105526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863105428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 485
+  indentLevel: 2
+  description: 
+  targetObject: {fileID: 131533246}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &863105538
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6989,11 +7085,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -24.893974, y: 399.90848}
+  scrollPos: {x: 36.344044, y: 333.06686}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.8200002
+  zoom: 0.7900002
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -7003,7 +7099,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 863105490}
   selectedCommands:
-  - {fileID: 863105480}
+  - {fileID: 863105487}
   variables:
   - {fileID: 863105541}
   - {fileID: 863105542}
@@ -7686,6 +7782,8 @@ GameObject:
   - component: {fileID: 1401982423}
   - component: {fileID: 1401982420}
   - component: {fileID: 1401982421}
+  - component: {fileID: 1401982432}
+  - component: {fileID: 1401982431}
   m_Layer: 5
   m_Name: Telefonen
   m_TagString: Untagged
@@ -7718,6 +7816,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1401982431}
   - {fileID: 1401982421}
   - {fileID: 1401982420}
 --- !u!114 &1401982420
@@ -7796,7 +7895,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1401982419}
   selectedCommands:
-  - {fileID: 1401982420}
+  - {fileID: 1401982431}
   variables: []
   description: 
   stepPause: 0
@@ -7854,6 +7953,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1401982423}
+  - {fileID: 1401982432}
 --- !u!114 &1401982425
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7900,22 +8000,6 @@ MonoBehaviour:
     _showPopup: 1
     _showVariablePopup: 0
     _defaultSolution: 0
-  - solution: 030719
-    flowchart: {fileID: 1401982422}
-    block: {fileID: 1401982419}
-    output: {fileID: 0}
-    _foldout: 1
-    _showPopup: 1
-    _showVariablePopup: 0
-    _defaultSolution: 0
-  - solution: 190703
-    flowchart: {fileID: 1401982422}
-    block: {fileID: 1401982419}
-    output: {fileID: 0}
-    _foldout: 1
-    _showPopup: 1
-    _showVariablePopup: 0
-    _defaultSolution: 0
   defaultSolution:
     solution: 
     flowchart: {fileID: 1401982422}
@@ -7951,6 +8035,7 @@ MonoBehaviour:
   showPuzzleGuess: {fileID: 99904872}
   autoEnable: []
   autoDisable: []
+  allButtons: []
 --- !u!114 &1401982427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8031,6 +8116,96 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1401982431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401982418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 131533246}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 3
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1401982432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401982418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 131533246}
+  targetComponentAssemblyName: PlayOneShot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: PlayOneShot
+  targetMethod: PlaySound
+  targetMethodText: 'PlaySound (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 2
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1416277426
 GameObject:
   m_ObjectHideFlags: 0
@@ -8849,6 +9024,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 5692884374466513571, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
         type: 3}
       propertyPath: inMenu
@@ -8859,11 +9039,6 @@ PrefabInstance:
       propertyPath: outMenu
       value: 
       objectReference: {fileID: 881986363}
-    - target: {fileID: 7085896948118731520, guid: aa3c1eac98f31e74da39d7b5fafc8e94,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa3c1eac98f31e74da39d7b5fafc8e94, type: 3}
 --- !u!1 &1899269518
