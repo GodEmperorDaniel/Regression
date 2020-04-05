@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 863105543}
+  selectedFlowchart: {fileID: 1401982422}
 --- !u!4 &31630136
 Transform:
   m_ObjectHideFlags: 1
@@ -7085,7 +7085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 36.344044, y: 333.06686}
+  scrollPos: {x: 31.28075, y: 345.72495}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -7572,6 +7572,7 @@ Transform:
   m_Children:
   - {fileID: 1578616241}
   - {fileID: 501312114}
+  - {fileID: 2129495945}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7779,9 +7780,7 @@ GameObject:
   - component: {fileID: 1401982425}
   - component: {fileID: 1401982419}
   - component: {fileID: 1401982424}
-  - component: {fileID: 1401982423}
   - component: {fileID: 1401982420}
-  - component: {fileID: 1401982421}
   - component: {fileID: 1401982432}
   - component: {fileID: 1401982431}
   m_Layer: 5
@@ -7806,7 +7805,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 351.30624
-    y: 112.72655
+    y: 111.72655
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7817,7 +7816,6 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1401982431}
-  - {fileID: 1401982421}
   - {fileID: 1401982420}
 --- !u!114 &1401982420
 MonoBehaviour:
@@ -7834,7 +7832,7 @@ MonoBehaviour:
   itemId: 6
   indentLevel: 0
   description: 
-  targetObject: {fileID: 421197292}
+  targetObject: {fileID: 2129495943}
   targetComponentAssemblyName: WarpEntrance, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
@@ -7847,27 +7845,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1401982421
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401982418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 7
-  indentLevel: 0
-  _targetGameObject:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 501312113}
-  activeState:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &1401982422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7895,7 +7872,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1401982419}
   selectedCommands:
-  - {fileID: 1401982431}
+  - {fileID: 1401982420}
   variables: []
   description: 
   stepPause: 0
@@ -7907,26 +7884,6 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
---- !u!114 &1401982423
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401982418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c0367bf08d147bd80b5454de50e9d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 5
-  indentLevel: 0
-  targetTextObject: {fileID: 99904871}
-  text:
-    stringRef: {fileID: 0}
-    stringVal: No Signal
-  description: 
-  _textObjectObsolete: {fileID: 0}
 --- !u!114 &1401982424
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7952,7 +7909,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1401982423}
   - {fileID: 1401982432}
 --- !u!114 &1401982425
 MonoBehaviour:
@@ -7992,7 +7948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solutions:
-  - solution: 071903
+  - solution: 312355
     flowchart: {fileID: 1401982422}
     block: {fileID: 1401982419}
     output: {fileID: 0}
@@ -8118,7 +8074,7 @@ RectTransform:
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1401982431
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8163,7 +8119,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1401982432
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9627,6 +9583,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128834534}
   m_CullTransparentMesh: 0
+--- !u!1 &2129495943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129495945}
+  - component: {fileID: 2129495944}
+  m_Layer: 0
+  m_Name: Chase Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2129495944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c471c40f8822ba3498d420a880ae7352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warpToScene:
+    sceneAsset: {fileID: 102900000, guid: d95a595c8bd157d489d308ab898ef229, type: 3}
+    scenePath: Assets/Scenes/Actual Game Scenes/SH_EndSequence.unity
+  exitId: 5126833876105539835
+--- !u!4 &2129495945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174459108}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2137541922
 PrefabInstance:
   m_ObjectHideFlags: 0

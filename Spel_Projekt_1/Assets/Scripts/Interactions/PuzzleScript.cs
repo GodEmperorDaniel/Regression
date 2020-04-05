@@ -170,10 +170,12 @@ public class PuzzleScript : MonoBehaviour {
 		{
 			if (puzzleCombination == solutions[i].solution)
 			{
+				puzzleCombination = "";
 				RunSolution(solutions[i], puzzleCombination);
 				return;
 			}
 		}
+		puzzleCombination = "";
 		RunSolution(defaultSolution, puzzleCombination);
 	}
 

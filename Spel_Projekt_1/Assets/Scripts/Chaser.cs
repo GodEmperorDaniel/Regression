@@ -14,7 +14,10 @@ public struct ChaserSettings {
 	public float minSpeed;
 	public float maxSpeed;
 
-	public ChaserSettings(float baseSpeed, float baseAcceleration, float playerDistanceSpeedScaling, float playerDistanceAccelerationScaling, float playerSpeedSpeedScaling, float playerSpeedAccelerationScaling, float minSpeed, float maxSpeed) {
+	public ChaserSettings(float baseSpeed, float baseAcceleration, float playerDistanceSpeedScaling,
+		float playerDistanceAccelerationScaling, float playerSpeedSpeedScaling, float playerSpeedAccelerationScaling, 
+		float minSpeed, float maxSpeed) {
+
 		this.baseSpeed = baseSpeed;
 		this.baseAcceleration = baseAcceleration;
 		this.playerDistanceSpeedScaling = playerDistanceSpeedScaling;
@@ -32,24 +35,27 @@ public class Chaser : MonoBehaviour {
 	public ChaserSettings playerMovingCloser = new ChaserSettings(0.8f, 1, -0.1f, 0, 0, 0, 0, 3);
 	public float startSpeed;
 	public float speed;
+	public Animator ani;
 
-	// Start is called before the first frame update
+	private CharacterController2d c;
+
 	void Start()
     {
 		speed = startSpeed;
+		c = PlayerStatic.ControllerInstance;
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	void Update()
+	{
 		float targetSpd = 0;
 		float accel = playerStationary.baseAcceleration;
-		var c = PlayerStatic.ControllerInstance;
+
 
 		if (c) {
-			var deltaPos = c.transform.position - transform.position;
+			var deltaPos = new Vector3(c.transform.position.x - 1, c.transform.position.y) - transform.position;
 			var v = c.velocity;
-			var d = Vector3.Dot(deltaPos, v);
+			var d = Vector3.Dot(deltaPos, Vector2.right);
+			Debug.Log(d);
 
 			ChaserSettings s;
 
@@ -79,8 +85,17 @@ public class Chaser : MonoBehaviour {
 
 		transform.position += new Vector3(speed * Time.deltaTime, 0);
 
-		if (transform.position.x > 8) {
-			transform.position -= new Vector3(16, 0);
+
+		if (speed < 0.1)
+		{
+			ani.speed = 0;
 		}
+		else
+		{
+			ani.speed = 1;
+		}
+		//if (transform.position.x > 8) {
+		//	transform.position -= new Vector3(16, 0);
+		//}
 	}
 }

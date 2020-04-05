@@ -482,6 +482,7 @@ MonoBehaviour:
   - {fileID: 137056714}
   - {fileID: 137056720}
   - {fileID: 137056713}
+  - {fileID: 7535735822714936849}
   - {fileID: 137056712}
   - {fileID: 137056711}
   - {fileID: 137056884}
@@ -491,6 +492,7 @@ MonoBehaviour:
   - {fileID: 137056709}
   - {fileID: 137056706}
   - {fileID: 137056708}
+  - {fileID: 7535735822714936848}
   - {fileID: 137056707}
   - {fileID: 137056705}
 --- !u!114 &137056717
@@ -2921,6 +2923,8 @@ GameObject:
   - component: {fileID: 7535735822714936845}
   - component: {fileID: 7535735822714936844}
   - component: {fileID: 7535735822714936843}
+  - component: {fileID: 7535735822714936849}
+  - component: {fileID: 7535735822714936848}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -3189,6 +3193,38 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 0
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &7535735822714936848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735822714936837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a6fa59eaa6d8c43b0dcc48f2d711a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 386
+  indentLevel: 1
+  stopPlayerString: cutscene
+  setPlayerActive: 0
+--- !u!114 &7535735822714936849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735822714936837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3bfc4d56c42d4a8aa18300e22e0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 385
+  indentLevel: 1
+  stopPlayerString: cutscene
+  setPlayerActive: 0
 --- !u!114 &7535735822714936870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3214,8 +3250,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 7535735822714936842}
-  selectedCommands: []
+  - {fileID: 137056716}
+  selectedCommands:
+  - {fileID: 7535735822714936848}
   variables:
   - {fileID: 137056715}
   description: 

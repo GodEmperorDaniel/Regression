@@ -2258,9 +2258,11 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1341147608}
+  - {fileID: 7535735823870858047}
   - {fileID: 1341147612}
   - {fileID: 1341147611}
   - {fileID: 1341147610}
+  - {fileID: 7535735823870858046}
   - {fileID: 1341147609}
   - {fileID: 1341147607}
 --- !u!114 &1341147616
@@ -2292,12 +2294,14 @@ MonoBehaviour:
   - {fileID: 1341147604}
   - {fileID: 1341147603}
   - {fileID: 1341147602}
+  - {fileID: 7535735823870858049}
   - {fileID: 1341147601}
   - {fileID: 1341147600}
   - {fileID: 1341147599}
   - {fileID: 1341147597}
   - {fileID: 7535735823870858045}
   - {fileID: 1341147598}
+  - {fileID: 7535735823870858048}
   - {fileID: 1341147596}
   - {fileID: 1341147595}
 --- !u!114 &1341147617
@@ -3998,8 +4002,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 7535735823870858029}
-  selectedCommands: []
+  - {fileID: 1341147616}
+  selectedCommands:
+  - {fileID: 7535735823870858048}
   variables:
   - {fileID: 1341147614}
   - {fileID: 1341147613}
@@ -4076,6 +4081,10 @@ GameObject:
   - component: {fileID: 7535735823870858033}
   - component: {fileID: 7535735823870858045}
   - component: {fileID: 7535735823870858044}
+  - component: {fileID: 7535735823870858047}
+  - component: {fileID: 7535735823870858046}
+  - component: {fileID: 7535735823870858049}
+  - component: {fileID: 7535735823870858048}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Untagged
@@ -4618,7 +4627,7 @@ MonoBehaviour:
   waitForFrames: 1
 --- !u!114 &7535735823870858044
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4663,7 +4672,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &7535735823870858045
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4706,6 +4715,70 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &7535735823870858046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a6fa59eaa6d8c43b0dcc48f2d711a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 420
+  indentLevel: 1
+  stopPlayerString: cutscene
+  setPlayerActive: 0
+--- !u!114 &7535735823870858047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3bfc4d56c42d4a8aa18300e22e0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 419
+  indentLevel: 1
+  stopPlayerString: cutscene
+  setPlayerActive: 0
+--- !u!114 &7535735823870858048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a6fa59eaa6d8c43b0dcc48f2d711a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 422
+  indentLevel: 2
+  stopPlayerString: cutscene
+  setPlayerActive: 0
+--- !u!114 &7535735823870858049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535735823870858026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3bfc4d56c42d4a8aa18300e22e0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 421
+  indentLevel: 2
+  stopPlayerString: cutscene
+  setPlayerActive: 0
 --- !u!95 &8560832131403451500
 Animator:
   serializedVersion: 3
