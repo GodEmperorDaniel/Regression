@@ -31,6 +31,7 @@ public class PuzzleScript : MonoBehaviour {
 	public TMP_Text showPuzzleGuess;
 	public List<GameObject> autoEnable;
 	public List<GameObject> autoDisable;
+	public bool clearOnCheck = true;
 
 	private string puzzleCombination = "";
 	private Selectable lastSelectedButton = null;
@@ -146,11 +147,13 @@ public class PuzzleScript : MonoBehaviour {
 	}
 
 	public void SetPuzzlePieceAtPreviouslySelectedIndex(string puzzleCharacter) {
-			puzzleCombination = puzzleCombination.PadRight(selectedIndex + 1);
-			var charArray = puzzleCombination.ToCharArray();
-			charArray[selectedIndex] = puzzleCharacter[0];
-			puzzleCombination = new string(charArray);
-			RunSolution(onPuzzlePieceAdded, puzzleCharacter);
+		Debug.Log(puzzleCombination);
+		puzzleCombination = puzzleCombination.PadRight(selectedIndex + 1);
+		var charArray = puzzleCombination.ToCharArray();
+		charArray[selectedIndex] = puzzleCharacter[0];
+		puzzleCombination = new string(charArray);
+		RunSolution(onPuzzlePieceAdded, puzzleCharacter);
+		Debug.Log(puzzleCombination);
 	}
 
 	public void RemovePuzzlePiece() {
@@ -175,7 +178,10 @@ public class PuzzleScript : MonoBehaviour {
 				return;
 			}
 		}
-		puzzleCombination = "";
+		if (clearOnCheck)
+		{ 
+			puzzleCombination = "";
+		}
 		RunSolution(defaultSolution, puzzleCombination);
 	}
 
