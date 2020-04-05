@@ -4446,10 +4446,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
-      propertyPath: tileMap
-      value: 
-      objectReference: {fileID: 65796663}
+    - target: {fileID: 6685346484804266381, guid: 56952e903d86a694ab8bddae2a483aea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8545625253530492900, guid: 56952e903d86a694ab8bddae2a483aea,
         type: 3}
       propertyPath: possibleCombinations.Array.size
@@ -4489,11 +4490,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6685346484804266381, guid: 56952e903d86a694ab8bddae2a483aea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 471277476, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 65796663}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56952e903d86a694ab8bddae2a483aea, type: 3}
 --- !u!1001 &95968081
@@ -7784,7 +7784,7 @@ MonoBehaviour:
   indentLevel: 1
   storyText: No arms. No hands. No time.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 167559730}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13159,7 +13159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1401982422}
+  selectedFlowchart: {fileID: 6356340247877577574}
 --- !u!4 &498638050
 Transform:
   m_ObjectHideFlags: 1
@@ -47854,7 +47854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 412.4716
+    x: 413.7374
     y: -95.119255
     width: 187.97466
     height: 40
@@ -48020,7 +48020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 72
   indentLevel: 1
-  storyText: One More
+  storyText: '{speed=30}Not a minute longer.'
   description: 
   character: {fileID: 167559730}
   portrait: {fileID: 0}
@@ -48322,7 +48322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 82
   indentLevel: 1
-  storyText: One More
+  storyText: '{speed=30}Hours cannot measure the time my arm was missing.'
   description: 
   character: {fileID: 167559730}
   portrait: {fileID: 0}
@@ -48827,9 +48827,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 132
   indentLevel: 1
-  storyText: '{i} Tick, Tock {i} {b} 312.. {b} {i} the time since it happend {i}'
+  storyText: Gears of rust grind. It peels like a skin shed, and with bloodspill,
+    I find my body awake.{i} 357 {i} The number is yours.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 167559730}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
