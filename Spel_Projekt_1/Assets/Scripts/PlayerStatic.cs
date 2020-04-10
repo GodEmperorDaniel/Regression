@@ -80,6 +80,7 @@ public class PlayerStatic : MonoBehaviour {
     void Awake()
     {
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 		DontDestroyOnLoad(gameObject);
         if (_player == null)
         {

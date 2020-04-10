@@ -21,6 +21,7 @@ public class Menu : MonoBehaviour
         {
             Destroy(PlayerStatic.PlayerInstance);
         }
+        FungusSaver.Instance.ClearSave();
 		GameSaveManager.instance.ClearSave();
         SceneManager.LoadScene("Start");
     }
