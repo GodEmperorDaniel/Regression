@@ -59,6 +59,7 @@ public class InventoryPopup : MonoBehaviour
 	}
 
 	public void Inspect() {
+		flowchart.StopAllBlocks();
 		flowchart.GetVariable<InventoryItemVariable>("SelectedItem").Value = _item;
 		flowchart.SetStringVariable("Name", _item.title);
 		flowchart.SetStringVariable("Description", _item.description);
