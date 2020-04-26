@@ -47,7 +47,6 @@ public class CharacterController2d : MonoBehaviour, ISaveable {
 	private Vector2 _stepDir;
 
 	private RaycastHit2D hit;
-	private Vector3 lastPos = new Vector3(0, 0);
 	private bool clone;
 
 

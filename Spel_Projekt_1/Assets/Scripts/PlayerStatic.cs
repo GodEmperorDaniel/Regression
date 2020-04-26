@@ -107,10 +107,22 @@ public class PlayerStatic : MonoBehaviour {
 		}
 	}
 
-	public static void ResumePlayer(string key) {
-		freezeStack.Remove(key);
-		if (ControllerInstance && !IsFrozen()) {
-			ControllerInstance.enabled = true;
+	public static void ResumePlayer(string key, bool all = false) {
+		if (all)
+		{
+			if (!freezeStack.Contains("Say"))
+			{ 
+				freezeStack = new HashSet<string>();
+				ControllerInstance.enabled = true;
+			}
+		}
+		else
+		{
+			freezeStack.Remove(key);
+			if (ControllerInstance && !IsFrozen())
+			{
+				ControllerInstance.enabled = true;
+			}
 		}
 	}
 

@@ -103,7 +103,7 @@ namespace Fungus
             }
 
 			if (freezePlayer) {
-				PlayerStatic.FreezePlayer("Say " + storyText);
+				PlayerStatic.FreezePlayer("Say");
 			}
 
 			if (interruptPlayer) {
@@ -170,7 +170,7 @@ namespace Fungus
 
         public override void OnStopExecuting()
         {
-			PlayerStatic.ResumePlayer("Say " + storyText);
+			PlayerStatic.ResumePlayer("Say");
 
 			var sayDialog = SayDialog.GetSayDialog();
             if (sayDialog == null)
@@ -182,7 +182,7 @@ namespace Fungus
         }
 
 		public override void OnExit() {
-			PlayerStatic.ResumePlayer("Say " + storyText);
+			PlayerStatic.ResumePlayer("Say");
 			base.OnExit();
 		}
 

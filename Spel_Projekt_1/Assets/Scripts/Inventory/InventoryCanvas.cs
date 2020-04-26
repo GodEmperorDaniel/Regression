@@ -256,6 +256,10 @@ public class InventoryCanvas : MonoBehaviour
 			cursor.SetActive(false);
 			combineCursor.SetActive(false);
 			PlayerStatic.ResumePlayer("Inventory");
+			if (PlayerStatic.IsFrozen())
+			{
+				PlayerStatic.ResumePlayer("", true);
+			}
 		}
 	}
 

@@ -31,10 +31,17 @@ public class InventoryPopup : MonoBehaviour
 		_canvas = canvas;
 		_item = item;
 		gameObject.SetActive(true);
+		StartCoroutine(WaitOnGui());
+	}
+
+	private IEnumerator WaitOnGui()
+	{
+		yield return new WaitForEndOfFrame();
+
 		firstSelectable.Select();
 	}
 
-	public void Hide() {
+		public void Hide() {
 		PlayerStatic.ResumePlayer("Inventory Popup");
 		gameObject.SetActive(false);
 		_item = null;
