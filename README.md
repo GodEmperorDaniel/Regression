@@ -1,2 +1,7 @@
-# Spel_Projekt_1
- Versions hantering av vårat spel projekt 1
+# Regression
+
+A game project made in connection to the Game Development education in Högskolan i Skövde.
+
+Link to Game
+
+## Credits
